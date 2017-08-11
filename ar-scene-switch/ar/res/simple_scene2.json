@@ -1,0 +1,40 @@
+{
+    "showImmediately": 1,
+    "userInteraction": {
+        "disableAll": 0,
+        "disablePinch": 0,
+        "disableClick": 0,
+        "disableSingleFingerScroll": 0,
+        "disableLongPress": 0
+    },
+    "nodeList": [
+        {
+            "name": "Scene2Button",
+            "type": "plane",
+            "visible": 1,
+            "touchable": 1,
+            "material": {
+                "common": {
+                    "defaultShaderName": "planeShader",
+                    "textureList": [
+                        {
+                            "textureName": "res/texture/resume.png"
+                        }
+                    ]
+                }
+            },
+            "hudDisplay": {
+                "marginLeft": 0.8,
+                "marginTop": 0.8,
+                "depthPosition": 3000,
+                "screenRatio": {
+                    "screenWidthRatio": 0.11
+                }
+            },
+            "transparentObject": 1,
+            "position": "0,0,0",
+            "rotation": "90,0,0",
+            "children": []
+        }
+    ]
+}

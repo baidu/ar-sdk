@@ -1,0 +1,62 @@
+{
+  "showImmediately": 1,
+  "userInteraction": {
+  "enableTouchZone":1,
+    "disableAll": 0,
+    "disablePinch": 0,
+    "disableClick": 0,
+    "disableScroll": 0,
+    "disbleLongPress": 0,
+    "disableSingleFingerScroll": 0
+  },
+  "nodeList": [
+    {
+      "name": "mainCamera",
+      "type": "camera",
+      "visiable": "1",
+      "position": "0,0,0",
+      "scale": "1,1,1",
+      "rotation": "0,0,0",
+      "chirlden": [],
+      "cameraNodeSuppl": {
+        "fov": 56,
+        "zNear": 50,
+        "zFar": 10000
+      }
+    },
+    {
+      "name": "ambientLight",
+      "type": "ambientLight",
+      "chirlden": [],
+      "lightNodeSuppl": {
+        "color": "255,255,255",
+        "intensity": 1
+      }
+    },
+    {
+      "name": "samplePod",
+      "type": "pod",
+	  "touchZone":200,
+      "visible": 1,
+      "touchable": 1,
+      "meshFileName": "res/model/BaiDu_Bear_Maya_Normal.pod",
+      "material": {
+        "common": {
+          "texturePath": "res/texture/",
+          "disableLightEffect": 0
+        }
+      },
+      "materialExtend": {
+        "Material #75": {
+          "type": "MESH_PHONG",
+          "offsetRepeat": "0, 0, 1, 1",
+          "shininess": 0.5
+        }
+      },
+      "position": "0,-400,0",
+      "scale": "0.5,0.5,0.5",
+      "rotation": "0,0,0",
+      "chirlden": []
+    }
+  ]
+}

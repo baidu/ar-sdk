@@ -1,0 +1,83 @@
+{
+    "showImmediately": 1,
+    "userInteraction": {
+        "disableAll": 0,
+        "disablePinch": 0,
+        "disableClick": 0,
+        "disableSingleFingerScroll": 1,
+        "disableLongPress": 0
+    },
+    "nodeList": [
+        {
+            "name": "mainCamera",
+            "type": "camera",
+            "visible": 1,
+            "position": "0,0,0",
+            "scale": "1,1,1",
+            "rotation": "0,0,0",
+            "children": [],
+            "cameraNodeSuppl": {
+                "fov": 56,
+                "zNear": 50,
+                "zFar": 10000
+            }
+        },
+        {
+            "name": "colorPhoto",
+            "type": "plane",
+            "visible": 1,
+            "touchable": 1,
+            "material": {
+                "common": {
+                    "defaultShaderName": "planeShader",
+                    "textureList": [
+                        {
+                            "textureName": "res/texture/color.png"
+                        }
+                    ]
+                }
+            },
+            "scale": "200,200,200",
+            "position": "0,-500,90",
+            "rotation": "90,0,0"
+        },
+        {
+            "name": "bantouPhoto",
+            "type": "plane",
+            "visible": 1,
+            "touchable": 1,
+            "material": {
+                "common": {
+                    "defaultShaderName": "planeShader",
+                    "textureList": [
+                        {
+                            "textureName": "res/texture/bantou.png"
+                        }
+                    ]
+                }
+            },
+            "scale": "200,200,200",
+            "position": "0,500,360",
+            "rotation": "45,0,0"
+        },
+        {
+            "name": "bwPhoto",
+            "type": "plane",
+            "visible": 1,
+            "touchable": 1,
+            "material": {
+                "common": {
+                    "defaultShaderName": "planeShader",
+                    "textureList": [
+                        {
+                            "textureName": "res/texture/bw.jpg"
+                        }
+                    ]
+                }
+            },
+            "scale": "200,200,200",
+            "position": "360,0,-720",
+            "rotation": "90,0,0"
+        }
+    ]
+}

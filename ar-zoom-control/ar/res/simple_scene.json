@@ -1,0 +1,70 @@
+{
+    "showImmediately": 1,
+    "userInteraction": {
+        "disableAll": 0,
+        "disablePinch": 0,
+        "disableClick": 0,
+        "disableSingleFingerScroll": 0,
+        "enableTouchZone":1,
+        "disableLongPress": 0
+    },
+    "nodeList": [
+        {
+            "name": "mainCamera",
+            "type": "camera",
+            "visible": 1,
+            "position": "0,0,0",
+            "scale": "1,1,1",
+            "rotation": "0,0,0",
+            "children": [],
+            "cameraNodeSuppl": {
+                "fov": 56,
+                "zNear": 50,
+                "zFar": 10000
+            }
+        },
+        {
+            "name": "bwPhoto",
+            "type": "plane",
+            "visible": 1,
+            "maxScale": 600,
+            "touchable": 1,
+            "touchZone":120,
+            "material": {
+                "common": {
+                    "defaultShaderName": "planeShader",
+                    "textureList": [
+                        {
+                            "textureName": "res/texture/bw.jpg"
+                        }
+                    ]
+                }
+            },
+            "scale": "300,300,300",
+            "position": "0,240,0",
+            "rotation": "90,0,0"
+        },
+        {
+                 "name": "coPhoto",
+                 "type": "plane",
+                 "visible": 1,
+                 "minScale": 150,
+                 "touchable": 1,
+                 "touchZone":120,
+                 "material": {
+                 "common": {
+                 "defaultShaderName": "planeShader",
+                 "textureList": [
+                                 {
+                                 "textureName": "res/texture/color.png"
+                                 }
+                                 ]
+                 }
+                 },
+                 "scale": "300,300,300",
+                 "position": "0,-240,0",
+                 "rotation": "90,0,0"
+        }
+
+    ]
+}

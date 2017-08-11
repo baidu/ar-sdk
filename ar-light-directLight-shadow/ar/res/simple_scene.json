@@ -1,0 +1,94 @@
+{
+  "showImmediately": 1,
+  "userInteraction": {
+    "disableAll": 0,
+    "disablePinch": 0,
+    "disableClick": 0,
+    "disableScroll": 0,
+    "disableSingleFingerScroll": 0,
+    "enableTouchZone": 0,
+    "disbleLongPress": 0
+  },
+  "nodeList": [
+    {
+      "name": "mainCamera",
+      "type": "camera",
+      "visiable": "1",
+      "position": "0,0,0",
+      "scale": "1,1,1",
+      "rotation": "0,0,0",
+      "chirlden": [],
+      "cameraNodeSuppl": {
+        "fov": 56,
+        "zNear": 50,
+        "zFar": 10000
+      }
+    },
+    {
+      "name": "ambientLight",
+      "type": "ambientLight",
+      "lightNodeSuppl": {
+        "color": "0,0,0",
+        "intensity": 1
+      }
+    },
+    {
+      "name": "directLight",
+      "type": "directLight",
+      "chirlden": [],
+      "lightNodeSuppl": {
+        "color": "255.0,255.0,255.0",
+        "intensity": 1.0,
+        "direction": "0, -1, -2",
+        "enableShadow": 1
+      }
+    },
+    {
+      "name": "samplePod1",
+      "type": "pod",
+      "visible": 1,
+      "touchZone": 200,
+      "touchable": 1,
+      "meshFileName": "res/model/BaiDu_Bear_Maya_Normal.pod",
+      "material": {
+        "common": {
+          "texturePath": "res/texture/",
+          "disableLightEffect": 0
+        }
+      },
+      "materialExtend": {
+        "Material #75": {
+          "type": "MESH_PHONG",
+          "offsetRepeat": "0, 0, 1, 1",
+          "shininess": 0.5
+        }
+      },
+      "position": "0,-400,0",
+      "scale": "0.5,0.5,0.5",
+      "rotation": "0,0,0",
+      "chirlden": []
+    },
+    {
+      "name": "samplePod",
+      "type": "pod",
+      "visible": 1,
+      "touchable": 1,
+      "meshFileName": "res/model/plane.pod",
+      "material": {
+        "common": {
+          "texturePath": "res/texture/"
+        }
+      },
+      "materialExtend": {
+        "lambert1": {
+          "customShader": "res/shader/custom_shadow",
+          "type": "MESH_LAMBERT"
+        }
+      },
+      "position": "0,0,-800",
+      "scale": "200,200,200",
+      "rotation": "90,0,0",
+      "chirlden": []
+    }
+  ]
+}

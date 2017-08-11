@@ -1,0 +1,27 @@
+{
+    "UI": {
+        "hint": "离开触发物居中显示\n温馨提醒：注意调整距离，请扫描全图",
+        "not_found_tip": "未找到目标物，请重新对准",
+        "too_far_hint": "距离太远，请将镜头靠近目标物",
+        "too_near_hint": "距离太近，请将镜头远离目标物",
+        "case_type": "0",
+        "far_threshold": "1400",
+        "near_threshold": "700",
+        "udt_tip_simple": "请将取景框正对带图案的竖直平面\n点击确定",
+        "udt_tip_detail": "请正对刚才拍照获取的平面区域",
+        "udt_tip_alert": "请正对图案丰富的竖直平面",
+        "help_url": ""
+    },
+    "targets": [
+        {
+            "id": "787432",
+            "name": "测试",
+            "model_path": "models/model",
+            "template_width": 1024,
+            "template_height": 1024,
+            "target_width": 454,
+            "target_height": 454,
+            "centre_pos": "512,512,0"
+        }
+    ]
+}
