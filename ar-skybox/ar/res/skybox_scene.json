@@ -1,0 +1,124 @@
+{
+  "showImmediately": 1,
+  "imuRelayCtrlWhenTrackLost": 1,
+  "showOffscreenGuidance": 0,
+  "userInteraction": {
+    "disableAll": 0,
+    "disablePinch": 1,
+    "disableClick": 0,
+    "disableScroll": 0,
+    "disableLongPress": 1,
+    "disableDoubleClick": 0,
+    "disableSingleFingerScroll": 1,
+    "disableTwoFingerScroll": 0
+  },
+  "cameraDefaultLookAt": {
+    "eyePos": "0,0,0",
+    "centerPos": "0,-1,0",
+    "upDirection": "0,0,-1"
+  },
+  "cameraDefaultLookAt2": {
+    "eyePos": "0,0,0",
+    "centerPos": "0,0,-1",
+    "upDirection": "0,1,0"
+  },
+  "nodeList": [
+    {
+      "name": "mainCamera",
+      "type": "camera",
+      "visiable": "1",
+      "position": "0,0,0",
+      "scale": "1,1,1",
+      "rotation": "0,0,0",
+      "chirlden": [],
+      "cameraNodeSuppl": {
+        "fov": 90,
+        "zNear": 0.6,
+        "zFar": 40000
+      }
+    },
+    {
+      "name": "container",
+      "type": "group",
+      "visible": 1,
+      "position": "0,0,0",
+      "children": [
+        {
+          "name": "skybox",
+          "type": "skybox",
+          "touchable": 0,
+          "visible": 1,
+          "position": "0,0,0",
+          "scale": "512, 512, 512",
+          "rotation": "0,90,0",
+          "material": {
+            "common": {
+              "defaultShaderName": "skyboxShader",
+              "textureList": [
+                {
+                  "textureShaderName": "tCube",
+                  "textureName": "res/texture/park.jpg",
+                  "textureType": "cubeMap"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "doorHandle",
+          "type": "plane2",
+          "position": "200,-140,-400",
+          "scale": "64, 64, 64",
+          "rotation": "0,60,90",
+          "visible": 1,
+          "touchable": 1,
+          "material": {
+            "common": {
+              "defaultShaderName": "planeShader",
+              "textureList": [
+                {
+                  "textureName": "res/texture/SZ_02.png"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "icons",
+      "type": "group2",
+      "visible": 1,
+      "hudDisplay": {
+        "marginLeft": 0.088,
+        "marginTop": 0.5,
+        "screenRatio": {
+          "screenWidthRatio": 0.096
+        }
+      },
+      "rotation": "90,-90,0",
+      "children2": [
+        {
+          "name": "exit",
+          "touchable": 1,
+          "type": "plane",
+          "visible": 1,
+          "scale": "3.33333, 1, 1",
+          "position": "-0,0,0",
+          "transparentObject": 1,
+          "material": {
+            "common": {
+              "defaultShaderName": "planeShader",
+              "textureList": [
+                {
+                  "textureName": "res/texture/exit_skybox.png",
+                  "textureShaderName": "diffuseMap"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

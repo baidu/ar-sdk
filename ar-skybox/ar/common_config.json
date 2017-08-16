@@ -1,0 +1,53 @@
+{
+  "compatibleVersion": "1.0.0",
+  "commonShaderList": [
+    {
+      "name": "skyboxShader",
+      "shader": {
+        "shaderPath": "res/shader/skybox-gles",
+        "vertexType": "RM_P",
+        "uniformList": [
+          {
+            "uniformName": "modelMatrix",
+            "uniformValue": "AR_MODEL",
+            "uniformType": "address"
+          },
+          {
+            "uniformName": "projectionMatrix",
+            "uniformValue": "AR_PROJECT",
+            "uniformType": "address"
+          },
+          {
+            "uniformName": "modelViewMatrix",
+            "uniformValue": "AR_MODELVIEW",
+            "uniformType": "address"
+          }
+        ]
+      }
+    },
+    {
+      "name": "planeShader",
+      "shader": {
+        "shaderPath": "res/shader/plane-gles",
+        "vertexType": "RM_P_N_T",
+        "uniformList": [
+          {
+            "uniformName": "World",
+            "uniformValue": "AR_MODEL",
+            "uniformType": "address"
+          },
+          {
+            "uniformName": "Proj",
+            "uniformValue": "AR_PROJECT",
+            "uniformType": "address"
+          },
+          {
+            "uniformName": "View",
+            "uniformValue": "AR_VIEW",
+            "uniformType": "address"
+          }
+        ]
+      }
+    }
+  ]
+}
