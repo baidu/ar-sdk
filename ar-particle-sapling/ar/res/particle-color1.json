@@ -1,0 +1,102 @@
+{
+"name": "kongmingdeng",
+"particleCountMax":4000,
+"useGLPoints":0,
+"material": {
+    "blendMode":"additive",
+    "textureName":"fire4.png",
+    "textureWidth":673,
+    "textureHeight":215,
+    "frameAnimated":0,
+    "frameLoop":1,
+    "frameCount":3,
+    "frameColums":3,
+    "frameRows":1,
+    "frameRandomOffset":3,
+    "frameDuration":100
+},
+"emission":{
+    "emissionLoop":-1,
+    "emissionRate":10000,
+    "emissionDuration":3000,
+    "emissionIdleDuration":0,
+    "emissionIdleDurationVar":0,
+    "emitterPosition":"0, 0, 0",
+    "emitterRotationAxisAngleMin":0,
+    "emitterRotationAxisAngleMax":0,
+    "emitterRotationAxis":"0, 0, 0",
+    "emitterRotationAxisVar":"0, 0, 0",
+    "emissionVelocityMode":"shape",
+    "emissionAccelecationMode":"shape",
+    "emitterShape":"mesh",
+    "emitterShapeStrectchScale":"1,1,1",
+    "emitterShapeParam":{
+                            "box":{
+                                "boxLengthX":10,
+                                "boxLengthY":10,
+                                "boxLengthZ":10
+                            },
+                            "sphere":{
+                                "sphereRadius":500
+                            },
+                            "hemisphere":{
+                                "hemisphereRadius":50
+                            },
+                            "cylinder":{
+                                "cylinderRadius":200,
+                                "cylinderHeight":500
+                            },
+                            "cone":{
+                                "coneRadius":200,
+                                "coneAngle":140
+                            },
+                            "circle":{
+                                "circleOutRadius":600,
+                                "circleInRadius":300
+                            },
+                            "mesh":{
+                                "meshScale":1.0,
+                                "meshName":"Tree"
+                            }
+                        }
+    
+
+},
+"particle":{
+    "lifeTimeMin":3000,
+    "lifeTimeMax":6000,
+    "sizeStartMin":10,
+    "sizeStartMax":10,
+    "sizeEndMin":30,
+    "sizeEndMax":30,
+    "colorStart":"255, 76, 0, 0",
+    "colorStartVar":"0, 0, 0, 0",
+    "colorMid":"255, 76, 0, 51",
+    "colorMidVar":"0, 0, 0, 0",
+    "colorEnd":"255, 76, 0, 0",
+    "colorEndVar":"0, 0, 0, 0",
+    "velocity":"0, 10, 0",
+    "velocityVar":"0, 5, 0",
+    "acceleration":"0, 0, 0",
+    "accelerationVar":"0, 0, 0",
+    "spinAngleMin":0,
+    "spinAngleMax":0,
+    "rotationAxisAngleMin":0,
+    "rotation_axis_angle_max":0,
+    "rotationAxis":"0, 0, 0",
+    "rotationAxisVar":"0, 0, 0"
+},
+"render":{
+    "imuType":0,
+    "billboardType":"none",
+    "stretchScale":"0,0,0",
+    "stretchType":"constant",
+    "spinAlignToSpeedDirection":0
+},
+    "subEmitter": {
+        "birth":[],
+        "deadth":[]
+    
+}
+
+}

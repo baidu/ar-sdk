@@ -1,0 +1,64 @@
+{
+    "name": "yanwu",
+    "shaderEffect": 0,
+    "particleCountMax": 30,
+    "material": {
+        "textureName": "ParticleCloudWhite.png",
+        "textureWidth": 2048,
+        "textureHeight": 2048,
+        "blendMode": "additive",
+        "frameAnimated": 0,
+        "frameLoop": 1,
+        "frameCount": 1,
+        "frameColums": 1,
+        "frameRows": 1,
+        "frameRandomOffset": 0,
+        "frameDuration": 1000
+    },
+    "emission": {
+        "emissionLoop": -1,
+        "emissionRate": 15000,
+        "emissionDuration": 45000,
+        "emissionIdleDuration": 0,
+        "emissionIdleDurationVar": 0,
+        "emitterShapeStrectchScale": "2,1,1",
+        "emissionVelocityMode": "axis",
+        "emissionAccelecationMode": "axis",
+        "emitterShape": "sphere",
+        "emitterPosition": "0,500,0",
+        "emitterShapeParam": {
+            "sphere": {
+                "sphereRadius": 100
+            }
+        }
+    },
+    "particle": {
+        "sizeStartMin": 200,
+        "sizeStartMax": 240,
+        "sizeEndMin": 320,
+        "sizeEndMax": 360,
+        "lifeTimeMin": 10000,
+        "lifeTimeMax": 300000,
+        "colorStart": "255, 255, 255, 25",
+        "colorStartVar": "0, 0, 0, 25",
+        "colorEnd": "255, 255, 255, 0",
+        "colorEndVar": "0, 0, 0, 0",
+        "velocity": "20, 0, 0",
+        "velocityVar": "1, 1, 1",
+        "acceleration": "0, 0, 0",
+        "accelerationVar": "0.8, 0.8, 0.8",
+        "spinAngleMin": 0,
+        "spinAngleMax": 0,
+        "rotationAxisAngleMin": 0,
+        "rotationAxisAngleMax": 0,
+        "rotationAxis": "0, 0, 0",
+        "rotationAxisVar": "0, 0, 0"
+    },
+    "render": {
+        "billboardType": "billboard",
+        "stretchScale": "0,0,0",
+        "stretchType": "speed",
+        "imuType": 0,
+        "spinAlignToSpeedDirection": 0
+    }
+}

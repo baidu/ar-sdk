@@ -1,0 +1,45 @@
+
+{
+    "showImmediately": 1,
+    "userInteraction": {
+        "enableTouchZone": 1,
+        "disableAll": 0,
+        "disablePinch": 0,
+        "disableClick": 0,
+        "disableScroll": 0,
+        "disableSingleFingerScroll": 0,
+        "disbleLongPress": 0
+    },
+    "nodeList": [
+                 {
+                 "name": "Tree",
+                 "type": "pod",
+                 "visible": 1,
+                 "touchable": 0,
+                 "meshFileName": "res/model/Tree.pod",
+                 "material": {
+                 "common": {
+                 "texturePath": "res/texture/",
+                 "disableLightEffect": 1
+                 }
+                 },
+                 "position": "0,0,0",
+                 "scale": "2.5, 2.5, 2.5",
+                 "rotation": "0,0,0",
+                 "chirlden": []
+                 },
+                {
+                 "name": "fire",
+                 "type": "particle",
+                 "visible": 1,
+                 "touchable": 0,
+                 "particleSystemSuppl": {
+                 "particlePath": "res/particle-color1.json"
+                 },
+                 "position": "0, 0, 0",
+                 "scale": "1, 1, 1",
+                 "rotation": "0, 0, 0",
+                 "children": []
+                 }
+            ]
+}

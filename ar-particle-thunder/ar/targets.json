@@ -1,0 +1,24 @@
+{
+	"UI": {
+		"hint": "雷电效果\n请单击屏幕",
+		"not_found_tip": "",
+		"too_far_hint": "距离太远，请将镜头靠近目标物",
+		"too_near_hint": "距离太近，请将镜头远离目标物",
+		"case_type": "1",
+		"far_threshold": "1400",
+		"near_threshold": "700",
+		"help_url": ""
+	},
+	"targets": [
+		{
+			"id": "787432",
+			"name": "朝阳门",
+			"model_path": "models/model",
+			"template_width": 1024,
+			"template_height": 1024,
+			"target_width": 449,
+			"target_height": 453,
+			"centre_pos": "512,512,0"
+		}
+	]
+}

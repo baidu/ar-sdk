@@ -1,0 +1,181 @@
+{
+    "showImmediately": 1,
+    "userInteraction": {
+        "disableAll": 0,
+        "disablePinch": 0,
+        "disableClick": 0,
+        "disableScroll": 0,
+        "disbleLongPress": 0
+    },
+    "nodeList": [
+        {
+            "name": "sky",
+            "type": "pod",
+            "visible": 0,
+            "touchable": 0,
+            "meshFileName": "res/model/Qiu.pod",
+            "material": {
+                "common": {
+                    "texturePath": "res/texture/",
+                    "disableLightEffect": 1
+                }
+            },
+            "position": "-1000,300,0",
+            "scale": "1200, 1200, 1200",
+            "rotation": "90,0,0",
+            "chirlden": []
+        },
+        {
+            "name": "volcano_Node",
+            "type": "pod",
+            "visible": 1,
+            "touchable": 0,
+            "meshFileName": "res/model/SNT.pod",
+            "material": {
+                "common": {
+                    "texturePath": "res/texture/",
+                    "disableLightEffect": 1
+                }
+            },
+            "position": "-1000,300,0",
+            "scale": "1, 1, 1",
+            "rotation": "30,25,0",
+            "chirlden": [],
+            "podSuppl": {
+                "allSubnodeTouchable": 0
+            }
+        },
+        {
+            "name": "walk_Node",
+            "type": "pod",
+            "visible": 1,
+            "touchable": 0,
+            "meshFileName": "res/model/monolophosaurus_walk.pod",
+            "material": {
+                "common": {
+                    "texturePath": "res/texture/",
+                    "disableLightEffect": 1
+                }
+            },
+            "materialExtend": {
+                "Material #75": {
+                    "type": "MESH_PHONG",
+                    "customShader2": "res/shader/pod-gles",
+                    "offsetRepeat": "0, 0, 1, 1",
+                    "shininess": 0.5
+                }
+            },
+            "position": "0,0,0",
+            "scale": "1.5, 1.5, 1.5",
+            "rotation": "0,-90,0",
+            "chirlden": [],
+            "podSuppl": {
+                "allSubnodeTouchable": 0
+            }
+        },
+        {
+            "name": "baofa",
+            "type": "particle",
+            "visible": 1,
+            "touchable": 0,
+            "particleSystemSuppl": {
+                "particlePath": "res/particle-baofa.json"
+            },
+            "position": "0,0,0",
+            "scale": "1, 1, 1",
+            "rotation": "0,0,0",
+            "children": []
+        },
+        {
+            "name": "baozha",
+            "type": "particle",
+            "visible": 1,
+            "touchable": 0,
+            "particleSystemSuppl": {
+                "particlePath": "res/particle-baozha.json"
+            },
+            "position": "0,0,0",
+            "scale": "1, 1, 1",
+            "rotation": "0,0,0",
+            "children": []
+        },
+        {
+            "name": "penhuo",
+            "type": "particle",
+            "visible": 1,
+            "touchable": 0,
+            "particleSystemSuppl": {
+                "particlePath": "res/particle-penhuo.json"
+            },
+            "position": "0,0,0",
+            "scale": "1, 1, 1",
+            "rotation": "0,0,0",
+            "children": []
+        },
+        {
+            "name": "bowen1",
+            "type": "particle",
+            "visible": 1,
+            "touchable": 0,
+            "particleSystemSuppl": {
+                "particlePath": "res/particle-bowen1.json"
+            },
+            "position": "0,0,0",
+            "scale": "1, 1, 1",
+            "rotation": "0,0,0",
+            "children": []
+        },
+        {
+            "name": "yanwu",
+            "type": "particle",
+            "visible": 1,
+            "touchable": 0,
+            "particleSystemSuppl": {
+                "particlePath": "res/particle-yanwu.json"
+            },
+            "position": "0,0,0",
+            "scale": "1, 1, 1",
+            "rotation": "0,0,0",
+            "children": []
+        },
+        {
+            "name": "huoyan",
+            "type": "particle",
+            "visible": 1,
+            "touchable": 0,
+            "particleSystemSuppl": {
+                "particlePath": "res/particle-huoyan.json"
+            },
+            "position": "0,0,0",
+            "scale": "1, 1, 1",
+            "rotation": "0,0,0",
+            "children": []
+        },
+        {
+            "name": "chuiyan",
+            "type": "particle",
+            "visible": 1,
+            "touchable": 0,
+            "particleSystemSuppl": {
+                "particlePath": "res/particle-chuiyan.json"
+            },
+            "position": "0,0,0",
+            "scale": "1, 1, 1",
+            "rotation": "0,0,0",
+            "children": []
+        },
+        {
+            "name": "rain",
+            "type": "particle",
+            "visible": 1,
+            "touchable": 0,
+            "particleSystemSuppl": {
+                "particlePath": "res/particle-rain.json"
+            },
+            "position": "0,0,0",
+            "scale": "1, 1, 1",
+            "rotation": "0,0,0",
+            "children": []
+        }
+    ]
+}

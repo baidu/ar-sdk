@@ -1,0 +1,46 @@
+{
+    "name": "earth",
+    "particleCountMax": 100,
+    "material": {
+        "blendMode": "alpha",
+        "textureName": "Dust.png",
+        "frameAnimated": 1,
+        "frameLoop": 1,
+        "frameCount": 1,
+        "frameColums": 1,
+        "frameRows": 1,
+        "frameRandomOffset": 0,
+        "frameDuration": 300
+    },
+    "emission": {
+        "emissionLoop": -1,
+        "emissionRate": 100,
+        "emissionDuration": 10,
+        "emissionIdleDuration": 10,
+        "emissionIdleDurationVar": 50,
+        "emitterPosition": "0,2500,8000",
+        "emissionVelocityMode": "shape",
+        "emitterShape": "cone",
+        "emitterShapeParam": {
+            "cone": {
+                "coneRadius": 30,
+                "coneAngle": 30
+            }
+        }
+    },
+    "particle": {
+        "lifeTimeMin": 1000,
+        "lifeTimeMax": 1500,
+        "sizeStartMin": 50,
+        "sizeStartMax": 50,
+        "sizeEndMin": 150,
+        "sizeEndMax": 150,
+        "colorStart": "147.9,132.6,96.9,219.3",
+        "colorEnd": "147.9,132.6,96.9,0",
+        "velocity": "0, 0, 300",
+        "velocityVar": "0, 0, 0",
+        "acceleration": "0, 0, -400",
+        "spinAngleMin": -90,
+        "spinAngleMax": 90
+    }
+}

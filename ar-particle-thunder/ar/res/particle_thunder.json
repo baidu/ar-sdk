@@ -1,0 +1,45 @@
+{
+    "name": "thunder",
+    "particleCountMax": 1000,
+    "material": {
+        "blendMode": "screen",
+        "textureName": "Thunder.png",
+        "frameAnimated": 1,
+        "frameLoop": -1,
+        "frameCount": 4,
+        "frameColums": 4,
+        "frameRows": 1,
+        "frameRandomOffset": 0,
+        "frameDuration": 1000
+    },
+    "emission": {
+        "emissionLoop": -1,
+        "emissionRate": 15,
+        "emissionDuration": 500,
+        "emitterPosition": "0,1500,9000",
+        "emissionVelocityMode": "shape",
+        "emitterShape": "cone",
+        "emitterShapeParam": {
+            "cone": {
+                "coneRadius": 1,
+                "coneAngle": 30
+            }
+        }
+    },
+    "particle": {
+        "lifeTimeMin": 100,
+        "lifeTimeMax": 200,
+        "sizeStartMin": 100,
+        "sizeStartMax": 100,
+        "sizeEndMin": 100,
+        "sizeEndMax": 100,
+        "colorStart": "255,255,255,255",
+        "colorEnd": "196.35,48.45,249.9,0"
+    },
+    "render": {
+        "billboardType": "verticalBillboard",
+        "stretchScale": "0,0.01,0",
+        "stretchType": "position",
+        "spinAlignToSpeedDirection": 0
+    }
+}

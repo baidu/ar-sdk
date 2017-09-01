@@ -1,0 +1,72 @@
+{
+    "name": "yanwu",
+    "shaderEffect": 0,
+    "particleCountMax": 80,
+    "material": {
+        "textureName": "fire1.png",
+        "blendMode": "additive",
+        "frameAnimated": 1,
+        "frameLoop": 1,
+        "frameCount": 1,
+        "frameColums": 1,
+        "frameRows": 1,
+        "frameRandomOffset": 0,
+        "frameDuration": 100
+    },
+    "emission": {
+        "emissionLoop": -1,
+        "emissionRate": 600,
+        "emissionDuration": 500,
+        "emissionIdleDuration": 0,
+        "emissionIdleDurationVar": 0,
+        "emitterShapeStrectchScale": "1,1,1",
+        "emissionVelocityMode": "axis",
+        "emissionAccelecationMode": "axis",
+        "emitterShape": "cone",
+        "emitterPosition": "800,200,0",
+        "emitterRotationAxisAngleMin": 0,
+        "emitterRotationAxisAngleMax": 0,
+        "emitterRotationAxis": "0, 0, 0",
+        "emitterRotationAxisVar": "0, 0, 0",
+        "emitterShapeParam": {
+            "box": {
+                "boxLengthX": 70,
+                "boxLengthY": 35,
+                "boxLengthZ": 0
+            },
+            "cone": {
+                "coneRadius": 60,
+                "coneAngle": 120
+            }
+        }
+    },
+    "particle": {
+        "sizeStartMin": 100,
+        "sizeStartMax": 150,
+        "sizeEndMin": 20,
+        "sizeEndMax": 50,
+        "lifeTimeMin": 500,
+        "lifeTimeMax": 1000,
+        "colorStart": "255, 255, 255, 128",
+        "colorStartVar": "0, 0, 0, 128",
+        "colorEnd": "255, 255, 255, 128",
+        "colorEndVar": "0, 0, 0, 128",
+        "velocity": "0, 200, 0",
+        "velocityVar": "32, 200, 0",
+        "acceleration": "0, 50, 0",
+        "accelerationVar": "12, 50, 0",
+        "spinAngleMin": 0,
+        "spinAngleMax": 0,
+        "rotationAxisAngleMin": 0,
+        "rotationAxisAngleMax": 0,
+        "rotationAxis": "0, 0, 0",
+        "rotationAxisVar": "0, 0, 0"
+    },
+    "render": {
+        "billboardType": "billboard",
+        "stretchScale": "0,0,0",
+        "stretchType": "speed",
+        "imuType": 0,
+        "spinAlignToSpeedDirection": 1
+    }
+}

@@ -1,0 +1,71 @@
+{
+    "name": "baofa",
+    "shaderEffect": 0,
+    "particleCountMax": 200,
+    "material": {
+        "blendMode": "additive",
+        "textureName": "fire4.png",
+        "textureWidth": 1048,
+        "textureHeight": 1048,
+        "frameAnimated": 1,
+        "frameLoop": 1,
+        "frameCount": 1,
+        "frameColums": 1,
+        "frameRows": 1,
+        "frameRandomOffset": 0,
+        "frameDuration": 100
+    },
+    "emission": {
+        "emissionLoop": -1,
+        "emissionRate": 400,
+        "emissionDuration": 500,
+        "emissionIdleDuration": 1000,
+        "emissionIdleDurationVar": 0,
+        "emitterShapeStrectchScale": "1,1,1",
+        "emissionVelocityMode": "shape",
+        "emissionAccelecationMode": "axis",
+        "velocity_random_direction": 0,
+        "acceleration_random_direction": 1,
+        "emitterShape": "cone",
+        "emitterPosition": "-1000,400,0",
+        "emitterRotationAxisAngleMin": -60,
+        "emitterRotationAxisAngleMax": -60,
+        "emitterRotationAxis": "1, 0, 0",
+        "emitterRotationAxisVar": "0, 0, 0",
+        "emitterShapeParam": {
+            "cone": {
+                "coneRadius": 45,
+                "coneAngle": 90
+            }
+        }
+    },
+    "particle": {
+        "sizeStartMin": 45,
+        "sizeStartMax": 105,
+        "sizeEndMin": 15,
+        "sizeEndMax": 15,
+        "lifeTimeMin": 500,
+        "lifeTimeMax": 3000,
+        "colorStart": "255, 255, 255, 128",
+        "colorStartVar": "0, 0, 0, 128",
+        "colorEnd": "255, 255, 255, 128",
+        "colorEndVar": "0, 0, 0, 128",
+        "velocity": "0, 250, 0",
+        "velocityVar": "0, 0, 0",
+        "acceleration": "0, -150, 0",
+        "accelerationVar": "0, 0, 0",
+        "spinAngleMin": 0,
+        "spinAngleMax": 0,
+        "rotationAxisAngleMin": 0,
+        "rotationAxisAngleMax": 0,
+        "rotationAxis": "0, 0, 0",
+        "rotationAxisVar": "0, 0, 0"
+    },
+    "render": {
+        "imuType": 0,
+        "billboardType": "billboard",
+        "stretchScale": "0,0,0",
+        "stretchType": "speed",
+        "spinAlignToSpeedDirection": 1
+    }
+}

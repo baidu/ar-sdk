@@ -1,0 +1,91 @@
+{
+    "name": "chuiyan",
+    "shaderEffect": 0,
+    "particleCountMax": 30,
+    "material": {
+        "textureName": "ParticleCloudWhite.png",
+        "textureWidth": 2048,
+        "textureHeight": 2048,
+        "blendMode": "additive",
+        "frameAnimated": 1,
+        "frameLoop": 1,
+        "frameCount": 1,
+        "frameColums": 1,
+        "frameRows": 1,
+        "frameRandomOffset": 0,
+        "frameDuration": 100
+    },
+    "emission": {
+        "emissionLoop": -1,
+        "emissionRate": 100,
+        "emissionDuration": 500,
+        "emissionIdleDuration": 0,
+        "emissionIdleDurationVar": 0,
+        "emitterShapeStrectchScale": "1,1,1",
+        "emissionVelocityMode": "axis",
+        "emissionAccelecationMode": "axis",
+        "emitterShape": "box",
+        "emitterPosition": "400,0,0",
+        "emitterRotationAxisAngleMin": 0,
+        "emitterRotationAxisAngleMax": 0,
+        "emitterRotationAxis": "0, 0, 0",
+        "emitterRotationAxisVar": "0, 0, 0",
+        "emitterShapeParam": {
+            "box": {
+                "boxLengthX": 15,
+                "boxLengthY": 15,
+                "boxLengthZ": 1
+            },
+            "sphere": {
+                "sphereRadius": 0
+            },
+            "hemisphere": {
+                "hemisphereRadius": 0
+            },
+            "cylinder": {
+                "cylinderRadius": 0,
+                "cylinderHeight": 0
+            },
+            "cone": {
+                "coneRadius": 0,
+                "coneAngle": 0
+            },
+            "circle": {
+                "circleOutRadius": 0,
+                "circleInRadius": 0
+            },
+            "mesh": {
+                "meshRadius": 0
+            }
+        }
+    },
+    "particle": {
+        "sizeStartMin": 50,
+        "sizeStartMax": 100,
+        "sizeEndMin": 50,
+        "sizeEndMax": 100,
+        "lifeTimeMin": 1500,
+        "lifeTimeMax": 4000,
+        "colorStart": "255, 255, 255, 76",
+        "colorStartVar": "0, 0, 0, 76",
+        "colorEnd": "255, 255, 255, 25",
+        "colorEndVar": "0, 0, 0, 25",
+        "velocity": "0, 120, 0",
+        "velocityVar": "18, 120, 0",
+        "acceleration": "0, 21, 0",
+        "accelerationVar": "0, 21, 0",
+        "spinAngleMin": 0,
+        "spinAngleMax": 0,
+        "rotationAxisAngleMin": 0,
+        "rotation_axis_angle_max": 0,
+        "rotationAxis": "0, 0, 0",
+        "rotationAxisVar": "0, 0, 0"
+    },
+    "render": {
+        "billboardType": "billboard",
+        "stretchScale": "0,0,0",
+        "stretchType": "speed",
+        "imuType": 0,
+        "spinAlignToSpeedDirection": 1
+    }
+}

@@ -1,0 +1,151 @@
+{
+    "name": "rain",
+    "shaderEffect": 0,
+    "particleCountMax": 100,
+    "material": {
+        "textureName": "raindrop.png",
+        "textureWidth": 2048,
+        "textureHeight": 2048,
+        "blendMode": "additive",
+        "frameAnimated": 1,
+        "frameLoop": 1,
+        "frameCount": 1,
+        "frameColums": 1,
+        "frameRows": 1,
+        "frameRandomOffset": 0,
+        "frameDuration": 5000
+    },
+    "emission": {
+        "emissionLoop": -1,
+        "emissionRate": 100,
+        "emissionDuration": 1000,
+        "emissionIdleDuration": 0,
+        "emissionIdleDurationVar": 0,
+        "emitterShapeStrectchScale": "1,1,1",
+        "emissionVelocityMode": "axis",
+        "emissionAccelecationMode": "axis",
+        "emitterShape": "box",
+        "emitterPosition": "0,1500,0",
+        "emitterRotationAxisAngleMin": 0,
+        "emitterRotationAxisAngleMax": 0,
+        "emitterRotationAxis": "0, 0, 0",
+        "emitterRotationAxisVar": "0, 0, 0",
+        "emitterShapeParam": {
+            "box": {
+                "boxLengthX": 2000,
+                "boxLengthY": 10,
+                "boxLengthZ": 10
+            }
+        }
+    },
+    "particle": {
+        "sizeStartMin": 10,
+        "sizeStartMax": 10,
+        "sizeEndMin": 10,
+        "sizeEndMax": 10,
+        "lifeTimeMin": 1500,
+        "lifeTimeMax": 2000,
+        "colorStart": "255, 255, 255, 255",
+        "colorStartVar": "0, 0, 0, 0",
+        "colorEnd": "255, 255, 255, 255",
+        "colorEndVar": "0, 0, 0, 0",
+        "velocity": "-5, -1000, 0",
+        "velocityVar": "0, 0, 0",
+        "acceleration": "0, 0, 0",
+        "accelerationVar": "0, 0, 0",
+        "spinAngleMin": 0,
+        "spinAngleMax": 0,
+        "rotationAxisAngleMin": 0,
+        "rotationAxisAngleMax": 0,
+        "rotationAxis": "0, 0, 0",
+        "rotationAxisVar": "0, 0, 0"
+    },
+    "render": {
+        "billboardType": "billboard",
+        "stretchScale": "0,0.004,0",
+        "stretchType": "speed",
+        "imuType": 0,
+        "spinAlignToSpeedDirection": 1
+    },
+    "subEmitter": {
+        "birth": [],
+        "collision": [],
+        "deadth": [
+            {
+                "name": "sub_drop",
+                "shaderEffect": 0,
+                "particleCountMax": 7,
+                "material": {
+                    "blendMode": "additive",
+                    "textureName": "raindrop.png",
+                    "frameAnimated": 0,
+                    "frameLoop": 0,
+                    "frameCount": 1,
+                    "frameColums": 1,
+                    "frameRows": 1,
+                    "frameRandomOffset": 0,
+                    "frameDuration": 100
+                },
+                "emission": {
+                    "emissionLoop": 0,
+                    "emissionRate": 1000,
+                    "emissionDuration": 500,
+                    "emissionIdleDuration": 0,
+                    "emissionIdleDurationVar": 0,
+                    "emitterPosition": "0, 0, 0",
+                    "emitterRotationAxisAngleMin": 0,
+                    "emitterRotationAxisAngleMax": 0,
+                    "emitterRotationAxis": "0, 0, 0",
+                    "emitterRotationAxisVar": "0, 0, 0",
+                    "emitterShapeStrectchScale": "1,1,1",
+                    "emissionVelocityMode": "shape",
+                    "emissionAccelecationMode": "shape",
+                    "emitterShape": "sphere",
+                    "emitterShapeParam": {
+                        "sphere": {
+                            "sphereRadius": 5
+                        },
+                        "circle": {
+                            "circleOutRadius": 4,
+                            "circleInRadius": 2
+                        }
+                    }
+                },
+                "particle": {
+                    "lifeTimeMin": 200,
+                    "lifeTimeMax": 500,
+                    "sizeStartMin": 10,
+                    "sizeStartMax": 15,
+                    "sizeEndMin": 1,
+                    "sizeEndMax": 5,
+                    "colorStart": "255, 255, 255, 255",
+                    "colorStartVar": "0, 0, 0, 0",
+                    "colorEnd": "255, 255, 255, 0",
+                    "colorEndVar": "0, 0, 0, 0",
+                    "velocity": "150, 150, 0",
+                    "velocityVar": "50, 50, 0",
+                    "acceleration": "0, 0, 0",
+                    "accelerationVar": "0, 0, 0",
+                    "spinAngleMin": 0,
+                    "spinAngleMax": 0,
+                    "rotationAxisAngleMin": 0,
+                    "rotationAxisAngleMax": 0,
+                    "rotationAxis": "0, 0, 0",
+                    "rotationAxisVar": "0, 0, 0"
+                },
+                "render": {
+                    "imuType": 0,
+                    "billboardType": "billboard",
+                    "stretchScale": "0,0.002,0",
+                    "stretchType": "speed",
+                    "spinAlignToSpeedDirection": 1
+                },
+                "subEmitter": {
+                    "birth": [],
+                    "collision": [],
+                    "deadth": []
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,131 @@
+{
+    "name": "rain",
+    "particleCountMax": 1500,
+    "material": {
+        "blendMode": "additive",
+        "textureName": "rain_heavy.png",
+        "frameAnimated": 1,
+        "frameLoop": 1,
+        "frameCount": 1,
+        "frameColums": 1,
+        "frameRows": 1,
+        "frameRandomOffset": 0,
+        "frameDuration": 1000
+    },
+    "emission": {
+        "emissionLoop": -1,
+        "emissionRate": 100,
+        "emissionDuration": 3000,
+        "emissionIdleDuration": 2000,
+        "emitterPosition": "0,0,3000",
+        "emitterRotationAxisAngleMin": 0,
+        "emitterRotationAxisAngleMax": 0,
+        "emitterShape": "box",
+        "emitterShapeStrectchScale": "1,1,1",
+        "emissionVelocityMode": "axis",
+        "emissionAccelecationMode": "axis",
+        "emitterShapeParam": {
+            "box": {
+                "boxLengthX": 1000,
+                "boxLengthY": 1000,
+                "boxLengthZ": 10
+            }
+        }
+    },
+    "particle": {
+        "lifeTimeMin": 5000,
+        "lifeTimeMax": 5000,
+        "sizeStartMin": 30,
+        "sizeStartMax": 30,
+        "sizeEndMin": 30,
+        "sizeEndMax": 30,
+        "colorStart": "255, 255, 255, 255",
+        "colorEnd": "255, 255, 255, 127.5",
+        "velocity": "0, 0, -500",
+        "velocityVar": "0, 0, 200",
+        "acceleration": "0, 0, -50",
+        "accelerationVar": "0, 0, 0",
+        "spinAngleMin": 0,
+        "spinAngleMax": 0,
+        "rotationAxisAngleMin": 0,
+        "rotationAxisAngleMax": 0,
+        "rotationAxis": "0, 0, 0",
+        "rotationAxisVar": "0, 0, 0"
+    },
+    "render": {
+        "imuType": 0,
+        "billboardType": "billboard",
+        "stretchScale": "0,0,0",
+        "stretchType": "speed",
+        "spinAlignToSpeedDirection": 0
+    },
+    "subEmitter": {
+        "birth": [],
+        "collision": [],
+        "deadth": [
+            {
+                "name": "ripple",
+                "particleCountMax": 1,
+                "material": {
+                    "blendMode": "additive",
+                    "textureName": "RainRipple_01.png",
+                    "frameAnimated": 1,
+                    "frameLoop": 0,
+                    "frameCount": 1,
+                    "frameColums": 1,
+                    "frameRows": 1,
+                    "frameRandomOffset": 0,
+                    "frameDuration": 300
+                },
+                "emission": {
+                    "emissionLoop": 0,
+                    "emissionRate": 1,
+                    "emissionDuration": 3000,
+                    "emissionIdleDuration": 0,
+                    "emitterPosition": "0, 0, 0",
+                    "emitterRotationAxisAngleMin": 0,
+                    "emitterRotationAxisAngleMax": 0,
+                    "emitterShapeStrectchScale": "1,1,1",
+                    "emissionVelocityMode": "shape",
+                    "emissionAccelecationMode": "axis",
+                    "emitterShape": "box",
+                    "emitterShapeParam": {
+                        "box": {
+                            "boxLengthX": 5,
+                            "boxLengthY": 5,
+                            "boxLengthZ": 5
+                        }
+                    }
+                },
+                "particle": {
+                    "lifeTimeMin": 3000,
+                    "lifeTimeMax": 3000,
+                    "sizeStartMin": 5,
+                    "sizeStartMax": 5,
+                    "sizeEndMin": 40,
+                    "sizeEndMax": 40,
+                    "colorStart": "255, 255, 255, 255",
+                    "colorEnd": "255, 255, 255, 127.5",
+                    "velocity": "0, 0, 0",
+                    "velocityVar": "0, 0, 0",
+                    "acceleration": "0, 0, 0",
+                    "accelerationVar": "0, 0, 0",
+                    "spinAngleMin": 0,
+                    "spinAngleMax": 0
+                },
+                "render": {
+                    "imuType": 0,
+                    "billboardType": "billboard",
+                    "stretchScale": "0,0,0",
+                    "stretchType": "speed",
+                    "spinAlignToSpeedDirection": 0
+                },
+                "subEmitter": {
+                    "birth": [],
+                    "collision": [],
+                    "deadth": []
+                }
+            }
+        ]
+    }
+}

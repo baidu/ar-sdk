@@ -1,0 +1,187 @@
+{
+    "name": "handwriting2",
+    "particleCountMax": 500,
+    "useGLPoints": 0,
+    "material": {
+        "blendMode": "additive",
+        "textureName": "point1.png",
+        "textureWidth": 64,
+        "textureHeight": 64,
+        "frameAnimated": 0,
+        "frameLoop": 1,
+        "frameCount": 1,
+        "frameColums": 1,
+        "frameRows": 1,
+        "frameRandomOffset": 0,
+        "frameDuration": 100
+    },
+    "emission": {
+        "emissionLoop": -1,
+        "emissionRate": 5,
+        "emissionDuration": 100,
+        "emissionIdleDuration": 150,
+        "emissionIdleDurationVar": 0,
+        "emitterPosition": "0, 0, 0",
+        "emitterRotationAxisAngleMin": 0,
+        "emitterRotationAxisAngleMax": 0,
+        "emitterRotationAxis": "0, 0, 0",
+        "emitterRotationAxisVar": "0, 0, 0",
+        "emissionVelocityMode": "camera",
+        "emissionAccelecationMode": "axis",
+        "emitterShape": "box",
+        "emitterShapeStrectchScale": "1,1,1",
+        "emitterShapeParam": {
+            "box": {
+                "boxLengthX": 1,
+                "boxLengthY": 1,
+                "boxLengthZ": 1
+            },
+            "sphere": {
+                "sphereRadius": 500
+            },
+            "hemisphere": {
+                "hemisphereRadius": 50
+            },
+            "cylinder": {
+                "cylinderRadius": 200,
+                "cylinderHeight": 500
+            },
+            "cone": {
+                "coneRadius": 500,
+                "coneAngle": 110
+            },
+            "circle": {
+                "circleOutRadius": 450,
+                "circleInRadius": 350
+            },
+            "mesh": {
+                "meshRadius": 150
+            }
+        }
+    },
+    "particle": {
+        "lifeTimeMin": 20000,
+        "lifeTimeMax": 25000,
+        "sizeStartMin": 5,
+        "sizeStartMax": 5,
+        "sizeEndMin": 5,
+        "sizeEndMax": 5,
+        "colorStart": "255, 128, 128, 178",
+        "colorStartVar": "0, 0, 0, 0",
+        "colorEnd": "255, 128, 128, 178",
+        "colorEndVar": "0, 0, 0, 0",
+        "velocity": "0, 0, 0",
+        "velocityVar": "0, 0, 0",
+        "acceleration": "0, 0, 0",
+        "accelerationVar": "0, 0, 0",
+        "spinAngleMin": 0,
+        "spinAngleMax": 0,
+        "rotationAxisAngleMin": 0,
+        "rotationAxisAngleMax": 0,
+        "rotationAxis": "0, 0, 0",
+        "rotationAxisVar": "0, 0, 0"
+    },
+    "render": {
+        "imuType": 1,
+        "billboardType": "billboard",
+        "stretchScale": "0,0,0",
+        "stretchType": "speed",
+        "spinAlignToSpeedDirection": 0
+    },
+    "subEmitter": {
+        "birth": [
+            {
+                "name": "handwriting22",
+                "particleCountMax": 5,
+                "useGLPoints": 0,
+                "material": {
+                    "blendMode": "alpha",
+                    "textureName": "lovex.png",
+                    "textureWidth": 2048,
+                    "textureHeight": 2048,
+                    "frameAnimated": 0,
+                    "frameLoop": 1,
+                    "frameCount": 4,
+                    "frameColums": 2,
+                    "frameRows": 2,
+                    "frameRandomOffset": 4,
+                    "frameDuration": 100
+                },
+                "emission": {
+                    "emissionLoop": -1,
+                    "emissionRate": 5,
+                    "emissionDuration": 1000,
+                    "emissionIdleDuration": 3000,
+                    "emissionIdleDurationVar": 1000,
+                    "emitterPosition": "0, 0, 0",
+                    "emitterRotationAxisAngleMin": 0,
+                    "emitterRotationAxisAngleMax": 0,
+                    "emitterRotationAxis": "0, 0, 0",
+                    "emitterRotationAxisVar": "0, 0, 0",
+                    "emissionVelocityMode": "shape",
+                    "emissionAccelecationMode": "axis",
+                    "emitterShape": "box",
+                    "emitterShapeStrectchScale": "1,1,1",
+                    "emitterShapeParam": {
+                        "box": {
+                            "boxLengthX": 10,
+                            "boxLengthY": 10,
+                            "boxLengthZ": 10
+                        },
+                        "sphere": {
+                            "sphereRadius": 500
+                        },
+                        "hemisphere": {
+                            "hemisphereRadius": 50
+                        },
+                        "cylinder": {
+                            "cylinderRadius": 200,
+                            "cylinderHeight": 500
+                        },
+                        "cone": {
+                            "coneRadius": 500,
+                            "coneAngle": 110
+                        },
+                        "circle": {
+                            "circleOutRadius": 450,
+                            "circleInRadius": 350
+                        },
+                        "mesh": {
+                            "meshRadius": 150
+                        }
+                    }
+                },
+                "particle": {
+                    "lifeTimeMin": 2000,
+                    "lifeTimeMax": 4000,
+                    "sizeStartMin": 8,
+                    "sizeStartMax": 16,
+                    "sizeEndMin": 5,
+                    "sizeEndMax": 8,
+                    "colorStart": "255, 128, 128, 178",
+                    "colorStartVar": "0, 0, 0, 0",
+                    "colorEnd": "255, 128, 128, 0",
+                    "colorEndVar": "0, 0, 0, 0",
+                    "velocity": "0, 0, 0",
+                    "velocityVar": "10, 10, 10",
+                    "acceleration": "0, 0, 0",
+                    "accelerationVar": "0, 0, 0",
+                    "spinAngleMin": 0,
+                    "spinAngleMax": 0,
+                    "rotationAxisAngleMin": 0,
+                    "rotationAxisAngleMax": 0,
+                    "rotationAxis": "0, 0, 0",
+                    "rotationAxisVar": "0, 0, 0"
+                },
+                "render": {
+                    "imuType": 1,
+                    "billboardType": "billboard",
+                    "stretchScale": "0,0,0",
+                    "stretchType": "speed",
+                    "spinAlignToSpeedDirection": 0
+                }
+            }
+        ],
+        "deadth": []
+    }
+}

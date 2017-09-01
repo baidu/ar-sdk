@@ -1,0 +1,69 @@
+{
+    "name": "bowen1",
+    "shaderEffect": 0,
+    "particleCountMax": 400,
+    "material": {
+        "textureName": "bowen2.png",
+        "textureWidth": 2048,
+        "textureHeight": 2048,
+        "blendMode": "additive",
+        "frameAnimated": 1,
+        "frameLoop": 1,
+        "frameCount": 1,
+        "frameColums": 1,
+        "frameRows": 1,
+        "frameRandomOffset": 0,
+        "frameDuration": 100
+    },
+    "emission": {
+        "emissionLoop": -1,
+        "emissionRate": 800,
+        "emissionDuration": 500,
+        "emissionIdleDuration": 250,
+        "emissionIdleDurationVar": 0,
+        "emitterShapeStrectchScale": "1,1,1",
+        "emissionVelocityMode": "shape",
+        "emissionAccelecationMode": "shape",
+        "emitterShape": "circle",
+        "emitterPosition": "0,0,0",
+        "emitterRotationAxisAngleMin": -70,
+        "emitterRotationAxisAngleMax": -70,
+        "emitterRotationAxis": "1, 0, 0",
+        "emitterRotationAxisVar": "0, 0, 0",
+        "emitterShapeParam": {
+            "circle": {
+                "circleOutRadius": 100,
+                "circleInRadius": 90
+            }
+        }
+    },
+    "particle": {
+        "sizeStartMin": 15,
+        "sizeStartMax": 15,
+        "sizeEndMin": 5,
+        "sizeEndMax": 5,
+        "lifeTimeMin": 300,
+        "lifeTimeMax": 500,
+        "colorStart": "255, 255, 255, 255",
+        "colorStartVar": "0, 0, 0, 0",
+        "colorEnd": "255, 255, 255, 0",
+        "colorEndVar": "0, 0, 0, 0",
+        "velocity": "500, 0, 0",
+        "velocityVar": "0, 0, 0",
+        "acceleration": "0, 0, 0",
+        "accelerationVar": "0, 0, 0",
+        "spinAngleMin": 0,
+        "spinAngleMax": 0,
+        "rotationAxisAngleMin": 0,
+        "rotationAxisAngleMax": 0,
+        "rotationAxis": "0, 0, 0",
+        "rotationAxisVar": "0, 0, 0"
+    },
+    "render": {
+        "billboardType": "billboard",
+        "stretchScale": "0,0,0",
+        "stretchType": "speed",
+        "imuType": 0,
+        "spinAlignToSpeedDirection": 0
+    }
+}

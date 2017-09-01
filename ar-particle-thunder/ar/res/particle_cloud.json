@@ -1,0 +1,74 @@
+{
+    "name": "cloud",
+    "particleCountMax": 500,
+    "material": {
+        "blendMode": "alpha",
+        "textureName": "cloud1.png",
+        "textureWidth": 256,
+        "textureHeight": 256,
+        "frameAnimated": 0,
+        "frameLoop": 1,
+        "frameCount": 16,
+        "frameColums": 4,
+        "frameRows": 4,
+        "frameRandomOffset": 3,
+        "frameDuration": 100
+    },
+    "emission": {
+        "emissionLoop": -1,
+        "emissionRate": 10,
+        "emissionDuration": 100,
+        "emissionIdleDuration": 0,
+        "emissionIdleDurationVar": 0,
+        "emitterPosition": "0,2500,8000",
+        "emitterRotationAxisAngleMin": 0,
+        "emitterRotationAxisAngleMax": 0,
+        "emitterRotationAxis": "0, 0, 0",
+        "emitterRotationAxisVar": "0, 0, 0",
+        "emissionVelocityMode": "shape",
+        "emissionAccelecationMode": "shape",
+        "emitterShape": "circle",
+        "emitterShapeStrectchScale": "1,1,1",
+        "emitterShapeParam": {
+            "circle": {
+                "circleOutRadius": 10,
+                "circleInRadius": 1
+            }
+        }
+    },
+    "particle": {
+        "lifeTimeMin": 50000,
+        "lifeTimeMax": 50000,
+        "sizeStartMin": 2000,
+        "sizeStartMax": 2000,
+        "sizeEndMin": 10000,
+        "sizeEndMax": 10000,
+        "colorStart": "201.45,198.39,198.9,0",
+        "colorStartVar": "0, 0, 0, 0",
+        "colorMid": "201.45,198.39,198.9,255",
+        "colorMidVar": "0, 0, 0, 0",
+        "colorEnd": "46.92,43.35,43.35,127",
+        "colorEndVar": "0, 0, 0, 0",
+        "velocity": "200, 200, 200",
+        "velocityVar": "100, 100, 100",
+        "acceleration": "0, 0, 0",
+        "accelerationVar": "0, 0, 0",
+        "spinAngleMin": -10,
+        "spinAngleMax": 10,
+        "rotationAxisAngleMin": 0,
+        "rotationAxisAngleMax": 0,
+        "rotationAxis": "0, 0, 0",
+        "rotationAxisVar": "0, 0, 0"
+    },
+    "render": {
+        "imuType": 0,
+        "billboardType": "billboard",
+        "stretchScale": "0,0,0",
+        "stretchType": "constant",
+        "spinAlignToSpeedDirection": 0
+    },
+    "subEmitter": {
+        "birth": [],
+        "deadth": []
+    }
+}

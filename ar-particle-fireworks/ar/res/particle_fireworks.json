@@ -1,0 +1,433 @@
+{
+    "name": "fire",
+    "shaderEffect": 0,
+    "particleCountMax": 4,
+    "material": {
+        "blendMode": "additive",
+        "textureName": "flare_orange.png",
+        "textureWidth": 500,
+        "textureHeight": 500,
+        "frameAnimated": 0,
+        "frameLoop": 0,
+        "frameCount": 1,
+        "frameColums": 1,
+        "frameRows": 1,
+        "frameRandomOffset": 0,
+        "frameDuration": 300
+    },
+    "emission": {
+        "emissionLoop": -1,
+        "emissionRate": 3,
+        "emissionDuration": 200,
+        "emissionIdleDuration": 100,
+        "emitterPosition": "0, 2000, 0",
+        "emitterShape": "box",
+        "emitterShapeStrectchScale": "1,1,1",
+        "emissionVelocityMode": "axis",
+        "emissionAccelecationMode": "axis",
+        "emitterShapeParam": {
+            "box": {
+                "boxLengthX": 400,
+                "boxLengthY": 900,
+                "boxLengthZ": 10
+            }
+        }
+    },
+    "particle": {
+        "lifeTimeMin": 1500,
+        "lifeTimeMax": 2000,
+        "sizeStartMin": 180,
+        "sizeStartMax": 180,
+        "sizeEndMin": 180,
+        "sizeEndMax": 180,
+        "colorStart": "255, 255, 255, 255",
+        "colorStartVar": "0, 0, 0, 0",
+        "colorEnd": "255, 255, 255, 255",
+        "colorEndVar": "0, 0, 0, 0",
+        "velocity": "0, 0, 600",
+        "velocityVar": "0, 0, 0",
+        "acceleration": "0, 0, 100",
+        "accelerationVar": "0, 0, 0"
+    },
+    "render": {
+        "imuType": 0,
+        "billboardType": "billboard",
+        "stretchScale": "0,0,0",
+        "stretchType": "speed",
+        "spinAlignToSpeedDirection": 0
+    },
+    "subEmitter": {
+        "birth": [
+            {
+                "name": "trail_1",
+                "shaderEffect": 0,
+                "particleCountMax": 50,
+                "material": {
+                    "blendMode": "additive",
+                    "textureName": "flare_orange.png",
+                    "textureWidth": 64,
+                    "textureHeight": 64,
+                    "frameAnimated": 0,
+                    "frameLoop": 0,
+                    "frameCount": 1,
+                    "frameColums": 1,
+                    "frameRows": 1,
+                    "frameRandomOffset": 0,
+                    "frameDuration": 300
+                },
+                "emission": {
+                    "emissionLoop": -1,
+                    "emissionRate": 300,
+                    "emissionDuration": 5000,
+                    "emissionIdleDuration": 0,
+                    "emitterPosition": "0, 0, 0",
+                    "emitterShape": "box",
+                    "emitterShapeStrectchScale": "1,1,1",
+                    "emissionVelocityMode": "axis",
+                    "emissionAccelecationMode": "axis",
+                    "emitterShapeParam": {
+                        "box": {
+                            "boxLengthX": 1,
+                            "boxLengthY": 1,
+                            "boxLengthZ": 1
+                        }
+                    }
+                },
+                "particle": {
+                    "lifeTimeMin": 300,
+                    "lifeTimeMax": 700,
+                    "sizeStartMin": 30,
+                    "sizeStartMax": 40,
+                    "sizeEndMin": 1,
+                    "sizeEndMax": 5,
+                    "colorStart": "255, 255, 255, 255",
+                    "colorStartVar": "0, 0, 0, 0",
+                    "colorEnd": "255, 255, 255, 255",
+                    "colorEndVar": "0, 0, 0, 0",
+                    "velocity": "10, 20, 20",
+                    "velocityVar": "10, 10, 100",
+                    "acceleration": "0, 0, 0",
+                    "accelerationVar": "0, 0, 0"
+                },
+                "render": {
+                    "imuType": 0,
+                    "billboardType": "billboard",
+                    "stretchScale": "0,0.04,0",
+                    "stretchType": "speed",
+                    "spinAlignToSpeedDirection": 1
+                }
+            }
+        ],
+        "collision": [],
+        "deadth": [
+            {
+                "name": "sub_point",
+                "shaderEffect": 0,
+                "particleCountMax": 1,
+                "material": {
+                    "blendMode": "additive",
+                    "textureName": "point1.png",
+                    "textureWidth": 2048,
+                    "textureHeight": 2048,
+                    "frameAnimated": 0,
+                    "frameLoop": 0,
+                    "frameCount": 1,
+                    "frameColums": 1,
+                    "frameRows": 1,
+                    "frameRandomOffset": 0,
+                    "frameDuration": 300
+                },
+                "emission": {
+                    "emissionLoop": 0,
+                    "emissionRate": 1000,
+                    "emissionDuration": 500
+                },
+                "particle": {
+                    "lifeTimeMin": 1500,
+                    "lifeTimeMax": 1500,
+                    "sizeStartMin": 500,
+                    "sizeStartMax": 500,
+                    "sizeEndMin": 1000,
+                    "sizeEndMax": 1000,
+                    "colorStart": "255, 214, 0, 178",
+                    "colorStartVar": "0, 0, 0, 0",
+                    "colorEnd": "255, 214, 0, 0",
+                    "colorEndVar": "0, 0, 0, 0",
+                    "velocity": "0, 0, 0"
+                }
+            },
+            {
+                "name": "sub_fire",
+                "shaderEffect": 0,
+                "particleCountMax": 30,
+                "material": {
+                    "blendMode": "additive",
+                    "textureName": "point1.png",
+                    "textureWidth": 2048,
+                    "textureHeight": 2048,
+                    "frameAnimated": 0,
+                    "frameLoop": 0,
+                    "frameCount": 1,
+                    "frameColums": 1,
+                    "frameRows": 1,
+                    "frameRandomOffset": 0,
+                    "frameDuration": 300
+                },
+                "emission": {
+                    "emissionLoop": 0,
+                    "emissionRate": 1000,
+                    "emissionDuration": 500,
+                    "emissionIdleDuration": 0,
+                    "emitterPosition": "0, 0, 0",
+                    "emitterShapeStrectchScale": "1,1,1",
+                    "emitterRotationAxisAngleMin": 90,
+                    "emitterRotationAxisAngleMax": 90,
+                    "emitterRotationAxis": "1, 0, 0",
+                    "emissionVelocityMode": "shape",
+                    "emissionAccelecationMode": "axis",
+                    "emitterShape": "circle",
+                    "emitterShapeParam": {
+                        "sphere": {
+                            "sphereRadius": 1
+                        },
+                        "circle": {
+                            "circleOutRadius": 0.2,
+                            "circleInRadius": 0.01
+                        }
+                    }
+                },
+                "particle": {
+                    "lifeTimeMin": 1000,
+                    "lifeTimeMax": 1200,
+                    "sizeStartMin": 80,
+                    "sizeStartMax": 120,
+                    "sizeEndMin": 1,
+                    "sizeEndMax": 10,
+                    "colorStart": "255, 255, 214, 255",
+                    "colorStartVar": "0, 0, 0, 0",
+                    "colorEnd": "255, 255, 214, 255",
+                    "colorEndVar": "0, 0, 0, 0",
+                    "velocity": "300, 0, 0",
+                    "velocityVar": "80, 0, 0",
+                    "acceleration": "0, 0, -300",
+                    "accelerationVar": "0, 0, 0"
+                },
+                "render": {
+                    "imuType": 0,
+                    "billboardType": "billboard",
+                    "stretchScale": "0,0,0",
+                    "stretchType": "speed",
+                    "spinAlignToSpeedDirection": 1
+                },
+                "subEmitter": {
+                    "birth": [
+                        {
+                            "name": "trail_1",
+                            "shaderEffect": 0,
+                            "particleCountMax": 10,
+                            "material": {
+                                "blendMode": "additive",
+                                "textureName": "fireworkstrail.png",
+                                "textureWidth": 512,
+                                "textureHeight": 512,
+                                "frameAnimated": 0,
+                                "frameLoop": 0,
+                                "frameCount": 1,
+                                "frameColums": 1,
+                                "frameRows": 1,
+                                "frameRandomOffset": 4,
+                                "frameDuration": 300
+                            },
+                            "emission": {
+                                "emissionLoop": -1,
+                                "emissionRate": 50,
+                                "emissionDuration": 5000,
+                                "emissionIdleDuration": 0,
+                                "emitterPosition": "0, 0, 0",
+                                "emitterShape": "sphere",
+                                "emitterShapeStrectchScale": "1,1,1",
+                                "emissionVelocityMode": "shape",
+                                "emissionAccelecationMode": "axis",
+                                "emitterShapeParam": {
+                                    "sphere": {
+                                        "sphereRadius": 0.01
+                                    },
+                                    "box": {
+                                        "boxLengthX": 1,
+                                        "boxLengthY": 1,
+                                        "boxLengthZ": 1
+                                    }
+                                }
+                            },
+                            "particle": {
+                                "lifeTimeMin": 600,
+                                "lifeTimeMax": 1500,
+                                "sizeStartMin": 10,
+                                "sizeStartMax": 10,
+                                "sizeEndMin": 1,
+                                "sizeEndMax": 10,
+                                "colorStart": "255, 102, 0, 255",
+                                "colorStartVar": "0, 0, 0, 0",
+                                "colorEnd": "255, 255, 214, 255",
+                                "colorEndVar": "0, 0, 0, 0",
+                                "velocity": "200, 0, 0",
+                                "velocityVar": "0, 0, 0",
+                                "acceleration": "0, 0, -300",
+                                "accelerationVar": "0, 0, 0"
+                            },
+                            "render": {
+                                "imuType": 0,
+                                "billboardType": "billboard",
+                                "stretchScale": "0,0.02,0",
+                                "stretchType": "speed",
+                                "spinAlignToSpeedDirection": 1
+                            },
+                            "subEmitter": {
+                                "birth": [],
+                                "collision": [],
+                                "deadth": []
+                            }
+                        }
+                    ],
+                    "collision": [],
+                    "deadth": [
+                        {
+                            "name": "sub_fire1",
+                            "shaderEffect": 0,
+                            "particleCountMax": 0,
+                            "material": {
+                                "blendMode": "additive",
+                                "textureName": "flare_orange.png",
+                                "textureWidth": 512,
+                                "textureHeight": 512,
+                                "frameAnimated": 0,
+                                "frameLoop": 0,
+                                "frameCount": 1,
+                                "frameColums": 1,
+                                "frameRows": 1,
+                                "frameRandomOffset": 0,
+                                "frameDuration": 300
+                            },
+                            "emission": {
+                                "emissionLoop": 0,
+                                "emissionRate": 1000,
+                                "emissionDuration": 500,
+                                "emissionIdleDuration": 0,
+                                "emitterPosition": "0, 0, 0",
+                                "emitterShapeStrectchScale": "1,1,1",
+                                "emissionVelocityMode": "shape",
+                                "emissionAccelecationMode": "axis",
+                                "emitterRotationAxisAngleMin": 90,
+                                "emitterRotationAxisAngleMax": 90,
+                                "emitterRotationAxis": "1, 0, 0",
+                                "emitterShape": "circle",
+                                "emitterShapeParam": {
+                                    "sphere": {
+                                        "sphereRadius": 1
+                                    },
+                                    "circle": {
+                                        "circleOutRadius": 0.2,
+                                        "circleInRadius": 0.1
+                                    }
+                                }
+                            },
+                            "particle": {
+                                "lifeTimeMin": 600,
+                                "lifeTimeMax": 600,
+                                "sizeStartMin": 20,
+                                "sizeStartMax": 20,
+                                "sizeEndMin": 1,
+                                "sizeEndMax": 10,
+                                "colorStart": "255, 255, 255, 255",
+                                "colorStartVar": "128, 128, 128, 255",
+                                "colorEnd": "255, 255, 255, 0",
+                                "colorEndVar": "0, 0, 0, 0",
+                                "velocity": "600, 0, 0",
+                                "velocityVar": "0, 0, 0",
+                                "acceleration": "0, 0, 0",
+                                "accelerationVar": "0, 0, 0"
+                            },
+                            "render": {
+                                "imuType": 0,
+                                "billboardType": "billboard",
+                                "stretchScale": "0,0,0",
+                                "stretchType": "speed",
+                                "spinAlignToSpeedDirection": 1
+                            },
+                            "subEmitter": {
+                                "birth": [
+                                    {
+                                        "name": "trail_2",
+                                        "shaderEffect": 0,
+                                        "particleCountMax": 0,
+                                        "material": {
+                                            "blendMode": "additive",
+                                            "textureName": "firework1.png",
+                                            "textureWidth": 512,
+                                            "textureHeight": 512,
+                                            "frameAnimated": 1,
+                                            "frameLoop": 1,
+                                            "frameCount": 4,
+                                            "frameColums": 4,
+                                            "frameRows": 1,
+                                            "frameRandomOffset": 0,
+                                            "frameDuration": 300
+                                        },
+                                        "emission": {
+                                            "emissionLoop": -1,
+                                            "emissionRate": 50,
+                                            "emissionDuration": 5000,
+                                            "emissionIdleDuration": 0,
+                                            "emitterPosition": "0, 0, 0",
+                                            "emitterShape": "box",
+                                            "emitterShapeStrectchScale": "1,1,1",
+                                            "emissionVelocityMode": "axis",
+                                            "emissionAccelecationMode": "axis",
+                                            "emitterShapeParam": {
+                                                "box": {
+                                                    "boxLengthX": 1,
+                                                    "boxLengthY": 1,
+                                                    "boxLengthZ": 1
+                                                }
+                                            }
+                                        },
+                                        "particle": {
+                                            "lifeTimeMin": 100,
+                                            "lifeTimeMax": 500,
+                                            "sizeStartMin": 30,
+                                            "sizeStartMax": 30,
+                                            "sizeEndMin": 10,
+                                            "sizeEndMax": 10,
+                                            "colorStart": "255, 255, 0, 255",
+                                            "colorStartVar": "0, 0, 0, 0",
+                                            "colorEnd": "0, 255, 255, 255",
+                                            "colorEndVar": "0, 0, 0, 0",
+                                            "velocity": "0, 0, -200",
+                                            "velocityVar": "10, 10, 100",
+                                            "acceleration": "0, 0, 0",
+                                            "accelerationVar": "0, 0, 0"
+                                        },
+                                        "render": {
+                                            "imuType": 0,
+                                            "billboardType": "billboard",
+                                            "stretchScale": "0,0,0",
+                                            "stretchType": "position",
+                                            "spinAlignToSpeedDirection": 0
+                                        },
+                                        "subEmitter": {
+                                            "birth": [],
+                                            "collision": [],
+                                            "deadth": []
+                                        }
+                                    }
+                                ],
+                                "collision": [],
+                                "deadth": []
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
