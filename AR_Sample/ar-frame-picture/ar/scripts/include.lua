@@ -1,9 +1,11 @@
 -- 不要修改模块的引入顺序 --
 -- 模块引入的路径以default.lua 所在路径为根目录 --
 app_controller:require('./scripts/utils.lua')
+app_controller:require('./scripts/webcontent.lua')
 app_controller:require('./scripts/const.lua')
 app_controller:require('./scripts/device.lua')
 app_controller:require('./scripts/bridge.lua')
+app_controller:require('./scripts/html.lua')
 app_controller:require('./scripts/ar.lua')
 app_controller:require('./scripts/scene.lua')
 app_controller:require('./scripts/application.lua')
@@ -13,3 +15,5 @@ app_controller:require('./scripts/amath.lua')
 app_controller:require('./scripts/anim.lua')
 app_controller:require('./scripts/audio.lua')
 app_controller:require('./scripts/video.lua')
+app_controller:require('./scripts/frame_picture.lua')
+app_controller:require('./scripts/particle_system.lua')

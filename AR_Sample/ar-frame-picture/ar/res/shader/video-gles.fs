@@ -1,8 +1,20 @@
 precision mediump float;
+uniform mediump vec4 Alpha;
 varying vec2 vTextureCoord;
-uniform sampler2D uDiffuseTexture;
+uniform samplerExternalOES uDiffuseTexture;
 void main() {
-    gl_FragColor = texture2D(uDiffuseTexture, vTextureCoord);
+    vec4 color = texture2D(uDiffuseTexture, vTextureCoord);
+    if(color.g > 0.5 && color.g > (color.r + color.b) * 0.75){
+        color.a = 0.0;
+    } else if(color.r < 0.02 && color.g < 0.02 && color.b < 0.02) {
+        color.a = 0.0;
+    }
+    // %SHADER_PLACE_HOLDER%
+    
+    if(color.g > 0.15 && color.g > (color.r + color.b) * 0.75) {
+        color.a = 0.5 - color.g;
+    }
+    gl_FragColor = mix( Alpha,color,Alpha.a);
     // gl_FragColor = vec4(0.5);
     
 }

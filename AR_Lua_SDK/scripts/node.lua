@@ -175,6 +175,11 @@ function LOAD_NODE()
 			return video
 		end
 
+		node.framePicture = function (self)
+			local framePicture = FramePicture(self)
+			return framePicture
+		end
+
 		node.html = function(self)
 			local html = Html(self)
 			self._html_need_update = false

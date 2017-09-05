@@ -1,10 +1,25 @@
 {
     "showImmediately": 1,
+    "imuRelayCtrlWhenTrackLost":1,
+    "userInteraction": {
+        "disableAll": 0,
+        "disablePinch": 0,
+        "disableClick": 0,
+        "disableScroll": 0,
+        "disbleLongPress": 0,
+        "disableSingleFingerScroll": 0,
+        "disableTwoFingerScroll": 0,
+        "disableDoubleClick": 0
+    },
     "nodeList": [
         {
             "name": "mainCamera",
             "type": "camera",
-            "children": [],
+            "visiable": "1",
+            "position": "0,0,0",
+            "scale": "1,1,1",
+            "rotation": "0,0,0",
+            "chirlden": [],
             "cameraNodeSuppl": {
                 "fov": 56,
                 "zNear": 50,
@@ -12,31 +27,104 @@
             }
         },
         {
-            "name": "sakuraPlane",
-            "type": "framePicture",
-            "visible": 1,
+            "name": "bear",
+            "type": "pod",
+            "visible": 0,
             "touchable": 1,
-            "framePictureSuppl": {
-                "picturePath": "res/media/sakura",
-                "pictureName": "",
-                "pictureFmtExtend": ".png",
-                "startNumber": 1,
-                "endNumber": 10,
-                "frameInterval": 10,
-                "bufferVolume": 10
-            },
+            "meshFileName": "res/model/bear.pod",
             "material": {
                 "common": {
-                    "textureList": [
+                    "texturePath":"res/texture/",
+                    "disableLightEffect":0
+                }
+            },
+            "position": "0,0,0",
+            "scale": "0.3,0.3,0.3",
+            "rotation": "0,0,0",
+            "chirlden": [],
+            "podSuppl": {
+                "allSubnodeTouchable":1
+            }
+        },
+        {
+            "name":"resume",
+            "type":"plane",
+            "visible":1,
+            "touchable":1,
+            "material":{
+                "common":{
+                    "defaultShaderName":"planeShader",
+                    "textureList":[
                         {
-                            "texturePath": "res/texture/tiyan.png"
+                            "textureName":"res/texture/resume.png"
                         }
                     ]
                 }
             },
-            "position": "0,0,-5",
-            "scale": "700,700,700",
-            "rotation": "90,-90,0",
+            "hudDisplay":{
+                "marginTop":0.7,
+                "marginLeft":0.92,
+                "screenRatio":{
+                    "screenWidthRatio":0.1
+                }
+            },
+            "transparentObject":1,
+            "rotation":"90,0,0",
+            "children":[]
+        },
+        {
+            "name": "share",
+            "type": "plane",
+            "visible": 1,
+            "touchable": 1,
+            "material": {
+                "common": {
+                    "defaultShaderName": "planeShader",
+                    "textureList": [{
+                        "textureName": "res/texture/share.png"
+                    }]
+                }
+            },
+            "hudDisplay": {
+                "marginLeft": 0.92,
+                "marginTop": 0.60,
+                "screenRatio": {
+                    "screenWidthRatio": 0.1
+                }
+            },
+            "transparentObject": 1,
+            "position": "0,0,0",
+            "rotation": "90,0,0",
+            "children": []
+        },
+        {
+            "name": "BLN_Light",
+            "type": "framePicture",
+            "visible": 1,
+            "touchable": 1,
+            "framePictureSuppl": {
+                "picturePath": "res/media/icon",
+                "pictureName": "",
+                "pictureFmtExtend": ".png",
+                "startNumber": 1,
+                "endNumber": 15,
+                "frameInterval": 1,
+                "bufferVolume": 5
+            },
+            "material": {
+                "common": {
+                    "defaultShaderName":"frameShader",
+                    "textureList": [
+                        {
+                            "texturePath": "res/media/icon/1.png"
+                        }
+                    ]
+                }
+            },
+            "transparentObject":0,
+            "position": "0,0,0",
+            "scale": "320,320,320",
+            "rotation": "90,0,0",
             "children": []
         }
     ]

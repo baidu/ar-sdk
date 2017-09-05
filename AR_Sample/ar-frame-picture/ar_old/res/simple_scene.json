@@ -1,0 +1,43 @@
+{
+    "showImmediately": 1,
+    "nodeList": [
+        {
+            "name": "mainCamera",
+            "type": "camera",
+            "children": [],
+            "cameraNodeSuppl": {
+                "fov": 56,
+                "zNear": 50,
+                "zFar": 10000
+            }
+        },
+        {
+            "name": "sakuraPlane",
+            "type": "framePicture",
+            "visible": 1,
+            "touchable": 1,
+            "framePictureSuppl": {
+                "picturePath": "res/media/sakura",
+                "pictureName": "",
+                "pictureFmtExtend": ".png",
+                "startNumber": 1,
+                "endNumber": 10,
+                "frameInterval": 10,
+                "bufferVolume": 10
+            },
+            "material": {
+                "common": {
+                    "textureList": [
+                        {
+                            "texturePath": "res/texture/tiyan.png"
+                        }
+                    ]
+                }
+            },
+            "position": "0,0,-5",
+            "scale": "700,700,700",
+            "rotation": "90,-90,0",
+            "children": []
+        }
+    ]
+}

@@ -1,5 +1,19 @@
 -- node.lua --
 function LOAD_NODE()
+
+	NULL_NODE = {}
+	NULL_NODE.__index = function(self, key)
+		ARLOG('NULL_NODE operation')
+		return self
+	end
+	NULL_NODE.__call = function(self, ...)
+		ARLOG('NULL_NODE operation')
+	end
+	NULL_NODE.__newindex = function(self, key, value)
+		ARLOG('NULL_NODE operation')
+	end
+	setmetatable(NULL_NODE, NULL_NODE)
+
 	AR_NODE_CACHE = {}
 	function GET_NODE(scene ,name)
 		CURRENT_SCENE = scene
@@ -17,18 +31,22 @@ function LOAD_NODE()
 		end
 
 		if(node.entity == nil) then
-			return nil
+			ARLOG('NULL NODE created')
+			return NULL_NODE
 		end
 
 		node.lua_handler = scene.application.lua_handler
 		node._on_click = 0
-		node._on_update = 0
+
+		node._on_update = 0  --用户注册的update 方法
+		node._update_closure = 0 -- SDK内部的总 update 闭包
+		node._html_update_handler = 0 -- SDK内部，html刷新相关的闭包
 
 		AR_NODE_CACHE[name] = node
 		setmetatable(node, node)
 
 		node.material = Material(node)
-
+		node.particle = ParticleSystem(node)
 
 		node.__index = function(self, key) 
 
@@ -70,21 +88,31 @@ function LOAD_NODE()
 				local handler_id = lua_handler:register_handle(RANDOM_NAME)
 				self.entity:set_event_handler(0, handler_id)
 			elseif(key == 'on_update') then
-				local anony_func = function()
-					if(self._on_update ~= 0) then
-						self._on_update()
-					end
-				end
 				self._on_update = value
-				local RANDOM_NAME = RES_CLOSURE(anony_func)	
-				local lua_handler = scene.application.lua_handler
-				local handler_id = lua_handler:register_handle(RANDOM_NAME)
-				self.entity:set_event_handler(100, handler_id)
-				ARLOG('here')
+				self:register_update_handle()
 			else 
 				rawset(self, key, value)
 			end
 		end
+
+		node.register_update_handle = function(self)			
+			if self._update_closure == 0 then
+				self._update_closure = function ()
+					if(self._on_update ~= 0) then
+						self._on_update()
+					end
+					if(self._html_update_handler ~= 0) then
+						self._html_update_handler()
+					end
+				end
+				local RANDOM_NAME = RES_CLOSURE(self._update_closure)	
+				local lua_handler = scene.application.lua_handler
+				local handler_id = lua_handler:register_handle(RANDOM_NAME)
+				self.entity:set_event_handler(100, handler_id)
+
+			end
+		end
+
 		
 		node.move_by = function(self)
 			local anim = Anim('move_by', self)
@@ -147,11 +175,27 @@ function LOAD_NODE()
 			return video
 		end
 
-		-- private end
+		node.framePicture = function (self)
+			local framePicture = FramePicture(self)
+			return framePicture
+		end
 
+		node.html = function(self)
+			local html = Html(self)
+			self._html_need_update = false
+			self._html_update_handler = function ()
+				if self._html_need_update == true then
+					self._html_need_update = false
+					self:update_html_texture(0)
+					ARLOG('update html texture')
+				end
+			end
+			self:register_update_handle()
+			return html
+		end
+		-- private end
 		return node
 	end
-
 	ARLOG('load node')
 end
 

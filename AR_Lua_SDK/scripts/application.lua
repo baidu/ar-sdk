@@ -126,7 +126,7 @@ function LOAD_APPLICATION()
 		local version = self.entity:get_engine_version()
 		local engine_version = REOMVE_SPECIAL_SYMBOL(version,"%.")
 		local version = tonumber(engine_version)
-		local eng_version_table = {[100] = 0.3, [110] = 0.4 ,[120] = 0.5, [121] = 1.1, [122] = 1.2}
+		local eng_version_table = {[100] = 11, [110] = 12 ,[120] = 14, [121] = 16}
 		local v = eng_version_table[version]
 		if(v == nil) then
 			v = 99999
@@ -140,7 +140,7 @@ function LOAD_APPLICATION()
 
 	application.open_url = function (self,url)
 		local engine_version = self:get_engine_version()
-		if engine_version >= 0.4 then
+		if engine_version >= 12 then
 			self.entity:open_url(url,1)
 			ARLOG('------------ 1',engine_version)
 		else
