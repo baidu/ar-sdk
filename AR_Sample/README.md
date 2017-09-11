@@ -1,14 +1,15 @@
 # AR
 Code to show how to use AR SDK
 
-<<<<<<< HEAD
-1.track.jpg    这是一张触发图
+
+1.track.jpg    这是一张触发图
 
 
-声明：
+### 声明：
+```
 1. 全部素材来自于网上，如有侵权立即删除
 2. 用户不能将素材图片用于商业用途
-=======
+```
 
 ### AR Sample :
 ```
@@ -31,4 +32,4 @@ Code to show how to use AR SDK
 果而不用受显卡的固定渲染管线限制.
 ```
 </br>
->>>>>>> 16c0e3fd4c437487f2380b6fdb051e889c0803c9
+
