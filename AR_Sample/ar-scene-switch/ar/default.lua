@@ -23,7 +23,10 @@ app.on_loading_finish = function()
 end
 
 function switchScene2()
+
     app:switch_to_scene_with_name("demo_scene2")
+    --切换到场景2 需要再获取一下当前场景是哪一个  否则无法作用与场景2
+    scene = app:get_current_scene()
     scene.Scene2Button.on_click = function()
         switchScene1()
     end
@@ -31,7 +34,4 @@ end
 
 function switchScene1()
     app:switch_to_scene_with_name("demo_scene1")
-    scene.ResumeButton.on_click = function()
-        switchScene1()
-    end
 end
