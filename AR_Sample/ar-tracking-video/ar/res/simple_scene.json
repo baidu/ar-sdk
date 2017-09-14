@@ -5,31 +5,9 @@
         "disablePinch": 0,
         "disableClick": 0,
         "disableScroll": 0,
-        "disableLongPress": 0
+        "disbleLongPress": 0
     },
     "nodeList": [
-        {
-            "name": "mainCamera",
-            "type": "camera",
-            "children": [],
-            "cameraNodeSuppl": {
-                "fov": 56,
-                "zNear": 50,
-                "zFar": 10000
-            }
-        },
-        {
-            "name": "directLight",
-            "type": "directLight",
-            "position": "0,0,1",
-            "rotation": "270,0,270",
-            "children": [],
-            "lightNodeSuppl": {
-                "color": "255.0,255.0,255.0",
-                "intensity": 1.2,
-                "direction": "0,0,1"
-            }
-        },
         {
             "name": "videoPlane",
             "type": "video",
@@ -38,17 +16,17 @@
             "material": {
                 "common": {
                     "textureType": "video",
-                    "uvUnwrapedTextureName": "res/media/content.mp4"
-                },
+                    "uvUnwrapedTextureName": "res/media/bb8-render.mp4"
+                 },
                 "android": {
                     "defaultShaderName": "androidVideoShader",
                     "textureType": "video",
-                    "uvUnwrapedTextureName": "res/media/content.mp4"
+                    "uvUnwrapedTextureName": "res/media/bb8-render.mp4"
                 }
             },
-            "position": "0,0,100",
-            "scale": "300,300,300",
-            "rotation": "90,180,0",
+            "position": "0, 0,0",
+            "scale": "2580,90,1520",
+            "rotation": "90,-90,0",
             "children": []
         }
     ]

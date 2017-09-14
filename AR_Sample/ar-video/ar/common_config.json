@@ -1,44 +1,80 @@
-{
-    "compatibleVersion": "1.0.0",
-    "podShaderConfig": {
-        "shaderPath": "res/shader/pod-gles",
-        "noBoneShaderPath": "res/shader/nobone-pod-gles"
-    },
-    "commonShaderList": [
+{	
+	"compatibleVersion":"1.0.0",
+	"podShaderConfig":{
+		"shaderPath":"res/shader/pod-gles",
+		"noBoneShaderPath":"res/shader/nobone-pod-gles"
+	},
+	"commonShaderList": [
         {
-            "name": "planeShader",
+            "name" : "xxplaneShader",
             "shader": {
-                "shaderPath": "res/shader/plane-gles",
-                "vertexType": "RM_P_N_T",
-                "uniformList": [
-                    {
-                        "uniformName": "Color",
-                        "uniformValue": "AR_COLOR",
-                        "uniformType": "address"
-                    },
-                    {
-                        "uniformName": "skinningMatrix",
-                        "uniformValue": "AR_BONEMATRIX",
-                        "uniformType": "address"
-                    },
-                    {
-                        "uniformName": "World",
-                        "uniformValue": "AR_MODEL",
-                        "uniformType": "address"
-                    },
-                    {
-                        "uniformName": "Proj",
-                        "uniformValue": "AR_PROJECT",
-                        "uniformType": "address"
-                    },
-                    {
-                        "uniformName": "View",
-                        "uniformValue": "AR_VIEW",
-                        "uniformType": "address"
-                    }
-                ]
-            }
+                    "shaderPath": "res/shader/forward-directional-gles",
+                    "vertexType": "RM_P_N_T",
+                    "uniformList": [
+                        {
+                            "uniformName": "Color",
+                            "uniformValue": "AR_COLOR",
+                            "uniformType": "address"
+                        },
+                        {
+                            "uniformName": "skinningMatrix",
+                            "uniformValue": "AR_BONEMATRIX",
+                            "uniformType": "address"
+                        },
+                        {
+                            "uniformName": "World",
+                            "uniformValue": "AR_MODEL",
+                            "uniformType": "address"
+                        },
+                        {
+                            "uniformName": "Proj",
+                            "uniformValue": "AR_PROJECT",
+                            "uniformType": "address"
+                        },
+                        {
+                            "uniformName": "View",
+                            "uniformValue": "AR_VIEW",
+                            "uniformType": "address"
+                        }
+                    ]
+                }
+
         },
+		{
+			"name" : "planeShader",
+			"shader": {
+                    "shaderPath": "res/shader/plane-gles",
+                    "vertexType": "RM_P_N_T",
+                    "uniformList": [
+                        {
+                            "uniformName": "Color",
+                            "uniformValue": "AR_COLOR",
+                            "uniformType": "address"
+                        },
+                        {
+                            "uniformName": "skinningMatrix",
+                            "uniformValue": "AR_BONEMATRIX",
+                            "uniformType": "address"
+                        },
+                        {
+                            "uniformName": "World",
+                            "uniformValue": "AR_MODEL",
+                            "uniformType": "address"
+                        },
+                        {
+                            "uniformName": "Proj",
+                            "uniformValue": "AR_PROJECT",
+                            "uniformType": "address"
+                        },
+                        {
+                            "uniformName": "View",
+                            "uniformValue": "AR_VIEW",
+                            "uniformType": "address"
+                        }
+                    ]
+                }
+
+		},
         {
             "name": "videoShader",
             "shader": {
@@ -87,5 +123,5 @@
                 ]
             }
         }
-    ]
+	]
 }

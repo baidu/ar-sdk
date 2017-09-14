@@ -46,9 +46,9 @@
                     "uvUnwrapedTextureName": "res/media/content.mp4"
                 }
             },
-            "position": "0,0,100",
-            "scale": "300,300,300",
-            "rotation": "90,180,0",
+            "position": "0,0,0",
+            "scale": "1000,1000,1000",
+            "rotation": "90,0,0",
             "children": []
         }
     ]

@@ -1,27 +1,23 @@
 {
-    "UI": {
-        "hint": "触发物丢失视频暂停",
-        "not_found_tip": "测试notFoundTip",
-        "too_far_hint": "测试tooFarHint",
-        "too_near_hint": "测试tooNearHint",
-        "case_type": "1",
-        "far_threshold": "1400",
-        "near_threshold": "700",
-        "udt_tip_simple": "测试udtTipSimple",
-        "udt_tip_detail": "测试udtTipDetail",
-        "udt_tip_alert": "测试udtTipAlert",
-        "help_url": "测试helpUrl"
-    },
-    "targets": [
-        {
-            "id": "787432",
-            "name": "测试",
-            "model_path": "models/model",
-            "template_width": 1024,
-            "template_height": 1024,
-            "target_width": 454,
-            "target_height": 454,
-            "centre_pos": "512,512,0"
-        }
-    ]
+	"UI":{
+		"hint":"tracking透明视频demo",
+		"not_found_tip":"未找到目标物，请重新对准",
+		"too_far_hint":"距离太远，请将镜头靠近目标物",
+		"too_near_hint":"距离太近，请将镜头远离目标物",
+		"far_threshold":"1400",
+		"near_threshold":"700",
+		"help_url":""
+	},
+	"targets":[
+		{
+	    	"id":"787432",
+	    	"name":"Mask_Alpha_Video",
+	        "model_path":"models/model",
+	        "template_width":480,
+	        "template_height":480,
+	        "target_width":480,
+	        "target_height":480,
+	        "centre_pos":"240,240,0"
+		}
+	]
 }
