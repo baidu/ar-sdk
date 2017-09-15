@@ -1,5 +1,6 @@
 {
     "showImmediately": 1,
+    "showOffscreenGuidance":1,
     "imuRelayCtrlWhenTrackLost": 1,
     "userInteraction": {
         "disableAll": 0,
@@ -51,6 +52,58 @@
             "position": "0,-200,0",
             "scale": "0.5,0.5,0.5",
             "rotation": "0,0,0",
+            "children": []
+        },
+        {
+            "name": "floor",
+            "type": "plane",
+            "visible": 1,
+            "touchable": 1,
+            "material": {
+                "common": {
+                    "defaultShaderName": "planeShader",
+                    "textureList": [
+                        {
+                            "textureName": "res/texture/floor.png"
+                        }
+                    ]
+                }
+            },
+            "hudDisplay": {
+                "marginLeft": 0.94,
+                "marginTop": 0.5,
+                "screenRatio": {
+                    "screenWidthRatio": 0.12
+                }
+            },
+            "transparentObject": 1,
+            "rotation": "90,0,0",
+            "children": []
+        },
+        {
+            "name": "reset",
+            "type": "plane",
+            "visible": 1,
+            "touchable": 1,
+            "material": {
+                "common": {
+                    "defaultShaderName": "planeShader",
+                    "textureList": [
+                        {
+                            "textureName": "res/texture/reset.png"
+                        }
+                    ]
+                }
+            },
+            "hudDisplay": {
+                "marginLeft": 0.94,
+                "marginTop": 0.5,
+                "screenRatio": {
+                    "screenWidthRatio": 0.12
+                }
+            },
+            "transparentObject": 1,
+            "rotation": "90,0,0",
             "children": []
         }
     ]

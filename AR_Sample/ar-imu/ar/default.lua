@@ -1,4 +1,4 @@
---iMU随屏初始化
+--iMU 无动画  点击复位
 
 
 app_controller = ae.ARApplicationController:shared_instance()
@@ -11,5 +11,9 @@ local scene = app.current_scene
 
 app.on_loading_finish = function()
     app.device:open_imu(1)
-    scene.root:play_pod_animation_all(1.0, true)
+
+    scene.reset.on_click = function()
+    	-- 点击复位
+    	app:relocate_current_scene()
+    end
 end
