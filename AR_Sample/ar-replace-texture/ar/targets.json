@@ -1,0 +1,26 @@
+{
+	"UI":{
+		"hint":"replace_texture",
+		"not_found_tip":"",
+		"too_far_hint":"",
+		"too_near_hint":"",
+		"far_threshold":"1400",
+		"near_threshold":"700",
+		"help_url":"测试helpUrl",
+        "slam_texture_tip":"请对准纹理丰富平面",
+        "slam_device_orientation_tip":"请向下对准平面放置模型",
+        "image_target_path":"image_target.png"
+	},
+	"targets":[
+		{
+	    	"id":"787432",
+	    	"name":"replace_texture",
+	        "model_path":"models/model",
+	        "template_width":480,
+	        "template_height":480,
+	        "target_width":480,
+	        "target_height":480,
+	        "centre_pos":"240,240,0"
+		}
+	]
+}
