@@ -1,5 +1,5 @@
 {
-    "showImmediately": 1,
+    "showImmediately": 0,
     "showOffscreenGuidance": 0,
     "imuRelayCtrlWhenTrackLost":0,
     "userInteraction": {
