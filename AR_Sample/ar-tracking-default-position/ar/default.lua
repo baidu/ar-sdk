@@ -3,7 +3,7 @@ app_controller:require('./scripts/include.lua')
 app = AR:create_application(AppType.ImageTrack, "bear")
 app:load_scene_from_json("res/simple_scene.json","demo_scene")
 
-scene = app:get_current_scene()
+scene = app.current_scene()
 
 local version = app:get_engine_version()
 

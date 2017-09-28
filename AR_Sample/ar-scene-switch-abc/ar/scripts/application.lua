@@ -12,6 +12,8 @@ function LOAD_APPLICATION()
 	application.device.application = application
 	application.current_scene = 0
 
+	application.webContent = WebContent()
+
 	setmetatable(application, application)
 
 	application.__index = function(self, key)
@@ -130,6 +132,10 @@ function LOAD_APPLICATION()
 			v = 99999
 		end
 		return v
+	end
+
+	application.stop_bg_music = function(self, name)
+		self.entity:pause_bg_music()
 	end
 
 	application.open_url = function (self,url)

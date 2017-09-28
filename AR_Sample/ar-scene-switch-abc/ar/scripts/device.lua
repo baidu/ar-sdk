@@ -38,7 +38,7 @@ function GET_DEVICE()
    	 	mapData:put_int("id", MSG_TYPE_STOP_TRACK) 
     	self.application.lua_handler:send_message_tosdk(mapData)
 	end
-
+	
 	function Device.set_shake_threshold(self, threshold)
 		if (type(threshold) == "number") then
 	 		if (threshold > 5) then

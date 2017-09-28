@@ -197,21 +197,21 @@ vec3 calculateSpotLight(SpotLight light) {
     return out_color;
 }
 void main() {
-    if ((directionalLightCount + pointLightCount + spotLightCount) > 0) {
-        vec3 output_color = vec3(0);
-        for (int i = 0; i < directionalLightCount; i++)
-            output_color += calculateDirectionalLight(directionalLight[i]);
-        
-        for (int i = 0; i < pointLightCount; i++)
-            output_color += calculatePointLight(pointLight[i]);
-        
-        for (int i = 0; i < spotLightCount; i++)
-            output_color += calculateSpotLight(spotLight[i]);
-        
-        gl_FragColor = vec4(vec3(output_color), frag_texCoord);
-    } else {
+//    if ((directionalLightCount + pointLightCount + spotLightCount) > 0) {
+//        vec3 output_color = vec3(0);
+//        for (int i = 0; i < directionalLightCount; i++)
+//            output_color += calculateDirectionalLight(directionalLight[i]);
+//        
+//        for (int i = 0; i < pointLightCount; i++)
+//            output_color += calculatePointLight(pointLight[i]);
+//        
+//        for (int i = 0; i < spotLightCount; i++)
+//            output_color += calculateSpotLight(spotLight[i]);
+//        
+//        gl_FragColor = vec4(vec3(output_color), frag_texCoord);
+//    } else
         gl_FragColor = texture2D(diffuseMap, frag_texCoord);
-    }
+//    }
     
 }
 

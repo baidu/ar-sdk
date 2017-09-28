@@ -38,19 +38,19 @@
           }
         },
         {
-            "name": "animB",
+            "name": "animA",
             "type": "pod",
             "visible": 1,
             "touchable": 1,
-            "meshFileName": "res/model/fruit.pod",
+            "meshFileName": "res/model/bear.pod",
             "material": {
                 "common": {
                     "texturePath":"res/texture/",
                     "disableLightEffect":0
                 }
             },
-            "position": "50,-50,0",
-            "scale": "20,20,20",
+            "position": "0,-100,0",
+            "scale": "0.2,0.2,0.2",
             "rotation": "0,0,0",
             "chirlden": [],
             "podSuppl": {
@@ -58,7 +58,7 @@
             }
         },
         {
-          "name": "bgB",
+          "name": "bgA",
           "type": "plane",
           "visible": 1,
           "touchable": 1,
@@ -77,15 +77,14 @@
               "defaultShaderName": "planeShader",
               "textureList": [
                 {
-                  "textureName": "res/texture/bgB.png"
+                  "textureName": "res/texture/bgA.png"
                 }
               ]
             }
           }
         },
-
         {
-          "name": "clickB_1",
+          "name": "clickA_1",
           "type": "plane",
           "visible": 1,
           "touchable": 1,
@@ -103,14 +102,14 @@
               "defaultShaderName": "planeShader",
               "textureList": [
                 {
-                  "textureName": "res/texture/clickA.png"
+                  "textureName": "res/texture/clickC.png"
                 }
               ]
             }
           }
         },
         {
-          "name": "clickB_2",
+          "name": "clickA_2",
           "type": "plane",
           "visible": 1,
           "touchable": 1,
@@ -128,7 +127,7 @@
               "defaultShaderName": "planeShader",
               "textureList": [
                 {
-                  "textureName": "res/texture/clickC.png"
+                  "textureName": "res/texture/clickB.png"
                 }
               ]
             }

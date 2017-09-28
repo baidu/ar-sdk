@@ -4,6 +4,17 @@ function LOAD_UTILS()
 		io.write('[LUA-LOG] '..line)
 	end
 
+	function DEBUG(line)
+		if lua_handler == nil then
+
+		else
+			local mapData = ae.MapData:new() 
+			mapData:put_int("id", MST_TYPE_REMOTE_DEBUG_SEND) 
+			mapData:put_string("log", line)
+			lua_handler:send_message_tosdk(mapData)
+		end
+	end
+
 	function NOP_FUNC(...)
 		ARLOG('nop_func called')
 	end
