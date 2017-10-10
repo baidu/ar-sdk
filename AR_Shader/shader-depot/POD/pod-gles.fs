@@ -1,4 +1,4 @@
-precision highp float;
+precision mediump float;
 
 varying vec3 object_position;
 varying vec3 object_normal;

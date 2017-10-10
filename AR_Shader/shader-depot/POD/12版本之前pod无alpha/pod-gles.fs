@@ -176,7 +176,9 @@ vec3 calculateSpotLight(SpotLight light, vec3 ambientNature, vec3 diffuseNature,
 void main() {
     if ((directionalLightCount + pointLightCount + spotLightCount) > 0) {
         vec3 output_color = vec3(0);
-        vec4 colorful = texture2D(sTexture, object_texcoord);
+        vec4 colorful = texture2D(sTexture, vec2(object_texcoord.x, 1.0 - object_texcoord.y));
+        //vec4 colorful = texture2D(sTexture, object_texcoord);
+        
         float lucency = colorful.w;
         
         vec3 diffuseNature = vec3(colorful);
@@ -186,15 +188,15 @@ void main() {
         for (int i = 0; i < directionalLightCount; i++)
             output_color += calculateDirectionalLight(directionalLight[i], diffuseNature, diffuseNature, specularNature);
         
-            for (int i = 0; i < pointLightCount; i++)
-                output_color += calculatePointLight(pointLight[i], diffuseNature, diffuseNature, specularNature);
+        for (int i = 0; i < pointLightCount; i++)
+            output_color += calculatePointLight(pointLight[i], diffuseNature, diffuseNature, specularNature);
         
-            for (int i = 0; i < spotLightCount; i++)
-                output_color += calculateSpotLight(spotLight[i], diffuseNature, diffuseNature, specularNature);
+        for (int i = 0; i < spotLightCount; i++)
+            output_color += calculateSpotLight(spotLight[i], diffuseNature, diffuseNature, specularNature);
         
         
-        gl_FragColor = mix(Alpha,vec4(vec3(output_color), lucency), Alpha.a);
+        gl_FragColor = vec4(vec3(output_color), lucency);
     } else {
-        gl_FragColor = mix( Alpha, texture2D(sTexture, object_texcoord) ,Alpha.a);
+        gl_FragColor = texture2D(sTexture, vec2(object_texcoord.x, 1.0 - object_texcoord.y));
     }
 }
