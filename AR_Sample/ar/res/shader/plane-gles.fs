@@ -148,26 +148,18 @@ vec3 calculatePointLight(PointLight light) {
     + light.attenuation.exponent * distanceToPoint * distanceToPoint
     + 0.0001;
     
-    //float phong = (ambient + diffuse + specular) * light.base.intensity / attenuation;
-    
     vec3 ambientColor = ambient * vec3(texture2D(diffuseMap, frag_texCoord));
     vec3 diffuseColor = diffuse *  vec3(texture2D(diffuseMap, frag_texCoord));
     vec3 specularColor = specular *  vec3(texture2D(specularMap, frag_texCoord));
     vec3 out_color = (ambientColor + diffuseColor + specularColor) * light.base.color * light.base.intensity / attenuation;
     
-    
-    //vec3 out_color = vec3(1.0, 0.5, 0.31) * phong * light.base.color;
-    
     return out_color;
-    //gl_FragColor = vec4(out_color , 1.0);
-    //gl_FragColor = vec4(vec3(1.0,1.0,1.0), 1.0);
 }
 
 vec3 calculateSpotLight(SpotLight light) {
     float ambient = light.base.lightWeight.ambientStrength;
     
     vec3 norm = normalize(frag_normal);
-    //vec3 norm = normalize(vec3(texture2D(normalMap, frag_texCoord)));
     vec3 lightDirection = light.position - frag_position;
     float distanceToPoint = length(lightDirection);
     
@@ -195,41 +187,31 @@ vec3 calculateSpotLight(SpotLight light) {
     float epsilon = light.cutoff - light.outerCutoff;
     float spotIntensity = clamp((theta - light.outerCutoff) / epsilon,0.0, 1.0);
     
-    
-    //float phong = (ambient + (diffuse + specular) * spotIntensity) * spotLight.pointLight.base.intensity / attenuation;
-    
     vec3 ambientColor = ambient * vec3(texture2D(diffuseMap, frag_texCoord));
     vec3 diffuseColor = diffuse * spotIntensity * vec3(texture2D(diffuseMap, frag_texCoord));
     vec3 specularColor = specular * spotIntensity * vec3(texture2D(specularMap, frag_texCoord));
-    
-    /*
-     if (theta < light.cutoff)
-     {
-     phong = ambient * light.pointLight.base.intensity / attenuation;
-     }
-     */
+
     
     vec3 out_color = (ambientColor + diffuseColor + specularColor) * light.base.color * light.base.intensity / attenuation;
     
-    //return vec3(light.base.lightWeight.specularStrength);
     return out_color;
-    //gl_FragColor = vec4(out_color , 1.0);
-    //gl_FragColor = vec4(vec3(spotIntensity,0, 0), 1.0);
 }
 void main() {
-//    vec3 output_color = vec3(0);
-    
-//    for (int i = 0; i < directionalLightCount; i++)
-//    output_color += calculateDirectionalLight(directionalLight[i]);
-//    
-//    for (int i = 0; i < pointLightCount; i++)
-//    output_color += calculatePointLight(pointLight[i]);
-//    
-//    for (int i = 0; i < spotLightCount; i++)
-//    output_color += calculateSpotLight(spotLight[i]);
-    
-    gl_FragColor = texture2D(diffuseMap, frag_texCoord);
-     //gl_FragColor = vec4(vec3(1.0,0.0,0.0), 1.0);
+//    if ((directionalLightCount + pointLightCount + spotLightCount) > 0) {
+//        vec3 output_color = vec3(0);
+//        for (int i = 0; i < directionalLightCount; i++)
+//            output_color += calculateDirectionalLight(directionalLight[i]);
+//        
+//        for (int i = 0; i < pointLightCount; i++)
+//            output_color += calculatePointLight(pointLight[i]);
+//        
+//        for (int i = 0; i < spotLightCount; i++)
+//            output_color += calculateSpotLight(spotLight[i]);
+//        
+//        gl_FragColor = vec4(vec3(output_color), frag_texCoord);
+//    } else
+        gl_FragColor = texture2D(diffuseMap, frag_texCoord);
+//    }
     
 }
 

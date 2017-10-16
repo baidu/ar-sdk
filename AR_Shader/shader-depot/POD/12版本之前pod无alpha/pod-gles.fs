@@ -177,6 +177,8 @@ void main() {
     if ((directionalLightCount + pointLightCount + spotLightCount) > 0) {
         vec3 output_color = vec3(0);
         vec4 colorful = texture2D(sTexture, vec2(object_texcoord.x, 1.0 - object_texcoord.y));
+        //vec4 colorful = texture2D(sTexture, object_texcoord);
+        
         float lucency = colorful.w;
         
         vec3 diffuseNature = vec3(colorful);
