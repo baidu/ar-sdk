@@ -5,41 +5,6 @@
 		"noBoneShaderPath":"res/shader/nobone-pod-gles"
 	},
 	"commonShaderList": [
-        {
-            "name" : "xxplaneShader",
-            "shader": {
-                    "shaderPath": "res/shader/forward-directional-gles",
-                    "vertexType": "RM_P_N_T",
-                    "uniformList": [
-                        {
-                            "uniformName": "Color",
-                            "uniformValue": "AR_COLOR",
-                            "uniformType": "address"
-                        },
-                        {
-                            "uniformName": "skinningMatrix",
-                            "uniformValue": "AR_BONEMATRIX",
-                            "uniformType": "address"
-                        },
-                        {
-                            "uniformName": "World",
-                            "uniformValue": "AR_MODEL",
-                            "uniformType": "address"
-                        },
-                        {
-                            "uniformName": "Proj",
-                            "uniformValue": "AR_PROJECT",
-                            "uniformType": "address"
-                        },
-                        {
-                            "uniformName": "View",
-                            "uniformValue": "AR_VIEW",
-                            "uniformType": "address"
-                        }
-                    ]
-                }
-
-        },
 		{
 			"name" : "planeShader",
 			"shader": {
@@ -76,7 +41,7 @@
 
 		},
         {
-            "name": "videoShader",
+            "name": "cVideoShader",
             "shader": {
                 "shaderName": "res/shader/video-gles",
                 "vertexType": "RM_P_N_T",
@@ -100,7 +65,7 @@
             }
         },
         {
-            "name": "androidVideoShader",
+            "name": "cAndroidVideoShader",
             "shader": {
                 "shaderName": "res/shader/video-gles-android",
                 "vertexType": "RM_P_N_T",
