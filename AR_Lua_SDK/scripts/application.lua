@@ -7,6 +7,8 @@ function LOAD_APPLICATION()
 	application.on_loading_finish = 0
 	application.on_target_lost = 0
 	application.on_target_found = 0
+	application._offscreen_button_show = 0
+    application._offscreen_button_hide = 0
 
 	application.device = GET_DEVICE()
 	application.device.application = application
@@ -31,6 +33,38 @@ function LOAD_APPLICATION()
 			return __F_FUNC
 		end
 	end
+
+	application.__newindex = function(self, key, value) 
+		if(key == 'offscreen_button_show') then
+			local anony_func = function()
+				if(self._offscreen_button_show ~= 0) then
+					self._offscreen_button_show()
+				end
+			end
+
+			self._offscreen_button_show = value
+			local RANDOM_NAME = RES_CLOSURE(anony_func)	
+			local lua_handler = self.lua_handler
+			local handler_id = lua_handler:register_handle(RANDOM_NAME)
+			self:set_show_offscreen_button_handler(handler_id)
+
+		elseif(key == 'offscreen_button_hide') then
+			local anony_func = function()
+				if(self._offscreen_button_hide ~= 0) then
+					self._offscreen_button_hide()
+				end
+			end
+			self._offscreen_button_hide = value
+			local RANDOM_NAME = RES_CLOSURE(anony_func)	
+			local lua_handler = self.lua_handler
+			local handler_id = lua_handler:register_handle(RANDOM_NAME)
+			self:set_hide_offscreen_button_handler(handler_id)
+
+		else
+			rawset(self, key, value)
+		end
+	end
+
 
 	application.setup_handlers = function(self)
 		local lua_handler = self.entity:get_lua_handler()
@@ -126,7 +160,7 @@ function LOAD_APPLICATION()
 		local version = self.entity:get_engine_version()
 		local engine_version = REOMVE_SPECIAL_SYMBOL(version,"%.")
 		local version = tonumber(engine_version)
-		local eng_version_table = {[100] = 11, [110] = 12 ,[120] = 14, [121] = 16}
+		local eng_version_table = {[100] = 11, [110] = 12 ,[120] = 14, [121] = 16, [122] = 18, [123] = 19, [124] = 20}
 		local v = eng_version_table[version]
 		if(v == nil) then
 			v = 99999
@@ -138,8 +172,8 @@ function LOAD_APPLICATION()
 		self.entity:pause_bg_music()
 	end
 
-	application.open_url = function (self,url)
-		local engine_version = self:get_engine_version()
+	application.open_url = function(self,url)
+		local engine_version = self:get_version()
 		if engine_version >= 12 then
 			self.entity:open_url(url,1)
 			ARLOG('------------ 1',engine_version)
@@ -148,6 +182,14 @@ function LOAD_APPLICATION()
 			ARLOG('------------ 0',engine_version)
 		end
 	end
+
+	application.visible_type = function(self,type)
+        local mapData = ae.MapData:new()
+        mapData:put_int("id", MSG_TYPE_VIEW_VISIBLE_TYPE)
+        mapData:put_int("visibleType",type)
+        self.lua_handler:send_message_tosdk(mapData)
+    end
+
 	return application
 end
 

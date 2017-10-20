@@ -20,6 +20,17 @@ function LOAD_CONST()
 
 
 	-- SDK LUA MSG TYPE --
+    -- UI --
+    MSG_TYPE_VIEW_VISIBLE_TYPE = 30000
+    ViewVisibleType = {}
+    ViewVisibleType.ShowAllButton  = 0
+    ViewVisibleType.HideAllButton  = 1
+    ViewVisibleType.ShowShotButton = 2
+    ViewVisibleType.HideShotButton = 3
+    ViewVisibleType.ShowTopButton  = 4
+    ViewVisibleType.HideTopButton  = 5
+
+
 	-- shake --
 	MSG_TYPE_SHAKE = 10000
 	MSG_TYPE_OPEN_SHAKE = 10001
@@ -30,8 +41,16 @@ function LOAD_CONST()
 	MSG_TYPE_OPEN_TRACK = 10101
 	MSG_TYPE_STOP_TRACK = 10102
 
+	MSG_TYPE_TRACK_TIPS = 10103
+	TrackTips = {}
+	TrackTips.trackedDistanceTooFar = 1
+	TrackTips.trackedDistanceTooNear = 2
+	TrackTips.trackedDistanceNormal = 3
+
+
 	-- camera --
 	MSG_TYPE_CAMERA_CHANGE = 10200
+	MSG_TYPE_ENABLE_FRONT_CAMERA = 10201
 
 	-- remote debug --
 	MST_TYPE_REMOTE_DEBUG_REC = 10300
@@ -39,6 +58,9 @@ function LOAD_CONST()
 
 	-- WebContent Handle
 	MSG_TYPE_WEB_OPERATION = 10400
+
+	-- model click --
+	MSG_TYPE_INITIAL_CLCIK = 10500
 	
 	-- voice api --
 	MSG_TYPE_VOICE_START = 2001
@@ -68,7 +90,17 @@ function LOAD_CONST()
 	HtmlOperation.loadFinish = 1
 	HtmlOperation.modelUpdate = 2
 	HtmlOperation.updateFinish = 3
-
+	
+    -- tts api --
+    MSG_TYPE_TTS_SPEAK = 2005
+    MSG_TYPE_TTS_STOP = 2006
+    MSG_TYPE_TTS_PAUSE = 2007
+    MSG_TYPE_TTS_RESUME = 2008
+    
+    -- tts status --
+    TTS_STATUS_READYFORTTS = 1
+    TTS_STATUS_ENDOFTTS = 2
+    TTS_STATUS_ERROR = 3
 	
 	ARLOG('load const')
 end

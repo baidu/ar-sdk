@@ -30,7 +30,7 @@ function LOAD_NODE()
 			node.entity = CURRENT_SCENE:get_node_by_name(name)
 		end
 
-		if(node.entity == nil) then
+		if(node.entity:is_empty_node()) then
 			ARLOG('NULL NODE created')
 			return NULL_NODE
 		end
