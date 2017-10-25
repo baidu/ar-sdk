@@ -1,0 +1,27 @@
+{
+	"UI":{
+		"hint":"",
+        "not_found_tip":"",
+        "too_far_hint":"",
+        "too_near_hint":"",
+        "case_type":"2",
+        "far_threshold":"1400",
+        "near_threshold":"700",
+        "udt_tip_simple":"请将取景框正对带图案的竖直平面\n点击确定",
+        "udt_tip_detail":"请正对刚才拍照获取的平面区域",
+        "udt_tip_alert":"请正对图案丰富的竖直平面",
+        "help_url":""
+	},
+	"targets":[
+		{
+	    	"id":"787432",
+	    	"name":"小熊",
+	        "model_path":"models/model",
+	        "template_width":1024,
+	        "template_height":1024,
+	        "target_width":454,
+	        "target_height":454,
+	        "centre_pos":"512,512,0"
+		}
+	]
+}
