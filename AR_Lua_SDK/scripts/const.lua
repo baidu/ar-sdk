@@ -65,6 +65,8 @@ function LOAD_CONST()
 	-- voice api --
 	MSG_TYPE_VOICE_START = 2001
 	MSG_TYPE_VOICE_STOP = 2002
+	MSG_TYPE_VOICE_SHOW_MIC_ICON = 2003
+  MSG_TYPE_VOICE_HIDE_MIC_ICON = 2004
 	
 	--voice status --
 	VOICE_STATUS_READYFORSPEECH = 0
@@ -91,16 +93,17 @@ function LOAD_CONST()
 	HtmlOperation.modelUpdate = 2
 	HtmlOperation.updateFinish = 3
 	
-    -- tts api --
-    MSG_TYPE_TTS_SPEAK = 2005
-    MSG_TYPE_TTS_STOP = 2006
-    MSG_TYPE_TTS_PAUSE = 2007
-    MSG_TYPE_TTS_RESUME = 2008
+  -- tts api --
+  MSG_TYPE_TTS_SPEAK = 2005
+  MSG_TYPE_TTS_STOP = 2006
+  MSG_TYPE_TTS_PAUSE = 2007
+  MSG_TYPE_TTS_RESUME = 2008
     
-    -- tts status --
-    TTS_STATUS_READYFORTTS = 1
-    TTS_STATUS_ENDOFTTS = 2
-    TTS_STATUS_ERROR = 3
+  -- tts status --
+  TTS_STATUS_READYFORTTS = 1
+  TTS_STATUS_ENDOFTTS = 2
+  TTS_STATUS_ERROR = 3
+  -- tts api end --
 	
 	ARLOG('load const')
 end

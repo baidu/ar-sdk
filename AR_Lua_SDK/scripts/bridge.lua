@@ -20,6 +20,10 @@ function HANDLE_SDK_MSG(mapData)
 		if(Speech.callBack ~= nil) then
 			Speech.callBack(mapData)
 		end
+	elseif(msg_id == MSG_TYPE_TTS_SPEAK) then
+		if(Tts.callBack ~= nil) then
+			Tts.callBack(mapData)
+		end		
 	elseif(msg_id == MSG_TYPE_CAMERA_CHANGE) then
 		if(AR.current_application.device.on_camera_change ~= 0) then
 			local is_front_camera = mapData['front_camera']

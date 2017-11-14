@@ -1,0 +1,35 @@
+
+{
+    "showImmediately": 1,
+    "userInteraction": {
+        "enableTouchZone": 1,
+        "disableAll": 0,
+        "disablePinch": 0,
+        "disableClick": 0,
+        "disableScroll": 0,
+        "disableSingleFingerScroll": 0,
+        "disbleLongPress": 0
+    },
+    "nodeList": [
+                {
+                 "name": "write1",
+                 "type": "particle",
+                 "visible": 1,
+                 "touchable": 0,
+                 "particleSystemSuppl": {
+                 "particlePath": "res/particle-file1.json"
+                 },
+                 "children": []
+                 },
+                 {
+                 "name": "write2",
+                 "type": "particle",
+                 "visible": 1,
+                 "touchable": 0,
+                 "particleSystemSuppl": {
+                 "particlePath": "res/particle-file2.json"
+                 },
+                 "children": []
+                 }
+            ]
+}
