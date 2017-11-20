@@ -13,7 +13,7 @@ vec3 transformDirection( in vec3 dir, in mat4 matrix ) {
 
 void main() {
 
-	vWorldPosition = transformDirection( position, modelMatrix );
+	vWorldPosition = position;
 
 	vec4 mvPosition = modelViewMatrix * vec4( position.xyz, 1.0 );
     gl_Position = projectionMatrix * mvPosition;
