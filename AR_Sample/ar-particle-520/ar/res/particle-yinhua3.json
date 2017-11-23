@@ -1,0 +1,69 @@
+{
+"name": "kongmingdeng",
+"particleCountMax":300,
+"material": {
+    "blendMode":"alpha",
+    "textureName":"yinhuapian.png",
+    "textureWidth":90,
+    "textureHeight":80,
+    "frameAnimated":0,
+    "frameLoop":1,
+    "frameCount":1,
+    "frameColums":1,
+    "frameRows":1,
+    "frameRandomOffset":0,
+    "frameDuration":100
+},
+"emission":{
+    "emissionLoop":-1,
+    "emissionRate":500,
+    "emissionDuration":100,
+    "emissionIdleDuration":2500,
+    "emissionIdleDurationVar":0,
+    "emitterPosition":"0, 0, 0",
+    "emitterRotationAxisAngleMin":0,
+    "emitterRotationAxisAngleMax":179,
+    "emitterRotationAxis":"0, 0, 0",
+    "emitterRotationAxisVar":"1, 1, 1",
+    "emissionVelocityMode":"shape",
+    "emissionAccelecationMode":"shape",
+    "emitterShape":"circle",
+    "emitterShapeStrectchScale":"1,1,1",
+    "emitterShapeParam":{
+                            "circle":{
+                                "circleOutRadius":50,
+                                "circleInRadius":49
+                            }
+                        }
+},
+"particle":{
+    "lifeTimeMin":3000,
+    "lifeTimeMax":3000,
+    "sizeStartMin":50,
+    "sizeStartMax":50,
+    "sizeEndMin":50,
+    "sizeEndMax":50,
+    "colorStart":"255, 255, 255, 255",
+    "colorStartVar":"0, 0, 0, 0",
+    "colorEnd":"255, 255, 255, 0",
+    "colorEndVar":"0, 0, 0, 0",
+    "velocity":"0, 500, 0",
+    "velocityVar":"0, 0, 0",
+    "acceleration":"0, 0, 0",
+    "accelerationVar":"0, 0, 0",
+    "spinAngleMin":30,
+    "spinAngleMax":120,
+    "rotationAxisAngleMin":0,
+    "rotationAxisAngleMax":0,
+    "rotationAxis":"0, 0, 0",
+    "rotationAxisVar":"0, 0, 0"
+},
+"render":{
+    "imuType":0,
+    "billboardType":"billboard",
+    "stretchScale":"0,0,0",
+    "stretchType":"speed",
+    "spinAlignToSpeedDirection":0
+}
+
+}

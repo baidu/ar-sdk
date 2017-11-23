@@ -7,6 +7,6 @@ varying vec3 vWorldPosition;
 
 void main() {
 
-	gl_FragColor = textureCube( tCube, vec3( -vWorldPosition.x, vWorldPosition.yz ) );
+	gl_FragColor = textureCube( tCube, vec3( vWorldPosition.x, vWorldPosition.yz ) );
 
 }

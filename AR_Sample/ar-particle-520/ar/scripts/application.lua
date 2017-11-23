@@ -12,8 +12,6 @@ function LOAD_APPLICATION()
 	application.device.application = application
 	application.current_scene = 0
 
-	application.webContent = WebContent()
-
 	setmetatable(application, application)
 
 	application.__index = function(self, key)
@@ -122,32 +120,6 @@ function LOAD_APPLICATION()
 		new_scene.entity = self.entity:get_scene_by_name(name)
 	end
 
-	application.get_engine_version = function(self)
-		local version = self.entity:get_engine_version()
-		local engine_version = REOMVE_SPECIAL_SYMBOL(version,"%.")
-		local version = tonumber(engine_version)
-		local eng_version_table = {[100] = 0.4,[110] = 0.5}
-		local v = eng_version_table[version]
-		if(v == nil) then
-			v = 99999
-		end
-		return v
-	end
-
-	application.stop_bg_music = function(self, name)
-		self.entity:pause_bg_music()
-	end
-
-	application.open_url = function (self,url)
-		local engine_version = self:get_engine_version()
-		if engine_version > 0.4 then
-			self.entity:open_url(url,1)
-			ARLOG('------------ 1',engine_version)
-		else
-			self.entity:open_url(url,0)
-			ARLOG('------------ 0',engine_version)
-		end
-	end
 	return application
 end
 

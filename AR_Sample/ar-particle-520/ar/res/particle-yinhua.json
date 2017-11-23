@@ -1,0 +1,72 @@
+{
+"name": "yinhua",
+"particleCountMax":1000,
+"material": {
+    "blendMode":"alpha",
+    "textureName":"yinhua3.png",
+    "textureWidth":261,
+    "textureHeight":238,
+    "frameAnimated":0,
+    "frameLoop":1,
+    "frameCount":12,
+    "frameColums":3,
+    "frameRows":4,
+    "frameRandomOffset":12,
+    "frameDuration":100
+},
+"emission":{
+    "emissionLoop":-1,
+    "emissionRate":200,
+    "emissionDuration":3000,
+    "emissionIdleDuration":0,
+    "emissionIdleDurationVar":0,
+    "emitterPosition":"500, 0, 2500",
+    "emitterRotationAxisAngleMin":0,
+    "emitterRotationAxisAngleMax":0,
+    "emitterRotationAxis":"0, 0, 0",
+    "emitterRotationAxisVar":"0, 0, 0",
+    "emissionVelocityMode":"axis",
+    "emissionAccelecationMode":"axis",
+    "emitterShape":"box",
+    "emitterShapeStrectchScale":"1,1,1",
+    "emitterShapeParam":{
+                            "box":{
+                                "boxLengthX":1500,
+                                "boxLengthY":1500,
+                                "boxLengthZ":10
+                            }
+                        }
+    
+
+},
+"particle":{
+    "lifeTimeMin":3000,
+    "lifeTimeMax":6000,
+    "sizeStartMin":60,
+    "sizeStartMax":60,
+    "sizeEndMin":40,
+    "sizeEndMax":40,
+    "colorStart":"255, 255, 255, 255",
+    "colorStartVar":"0, 0, 0, 0",
+    "colorEnd":"255, 255, 255, 255",
+    "colorEndVar":"0, 0, 0, 0",
+    "velocity":"-120, 0, -350",
+    "velocityVar":"70, 100, 100",
+    "acceleration":"0, 0, 0",
+    "accelerationVar":"0, 0, 0",
+    "spinAngleMin":30,
+    "spinAngleMax":120,
+    "rotationAxisAngleMin":0,
+    "rotationAxisAngleMax":0,
+    "rotationAxis":"0, 0, 0",
+    "rotationAxisVar":"0, 0, 0"
+},
+"render":{
+    "imuType":0,
+    "billboardType":"billboard",
+    "stretchScale":"0,0,0",
+    "stretchType":"speed",
+    "spinAlignToSpeedDirection":0
+}
+
+}

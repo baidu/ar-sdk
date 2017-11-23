@@ -6,14 +6,12 @@ function GET_DEVICE()
 	Device.open_imu = 0
 	Device.close_imu = 0
 	Device.shake_enable = false
-	Device.on_camera_change = 0
 
 	Device.open_shake_listener = 0
 	Device.stop_shake_listner = 0
 	Device.set_shake_threshold = 0
 
 	function Device.open_shake_listener(self)
-		ARLOG('open shake listener')
 		local mapData = ae.MapData:new() 
    	 	mapData:put_int("id",MSG_TYPE_OPEN_SHAKE ) 
     	self.application.lua_handler:send_message_tosdk(mapData)
@@ -27,18 +25,6 @@ function GET_DEVICE()
     	self.shake_enable = false
 	end
 
-	function Device.open_track_service(self)
-		local mapData = ae.MapData:new() 
-   	 	mapData:put_int("id", MSG_TYPE_OPEN_TRACK) 
-    	self.application.lua_handler:send_message_tosdk(mapData)
-	end
-
-	function Device.stop_track_service(self)
-		local mapData = ae.MapData:new() 
-   	 	mapData:put_int("id", MSG_TYPE_STOP_TRACK) 
-    	self.application.lua_handler:send_message_tosdk(mapData)
-	end
-	
 	function Device.set_shake_threshold(self, threshold)
 		if (type(threshold) == "number") then
 	 		if (threshold > 5) then

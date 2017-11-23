@@ -1,10 +1,10 @@
 -- utils.lua --
 function LOAD_CONST()
 	AppType = {}
-	-- AppType.None = 0
-	-- AppType.ImageTrack = 1
+	AppType.None = 0
+	AppType.ImageTrack = 1
 	AppType.Imu = 2
-	AppType.ImageTrack = 3
+	AppType.TrackImu = 3
 	AppType.Slam = 4
 
 	-- Device Orientation -- 
@@ -12,12 +12,6 @@ function LOAD_CONST()
 	DeviceOrientation.Portrait = 0
 	DeviceOrientation.Left = 1
 	DeviceOrientation.Right = 2
-	
-	EventType = {}
-	EventType.Scroll = 2
-	EventType.ScrollDown = 9
-	EventType.ScrollUp = 11	
-
 
 	-- SDK LUA MSG TYPE --
 	-- shake --
@@ -25,20 +19,6 @@ function LOAD_CONST()
 	MSG_TYPE_OPEN_SHAKE = 10001
 	MSG_TYPE_STOP_SHAKE = 10002
 	MAX_SHAKE_THRESHOLD = 9.8
-
-	-- track -- 
-	MSG_TYPE_OPEN_TRACK = 10101
-	MSG_TYPE_STOP_TRACK = 10102
-
-	-- camera --
-	MSG_TYPE_CAMERA_CHANGE = 10200
-
-	-- remote debug --
-	MST_TYPE_REMOTE_DEBUG_REC = 10300
-	MST_TYPE_REMOTE_DEBUG_SEND = 10301
-
-	-- WebContent Handle
-	MSG_TYPE_WEB_OPERATION = 10400
 	
 	-- voice api --
 	MSG_TYPE_VOICE_START = 2001
@@ -60,15 +40,6 @@ function LOAD_CONST()
 	VOICE_ERROR_STATUS_NETWORK = 2
 	VOICE_ERROR_STATUS_INSUFFICIENT_PERMISSIONS = 3
 	-- voice api end --
-
-	-- html --
-	MSG_TYPE_HTML_OPERATION = 10500
-	HtmlOperation = {}
-	HtmlOperation.htmlLoad = 0
-	HtmlOperation.loadFinish = 1
-	HtmlOperation.modelUpdate = 2
-	HtmlOperation.updateFinish = 3
-
 	
 	ARLOG('load const')
 end

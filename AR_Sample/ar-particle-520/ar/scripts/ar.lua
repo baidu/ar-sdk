@@ -14,7 +14,7 @@ function LOAD_AR()
 		app.entity = app_entity
 		app:setup_handlers()
 
-		lua_handler = app:get_lua_handler()
+		local lua_handler = app:get_lua_handler()
 		lua_handler:register_lua_sdk_bridge("HANDLE_SDK_MSG")
 		self.current_application = app
 		return app
@@ -50,13 +50,6 @@ function LOAD_AR()
 		if BAR_ON_LOOP then
 			ae.LuaUtils:call_function_after_delay(LOOP_INTERVAL, "BAR_INNER_LOOP")
 		end
-	end
-
-	-- Delay -- 
-
-	AR.perform_after = function(self, delay, func)
-		local random_name = RES_CLOSURE(func)
-		ae.LuaUtils:call_function_after_delay(delay, random_name)
 	end
 
 	ARLOG('Load AR')

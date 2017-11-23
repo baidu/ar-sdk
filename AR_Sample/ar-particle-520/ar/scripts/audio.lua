@@ -9,22 +9,11 @@ function LOAD_AUDIO()
 				_path = '',
 				_repeat_count = 0,
 				_delay = 0,
-				_forward_logic = 0,
-				_backward_logic = 0,
 				_on_complete = nil,
 				_audio_id = -1,
 
-				get_meta_action_priority_config = function(self)
-					local action_config = ae.ActionPriorityConfig:new() 
-					action_config.forward_logic = self._forward_logic
-					action_config.backward_logic = self._backward_logic
-					ARLOG("Get Action Config")
-					return action_config
-				end,
-
 				start = function(self)
-					local config = self:get_meta_action_priority_config()
-					local audio_id = self._entity:play_audio(config,self._path, self._repeat_count, self._delay)
+					local audio_id = self._entity:play_audio(self._path, self._repeat_count, self._delay)
 					ARLOG(' ----------- 系统 play_audio 调用 -------------- ')
 					if (self._on_complete ~= nil) then
 						if type(self._on_complete) == 'string' then
@@ -43,24 +32,35 @@ function LOAD_AUDIO()
 
 					return self
 				end,
+
+
 				pause = function(self)
 					self._entity:pause_action(self._audio_id)
 					ARLOG(' ------------ 系统 pause_action(audio) 调用 -------------- ')
 					return self
 
 				end,
+
+
+
 				resume = function(self)
 					self._entity:resume_action(self._audio_id)
 					ARLOG(' ------------ 系统 resume_action(audio) 调用 -------------- ')
 					return self
 
 				end,
+
+
+
+
 				stop = function(self)
 					self._entity:stop_action(self._audio_id)
 					ARLOG(' ------------ 系统 stop_action(audio) 调用 -------------- ')
 					return self
 
 				end,
+
+
 				path = function (self,string)
 					self._path = string
 					return self
@@ -72,16 +72,7 @@ function LOAD_AUDIO()
 				end,
 
 				delay = function (self,value)
-					self._delay = value
-					return self
-				end,
-
-				forward_logic = function (self,value)
-					self._forward_logic = value
-					return self
-				end,
-				backward_logic = function (self,value)
-					self._backward_logic = value
+					self._delay = delay
 					return self
 				end,
 
@@ -89,6 +80,8 @@ function LOAD_AUDIO()
 					self._on_complete = handler
 					return self
 				end
+
+				
 			}
 			audio._entity = entity
 			return audio

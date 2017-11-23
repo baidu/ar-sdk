@@ -30,10 +30,21 @@ function LOAD_NODE()
 			node.entity = CURRENT_SCENE:get_node_by_name(name)
 		end
 
-		if(node.entity == nil) then
-			ARLOG('NULL NODE created')
-			return NULL_NODE
-		end
+        local engine_version = scene.application:get_version()
+        if (engine_version < 22) then
+            if not(node.entity:is_empty_node()) then
+                ARLOG('NULL NODE created')
+                return NULL_NODE
+            end
+            ARLOG('------------ 1'..engine_version)
+
+        else
+            if node.entity:is_empty_node() then
+                ARLOG('NULL NODE created')
+                return NULL_NODE
+            end
+            ARLOG('------------ 0'..engine_version)
+        end
 
 		node.lua_handler = scene.application.lua_handler
 		node._on_click = 0

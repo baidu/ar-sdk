@@ -115,7 +115,7 @@
                 "common": {
                     "defaultShaderName":"frameShader",
                     "textureList": [
-                        {
+                        {`
                             "texturePath": "res/media/icon/1.png"
                         }
                     ]

@@ -1,3 +1,4 @@
+
 {
     "showImmediately": 1,
     "userInteraction": {
@@ -6,31 +7,97 @@
         "disablePinch": 0,
         "disableClick": 0,
         "disableScroll": 0,
-        "disableLongPress": 0,
-        "disableDoubleClick": 1,
-        "disableSingleFingerScroll": 1,
-        "disableTwoFingerScroll": 0
+        "disableSingleFingerScroll": 0,
+        "disbleLongPress": 0
     },
     "nodeList": [
-        {
-            "name": "write1",
-            "type": "particle",
-            "visible": 1,
-            "touchable": 0,
-            "particleSystemSuppl": {
-                "particlePath": "res/particle-file1.json"
-            },
-            "children": []
-        },
-        {
-            "name": "write2",
-            "type": "particle",
-            "visible": 1,
-            "touchable": 0,
-            "particleSystemSuppl": {
-                "particlePath": "res/particle-file2.json"
-            },
-            "children": []
-        }
-    ]
+                 {
+                 "name": "mainCamera",
+                 "type": "camera",
+                 "children": [],
+                 "cameraNodeSuppl": {
+                 "fov": 56,
+                 "zNear": 30,
+                 "zFar": 50000
+                 }
+                 },
+                 {
+                 "name": "sky",
+                 "type": "pod",
+                 "visible": 1,
+                 "touchable": 0,
+                 "meshFileName": "res/model/Qiu.pod",
+                 "material": {
+                 "common": {
+                 "texturePath": "res/texture/",
+                 "disableLightEffect": 1
+                 }
+                 },
+                 "position": "0,0,7000",
+                 "scale": "3000, 3000, 3000",
+                 "rotation": "90,0,0",
+                 "chirlden": []
+                 },
+                 {
+                 "name": "tree",
+                 "type": "pod",
+                 "visible": 1,
+                 "position": "0, 1000, 2400",
+                 "scale": "2, 2, 2",
+                 "rotation": "0,0,0",
+                 "meshFileName": "res/model/tree.pod",
+                 "children": []
+                 },
+                 {
+                 "name": "yinhua1",
+                 "type": "particle",
+                 "visible": 1,
+                 "touchable": 0,
+                 "particleSystemSuppl": {
+                 "particlePath": "res/particle-yinhua.json"
+                 },
+                 "position": "0, 0, 0",
+                 "scale": "1, 1, 1",
+                 "rotation": "0, 0, 0",
+                 "children": []
+                 },
+                 {
+                 "name": "yinhua2",
+                 "type": "particle",
+                 "visible": 1,
+                 "touchable": 0,
+                 "particleSystemSuppl": {
+                 "particlePath": "res/particle-yinhua2.json"
+                 },
+                 "position": "0, 0, 0",
+                 "scale": "1, 1, 1",
+                 "rotation": "0, 0, 0",
+                 "children": []
+                 },
+                 {
+                 
+                 "name": "yinhua3",
+                 "type": "particle",
+                 "visible": 1,
+                 "touchable": 0,
+                 "particleSystemSuppl": {
+                 "particlePath": "res/particle-yinhua3.json"
+                 },
+                 "position": "0, 0, 0",
+                 "scale": "1, 1, 1",
+                 "rotation": "0, 0, 0",
+                 "children": []
+                 },
+                 {
+                 "name": "fan",
+                 "type": "pod",
+                 "visible": 1,
+                 "touchable": 1,
+                 "scale": "8, 8, 8",
+                 "rotation": "90,0,0",
+                 "position": "0, 1000, 800",
+                 "meshFileName": "res/model/shanzi.pod",
+                 "children": []
+                 }
+            ]
 }

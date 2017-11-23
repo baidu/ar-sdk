@@ -37,11 +37,12 @@
             "visible": 1,
             "material": {
                 "common": {
+                    "defaultShaderName": "cVideoShader",
                     "textureType": "video",
                     "uvUnwrapedTextureName": "res/media/content.mp4"
                 },
                 "android": {
-                    "defaultShaderName": "androidVideoShader",
+                    "defaultShaderName": "cAndroidVideoShader",
                     "textureType": "video",
                     "uvUnwrapedTextureName": "res/media/content.mp4"
                 }

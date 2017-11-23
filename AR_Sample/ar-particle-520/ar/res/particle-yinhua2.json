@@ -1,0 +1,70 @@
+{
+"name": "kongmingdeng",
+"particleCountMax":1000,
+"material": {
+    "blendMode":"alpha",
+    "textureName":"flower.png",
+    "textureWidth":400,
+    "textureHeight":400,
+    "frameAnimated":0,
+    "frameLoop":1,
+    "frameCount":4,
+    "frameColums":2,
+    "frameRows":2,
+    "frameRandomOffset":4,
+    "frameDuration":100
+},
+"emission":{
+    "emissionLoop":-1,
+    "emissionRate":100,
+    "emissionDuration":3000,
+    "emissionIdleDuration":0,
+    "emissionIdleDurationVar":0,
+    "emitterPosition":"0, 0, 0",
+    "emitterRotationAxisAngleMin":2,
+    "emitterRotationAxisAngleMax":180,
+    "emitterRotationAxis":"0, 0, 0",
+    "emitterRotationAxisVar":"1, 1, 1",
+    "emissionVelocityMode":"axis",
+    "emissionAccelecationMode":"axis",
+    "emitterShape":"box",
+    "emitterShapeStrectchScale":"1,1,1",
+    "emitterShapeParam":{
+                            "box":{
+                                "boxLengthX":100,
+                                "boxLengthY":100,
+                                "boxLengthZ":100
+                            }
+                        }
+},
+"particle":{
+    "lifeTimeMin":2000,
+    "lifeTimeMax":3000,
+    "sizeStartMin":80,
+    "sizeStartMax":80,
+    "sizeEndMin":80,
+    "sizeEndMax":80,
+    "colorStart":"255, 255, 255, 255",
+    "colorStartVar":"0, 0, 0, 0",
+    "colorEnd":"255, 255, 255, 0",
+    "colorEndVar":"0, 0, 0, 0",
+    "velocity":"0, 0, 0",
+    "velocityVar":"100, 100, 100",
+    "acceleration":"0, 0, 0",
+    "accelerationVar":"0, 0, 0",
+    "spinAngleMin":30,
+    "spinAngleMax":120,
+    "rotationAxisAngleMin":0,
+    "rotationAxisAngleMax":0,
+    "rotationAxis":"0, 0, 0",
+    "rotationAxisVar":"0, 0, 0"
+},
+"render":{
+    "imuType":0,
+    "billboardType":"billboard",
+    "stretchScale":"0,0,0",
+    "stretchType":"speed",
+    "spinAlignToSpeedDirection":0
+}
+
+}

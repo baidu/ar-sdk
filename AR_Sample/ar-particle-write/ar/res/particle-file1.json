@@ -1,0 +1,101 @@
+{
+    "name": "handwriting",
+    "particleCountMax":30000,
+    "useGLPoints":1,
+    "material": {
+        "blendMode":"additive",
+        "textureName":"point1.png",
+        "textureWidth":64,
+        "textureHeight":64,
+        "frameAnimated":0,
+        "frameLoop":1,
+        "frameCount":1,
+        "frameColums":1,
+        "frameRows":1,
+        "frameRandomOffset":0,
+        "frameDuration":100
+    },
+    "emission":{
+        "emissionLoop":-1,
+        "emissionRate":1,
+        "emissionDuration":500,
+        "emissionIdleDuration":0,
+        "emissionIdleDurationVar":0,
+        "emitterPosition":"0, 0, 0",
+        "emitterRotationAxisAngleMin":0,
+        "emitterRotationAxisAngleMax":0,
+        "emitterRotationAxis":"0, 0, 0",
+        "emitterRotationAxisVar":"0, 0, 0",
+        "emissionVelocityMode":"camera",
+        "emissionAccelecationMode":"axis",
+        "emitterShape":"box",
+        "emitterShapeStrectchScale":"1,1,1",
+        "emitterShapeParam":{
+            "box":{
+                "boxLengthX":1,
+                "boxLengthY":1,
+                "boxLengthZ":1
+            },
+            "sphere":{
+                "sphereRadius":500
+            },
+            "hemisphere":{
+                "hemisphereRadius":50
+            },
+            "cylinder":{
+                "cylinderRadius":200,
+                "cylinderHeight":500
+            },
+            "cone":{
+                "coneRadius":500,
+                "coneAngle":110
+            },
+            "circle":{
+                "circleOutRadius":450,
+                "circleInRadius":350
+            },
+            "mesh":{
+                "meshRadius":150
+            }
+        }
+        
+        
+    },
+    "particle":{
+        "lifeTimeMin":25000000,
+        "lifeTimeMax":25000000,
+        "sizeStartMin":30,
+        "sizeStartMax":30,
+        "sizeEndMin":30,
+        "sizeEndMax":30,
+        "colorStart":"204, 128, 128, 128",
+        "colorStartVar":"0, 0, 0, 0",
+        "colorEnd":"204, 128, 128, 128",
+        "colorEndVar":"0, 0, 0, 0",
+        "velocity":"0, 0, 0",
+        "velocityVar":"0, 0, 0",
+        "acceleration":"0, 0, 0",
+        "accelerationVar":"0, 0, 0",
+        "spinAngleMin":0,
+        "spinAngleMax":0,
+        "rotationAxisAngleMin":0,
+        "rotationAxisAngleMax":0,
+        "rotationAxis":"0, 0, 0",
+        "rotationAxisVar":"0, 0, 0"
+    },
+    "render":{
+        "imuType":1,
+        "billboardType":"billboard",
+        "stretchScale":"0,0,0",
+        "stretchType":"constant",
+        "spinAlignToSpeedDirection":0
+    },
+    "subEmitter": {
+        "birth":[],
+        "deadth":[]
+        
+    }
+    
+}
+
+

@@ -21,7 +21,8 @@ function LOAD_VIDEO()
 				end,
 				start = function (self)
 					local config = self:get_meta_action_priority_config()
-					local video_id = self._entity:play_texture_video(config, self._path, self._repeat_count, self._delay)
+					local video_id = self._entity:play_texture_video(self._path,self._repeat_count,self._delay)
+
 					ARLOG(' ----------- 系统 play_texture_video 调用 -----------')
 					if(self._on_complete ~= nil) then
 						if type(self._on_complete) == 'string' then
@@ -66,7 +67,7 @@ function LOAD_VIDEO()
 					return self
 				end,
 				delay = function (self,value)
-					self._delay = value
+					self._delay = delay
 					return self
 				end,
 
