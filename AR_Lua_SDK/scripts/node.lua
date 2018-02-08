@@ -31,7 +31,7 @@ function LOAD_NODE()
 		end
 
         local engine_version = scene.application:get_version()
-        if (engine_version < 22) then
+        if (engine_version <= 22) then
             if not(node.entity:is_empty_node()) then
                 ARLOG('NULL NODE created')
                 return NULL_NODE
