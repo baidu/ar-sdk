@@ -8,6 +8,9 @@ app = AR:create_application(AppType.ImageTrack, "bear")
 -- 加载场景文件
 app:load_scene_from_json("res/simple_scene.json","demo_scene")
 
+
+
+
 scene = app:get_current_scene()
 
 app.on_loading_finish = function()

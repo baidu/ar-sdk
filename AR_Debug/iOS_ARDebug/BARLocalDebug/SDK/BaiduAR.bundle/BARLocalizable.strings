@@ -1,0 +1,67 @@
+/**
+ * strings
+ */
+
+"bar_tip_record"="录制";
+"bar_tip_photograph"="拍摄";
+"bar_tip_net_retray"="网络不给力，请重试!";
+"bar_tip_already_save_album" = "图片已保存至系统相册";
+"bar_tip_net_wrong"="哎呀，网络不给力";
+"bar_tip_retray"="重试";
+"bar_tip_cancel"="取消";
+"bar_tip_warn"="提示";
+"bar_tip_ok"="确定";
+"bar_tip_net_ifretray"="网络不给力，是否重试?";
+"bar_tip_ifcontinue_wait"="网络不给力，确认要继续等待吗?";
+"bar_tip_wait"="等待";
+"bar_tip_continue_wait"="继续等待";
+"bar_tip_if_continue_wait"="确定要继续等待吗?";
+"bar_tip_net_ifretray_rightnow"="网络不给力，是否立即重试?";
+"bar_tip_if_retray_rightnow"="确定要立即重试吗？";
+"bar_tip_retray_rightnow"="立即重试";
+//"bar_tip_your_phone_not_support_this" = "您的手机不支持该功能";  
+"bar_tip_i_known"="我知道了";
+"bar_tip_no_flash"="没有检测到闪光灯";
+"bar_tip_wrong"="出错啦!";
+//"bar_tip_your_phone_not_support" = "您的手机不支持";
+"bar_tip_net_if_wait"="网络不给力，是否继续等待?";
+"bar_tip_no_wifi"="您当前不是Wi-Fi网络，继续进行可能产生流量费用";
+"bar_tip_loading"="正在加载...";
+"bar_tip_login"="登录";
+"bar_tip_set_camera_authority"="手机百度没有权限使用你的相机，请在iphone的“设置-隐私-相机”中开启";
+"bar_tip_show_case"="案例展示";
+"bar_tip_ar_abstract"="AR简介";
+"bar_tip_network_unreachable"="网络不给力";
+"bar_tip_save_picture"="已保存到相册";
+"bar_tip_save_failed_and_open_album"="保存失败，请开启相册权限";
+"bar_tip_can_not_save"="无法保存";
+"bar_tip_set_photo_authority"="请在iPhone的“设置-隐私-照片”选项中，允许手机百度访问你的照片";
+"bar_tip_good"="好";
+"bar_tip_video_creating"="视频生成中";
+"bar_tip_whether_record_audio_video"="是否录制有声视频";
+"bar_tip_set_microphone_authority"="手机百度将获取您的麦克风权限，以便录制有声视频";
+"bar_tip_continue"="继续";
+"bar_tip_video_too_short_revideo"="录制过短，请重新录制";
+"bar_tip_yes"="是";
+"bar_tip_no"="否";
+"bar_tip_ar_title"="百度AR";
+"bar_tips_on_wwan" = "正在非WiFi网络下体验\n可能会产生流量费用";
+"bar_tip_known"="知道了";
+"bar_tip_goto_set"="去设置";
+"bar_tip_go_set"="前往设置";
+"bar_tip_set"="设置";
+"bar_tip_open_camera"="开启相机权限";
+"bar_tip_storage_space_full"="存储空间几乎已满";
+"bar_tip_manage_storage_space"="你可以在“设置”中管理存储空间";
+"bar_tip_undistinguish_ar"="未识别到AR图片";
+"bar_tip_rescan_tip"="点击这里重新扫描";
+"bar_tip_sdk_version_too_low"="此功能需要最新版手机百度";
+"bar_tip_sdk_update"="更新";
+"bar_tip_sdk_imm_update"="立即更新";
+"bar_tip_sdk_update_warn"="更新提醒";
+
+
+
+
+
+
