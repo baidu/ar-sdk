@@ -8,6 +8,7 @@ function LOAD_NODE()
 	end
 	NULL_NODE.__call = function(self, ...)
 		ARLOG('NULL_NODE operation')
+        return self
 	end
 	NULL_NODE.__newindex = function(self, key, value)
 		ARLOG('NULL_NODE operation')
@@ -30,19 +31,25 @@ function LOAD_NODE()
 			node.entity = CURRENT_SCENE:get_node_by_name(name)
 		end
 
+        --if(node.entity:is_empty_node()) then
+        --    ARLOG('NULL NODE created')
+        --return NULL_NODE
+        --end
+
         local engine_version = scene.application:get_version()
+
         if (engine_version <= 22) then
             if not(node.entity:is_empty_node()) then
-                ARLOG('NULL NODE created')
-                return NULL_NODE
+                 ARLOG('NULL NODE created')
+            return NULL_NODE
             end
             ARLOG('------------ 1'..engine_version)
 
         else
             if node.entity:is_empty_node() then
-                ARLOG('NULL NODE created')
-                return NULL_NODE
-            end
+            ARLOG('NULL NODE created')
+            return NULL_NODE
+        end
             ARLOG('------------ 0'..engine_version)
         end
 
@@ -85,8 +92,10 @@ function LOAD_NODE()
 		node.__newindex = function(self, key, value) 
 			if(key == 'position') then
 				self:set_position(value)
+
 			elseif(key == 'scale') then
 				self:set_scale(value)
+
 			elseif(key == 'on_click') then
 				local anony_func = function()
 					if(self._on_click ~= 0) then
@@ -98,6 +107,7 @@ function LOAD_NODE()
 				local lua_handler = scene.application.lua_handler
 				local handler_id = lua_handler:register_handle(RANDOM_NAME)
 				self.entity:set_event_handler(0, handler_id)
+				
 			elseif(key == 'on_update') then
 				self._on_update = value
 				self:register_update_handle()
@@ -106,11 +116,11 @@ function LOAD_NODE()
 			end
 		end
 
-		node.register_update_handle = function(self)			
+		node.register_update_handle = function(self, delta)			
 			if self._update_closure == 0 then
-				self._update_closure = function ()
+				self._update_closure = function (delta)
 					if(self._on_update ~= 0) then
-						self._on_update()
+						self._on_update(delta)
 					end
 					if(self._html_update_handler ~= 0) then
 						self._html_update_handler()
@@ -203,6 +213,14 @@ function LOAD_NODE()
 			end
 			self:register_update_handle()
 			return html
+		end
+
+		node.attach_hud_to_node = function(self, attach_node, tvec, rvec)
+			if (attach_node.entity ~= NULL) then
+				tvec = tvec or Vector3(0,0,0)
+				rvec = rvec or Vector3(0,0,0)
+				node.entity:attach_hud_to_node(attach_node.entity, tvec.x, tvec.y, tvec.z, rvec.x, rvec.y, rvec.z)
+			end
 		end
 		-- private end
 		return node

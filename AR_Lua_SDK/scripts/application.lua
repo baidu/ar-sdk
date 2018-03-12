@@ -5,7 +5,7 @@ function LOAD_APPLICATION()
 	application.entity = nil
 
 	application.on_loading_finish = 0
-	application.on_target_lost = 0
+--	application.on_target_lost = 0
 	application.on_target_found = 0
 	application._offscreen_button_show = 0
     application._offscreen_button_hide = 0
@@ -13,6 +13,9 @@ function LOAD_APPLICATION()
 	application.device = GET_DEVICE()
 	application.device.application = application
 	application.current_scene = 0
+
+	application.slam = SLAM()
+	application.slam.application = application;
 
 	application.webContent = WebContent()
 
@@ -59,7 +62,14 @@ function LOAD_APPLICATION()
 			local lua_handler = self.lua_handler
 			local handler_id = lua_handler:register_handle(RANDOM_NAME)
 			self:set_hide_offscreen_button_handler(handler_id)
-
+        elseif(key == 'on_target_lost') then
+            function ON_TARGET_LOST()
+                self.on_target_lost()
+            end
+            local lua_handler = self.entity:get_lua_handler()
+            local handler_id =  lua_handler:register_handle("ON_TARGET_LOST")
+            self:set_on_tracking_lost_handler(handler_id)
+            rawset(self, key, value)
 		else
 			rawset(self, key, value)
 		end
@@ -103,14 +113,14 @@ function LOAD_APPLICATION()
 			end
 		end
 
-		function ON_TARGET_LOST()
-			if(self.on_target_lost ~= 0) then
-				self.on_target_lost()
-			else
-				local scene = self:get_current_scene()
-				scene:set_visible(false)
-			end
-		end
+		-- function ON_TARGET_LOST()
+		-- 	if(self.on_target_lost ~= 0) then
+		-- 		self.on_target_lost()
+		-- 	else
+		-- 		local scene = self:get_current_scene()
+		-- 		scene:set_visible(false)
+		-- 	end
+		-- end
 
 		function ON_TARGET_FOUND()
 			if(self.on_target_found ~= 0) then
@@ -121,8 +131,8 @@ function LOAD_APPLICATION()
 		handler_id =  lua_handler:register_handle("APPLICATION_DID_LOAD")
 		self:set_on_loading_finish_handler(handler_id)
 
-		handler_id =  lua_handler:register_handle("ON_TARGET_LOST")
-		self:set_on_tracking_lost_handler(handler_id)
+--		handler_id =  lua_handler:register_handle("ON_TARGET_LOST")
+--		self:set_on_tracking_lost_handler(handler_id)
 
 		handler_id =  lua_handler:register_handle("ON_TARGET_FOUND")
 		self:set_on_tracking_found_handler(handler_id)
@@ -160,7 +170,7 @@ function LOAD_APPLICATION()
 		local version = self.entity:get_engine_version()
 		local engine_version = REOMVE_SPECIAL_SYMBOL(version,"%.")
 		local version = tonumber(engine_version)
-		local eng_version_table = {[100] = 11, [110] = 12 ,[120] = 14, [121] = 16, [122] = 18, [123] = 19, [124] = 20,[125] = 22}
+		local eng_version_table = {[100] = 11, [110] = 12 ,[120] = 14, [121] = 16, [122] = 18, [123] = 19, [124] = 20,[125] = 23,[126] = 100,[130] = 110, [131] = 120}
 		local v = eng_version_table[version]
 		if(v == nil) then
 			v = 99999
