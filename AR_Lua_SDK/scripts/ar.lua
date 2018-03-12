@@ -52,8 +52,8 @@ function LOAD_AR()
 		end
 	end
 
-	-- Delay -- 
 
+	-- Delay -- 
 	AR.perform_after = function(self, delay, func)
 		local random_name = RES_CLOSURE(func)
 		ae.LuaUtils:call_function_after_delay(delay, random_name)

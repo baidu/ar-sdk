@@ -16,7 +16,9 @@ function LOAD_CONST()
 	EventType = {}
 	EventType.Scroll = 2
 	EventType.ScrollDown = 9
-	EventType.ScrollUp = 11	
+	EventType.ScrollUp = 11
+    EventType.BatchLoadFinish = 200
+    EventType.BatchLoadProgressUpdate = 201
 
 
 	-- SDK LUA MSG TYPE --
@@ -66,7 +68,7 @@ function LOAD_CONST()
 	MSG_TYPE_VOICE_START = 2001
 	MSG_TYPE_VOICE_STOP = 2002
 	MSG_TYPE_VOICE_SHOW_MIC_ICON = 2003
-  MSG_TYPE_VOICE_HIDE_MIC_ICON = 2004
+    MSG_TYPE_VOICE_HIDE_MIC_ICON = 2004
 	
 	--voice status --
 	VOICE_STATUS_READYFORSPEECH = 0
@@ -93,18 +95,86 @@ function LOAD_CONST()
 	HtmlOperation.modelUpdate = 2
 	HtmlOperation.updateFinish = 3
 	
-  -- tts api --
-  MSG_TYPE_TTS_SPEAK = 2005
-  MSG_TYPE_TTS_STOP = 2006
-  MSG_TYPE_TTS_PAUSE = 2007
-  MSG_TYPE_TTS_RESUME = 2008
+  	-- tts api --
+  	MSG_TYPE_TTS_SPEAK = 2005
+  	MSG_TYPE_TTS_STOP = 2006
+  	MSG_TYPE_TTS_PAUSE = 2007
+  	MSG_TYPE_TTS_RESUME = 2008
     
-  -- tts status --
-  TTS_STATUS_READYFORTTS = 1
-  TTS_STATUS_ENDOFTTS = 2
-  TTS_STATUS_ERROR = 3
-  -- tts api end --
+    -- tts status --
+    TTS_STATUS_READYFORTTS = 1
+    TTS_STATUS_ENDOFTTS = 2
+    TTS_STATUS_ERROR = 3
+    -- tts api end --
+
+    -- loading status --
+    LOAD_STATUS_DOWNLOAD_RETRY_SHOWDIALOG = 3010
+    LOAD_STATUS_DOWNLOAD_ANSWER = 3021
+    -- loading status end --
 	
+
+    -- slam 
+    MSG_TYPE_SLAM_RESET = 4100
+    MSG_TYPE_SLAM_DIRECTION_GUIDE = 4101
+    
+    MSG_TYPE_START_SLAM = 4200
+
+    -- paddle gesture --
+	PADDLE_GESTURE_CONTROL = 5001
+    PADDLE_GESTURE_STATUS_DETECTED = 5002
+    GestureType = {}
+    GestureType.Point = 1
+    GestureType.Palm = 2
+    GestureType.Fist = 3
+    GestureType.OK= 4
+    GestureType.Other = 5
+    -- paddle gesture end --
+	
+	-- action api --
+	MSG_TYPE_CLOSE_AR = 10301
+	MSG_TYPE_SEND_VALUE = 10401
+	
+
+	-- filter --
+    MSG_TYPE_FILTER_START               = 1065
+    MSG_TYPE_FILTER_STOP                = 1067
+    MSG_TYPE_FILTER_UPDATE              = 1069
+    MSG_TYPE_FILTER_DISABLE_TECHNIQUE   = 1071
+    MSG_TYPE_FILTER_RESET               = 1072
+    MSG_TYPE_FILTER_DISABLE_TARGET      = 1073
+    MSG_TYPE_FILTER_ADJUST              = 1074
+
+    ResetType = {}
+    ResetType.update = 0
+    ResetType.add    = 1
+    ResetType.delete = 2
+
+    AdjustType = {}
+    AdjustType.int   = 0
+    AdjustType.float = 1
+    AdjustType.point = 2
+    AdjustType.vec3  = 3
+    AdjustType.vec4  = 4
+    AdjustType.size  = 5
+    AdjustType.map   = 6
+    AdjustType.mat3  = 7
+    AdjustType.mat4  = 8
+
+    -- filter end --
+
+
+    -- http url request --
+
+    MSG_TYPE_LUA_URL_REQUEST = 9001
+    MSG_TYPE_LUA_REQUEST_STATUS = 9002
+    MSG_TYPE_LUA_REQUEST_ANSWER  = 9003
+    UrlStatus = {}
+    UrlStatus.NetworkError = 1
+    UrlStatus.ParamError = 2
+
+    -- http url request end--
+
+
 	ARLOG('load const')
 end
 

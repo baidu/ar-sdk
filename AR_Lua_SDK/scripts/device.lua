@@ -12,6 +12,8 @@ function GET_DEVICE()
 	Device.stop_shake_listner = 0
 	Device.set_shake_threshold = 0
 
+	Device.get_camera_pitch_angle = 0
+
 	function Device.open_shake_listener(self)
 		ARLOG('open shake listener')
 		local mapData = ae.MapData:new() 
@@ -87,6 +89,13 @@ function GET_DEVICE()
 		self.application.lua_handler:send_message_tosdk(mapData)
 	end
     
+    function Device.get_camera_pitch_angle(self)
+    	local scene = application.get_current_scene()
+    	if (scene ~= nil) then
+    		return scene:get_camera_pitch_angle()
+    	end
+    end
+
 	return Device
 end
 

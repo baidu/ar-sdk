@@ -62,9 +62,27 @@ function HANDLE_SDK_MSG(mapData)
 		else
 			ARLOG("收到track消息，但无方法："..msg_tips_type)
 		end
+    elseif(msg_id == LOAD_STATUS_DOWNLOAD_ANSWER) then
+    	if (BatchLoader.CallBack  ~= nil) then
+    		BatchLoader.CallBack(mapData)
+    		ARLOG("收到DownLoad batch消息")
+    	end
+    elseif(msg_id == MSG_TYPE_SLAM_DIRECTION_GUIDE) then
+    	if (AR.current_application.slam.on_slam_direction_guide ~= nil) then
+    		switchGuide = mapData['switchGuide']
+    		guideDirection = mapData['guideDirection'] or 0
+    		AR.current_application.slam.on_slam_direction_guide(switchGuide, guideDirection)
+    	end
+    elseif(msg_id == PADDLE_GESTURE_STATUS_DETECTED) then
+    	if (PaddleGesture.CallBack  ~= nil) then
+    		PaddleGesture.CallBack(mapData)
+    		ARLOG("收到Gesture消息")
+    	end
+    elseif(msg_id == MSG_TYPE_LUA_REQUEST_STATUS or msg_id == MSG_TYPE_LUA_REQUEST_ANSWER) then
+    	HTTPS:HANDLE_CALLBACK_FORM_SDK(mapData)
 	else
 		ARLOG("收到未知消息类型: "..msg_id)
-	end
+    end
 end
 
 
