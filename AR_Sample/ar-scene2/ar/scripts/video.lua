@@ -11,6 +11,11 @@ function LOAD_VIDEO()
 				_backward_logic = 0,
 				_on_complete = nil,
 				_video_id = -1,
+                _refresh_when_stop = false,
+
+                _video_total_length = 0,
+                _video_play_length = 0,
+                _video_is_played = false,
 
 				get_meta_action_priority_config = function(self)
 					local action_config = ae.ActionPriorityConfig:new() 
@@ -37,26 +42,35 @@ function LOAD_VIDEO()
 						end
 					end
 					self._video_id = video_id
+                    self._video_is_played = true
 
 					return self
 				end,
 				pause = function (self)
 					self._entity:pause_action(self._video_id)
+                    self._video_is_played = false
 					ARLOG(' ------------ 系统 pause_action(video) 调用 -------------- ')
 					return self
 				end,
 				resume = function (self)
 					self._entity:resume_action(self._video_id)
+                    self._video_is_played = true
 					ARLOG(' ------------ 系统 resume_action(video) 调用 -------------- ')
 					return self
 				end,
-
 				stop = function (self)
 					self._entity:stop_action(self._video_id)
+                    if (self._refresh_when_stop) then
+                        self:refresh_texture()
+                    end
+                    self._video_is_played = false
 					ARLOG(' ------------ 系统 stop_action(video) 调用 -------------- ')
 					return self
 				end,
-
+                refresh_texture = function(self)
+                    self._entity:refresh_texture("video_texture")
+                    return self
+                end,
 				path = function (self,string)
 					self._path = string
 					return self
@@ -69,7 +83,6 @@ function LOAD_VIDEO()
 					self._delay = value
 					return self
 				end,
-
 				forward_logic = function (self,value)
 					self._forward_logic = value
 					return self
@@ -81,7 +94,38 @@ function LOAD_VIDEO()
 				on_complete = function (self,handler)
 					self._on_complete = handler
 					return self
-				end
+				end,
+                reset_texture_when_use_stop = function (self,value)
+                    self._refresh_when_stop = value
+                    return self
+                end,
+
+                --for 10.2临时解决方案的接口
+                video_total_length = function (self, value)
+                    self._video_total_length = value
+                    return self
+                end,
+                --for 10.2临时解决方案的接口
+                check_if_pause = function (self, value, value2)
+                    local engine_version = CURRENT_SCENE.application:get_version()
+                    if (not engine_version == 23) then
+                        return self
+                    end
+
+                    if (self._video_is_played) then
+                        self._video_play_length = self._video_play_length + value
+                        if (self._video_play_length > self._video_total_length * value2) then
+                            io.write("play_length"..self._video_play_length)
+                            self:pause()
+                            self._video_is_played = false
+                            self._video_play_length = 0
+                            if type(self._on_complete) == 'function' then
+                                self._on_complete()
+                            end
+                         end
+                    end
+                    return self
+                end
 			}
 			video._entity = entity
 			return video

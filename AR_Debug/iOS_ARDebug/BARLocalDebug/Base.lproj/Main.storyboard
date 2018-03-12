@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KbG-QY-HuA">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="xKa-k7-Hj7">
+            <objects>
+                <navigationController id="KbG-QY-HuA" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="w3m-W9-adm">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="S4R-Ja-viH" kind="relationship" relationship="rootViewController" id="5EY-tM-gaE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eyE-ki-dwq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1174" y="-627"/>
+        </scene>
+        <!--BAR_Debugger-->
+        <scene sceneID="gJY-KT-Zph">
+            <objects>
+                <tableViewController id="zYj-KL-ZPl" customClass="DifTypeTableVC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="N4r-fk-CG0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="zYj-KL-ZPl" id="6n7-Hs-RPo"/>
+                            <outlet property="delegate" destination="zYj-KL-ZPl" id="JZ1-gb-edn"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="BAR_Debugger" id="6AD-ah-sxF"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VTS-3v-PWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-102" y="433"/>
+        </scene>
+        <!--百度AR-->
+        <scene sceneID="snT-py-3hH">
+            <objects>
+                <viewController storyboardIdentifier="DataViewController" id="S4R-Ja-viH" customClass="DataViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fXf-Jd-eTc"/>
+                        <viewControllerLayoutGuide type="bottom" id="EPS-s9-h4K"/>
+                    </layoutGuides>
+                    <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ZwX-cT-FIQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5BI-P9-UXZ">
+                                <rect key="frame" x="40" y="118" width="296" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="77" id="A6v-8s-X4J"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <state key="normal" title="进入AR "/>
+                                <connections>
+                                    <action selector="trackClicked:" destination="S4R-Ja-viH" eventType="touchUpInside" id="UGL-2a-vAU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5BI-P9-UXZ" firstAttribute="leading" secondItem="ZwX-cT-FIQ" secondAttribute="leading" constant="40" id="QVh-4o-QCg"/>
+                            <constraint firstItem="5BI-P9-UXZ" firstAttribute="top" secondItem="fXf-Jd-eTc" secondAttribute="bottom" constant="30" id="bri-tk-alv"/>
+                            <constraint firstAttribute="trailing" secondItem="5BI-P9-UXZ" secondAttribute="trailing" constant="39" id="mfy-Db-DKB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="百度AR" id="8uT-8G-v1X"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="rRR-Kc-oIC" id="hdv-Ke-KtA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GmD-Rr-ZGN" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="rRR-Kc-oIC">
+                    <connections>
+                        <outlet property="delegate" destination="S4R-Ja-viH" id="a7P-Wn-PuM"/>
+                        <outlet property="searchContentsController" destination="S4R-Ja-viH" id="xDa-j8-gp8"/>
+                        <outlet property="searchResultsDataSource" destination="S4R-Ja-viH" id="gPR-gO-2WF"/>
+                        <outlet property="searchResultsDelegate" destination="S4R-Ja-viH" id="9Bv-8P-gss"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="-338.39999999999998" y="-628.07881773399015"/>
+        </scene>
+    </scenes>
+</document>

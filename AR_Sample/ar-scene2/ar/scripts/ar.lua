@@ -14,7 +14,7 @@ function LOAD_AR()
 		app.entity = app_entity
 		app:setup_handlers()
 
-		local lua_handler = app:get_lua_handler()
+		lua_handler = app:get_lua_handler()
 		lua_handler:register_lua_sdk_bridge("HANDLE_SDK_MSG")
 		self.current_application = app
 		return app

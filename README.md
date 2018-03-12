@@ -34,3 +34,10 @@ Code to show how to use AR SDK
 ```
 </br>
 
+
+### AR Debug :
+```
+    方便开发者内容制作效果调试, 提供本地调试工程。
+    使用前, 请阅README.md
+```
+</br>

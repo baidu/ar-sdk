@@ -1,0 +1,728 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		212175411DD17BEB00A05D1D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 212175401DD17BEB00A05D1D /* main.m */; };
+		212175441DD17BEB00A05D1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 212175431DD17BEB00A05D1D /* AppDelegate.m */; };
+		2121754A1DD17BEB00A05D1D /* DataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212175491DD17BEB00A05D1D /* DataViewController.m */; };
+		212175501DD17BEB00A05D1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2121754E1DD17BEB00A05D1D /* Main.storyboard */; };
+		212175521DD17BEB00A05D1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 212175511DD17BEB00A05D1D /* Assets.xcassets */; };
+		212175551DD17BEB00A05D1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 212175531DD17BEB00A05D1D /* LaunchScreen.storyboard */; };
+		212175601DD17BEB00A05D1D /* BARLocalDebugTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2121755F1DD17BEB00A05D1D /* BARLocalDebugTests.m */; };
+		2121756B1DD17BEB00A05D1D /* BARLocalDebugUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2121756A1DD17BEB00A05D1D /* BARLocalDebugUITests.m */; };
+		2121757A1DD17D6200A05D1D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 212175791DD17D6200A05D1D /* CoreGraphics.framework */; };
+		2121757C1DD17D6700A05D1D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2121757B1DD17D6700A05D1D /* Security.framework */; };
+		2121757E1DD17D6D00A05D1D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2121757D1DD17D6D00A05D1D /* MessageUI.framework */; };
+		212175801DD17D7400A05D1D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2121757F1DD17D7400A05D1D /* SystemConfiguration.framework */; };
+		212175821DD17D7B00A05D1D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 212175811DD17D7B00A05D1D /* CFNetwork.framework */; };
+		212175841DD17D8300A05D1D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 212175831DD17D8300A05D1D /* libz.tbd */; };
+		212175861DD17D8E00A05D1D /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 212175851DD17D8E00A05D1D /* libc++.tbd */; };
+		2121758E1DD181AE00A05D1D /* BaiduAR.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 212175881DD181AE00A05D1D /* BaiduAR.bundle */; };
+		3F0923C41F389E2100D13142 /* air_drop@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F0923BF1F389E2100D13142 /* air_drop@3x.png */; };
+		3F0923C51F389E2100D13142 /* close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F0923C01F389E2100D13142 /* close@3x.png */; };
+		3F0923C61F389E2100D13142 /* debug@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F0923C11F389E2100D13142 /* debug@2x.png */; };
+		3F0923C71F389E2100D13142 /* revert@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F0923C21F389E2100D13142 /* revert@3x.png */; };
+		3F0923C81F389E2100D13142 /* save@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F0923C31F389E2100D13142 /* save@3x.png */; };
+		3F3115BA1EDE66FE0038CB69 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 3F3115B91EDE66FE0038CB69 /* README.md */; };
+		3F47B8A11F5D58E500EF0F51 /* BAR.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3F47B8A01F5D58E500EF0F51 /* BAR.bundle */; };
+		3F47B8A31F5D617100EF0F51 /* BaiduAR.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F47B8A21F5D617100EF0F51 /* BaiduAR.xcassets */; };
+		3F47B8A51F5D773B00EF0F51 /* libAR-AFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F47B8A41F5D773B00EF0F51 /* libAR-AFNetworking.a */; };
+		3F47B8A71F5D786600EF0F51 /* libAR-SClientSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F47B8A61F5D786600EF0F51 /* libAR-SClientSDK.a */; };
+		3F47B8AA1F5D788A00EF0F51 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F47B8A91F5D788A00EF0F51 /* libsqlite3.0.tbd */; };
+		3F47B8AC1F5D78B800EF0F51 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F47B8AB1F5D78B800EF0F51 /* Accelerate.framework */; };
+		3F82A48C1EBC2B9D0003CB6C /* libAR-ASIHttpRequest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 212175911DD196DC00A05D1D /* libAR-ASIHttpRequest.a */; };
+		3F82A48D1EBC2B9D0003CB6C /* libAR-ZipArchive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 212175921DD196DC00A05D1D /* libAR-ZipArchive.a */; };
+		3F8F25DA1F9F73A0008DD783 /* bds_easr_mfe_cmvn.dat in Resources */ = {isa = PBXBuildFile; fileRef = 3F8F25D81F9F738C008DD783 /* bds_easr_mfe_cmvn.dat */; };
+		3F8F25DB1F9F73A3008DD783 /* bds_easr_mfe_dnn.dat in Resources */ = {isa = PBXBuildFile; fileRef = 3F8F25D91F9F738C008DD783 /* bds_easr_mfe_dnn.dat */; };
+		3FFE86D42029AF8F0098ED56 /* libARSDK-INDEP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FFE86D32029AF8E0098ED56 /* libARSDK-INDEP.a */; };
+		3FFE86D62029B7DE0098ED56 /* libBAR_local.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FFE86D52029B7DE0098ED56 /* libBAR_local.a */; };
+		3FFE876A202AD54C0098ED56 /* libMMLSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FFE8769202AD54C0098ED56 /* libMMLSDK.a */; };
+		3FFE876C202AD5560098ED56 /* libSameSearchClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FFE876B202AD5560098ED56 /* libSameSearchClient.a */; };
+		3FFE876E202AD5770098ED56 /* libAR-Paddle-Wrap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FFE876D202AD5770098ED56 /* libAR-Paddle-Wrap.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2121755C1DD17BEB00A05D1D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 212175341DD17BEB00A05D1D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2121753B1DD17BEB00A05D1D;
+			remoteInfo = BaiduBoxAppDemo;
+		};
+		212175671DD17BEB00A05D1D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 212175341DD17BEB00A05D1D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2121753B1DD17BEB00A05D1D;
+			remoteInfo = BaiduBoxAppDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2121753C1DD17BEB00A05D1D /* BARLocalDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BARLocalDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		212175401DD17BEB00A05D1D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		212175421DD17BEB00A05D1D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		212175431DD17BEB00A05D1D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		212175481DD17BEB00A05D1D /* DataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataViewController.h; sourceTree = "<group>"; };
+		212175491DD17BEB00A05D1D /* DataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataViewController.m; sourceTree = "<group>"; };
+		2121754F1DD17BEB00A05D1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		212175511DD17BEB00A05D1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		212175541DD17BEB00A05D1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		212175561DD17BEB00A05D1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2121755B1DD17BEB00A05D1D /* BARLocalDebugTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BARLocalDebugTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2121755F1DD17BEB00A05D1D /* BARLocalDebugTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BARLocalDebugTests.m; sourceTree = "<group>"; };
+		212175611DD17BEB00A05D1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		212175661DD17BEB00A05D1D /* BARLocalDebugUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BARLocalDebugUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2121756A1DD17BEB00A05D1D /* BARLocalDebugUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BARLocalDebugUITests.m; sourceTree = "<group>"; };
+		2121756C1DD17BEB00A05D1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		212175791DD17D6200A05D1D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2121757B1DD17D6700A05D1D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		2121757D1DD17D6D00A05D1D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		2121757F1DD17D7400A05D1D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		212175811DD17D7B00A05D1D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		212175831DD17D8300A05D1D /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		212175851DD17D8E00A05D1D /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		212175881DD181AE00A05D1D /* BaiduAR.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BaiduAR.bundle; sourceTree = "<group>"; };
+		212175891DD181AE00A05D1D /* BaiduARSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduARSDK.h; sourceTree = "<group>"; };
+		2121758A1DD181AE00A05D1D /* BARSDKDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARSDKDelegate.h; sourceTree = "<group>"; };
+		2121758B1DD181AE00A05D1D /* BARViewController+Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BARViewController+Login.h"; sourceTree = "<group>"; };
+		2121758C1DD181AE00A05D1D /* BARViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARViewController.h; sourceTree = "<group>"; };
+		212175911DD196DC00A05D1D /* libAR-ASIHttpRequest.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libAR-ASIHttpRequest.a"; sourceTree = "<group>"; };
+		212175921DD196DC00A05D1D /* libAR-ZipArchive.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libAR-ZipArchive.a"; sourceTree = "<group>"; };
+		215C8EDF1E6FE4C100A8325E /* BARConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARConfig.h; sourceTree = "<group>"; };
+		3F0923BF1F389E2100D13142 /* air_drop@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "air_drop@3x.png"; sourceTree = "<group>"; };
+		3F0923C01F389E2100D13142 /* close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@3x.png"; sourceTree = "<group>"; };
+		3F0923C11F389E2100D13142 /* debug@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "debug@2x.png"; sourceTree = "<group>"; };
+		3F0923C21F389E2100D13142 /* revert@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "revert@3x.png"; sourceTree = "<group>"; };
+		3F0923C31F389E2100D13142 /* save@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "save@3x.png"; sourceTree = "<group>"; };
+		3F3115B91EDE66FE0038CB69 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		3F47B8A01F5D58E500EF0F51 /* BAR.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BAR.bundle; sourceTree = "<group>"; };
+		3F47B8A21F5D617100EF0F51 /* BaiduAR.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = BaiduAR.xcassets; sourceTree = "<group>"; };
+		3F47B8A41F5D773B00EF0F51 /* libAR-AFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libAR-AFNetworking.a"; sourceTree = "<group>"; };
+		3F47B8A61F5D786600EF0F51 /* libAR-SClientSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libAR-SClientSDK.a"; sourceTree = "<group>"; };
+		3F47B8A81F5D787300EF0F51 /* MMSVoiceRecognitionARCallWrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSVoiceRecognitionARCallWrap.h; sourceTree = "<group>"; };
+		3F47B8A91F5D788A00EF0F51 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		3F47B8AB1F5D78B800EF0F51 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		3F8F25D81F9F738C008DD783 /* bds_easr_mfe_cmvn.dat */ = {isa = PBXFileReference; lastKnownFileType = text; path = bds_easr_mfe_cmvn.dat; sourceTree = "<group>"; };
+		3F8F25D91F9F738C008DD783 /* bds_easr_mfe_dnn.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = bds_easr_mfe_dnn.dat; sourceTree = "<group>"; };
+		3FFE86D32029AF8E0098ED56 /* libARSDK-INDEP.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libARSDK-INDEP.a"; sourceTree = "<group>"; };
+		3FFE86D52029B7DE0098ED56 /* libBAR_local.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBAR_local.a; sourceTree = "<group>"; };
+		3FFE86D72029B7EF0098ED56 /* BAR_local.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAR_local.h; sourceTree = "<group>"; };
+		3FFE8769202AD54C0098ED56 /* libMMLSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMMLSDK.a; sourceTree = "<group>"; };
+		3FFE876B202AD5560098ED56 /* libSameSearchClient.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSameSearchClient.a; sourceTree = "<group>"; };
+		3FFE876D202AD5770098ED56 /* libAR-Paddle-Wrap.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libAR-Paddle-Wrap.a"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		212175391DD17BEB00A05D1D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F47B8AC1F5D78B800EF0F51 /* Accelerate.framework in Frameworks */,
+				3F47B8AA1F5D788A00EF0F51 /* libsqlite3.0.tbd in Frameworks */,
+				3FFE86D62029B7DE0098ED56 /* libBAR_local.a in Frameworks */,
+				3F82A48C1EBC2B9D0003CB6C /* libAR-ASIHttpRequest.a in Frameworks */,
+				3FFE86D42029AF8F0098ED56 /* libARSDK-INDEP.a in Frameworks */,
+				3F47B8A51F5D773B00EF0F51 /* libAR-AFNetworking.a in Frameworks */,
+				3FFE876E202AD5770098ED56 /* libAR-Paddle-Wrap.a in Frameworks */,
+				3F82A48D1EBC2B9D0003CB6C /* libAR-ZipArchive.a in Frameworks */,
+				212175861DD17D8E00A05D1D /* libc++.tbd in Frameworks */,
+				3FFE876C202AD5560098ED56 /* libSameSearchClient.a in Frameworks */,
+				212175841DD17D8300A05D1D /* libz.tbd in Frameworks */,
+				3FFE876A202AD54C0098ED56 /* libMMLSDK.a in Frameworks */,
+				212175821DD17D7B00A05D1D /* CFNetwork.framework in Frameworks */,
+				212175801DD17D7400A05D1D /* SystemConfiguration.framework in Frameworks */,
+				3F47B8A71F5D786600EF0F51 /* libAR-SClientSDK.a in Frameworks */,
+				2121757E1DD17D6D00A05D1D /* MessageUI.framework in Frameworks */,
+				2121757C1DD17D6700A05D1D /* Security.framework in Frameworks */,
+				2121757A1DD17D6200A05D1D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		212175581DD17BEB00A05D1D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		212175631DD17BEB00A05D1D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		212175331DD17BEB00A05D1D = {
+			isa = PBXGroup;
+			children = (
+				3F3115B91EDE66FE0038CB69 /* README.md */,
+				2121753E1DD17BEB00A05D1D /* BARLocalDebug */,
+				2121755E1DD17BEB00A05D1D /* BARLocalDebugTests */,
+				212175691DD17BEB00A05D1D /* BARLocalDebugUITests */,
+				2121753D1DD17BEB00A05D1D /* Products */,
+				212175781DD17D6200A05D1D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2121753D1DD17BEB00A05D1D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2121753C1DD17BEB00A05D1D /* BARLocalDebug.app */,
+				2121755B1DD17BEB00A05D1D /* BARLocalDebugTests.xctest */,
+				212175661DD17BEB00A05D1D /* BARLocalDebugUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2121753E1DD17BEB00A05D1D /* BARLocalDebug */ = {
+			isa = PBXGroup;
+			children = (
+				3F47B8A01F5D58E500EF0F51 /* BAR.bundle */,
+				3F8F25D71F9F738C008DD783 /* AR-SClientSDK */,
+				212175901DD196DC00A05D1D /* Third */,
+				212175871DD181AE00A05D1D /* SDK */,
+				212175421DD17BEB00A05D1D /* AppDelegate.h */,
+				212175431DD17BEB00A05D1D /* AppDelegate.m */,
+				212175481DD17BEB00A05D1D /* DataViewController.h */,
+				212175491DD17BEB00A05D1D /* DataViewController.m */,
+				2121754E1DD17BEB00A05D1D /* Main.storyboard */,
+				212175511DD17BEB00A05D1D /* Assets.xcassets */,
+				3F47B8A21F5D617100EF0F51 /* BaiduAR.xcassets */,
+				212175531DD17BEB00A05D1D /* LaunchScreen.storyboard */,
+				212175561DD17BEB00A05D1D /* Info.plist */,
+				2121753F1DD17BEB00A05D1D /* Supporting Files */,
+			);
+			path = BARLocalDebug;
+			sourceTree = "<group>";
+		};
+		2121753F1DD17BEB00A05D1D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				212175401DD17BEB00A05D1D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2121755E1DD17BEB00A05D1D /* BARLocalDebugTests */ = {
+			isa = PBXGroup;
+			children = (
+				2121755F1DD17BEB00A05D1D /* BARLocalDebugTests.m */,
+				212175611DD17BEB00A05D1D /* Info.plist */,
+			);
+			path = BARLocalDebugTests;
+			sourceTree = "<group>";
+		};
+		212175691DD17BEB00A05D1D /* BARLocalDebugUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2121756A1DD17BEB00A05D1D /* BARLocalDebugUITests.m */,
+				2121756C1DD17BEB00A05D1D /* Info.plist */,
+			);
+			path = BARLocalDebugUITests;
+			sourceTree = "<group>";
+		};
+		212175781DD17D6200A05D1D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F47B8AB1F5D78B800EF0F51 /* Accelerate.framework */,
+				3F47B8A91F5D788A00EF0F51 /* libsqlite3.0.tbd */,
+				212175851DD17D8E00A05D1D /* libc++.tbd */,
+				212175831DD17D8300A05D1D /* libz.tbd */,
+				212175811DD17D7B00A05D1D /* CFNetwork.framework */,
+				2121757F1DD17D7400A05D1D /* SystemConfiguration.framework */,
+				2121757D1DD17D6D00A05D1D /* MessageUI.framework */,
+				2121757B1DD17D6700A05D1D /* Security.framework */,
+				212175791DD17D6200A05D1D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		212175871DD181AE00A05D1D /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				3F0923BE1F389E2100D13142 /* debugTools */,
+				215C8EDF1E6FE4C100A8325E /* BARConfig.h */,
+				3F47B8A81F5D787300EF0F51 /* MMSVoiceRecognitionARCallWrap.h */,
+				212175881DD181AE00A05D1D /* BaiduAR.bundle */,
+				212175891DD181AE00A05D1D /* BaiduARSDK.h */,
+				2121758A1DD181AE00A05D1D /* BARSDKDelegate.h */,
+				2121758B1DD181AE00A05D1D /* BARViewController+Login.h */,
+				2121758C1DD181AE00A05D1D /* BARViewController.h */,
+				3FFE876D202AD5770098ED56 /* libAR-Paddle-Wrap.a */,
+				3FFE876B202AD5560098ED56 /* libSameSearchClient.a */,
+				3FFE86D32029AF8E0098ED56 /* libARSDK-INDEP.a */,
+				3FFE86D72029B7EF0098ED56 /* BAR_local.h */,
+				3FFE8769202AD54C0098ED56 /* libMMLSDK.a */,
+				3FFE86D52029B7DE0098ED56 /* libBAR_local.a */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
+		212175901DD196DC00A05D1D /* Third */ = {
+			isa = PBXGroup;
+			children = (
+				212175911DD196DC00A05D1D /* libAR-ASIHttpRequest.a */,
+				3F47B8A61F5D786600EF0F51 /* libAR-SClientSDK.a */,
+				212175921DD196DC00A05D1D /* libAR-ZipArchive.a */,
+				3F47B8A41F5D773B00EF0F51 /* libAR-AFNetworking.a */,
+			);
+			path = Third;
+			sourceTree = "<group>";
+		};
+		3F0923BE1F389E2100D13142 /* debugTools */ = {
+			isa = PBXGroup;
+			children = (
+				3F0923BF1F389E2100D13142 /* air_drop@3x.png */,
+				3F0923C01F389E2100D13142 /* close@3x.png */,
+				3F0923C11F389E2100D13142 /* debug@2x.png */,
+				3F0923C21F389E2100D13142 /* revert@3x.png */,
+				3F0923C31F389E2100D13142 /* save@3x.png */,
+			);
+			path = debugTools;
+			sourceTree = "<group>";
+		};
+		3F8F25D71F9F738C008DD783 /* AR-SClientSDK */ = {
+			isa = PBXGroup;
+			children = (
+				3F8F25D81F9F738C008DD783 /* bds_easr_mfe_cmvn.dat */,
+				3F8F25D91F9F738C008DD783 /* bds_easr_mfe_dnn.dat */,
+			);
+			path = "AR-SClientSDK";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2121753B1DD17BEB00A05D1D /* BARLocalDebug */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2121756F1DD17BEB00A05D1D /* Build configuration list for PBXNativeTarget "BARLocalDebug" */;
+			buildPhases = (
+				212175381DD17BEB00A05D1D /* Sources */,
+				212175391DD17BEB00A05D1D /* Frameworks */,
+				2121753A1DD17BEB00A05D1D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BARLocalDebug;
+			productName = BaiduBoxAppDemo;
+			productReference = 2121753C1DD17BEB00A05D1D /* BARLocalDebug.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2121755A1DD17BEB00A05D1D /* BARLocalDebugTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 212175721DD17BEB00A05D1D /* Build configuration list for PBXNativeTarget "BARLocalDebugTests" */;
+			buildPhases = (
+				212175571DD17BEB00A05D1D /* Sources */,
+				212175581DD17BEB00A05D1D /* Frameworks */,
+				212175591DD17BEB00A05D1D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2121755D1DD17BEB00A05D1D /* PBXTargetDependency */,
+			);
+			name = BARLocalDebugTests;
+			productName = BaiduBoxAppDemoTests;
+			productReference = 2121755B1DD17BEB00A05D1D /* BARLocalDebugTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		212175651DD17BEB00A05D1D /* BARLocalDebugUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 212175751DD17BEB00A05D1D /* Build configuration list for PBXNativeTarget "BARLocalDebugUITests" */;
+			buildPhases = (
+				212175621DD17BEB00A05D1D /* Sources */,
+				212175631DD17BEB00A05D1D /* Frameworks */,
+				212175641DD17BEB00A05D1D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				212175681DD17BEB00A05D1D /* PBXTargetDependency */,
+			);
+			name = BARLocalDebugUITests;
+			productName = BaiduBoxAppDemoUITests;
+			productReference = 212175661DD17BEB00A05D1D /* BARLocalDebugUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		212175341DD17BEB00A05D1D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = ccytsoft;
+				TargetAttributes = {
+					2121753B1DD17BEB00A05D1D = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 6FY5UC6QDA;
+						ProvisioningStyle = Automatic;
+					};
+					2121755A1DD17BEB00A05D1D = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2121753B1DD17BEB00A05D1D;
+					};
+					212175651DD17BEB00A05D1D = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2121753B1DD17BEB00A05D1D;
+					};
+				};
+			};
+			buildConfigurationList = 212175371DD17BEB00A05D1D /* Build configuration list for PBXProject "BARLocalDebug" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 212175331DD17BEB00A05D1D;
+			productRefGroup = 2121753D1DD17BEB00A05D1D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2121753B1DD17BEB00A05D1D /* BARLocalDebug */,
+				2121755A1DD17BEB00A05D1D /* BARLocalDebugTests */,
+				212175651DD17BEB00A05D1D /* BARLocalDebugUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2121753A1DD17BEB00A05D1D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F0923C61F389E2100D13142 /* debug@2x.png in Resources */,
+				212175551DD17BEB00A05D1D /* LaunchScreen.storyboard in Resources */,
+				3F0923C71F389E2100D13142 /* revert@3x.png in Resources */,
+				3F0923C41F389E2100D13142 /* air_drop@3x.png in Resources */,
+				3F0923C81F389E2100D13142 /* save@3x.png in Resources */,
+				3F47B8A31F5D617100EF0F51 /* BaiduAR.xcassets in Resources */,
+				3F0923C51F389E2100D13142 /* close@3x.png in Resources */,
+				3F8F25DA1F9F73A0008DD783 /* bds_easr_mfe_cmvn.dat in Resources */,
+				212175521DD17BEB00A05D1D /* Assets.xcassets in Resources */,
+				3F8F25DB1F9F73A3008DD783 /* bds_easr_mfe_dnn.dat in Resources */,
+				2121758E1DD181AE00A05D1D /* BaiduAR.bundle in Resources */,
+				212175501DD17BEB00A05D1D /* Main.storyboard in Resources */,
+				3F47B8A11F5D58E500EF0F51 /* BAR.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		212175591DD17BEB00A05D1D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		212175641DD17BEB00A05D1D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		212175381DD17BEB00A05D1D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2121754A1DD17BEB00A05D1D /* DataViewController.m in Sources */,
+				212175441DD17BEB00A05D1D /* AppDelegate.m in Sources */,
+				3F3115BA1EDE66FE0038CB69 /* README.md in Sources */,
+				212175411DD17BEB00A05D1D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		212175571DD17BEB00A05D1D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				212175601DD17BEB00A05D1D /* BARLocalDebugTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		212175621DD17BEB00A05D1D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2121756B1DD17BEB00A05D1D /* BARLocalDebugUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2121755D1DD17BEB00A05D1D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2121753B1DD17BEB00A05D1D /* BARLocalDebug */;
+			targetProxy = 2121755C1DD17BEB00A05D1D /* PBXContainerItemProxy */;
+		};
+		212175681DD17BEB00A05D1D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2121753B1DD17BEB00A05D1D /* BARLocalDebug */;
+			targetProxy = 212175671DD17BEB00A05D1D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2121754E1DD17BEB00A05D1D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2121754F1DD17BEB00A05D1D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		212175531DD17BEB00A05D1D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				212175541DD17BEB00A05D1D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2121756D1DD17BEB00A05D1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2121756E1DD17BEB00A05D1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		212175701DD17BEB00A05D1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 6FY5UC6QDA;
+				INFOPLIST_FILE = "$(SRCROOT)/BARLocalDebug/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BARLocalDebug/SDK",
+					"$(PROJECT_DIR)/BARLocalDebug/Third",
+					"$(PROJECT_DIR)/BARLocalDebug",
+				);
+				OTHER_LDFLAGS = (
+					"$(SRCROOT)/BARLocalDebug/SDK/libMMLSDK.a",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Baidu.BARDebug-s";
+				PRODUCT_NAME = BARLocalDebug;
+			};
+			name = Debug;
+		};
+		212175711DD17BEB00A05D1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 6FY5UC6QDA;
+				INFOPLIST_FILE = "$(SRCROOT)/BARLocalDebug/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BARLocalDebug/SDK",
+					"$(PROJECT_DIR)/BARLocalDebug/Third",
+					"$(PROJECT_DIR)/BARLocalDebug",
+				);
+				OTHER_LDFLAGS = (
+					"$(SRCROOT)/BARLocalDebug/SDK/libMMLSDK.a",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Baidu.BARDebug-s";
+				PRODUCT_NAME = BARLocalDebug;
+			};
+			name = Release;
+		};
+		212175731DD17BEB00A05D1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BARLocalDebugTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.baidu.shell.BAR_ios_DebuggerTests;
+				PRODUCT_NAME = BARLocalDebugTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BARLocalDebug.app/BARLocalDebug";
+			};
+			name = Debug;
+		};
+		212175741DD17BEB00A05D1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BARLocalDebugTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.baidu.shell.BAR_ios_DebuggerTests;
+				PRODUCT_NAME = BARLocalDebugTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BARLocalDebug.app/BARLocalDebug";
+			};
+			name = Release;
+		};
+		212175761DD17BEB00A05D1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = BARLocalDebugUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.baidu.shell.BAR_ios_DebuggerUITests;
+				PRODUCT_NAME = BARLocalDebugUITests;
+				TEST_TARGET_NAME = BARLocalDebug;
+			};
+			name = Debug;
+		};
+		212175771DD17BEB00A05D1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = BARLocalDebugUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.baidu.shell.BAR_ios_DebuggerUITests;
+				PRODUCT_NAME = BARLocalDebugUITests;
+				TEST_TARGET_NAME = BARLocalDebug;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		212175371DD17BEB00A05D1D /* Build configuration list for PBXProject "BARLocalDebug" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2121756D1DD17BEB00A05D1D /* Debug */,
+				2121756E1DD17BEB00A05D1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2121756F1DD17BEB00A05D1D /* Build configuration list for PBXNativeTarget "BARLocalDebug" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				212175701DD17BEB00A05D1D /* Debug */,
+				212175711DD17BEB00A05D1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		212175721DD17BEB00A05D1D /* Build configuration list for PBXNativeTarget "BARLocalDebugTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				212175731DD17BEB00A05D1D /* Debug */,
+				212175741DD17BEB00A05D1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		212175751DD17BEB00A05D1D /* Build configuration list for PBXNativeTarget "BARLocalDebugUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				212175761DD17BEB00A05D1D /* Debug */,
+				212175771DD17BEB00A05D1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 212175341DD17BEB00A05D1D /* Project object */;
+}

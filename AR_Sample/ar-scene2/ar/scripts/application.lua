@@ -5,12 +5,19 @@ function LOAD_APPLICATION()
 	application.entity = nil
 
 	application.on_loading_finish = 0
-	application.on_target_lost = 0
+--	application.on_target_lost = 0
 	application.on_target_found = 0
+	application._offscreen_button_show = 0
+    application._offscreen_button_hide = 0
 
 	application.device = GET_DEVICE()
 	application.device.application = application
 	application.current_scene = 0
+
+	application.slam = SLAM()
+	application.slam.application = application;
+
+	application.webContent = WebContent()
 
 	setmetatable(application, application)
 
@@ -29,6 +36,45 @@ function LOAD_APPLICATION()
 			return __F_FUNC
 		end
 	end
+
+	application.__newindex = function(self, key, value) 
+		if(key == 'offscreen_button_show') then
+			local anony_func = function()
+				if(self._offscreen_button_show ~= 0) then
+					self._offscreen_button_show()
+				end
+			end
+
+			self._offscreen_button_show = value
+			local RANDOM_NAME = RES_CLOSURE(anony_func)	
+			local lua_handler = self.lua_handler
+			local handler_id = lua_handler:register_handle(RANDOM_NAME)
+			self:set_show_offscreen_button_handler(handler_id)
+
+		elseif(key == 'offscreen_button_hide') then
+			local anony_func = function()
+				if(self._offscreen_button_hide ~= 0) then
+					self._offscreen_button_hide()
+				end
+			end
+			self._offscreen_button_hide = value
+			local RANDOM_NAME = RES_CLOSURE(anony_func)	
+			local lua_handler = self.lua_handler
+			local handler_id = lua_handler:register_handle(RANDOM_NAME)
+			self:set_hide_offscreen_button_handler(handler_id)
+        elseif(key == 'on_target_lost') then
+            function ON_TARGET_LOST()
+                self.on_target_lost()
+            end
+            local lua_handler = self.entity:get_lua_handler()
+            local handler_id =  lua_handler:register_handle("ON_TARGET_LOST")
+            self:set_on_tracking_lost_handler(handler_id)
+            rawset(self, key, value)
+		else
+			rawset(self, key, value)
+		end
+	end
+
 
 	application.setup_handlers = function(self)
 		local lua_handler = self.entity:get_lua_handler()
@@ -67,14 +113,14 @@ function LOAD_APPLICATION()
 			end
 		end
 
-		function ON_TARGET_LOST()
-			if(self.on_target_lost ~= 0) then
-				self.on_target_lost()
-			else
-				local scene = self:get_current_scene()
-				scene:set_visible(false)
-			end
-		end
+		-- function ON_TARGET_LOST()
+		-- 	if(self.on_target_lost ~= 0) then
+		-- 		self.on_target_lost()
+		-- 	else
+		-- 		local scene = self:get_current_scene()
+		-- 		scene:set_visible(false)
+		-- 	end
+		-- end
 
 		function ON_TARGET_FOUND()
 			if(self.on_target_found ~= 0) then
@@ -85,8 +131,8 @@ function LOAD_APPLICATION()
 		handler_id =  lua_handler:register_handle("APPLICATION_DID_LOAD")
 		self:set_on_loading_finish_handler(handler_id)
 
-		handler_id =  lua_handler:register_handle("ON_TARGET_LOST")
-		self:set_on_tracking_lost_handler(handler_id)
+--		handler_id =  lua_handler:register_handle("ON_TARGET_LOST")
+--		self:set_on_tracking_lost_handler(handler_id)
 
 		handler_id =  lua_handler:register_handle("ON_TARGET_FOUND")
 		self:set_on_tracking_found_handler(handler_id)
@@ -120,11 +166,11 @@ function LOAD_APPLICATION()
 		new_scene.entity = self.entity:get_scene_by_name(name)
 	end
 
-	application.get_engine_version = function(self)
+	application.get_version = function(self)
 		local version = self.entity:get_engine_version()
 		local engine_version = REOMVE_SPECIAL_SYMBOL(version,"%.")
 		local version = tonumber(engine_version)
-		local eng_version_table = {[100] = 0.4,[110] = 0.5}
+		local eng_version_table = {[100] = 11, [110] = 12 ,[120] = 14, [121] = 16, [122] = 18, [123] = 19, [124] = 20,[125] = 23,[126] = 100,[130] = 110, [131] = 120}
 		local v = eng_version_table[version]
 		if(v == nil) then
 			v = 99999
@@ -132,9 +178,13 @@ function LOAD_APPLICATION()
 		return v
 	end
 
-	application.open_url = function (self,url)
-		local engine_version = self:get_engine_version()
-		if engine_version > 0.4 then
+	application.stop_bg_music = function(self, name)
+		self.entity:pause_bg_music()
+	end
+
+	application.open_url = function(self,url)
+		local engine_version = self:get_version()
+		if engine_version >= 12 then
 			self.entity:open_url(url,1)
 			ARLOG('------------ 1',engine_version)
 		else
@@ -142,6 +192,14 @@ function LOAD_APPLICATION()
 			ARLOG('------------ 0',engine_version)
 		end
 	end
+
+	application.visible_type = function(self,type)
+        local mapData = ae.MapData:new()
+        mapData:put_int("id", MSG_TYPE_VIEW_VISIBLE_TYPE)
+        mapData:put_int("visibleType",type)
+        self.lua_handler:send_message_tosdk(mapData)
+    end
+
 	return application
 end
 
