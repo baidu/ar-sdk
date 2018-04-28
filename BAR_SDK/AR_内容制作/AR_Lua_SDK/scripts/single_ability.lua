@@ -9,6 +9,7 @@ function LOAD_SINGLE_ABILITY()
 		local mapData = ae.MapData:new() 
 			mapData:put_int("id", MSG_TYPE_CLOSE_AR) 
 			lua_handler:send_message_tosdk(mapData)
+			mapData:delete()
 	end
 
 end

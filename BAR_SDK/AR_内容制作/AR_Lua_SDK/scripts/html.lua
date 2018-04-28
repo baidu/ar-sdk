@@ -20,6 +20,8 @@ function LOAD_HTML()
 				Html.htmlDict[texture_id] = self
 
 				AR.current_application.lua_handler:send_message_tosdk(mapData)
+				mapData:delete()
+
 				return self
 			end
 
@@ -33,6 +35,8 @@ function LOAD_HTML()
 				mapData:put_string("attribute_name", attribute_name)
 				mapData:put_string("value", value)
 				AR.current_application.lua_handler:send_message_tosdk(mapData)
+				mapData:delete()
+				
 				return self
 			end
 

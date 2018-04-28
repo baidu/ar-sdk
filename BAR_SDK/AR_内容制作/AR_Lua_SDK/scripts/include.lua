@@ -25,3 +25,5 @@ app_controller:require('./scripts/paddle_gesture.lua')
 app_controller:require('./scripts/filter.lua')
 app_controller:require('./scripts/https.lua')
 app_controller:require('./scripts/json.lua')
+app_controller:require('./scripts/alert.lua')
+

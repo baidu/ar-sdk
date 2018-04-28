@@ -2,13 +2,10 @@
 function LOAD_AR()	
 	AR = {}
 	AR.current_application = 0
+
 	function AR.create_application(self, app_type, name)
 		local app_entity = 0
-		if(ae.ARApplicationController) ~= nil then
-			app_entity = ae.ARApplicationController:shared_instance():add_application_with_type(app_type, name)
-		else
-			app_entity = ae.ARApplication:shared_application()
-		end
+		app_entity = ae.ARApplicationController:shared_instance():add_application_with_type(app_type, name)
 
 		local app = LOAD_APPLICATION()
 		app.entity = app_entity
@@ -57,6 +54,18 @@ function LOAD_AR()
 	AR.perform_after = function(self, delay, func)
 		local random_name = RES_CLOSURE(func)
 		ae.LuaUtils:call_function_after_delay(delay, random_name)
+	end
+
+
+	-- DataStore --
+	AR.set_dataStore = function(self, mode, key, value)
+		ae.SharedPreference:set_value(mode, key, value) 
+	end
+
+
+	AR.get_dataStore = function(self, mode, key)
+		local name = ae.SharedPreference:get_value(mode, key)
+		return name
 	end
 
 	ARLOG('Load AR')

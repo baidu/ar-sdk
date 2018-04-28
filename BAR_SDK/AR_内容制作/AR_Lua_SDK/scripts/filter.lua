@@ -12,6 +12,7 @@ Filter.start = function(self)
     mapData:put_int("action",MSG_TYPE_FILTER_START)
     mapData:put_string("file_path", "/res/filter_config.json")
     lua_handler:send_message_tosdk(mapData)
+    mapData:delete()
 end
 
 -- 更新滤镜组：需要指定更新到某一个滤镜id
@@ -25,6 +26,7 @@ Filter.update = function(self,filter_group_id)
     mapData:put_int("action", MSG_TYPE_FILTER_UPDATE)
     mapData:put_string("filter_group_id", filter_group_id)
     lua_handler:send_message_tosdk(mapData)
+    mapData:delete()
 end
 
 -- 关闭滤镜
@@ -32,6 +34,7 @@ Filter.stop = function(self)
     local mapData = ae.MapData:new()
     mapData:put_int("action",MSG_TYPE_FILTER_STOP)
     lua_handler:send_message_tosdk(mapData)
+    mapData:delete()
 end
 
 -- 将filter_config.json中的某一个滤镜组设置为disable的状态 当切换到这个滤镜组的时候将不会有效果
@@ -43,6 +46,7 @@ Filter.disable_filter_group = function(self,filter_group_id,disable)
     mapData:put_string("filter_group_id", filter_group_id)
     mapData:put_string("disable",disable)
     lua_handler:send_message_tosdk(mapData)
+    mapData:delete()
 end
 
 -- 屏蔽滤镜中某一层的滤镜组(params：指定id，目标，是否关闭）
@@ -67,6 +71,7 @@ Filter.disable_target = function(self,filter_group_id,target,disable)
     mapData:put_string("target", target)
     mapData:put_string("disable",disable)
     lua_handler:send_message_tosdk(mapData)
+    mapData:delete()
 
 end
 
@@ -89,6 +94,7 @@ Filter.update_pass = function(self,filter_group_id,target,pass)
     mapData:put_string("target", target)
     mapData:put_map_data("pass",pass)
     lua_handler:send_message_tosdk(mapData)
+    mapData:delete()
 
 end
 
@@ -111,6 +117,7 @@ Filter.add_pass = function(self,filter_group_id,target,pass)
     mapData:put_string("target", target)
     mapData:put_map_data("pass",pass)
     lua_handler:send_message_tosdk(mapData)
+    mapData:delete()
 
 end
 
@@ -136,6 +143,7 @@ Filter.delete_pass = function(self,filter_group_id,target,pass_id)
     mapData:put_string("target", target)
     mapData:put_map_data("pass",pass)
     lua_handler:send_message_tosdk(mapData)
+    mapData:delete()
 
 end
 
@@ -152,6 +160,7 @@ Filter.adjust = function(self,target,pass_id,data)
     mapData:put_string("pass_id",pass_id)
     mapData:put_map_data("adjust_params",data)
     lua_handler:send_message_tosdk(mapData)
+    mapData:delete()
 end
 
 --  获取一个 int 类型滤镜数据

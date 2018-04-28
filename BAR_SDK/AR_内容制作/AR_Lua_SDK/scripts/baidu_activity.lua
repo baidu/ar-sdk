@@ -17,6 +17,7 @@ function LOAD_BAIDU_ACTIVITY()
 		mapData:put_string("action_id", action_id)
 
 		lua_handler:send_message_tosdk(mapData)
+		mapData:delete()
 	end
 
 end

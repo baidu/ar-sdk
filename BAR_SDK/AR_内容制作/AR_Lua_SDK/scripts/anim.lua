@@ -161,6 +161,8 @@ function LOAD_ANIM()
 						local param = self:get_meta_param()
 						local config = self:get_meta_action_priority_config()
 						__anim_id = self._entity:play_rigid_anim(param, config)
+						config:delete()
+						param:delete()
 					end
 					-- 配置回调函数
 					if self._on_complete ~= nil then

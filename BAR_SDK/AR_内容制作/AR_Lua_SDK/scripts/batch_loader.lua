@@ -9,6 +9,7 @@ function Load_BatchLoader()
 		local mapData = ae.MapData:new() 
 		mapData:put_int("id", LOAD_STATUS_DOWNLOAD_RETRY_SHOWDIALOG)
 		AR.current_application.lua_handler:send_message_tosdk(mapData)
+        mapData:delete()
 	end
 
     BatchLoader.CallBack = function(mapData)

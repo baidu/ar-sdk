@@ -7,6 +7,8 @@ function LOAD_AUDIO()
 				_entity = nil,
 				_config = nil,
 				_path = '',
+				_is_remote = 0,
+				_from_time = 0,
 				_repeat_count = 0,
 				_delay = 0,
 				_forward_logic = 0,
@@ -24,7 +26,8 @@ function LOAD_AUDIO()
 
 				start = function(self)
 					local config = self:get_meta_action_priority_config()
-					local audio_id = self._entity:play_audio(config,self._path, self._repeat_count, self._delay)
+					local audio_id = self._entity:play_audio(config,self._path, self._repeat_count, self._delay, self._is_remote, self._from_time)
+					config:delete()
 					ARLOG(' ----------- 系统 play_audio 调用 -------------- ')
 					if (self._on_complete ~= nil) then
 						if type(self._on_complete) == 'string' then
@@ -71,6 +74,20 @@ function LOAD_AUDIO()
 					return self
 				end,
 
+				get_audio_play_info = function (self)
+                    return self._entity:get_audio_play_info(self._audio_id)
+                end,
+
+                is_remote = function (self, remote)
+                	self._is_remote = remote
+                	return self
+                end,
+
+                from_time = function (self, from)
+                	self._from_time = from
+                	return self
+                end,
+
 				delay = function (self,value)
 					self._delay = value
 					return self
@@ -94,6 +111,7 @@ function LOAD_AUDIO()
 			return audio
 		end
 	}
+	Audio.callBack = nil
 	setmetatable(Audio,Audio)
 	ARLOG('load audio')
 end

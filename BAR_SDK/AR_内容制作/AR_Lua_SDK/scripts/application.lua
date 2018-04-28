@@ -198,6 +198,7 @@ function LOAD_APPLICATION()
         mapData:put_int("id", MSG_TYPE_VIEW_VISIBLE_TYPE)
         mapData:put_int("visibleType",type)
         self.lua_handler:send_message_tosdk(mapData)
+        mapData:delete()
     end
 
 	return application

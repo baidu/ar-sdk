@@ -25,6 +25,7 @@ function LOAD_TTS()
 		mapData:put_float("volume", volume)
 		ARLOG(' lua speak function')
 		AR.current_application.lua_handler:send_message_tosdk(mapData)
+		mapData:delete()
 
 	end
 
@@ -32,18 +33,21 @@ function LOAD_TTS()
 		local mapData = ae.MapData:new()
 		mapData:put_int("id", MSG_TYPE_TTS_PAUSE)
 		AR.current_application.lua_handler:send_message_tosdk(mapData)
+		mapData:delete()
 	end
 
 	Tts.resume = function(self)
 		local mapData = ae.MapData:new()
 		mapData:put_int("id", MSG_TYPE_TTS_RESUME)
 		AR.current_application.lua_handler:send_message_tosdk(mapData)
+		mapData:delete()
 	end
 
 	Tts.stop = function(self)
 		local mapData = ae.MapData:new()
 		mapData:put_int("id", MSG_TYPE_TTS_STOP)
 		AR.current_application.lua_handler:send_message_tosdk(mapData)
+		mapData:delete()
 	end
 
 end

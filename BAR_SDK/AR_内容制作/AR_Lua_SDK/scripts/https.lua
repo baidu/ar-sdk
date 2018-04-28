@@ -54,6 +54,7 @@ function LOAD_HTTPS()
 		    mapData:put_string("content",self._content)
 
 		    lua_handler:send_message_tosdk(mapData)
+            mapData:delete()
 
             self._HTTPS:ADD_REQUEST_TABLE(request_id, self)
             io.write("HTTP_REQUEST_SEND,ID:"..self._request_id)

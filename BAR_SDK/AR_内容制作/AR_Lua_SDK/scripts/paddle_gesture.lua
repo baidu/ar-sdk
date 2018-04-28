@@ -7,6 +7,7 @@ function LOAD_PADDLE_GESTURE()
         mapData:put_int("id", PADDLE_GESTURE_CONTROL)
         mapData:put_int("open", open)
         AR.current_application.lua_handler:send_message_tosdk(mapData)
+        mapData:delete()
     end
 
     PaddleGesture.CallBack = function(mapData)

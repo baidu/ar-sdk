@@ -4,12 +4,13 @@ function LOAD_UTILS()
 		io.write('[LUA-LOG] '..line)
 	end
 
-	function EDLOG(line)
+	function DELOG(line)
 		local lua_h = AR.current_application:get_lua_handler()
 		local mapData = ae.MapData:new()
-		mapData:put_int("id", 10302)
+		mapData:put_int("id", MST_TYPE_REMOTE_DELOG_SEND)
 		mapData:put_string("log", line)
 		lua_handler:send_message_tosdk(mapData)
+		mapData:delete()
 	end
 
 	function DEBUG(line)
@@ -20,6 +21,7 @@ function LOAD_UTILS()
 			mapData:put_int("id", MST_TYPE_REMOTE_DEBUG_SEND) 
 			mapData:put_string("log", line)
 			lua_handler:send_message_tosdk(mapData)
+			mapData:delete()
 		end
 	end
 

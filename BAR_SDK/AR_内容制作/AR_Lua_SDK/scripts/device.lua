@@ -14,12 +14,23 @@ function GET_DEVICE()
 
 	Device.get_camera_pitch_angle = 0
 
+	-- arkit
+    Device.plane_detected = 0
+    Device.get_plane_position = 0
+    Device.plane_clear = 0
+
+	Device.show_lay_status = 0
+    Device.open_place_status = 0
+    Device.close_place_status = 0
+    Device.restart_status = 0
+
 	function Device.open_shake_listener(self)
 		ARLOG('open shake listener')
 		local mapData = ae.MapData:new() 
    	 	mapData:put_int("id",MSG_TYPE_OPEN_SHAKE ) 
     	self.application.lua_handler:send_message_tosdk(mapData)
     	self.shake_enable = true
+    	mapData:delete()
 	end
 
 	function Device.stop_shake_listener(self)
@@ -27,18 +38,21 @@ function GET_DEVICE()
    	 	mapData:put_int("id", MSG_TYPE_STOP_SHAKE) 
     	self.application.lua_handler:send_message_tosdk(mapData)
     	self.shake_enable = false
+    	mapData:delete()
 	end
 
 	function Device.open_track_service(self)
 		local mapData = ae.MapData:new() 
    	 	mapData:put_int("id", MSG_TYPE_OPEN_TRACK) 
     	self.application.lua_handler:send_message_tosdk(mapData)
+    	mapData:delete()
 	end
 
 	function Device.stop_track_service(self)
 		local mapData = ae.MapData:new() 
    	 	mapData:put_int("id", MSG_TYPE_STOP_TRACK) 
     	self.application.lua_handler:send_message_tosdk(mapData)
+    	mapData:delete()
 	end
 	
 	function Device.set_shake_threshold(self, threshold)
@@ -64,6 +78,7 @@ function GET_DEVICE()
 	    mapData:put_int("type", 1) 
 	    mapData:put_int("resume_original_position", 1)
 	    self.application.lua_handler:send_message_tosdk(mapData)
+	    mapData:delete()
 	end
 
 	function Device.open_imu(self, imu_type, init_position)
@@ -87,6 +102,7 @@ function GET_DEVICE()
 		local mapData = ae.MapData:new()
 		mapData:put_int("id", MSG_TYPE_ENABLE_FRONT_CAMERA)
 		self.application.lua_handler:send_message_tosdk(mapData)
+		mapData:delete()
 	end
     
     function Device.get_camera_pitch_angle(self)
@@ -94,6 +110,27 @@ function GET_DEVICE()
     	if (scene ~= nil) then
     		return scene:get_camera_pitch_angle()
     	end
+    end
+
+    function Device.open_place_status(self)
+    	local mapData = ae.MapData:new()
+		mapData:put_int("id", MSG_TYPE_OPEN_PLACE_STATUE)
+		self.application.lua_handler:send_message_tosdk(mapData)
+		mapData:delete()
+    end
+
+    function Device.close_place_status(self)
+    	local mapData = ae.MapData:new()
+    	mapData:put_int("id", MSG_TYPE_CLOSE_PLACE_STATUE) 
+    	self.application.lua_handler:send_message_tosdk(mapData)
+    	mapData:delete()
+    end
+
+    function Device.restart_status(self)
+    	local mapData = ae.MapData:new()
+		mapData:put_int("id", MSG_TYPE_RESET_STATUE)
+		self.application.lua_handler:send_message_tosdk(mapData)
+		mapData:delete()
     end
 
 	return Device
