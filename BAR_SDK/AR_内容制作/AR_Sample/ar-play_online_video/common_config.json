@@ -1,0 +1,116 @@
+{	
+	"compatibleVersion":"1.0.0",
+	"podShaderConfig":{
+		"shaderPath":"res/shader/pod-gles",
+		"noBoneShaderPath":"res/shader/nobone-pod-gles"
+	},
+	"commonShaderList": [
+		{
+			"name" : "planeShader",
+			"shader": {
+                    "shaderPath": "res/shader/plane-gles",
+                    "vertexType": "RM_P_N_T",
+                    "uniformList": [
+                        {
+                            "uniformName": "Color",
+                            "uniformValue": "AR_COLOR",
+                            "uniformType": "address"
+                        },
+                        {
+                            "uniformName": "skinningMatrix",
+                            "uniformValue": "AR_BONEMATRIX",
+                            "uniformType": "address"
+                        },
+                        {
+                            "uniformName": "World",
+                            "uniformValue": "AR_MODEL",
+                            "uniformType": "address"
+                        },
+                        {
+                            "uniformName": "Proj",
+                            "uniformValue": "AR_PROJECT",
+                            "uniformType": "address"
+                        },
+                        {
+                            "uniformName": "View",
+                            "uniformValue": "AR_VIEW",
+                            "uniformType": "address"
+                        }
+                    ]
+                }
+
+		},
+        {
+            "name":"frameShader",
+            "shader" : {
+                     "shaderName":"res/shader/frame-gles",
+                     "vertexType":"RM_P_N_T",
+                     "uniformList": [
+                                        {
+                                             "uniformName":"World",
+                                             "uniformValue" : "AR_MODEL",
+                                             "uniformType":"address"
+                                         },
+                                         {
+                                             "uniformName":"Proj",
+                                             "uniformValue" : "AR_PROJECT",
+                                             "uniformType":"address"
+                                         },
+                                         {
+                                             "uniformName":"View",
+                                             "uniformValue" : "AR_VIEW",
+                                             "uniformType":"address"
+                                         }
+                                     ]
+                }
+        },
+        {
+            "name":"videoShader",
+            "shader" : {
+                     "shaderName":"res/shader/video-gles",
+                     "vertexType":"RM_P_N_T",
+                     "uniformList": [
+                                        {
+                                             "uniformName":"World",
+                                             "uniformValue" : "AR_MODEL",
+                                             "uniformType":"address"
+                                         },
+                                         {
+                                             "uniformName":"Proj",
+                                             "uniformValue" : "AR_PROJECT",
+                                             "uniformType":"address"
+                                         },
+                                         {
+                                             "uniformName":"View",
+                                             "uniformValue" : "AR_VIEW",
+                                             "uniformType":"address"
+                                         }
+                                     ]
+                }
+        },
+         {
+         "name": "androidVideoShader",
+         "shader": {
+         "shaderName": "res/shader/video-gles-android",
+         "vertexType": "RM_P_N_T",
+         "uniformList": [
+                         {
+                         "uniformName": "World",
+                         "uniformValue": "AR_MODEL",
+                         "uniformType": "address"
+                         },
+                         {
+                         "uniformName": "Proj",
+                         "uniformValue": "AR_PROJECT",
+                         "uniformType": "address"
+                         },
+                         {
+                         "uniformName": "View",
+                         "uniformValue": "AR_VIEW",
+                         "uniformType": "address"
+                         }
+                ]
+            }
+        }
+	]
+}

@@ -1,0 +1,220 @@
+{
+    "showImmediately": 1,
+    "imuRelayCtrlWhenTrackLost":1,
+    "userInteraction": {
+        "disableAll": 0,
+        "disablePinch": 0,
+        "disableClick": 0,
+        "disableScroll": 0,
+        "disbleLongPress": 0,
+        "disableSingleFingerScroll": 0,
+        "disableTwoFingerScroll": 0,
+        "disableDoubleClick": 0
+    },
+    "nodeList": [
+        {
+            "name": "mainCamera",
+            "type": "camera",
+            "visiable": "1",
+            "position": "0,0,0",
+            "scale": "1,1,1",
+            "rotation": "0,0,0",
+            "chirlden": [],
+            "cameraNodeSuppl": {
+                "fov": 56,
+                "zNear": 50,
+                "zFar": 10000
+            }
+        },
+
+        {
+            "name": "bear",
+            "type": "pod",
+            "visible": 0,
+            "touchable": 1,
+            "meshFileName": "res/model/CS_01.pod",
+            "material": {
+                "common": {
+                    "texturePath":"res/texture/",
+                    "disableLightEffect":0
+                }
+            },
+            "position": "0,0,0",
+            "scale": "25,25,25",
+            "rotation": "0,0,0",
+            "chirlden": [],
+            "podSuppl": {
+                "allSubnodeTouchable":1
+            }
+        },
+
+        {
+            "name": "ContentPlane",
+            "type": "plane",
+            "visible": 1,
+            "touchable": 1,
+            "material": {
+                "common": {
+                    "defaultShaderName": "planeShader",
+                    "textureList": [
+                        {
+                            "textureName": "res/texture/content.png"
+                        }
+                    ]
+                }
+            },
+            "hudDisplay": {
+                "marginLeft": 0.5,
+                "marginTop": 0.5,
+                "depthPosition": 10000,
+                "screenRatio": {
+                    "screenWidthRatio": 1,
+                    "screenHeightRatio": 1
+                }
+            },
+            "position": "0,0,0",
+            "rotation": "90,0,0",
+            "children": []
+        },
+        {
+            "name": "StartButton",
+            "type": "plane",
+            "visible": 1,
+            "touchable": 1,
+            "material": {
+                "common": {
+                    "defaultShaderName": "planeShader",
+                    "textureList": [
+                        {
+                            "textureName": "res/texture/startbtn.png"
+                        }
+                    ]
+                }
+            },
+            "hudDisplay": {
+                "marginLeft": 0.5,
+                "marginTop": 0.66,
+                "depthPosition": 12000,
+                "screenRatio": {
+                    "screenWidthRatio": 0.4,
+                    "screenHeightRatio": 0.07
+                }
+            },
+            "position": "0,0,0",
+            "scale": "100,100,100",
+            "rotation": "90,0,0",
+            "children": []
+        },
+
+        {
+            "name":"gesture_1",
+            "type":"plane",
+            "visible":0,
+            "touchable":1,
+            "material":{
+                "common":{
+                    "defaultShaderName":"planeShader",
+                    "textureList":[
+                        {
+                            "textureName":"res/texture/point.png"
+                        }
+                    ]
+                }
+            },
+            "hudDisplay":{
+                "marginTop":0.5,
+                "marginLeft":0.5,
+                "screenRatio":{
+                    "screenWidthRatio":0.4,
+                    "screenHeightRatio":0.35
+                }
+            },
+            "transparentObject":1,
+            "rotation":"90,0,0",
+            "children":[]
+        },
+        {
+            "name":"gesture_2",
+            "type":"plane",
+            "visible":0,
+            "touchable":1,
+            "material":{
+                "common":{
+                    "defaultShaderName":"planeShader",
+                    "textureList":[
+                        {
+                            "textureName":"res/texture/palm.png"
+                        }
+                    ]
+                }
+            },
+            "hudDisplay":{
+                "marginTop":0.5,
+                "marginLeft":0.5,
+                "screenRatio":{
+                    "screenWidthRatio":0.4,
+                    "screenHeightRatio":0.35
+                }
+            },
+            "transparentObject":1,
+            "rotation":"90,0,0",
+            "children":[]
+        },
+
+        {
+            "name":"gesture_3",
+            "type":"plane",
+            "visible":0,
+            "touchable":1,
+            "material":{
+                "common":{
+                    "defaultShaderName":"planeShader",
+                    "textureList":[
+                        {
+                            "textureName":"res/texture/fist.png"
+                        }
+                    ]
+                }
+            },
+            "hudDisplay":{
+                "marginTop":0.5,
+                "marginLeft":0.5,
+                "screenRatio":{
+                    "screenWidthRatio":0.4,
+                    "screenHeightRatio":0.35
+                }
+            },
+            "transparentObject":1,
+            "rotation":"90,0,0",
+            "children":[]
+        },
+
+        {
+            "name":"gesture_4",
+            "type":"plane",
+            "visible":0,
+            "touchable":1,
+            "material":{
+                "common":{
+                    "defaultShaderName":"planeShader",
+                    "textureList":[
+                        {
+                            "textureName":"res/texture/ok.png"
+                        }
+                    ]
+                }
+            },
+            "hudDisplay":{
+                "marginTop":0.5,
+                "marginLeft":0.75,
+                "screenRatio":{
+                    "screenWidthRatio":0.4,
+                    "screenHeightRatio":0.35
+                }
+            },
+            "transparentObject":1,
+            "rotation":"90,0,0",
+            "children":[]
+        }
+    ]
+}
