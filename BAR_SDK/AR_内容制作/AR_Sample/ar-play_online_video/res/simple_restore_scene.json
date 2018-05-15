@@ -1,0 +1,364 @@
+{
+    "showImmediately": 0,
+    "imuRelayCtrlWhenTrackLost": 1,
+    "showOffscreenGuidance":1,
+    "userInteraction": {
+        "disableAll": 0,
+        "disablePinch": 0,
+        "disableClick": 0,
+        "enableTouchZone": 0,
+        "enable_Touch_Zone":0,
+        "disableScroll": 1,
+        "disbleLongPress": 0,
+        "disableSingleFingerScroll": 0,
+        "disableTwoFingerScroll": 1,
+        "disableDoubleClick": 0
+    },
+    "nodeList": [
+                 {
+                 "name": "mainCamera",
+                 "type": "camera",
+                 "visiable": "1",
+                 "position": "0,0,0",
+                 "scale": "1,1,1",
+                 "rotation": "0,0,0",
+                 "chirlden": [],
+                 "cameraNodeSuppl": {
+                 "fov": 56,
+                 "zNear": 50,
+                 "zFar": 10000
+                 }
+                 },
+                 {
+                 "name": "directLight",
+                 "type": "directLight",
+                 "position": "0,0,1",
+                 "rotation": "270,0,270",
+                 "chirlden": [],
+                 "lightNodeSuppl": {
+                 "color": "255.0,255.0,255.0",
+                 "intensity": 1.2,
+                 "direction": "0,0,1",
+                 "enableShadow": 0
+                 }
+                 },
+                 {
+                 "name": "videoPlane1",
+                 "type": "video",
+                 "visible": 1,
+                 "touchable": 1,
+                 "touchZone":1000,
+                 "material": {
+                 "common": {
+                 "textureType": "video",
+                 "uvUnwrapedTextureName": "res/texture/fengmian.png"
+                 },
+                 "android": {
+                 "defaultShaderName": "androidVideoShader",
+                 "textureType": "video",
+                 "uvUnwrapedTextureName": "res/texture/fengmian.png"
+                 }
+                 },
+                 "transparentObject": 0,
+                 "position":"0,0,0",
+                 "minScale":470,
+                 "maxScale":1800,
+                 "rotation": "90,0,0",
+                 "scale":"600,350,350",
+                 "children": []
+                 },
+
+                 {
+                 "name": "progressBar",
+                 "type": "plane",
+                 "batchNum": 0,
+                 "visible": 0,
+                 "touchable": 0,
+                 "material": {
+                 "common": {
+                 "defaultShaderName": "planeShader",
+                 "textureList": [
+                                 {
+                                 "textureName": "res/texture/progressBar/bar0.png"
+                                 }
+                                 ]
+                 }
+                 },
+                 "transparentObject": 1,
+                 "rotation": "90,0,0",
+                 "position": "0,-185,0",
+                 "scale":"600,20,20",
+                 "children": []
+                 },
+                 {
+                 "name": "play",
+                 "type": "plane",
+                 "batchNum": 0,
+                 "visible": 0,
+                 "touchable": 1,
+                 "material": {
+                 "common": {
+                 "defaultShaderName": "planeShader",
+                 "textureList": [
+                                 {
+                                 "textureName": "res/texture/play.png"
+                                 }
+                                 ]
+                 }
+                 },
+                 "transparentObject": 1,
+                 "position": "0,0,2",
+                 "rotation": "90,0,0",
+                 "scale":"50,50,50",
+                 "children": []
+                 },
+                 {
+                 "name": "resume",
+                 "type": "plane",
+                 "batchNum": 0,
+                 "visible": 0,
+                 "touchable": 1,
+                 "material": {
+                 "common": {
+                 "defaultShaderName": "planeShader",
+                 "textureList": [
+                                 {
+                                 "textureName": "res/texture/pause.png"
+                                 }
+                                 ]
+                 }
+                 },
+                 "hudDisplay": {
+                 "marginLeft": 0.2,
+                 "marginTop": 0.8,
+                 "depthPosition": 7000,
+                 "screenRatio": {
+                 "screenWidthRatio": 0.15,
+                 "keepAspectRatio": 1
+                 }
+                 },
+                 "transparentObject": 1,
+                 "rotation": "90,0,0",
+                 "children": []
+                 },
+                 {
+                 "name": "pause",
+                 "type": "plane",
+                 "batchNum": 0,
+                 "visible": 0,
+                 "touchable": 1,
+                 "material": {
+                 "common": {
+                 "defaultShaderName": "planeShader",
+                 "textureList": [
+                                 {
+                                 "textureName": "res/texture/stop.png"
+                                 }
+                                 ]
+                 }
+                 },
+                 "hudDisplay": {
+                 "marginLeft": 0.8,
+                 "marginTop": 0.8,
+                 "depthPosition": 7000,
+                 "screenRatio": {
+                 "screenWidthRatio": 0.17,
+                 "keepAspectRatio": 1
+                 }
+                 },
+                 "transparentObject": 1,
+                 "rotation": "90,0,0",
+                 "children": []
+                 },
+            {
+              "name": "again",
+              "type": "plane",
+              "visible": 0,
+              "touchable": 1,
+              "material": {
+                "common": {
+                  "defaultShaderName": "planeShader",
+                  "textureList": [
+                    {
+                      "textureName": "res/texture/back.png"
+                    }
+                  ]
+                }
+              },
+              "hudDisplay": {
+                "marginLeft": 0.35,
+                "marginTop": 0.5,
+                "screenRatio": {
+                  "screenHeightRatio": 0.06,
+                  "keepAspectRatio":1
+                }
+              },
+              "transparentObject": 1,
+              "position": "0,0,0",
+              "rotation": "90,0,0",
+              "children": [ ]
+            },  
+            {
+              "name": "againText",
+              "type": "plane",
+              "visible": 0,
+              "touchable": 1,
+              "material": {
+                "common": {
+                  "defaultShaderName": "planeShader",
+                  "textureList": [
+                    {
+                      "textureName": "res/texture/playvideo.png"
+                    }
+                  ]
+                }
+              },
+              "hudDisplay": {
+                "marginLeft": 0.35,
+                "marginTop": 0.55,
+                "screenRatio": {
+                  "screenHeightRatio": 0.03,
+                  "keepAspectRatio":1
+                }
+              },
+              "transparentObject": 1,
+              "position": "0,0,0",
+              "rotation": "90,0,0",
+              "children": [ ]
+            },  
+            {
+              "name": "linkText",
+              "type": "plane",
+              "visible": 0,
+              "touchable": 1,
+              "material": {
+                "common": {
+                  "defaultShaderName": "planeShader",
+                  "textureList": [
+                    {
+                      "textureName": "res/texture/text.png"
+                    }
+                  ]
+                }
+              },
+              "hudDisplay": {
+                "marginLeft": 0.65,
+                "marginTop": 0.55,
+                "screenRatio": {
+                  "screenHeightRatio": 0.03,
+                  "keepAspectRatio":1
+                }
+              },
+              "transparentObject": 1,
+              "position": "0,0,0",
+              "rotation": "90,0,0",
+              "children": [ ]
+            },   
+            {
+              "name": "link",
+              "type": "plane",
+              "visible": 0,
+              "touchable": 1,
+              "material": {
+                "common": {
+                  "defaultShaderName": "planeShader",
+                  "textureList": [
+                    {
+                      "textureName": "res/texture/link.png"
+                    }
+                  ]
+                }
+              },
+              "hudDisplay": {
+                "marginLeft": 0.65,
+                "marginTop": 0.5,
+                "screenRatio": {
+                  "screenHeightRatio": 0.06,
+                  "keepAspectRatio":1
+                }
+              },
+              "transparentObject": 1,
+              "position": "0,0,0",
+              "rotation": "90,0,0",
+              "children": [ ]
+            },          
+        {
+          "name": "onlineVideo",
+          "type": "plane",
+          "visible": 0,
+          "touchable": 1,
+          "material": {
+            "common": {
+              "defaultShaderName": "planeShader",
+              "textureList": [
+                {
+                  "textureName": "res/texture/onlineVideo.png"
+                }
+              ]
+            }
+          },
+          "hudDisplay": {
+            "marginLeft": 0.85,
+            "marginTop": 0.5,
+            "screenRatio": {
+              "screenHeightRatio": 0.05,
+              "keepAspectRatio":1
+            }
+          },
+          "transparentObject": 1,
+          "position": "0,0,0",
+          "rotation": "90,0,0",
+          "children": [ ]
+        },
+        {
+          "name": "all",
+          "type": "plane",
+          "visible": 0,
+          "touchable": 1,
+          "material": {
+            "common": {
+              "defaultShaderName": "planeShader",
+              "textureList": [
+                {
+                  "textureName": "res/texture/tu.png"
+                }
+              ]
+            }
+          },
+          "transparentObject": 1,
+          "position": "0,0,1",
+          "rotation": "90,0,0",
+          "scale":"600,349,349",
+          "children": [ ]
+        },
+        {
+          "name": "fengmian",
+          "type": "plane",
+          "visible": 1,
+          "touchable": 1,
+          "material": {
+            "common": {
+              "defaultShaderName": "planeShader",
+              "textureList": [
+                {
+                  "textureName": "res/texture/fengmian.png"
+                }
+              ]
+            }
+          },
+          "transparentObject": 1,
+          "position": "0,0,1",
+          "rotation": "90,0,0",
+          "scale":"600,351,351",
+          "children": [ ]
+        }
+    ]
+}
+
+
+
+
+
+
+
+

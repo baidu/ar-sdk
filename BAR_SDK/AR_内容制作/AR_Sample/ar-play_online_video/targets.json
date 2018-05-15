@@ -1,0 +1,25 @@
+{
+    "UI":{
+        "hint":"在线视频播放demo",
+        "not_found_tip":"",
+        "too_far_hint":"",
+        "too_near_hint":"",
+        "far_threshold":"1400",
+        "near_threshold":"700",
+        "help_url":"测试helpUrl",
+        "image_target_path":"image_target.png"
+    },
+    "targets":[
+               {
+               "id":"787432",
+               "name":"Baidu AR Logo",
+               "model_path":"models/model",
+               "template_width":553,
+               "template_height":480,
+               "target_width":553,
+               "target_height":480,
+               "centre_pos":"276,240,0"
+               }
+               ]
+}
+
