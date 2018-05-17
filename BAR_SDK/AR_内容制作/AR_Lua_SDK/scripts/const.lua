@@ -7,7 +7,6 @@ function LOAD_CONST()
 	AppType.ImageTrack = 3
 	AppType.Slam = 4
 
-
 	-- data Store
 	-- mode = 0: RESERVED(保留) 
 	-- mode = 1: MEMORY_AR_ZONE (存内存，AR相机生命周期内有效) 
@@ -25,7 +24,6 @@ function LOAD_CONST()
 	Backward_L.CANNOT_BE_CANCELED = 1
 	Backward_L.CANCEL_BACKWARD = 2
 
-
 	-- forward_logic
 	Forward_L = {}
 	Forward_L.WAIT_FORWARD = 0
@@ -34,7 +32,6 @@ function LOAD_CONST()
 	Forward_L.CANCEL_SELF = 3
 	Forward_L.WAIT_ALL_FORWARD = 4
 	Forward_L.FORCE_CANCEL_FORWARD = 5
-
 
 
 	-- Device Orientation -- 
@@ -94,6 +91,15 @@ function LOAD_CONST()
 
 	-- model click --
 	MSG_TYPE_INITIAL_CLCIK = 10500
+
+	-- webview --
+	MSG_TYPE_WEBVIEW_OPERATION = 10800
+	WebViewOperation = {}
+	WebViewOperation.WebViewLoad = 0
+	WebViewOperation.LoadFinish = 1
+	WebViewOperation.ModelUpdate = 2
+	WebViewOperation.UpdateFinish = 3
+    WebViewOperation.LoadFailed = 4
 	
 	-- voice api --
 	MSG_TYPE_VOICE_START = 2001
@@ -117,14 +123,6 @@ function LOAD_CONST()
 	VOICE_ERROR_STATUS_NETWORK = 2
 	VOICE_ERROR_STATUS_INSUFFICIENT_PERMISSIONS = 3
 	-- voice api end --
-
-	-- html --
-	MSG_TYPE_HTML_OPERATION = 10500
-	HtmlOperation = {}
-	HtmlOperation.htmlLoad = 0
-	HtmlOperation.loadFinish = 1
-	HtmlOperation.modelUpdate = 2
-	HtmlOperation.updateFinish = 3
 	
   	-- tts api --
   	MSG_TYPE_TTS_SPEAK = 2005
@@ -205,8 +203,6 @@ function LOAD_CONST()
 
     -- arkit end--
 
-
-
     -- http url request --
     MSG_TYPE_LUA_URL_REQUEST = 9001
     MSG_TYPE_LUA_REQUEST_STATUS = 9002
@@ -217,7 +213,7 @@ function LOAD_CONST()
 
     -- http url request end--
 
-   -- MEDIA MSG --
+   	-- MEDIA MSG --
     MSG_TYPE_SHOW_DIALOG = 21111
     MSG_TYPE_DIALOG_RESULT = 21112
     MSG_TYPE_SHOW_TOAST = 21113

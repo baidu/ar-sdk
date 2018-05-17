@@ -43,14 +43,14 @@ function LOAD_NODE()
                  ARLOG('NULL NODE created')
             return NULL_NODE
             end
-            ARLOG('------------ 1'..engine_version)
+            ARLOG('engine_version :'..engine_version)
 
         else
             if node.entity:is_empty_node() then
             ARLOG('NULL NODE created')
             return NULL_NODE
         end
-            ARLOG('------------ 0'..engine_version)
+            ARLOG('engine_version :'..engine_version)
         end
 
 		node.lua_handler = scene.application.lua_handler
@@ -201,18 +201,9 @@ function LOAD_NODE()
 			return framePicture
 		end
 
-		node.html = function(self)
-			local html = Html(self)
-			self._html_need_update = false
-			self._html_update_handler = function ()
-				if self._html_need_update == true then
-					self._html_need_update = false
-					self:update_html_texture(0)
-					ARLOG('update html texture')
-				end
-			end
-			self:register_update_handle()
-			return html
+		node.webview = function(self)
+			local webview = WebView(self)
+			return webview
 		end
 
 		node.attach_hud_to_node = function(self, attach_node, tvec, rvec)

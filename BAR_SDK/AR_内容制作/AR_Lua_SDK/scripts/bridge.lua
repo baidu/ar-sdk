@@ -1,5 +1,11 @@
 -- bridge.lua --
+
 function HANDLE_SDK_MSG(mapData)
+
+	msg_name = mapData['event_name']
+	msg_data = mapData['event_data']
+	if msg_name then  Event:dispatchEvent({name=msg_name,data=msg_data}) end
+
 	msg_id = mapData['id']
 	if (msg_id == MSG_TYPE_SHAKE) then
         max_acc = mapData['max_acc']
@@ -37,13 +43,23 @@ function HANDLE_SDK_MSG(mapData)
 		code = mapData['code']
 		loadstring(code)()
 
-	elseif(msg_id == MSG_TYPE_HTML_OPERATION) then
+	-- WebView --
+	elseif(msg_id == MSG_TYPE_WEBVIEW_OPERATION) then
 		op = mapData['operation']
-		if op == HtmlOperation.loadFinish then
-			Html:htmlLoaded(mapData['texture_id'])
-		elseif op == HtmlOperation.updateFinish then
-			Html:htmlLoaded(mapData['texture_id'])
+		ARLOG("WebViewOperation.operation: "..op)
+		if op == WebViewOperation.LoadFinish then
+			ARLOG("WebViewOperation.loadFinish texture_id: "..mapData['texture_id'])
+			WebView:WebViewLoaded(mapData['texture_id'])
+		elseif op == WebViewOperation.UpdateFinish then
+			ARLOG("WebViewOperation.updateFinish texture_id: "..mapData['texture_id'])
+			WebView:WebViewUpdateFinished(mapData['texture_id'])
+		elseif op == WebViewOperation.LoadFailed then
+			ARLOG("WebViewOperation.LoadFailed texture_id: "..mapData['texture_id'])
+            msg = mapData['data']
+			WebView:WebViewLoadError(mapData['texture_id'], msg)
 		end
+		
+	-- WebView end --
 
 	elseif(msg_id == MSG_TYPE_TRACK_TIPS) then
 		msg_tips_type = mapData['tips_type']
@@ -113,16 +129,16 @@ function HANDLE_SDK_MSG(mapData)
     		Alert.CallBack(mapData)
     	end
 
--- ARKit -- 
+	-- ARKit -- 
 	elseif(msg_id == MSG_TYPE_ARKIT_PlANE_DETECTED) then
 		if(AR.current_application.device.plane_detected ~= 0) then
 			AR.current_application.device.plane_detected()
-			local plane_position = {}
-			plane_position.x= mapData['plane_position_x']
-			plane_position.y= mapData['plane_position_y']
-			plane_position.z= mapData['plane_position_z']
+			local plane_pos = {}
+			plane_pos.x= mapData['plane_position_x']
+			plane_pos.y= mapData['plane_position_y']
+			plane_pos.z= mapData['plane_position_z']
 
-			AR.current_application.device.get_plane_position(plane_position)
+			AR.current_application.device.get_plane_position(plane_pos)
 		end
 
 	elseif(msg_id == MSG_TYPE_ARKIT_PlANE_CLEAR) then
@@ -136,10 +152,9 @@ function HANDLE_SDK_MSG(mapData)
 			local show = mapData['show']
 			AR.current_application.device.show_lay_status(show)
 		end
--- ARKit end-- 
+	-- ARKit end-- 
+
 	else
 		ARLOG("收到未知消息类型: "..msg_id)
     end
 end
-
-

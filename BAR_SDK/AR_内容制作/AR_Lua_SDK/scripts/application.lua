@@ -186,10 +186,8 @@ function LOAD_APPLICATION()
 		local engine_version = self:get_version()
 		if engine_version >= 12 then
 			self.entity:open_url(url,1)
-			ARLOG('------------ 1',engine_version)
 		else
 			self.entity:open_url(url,0)
-			ARLOG('------------ 0',engine_version)
 		end
 	end
 

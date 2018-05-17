@@ -85,7 +85,7 @@ function GET_DEVICE()
 		imu_type = imu_type or 0
 		init_position = init_position or 0
 		local version = self.application:get_version()
-        ARLOG('version : ',version)
+        ARLOG('version : '..version)
 		--判断引擎版本：如果大于等于20, 调用新接口
 		if version >= 20 and version < 10000 then
 			self.application:open_imu_service(imu_type, init_position)
