@@ -26,7 +26,7 @@ AR案例展示
 
 技术支持
 -----
- >[AI社区](http://ai.baidu.com/forum)<br>
+ >[百度AR社区](http://ai.baidu.com/forum/topic/list/175)<br>
  >百度AR开发交流群 号码：47208111<br>
  >Email : xiegaoxi@baidu.com <br>
 
