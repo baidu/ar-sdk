@@ -22,10 +22,11 @@ AR案例展示
 * Android
 * IOS
 * Unity
-* AR内容CASE制作
+* AR CASE内容制作平台
 
 技术支持
 -----
+ >[AI社区](http://ai.baidu.com/forum)<br>
+ >百度AR开发交流群 号码：47208111<br>
  >Email : xiegaoxi@baidu.com <br>
- >百度AR开发交流群 号码：47208111
 
