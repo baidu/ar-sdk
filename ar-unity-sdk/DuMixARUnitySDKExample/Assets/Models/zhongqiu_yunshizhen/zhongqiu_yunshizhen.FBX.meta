@@ -1,0 +1,914 @@
+fileFormatVersion: 2
+guid: b3a67868641f442f7a79f37480ff2fd4
+timeCreated: 1522313836
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bip001
+    100002: Bip001 Footsteps
+    100004: Bip001 Head
+    100006: Bip001 HeadNub
+    100008: Bip001 L Calf
+    100010: Bip001 L Clavicle
+    100012: Bip001 L Finger0
+    100014: Bip001 L Finger01
+    100016: Bip001 L Finger0Nub
+    100018: Bip001 L Finger1
+    100020: Bip001 L Finger11
+    100022: Bip001 L Finger1Nub
+    100024: Bip001 L Foot
+    100026: Bip001 L Forearm
+    100028: Bip001 L Hand
+    100030: Bip001 L Thigh
+    100032: Bip001 L Toe0
+    100034: Bip001 L Toe0Nub
+    100036: Bip001 L UpperArm
+    100038: Bip001 Neck
+    100040: Bip001 Pelvis
+    100042: Bip001 R Calf
+    100044: Bip001 R Clavicle
+    100046: Bip001 R Finger0
+    100048: Bip001 R Finger01
+    100050: Bip001 R Finger0Nub
+    100052: Bip001 R Finger1
+    100054: Bip001 R Finger11
+    100056: Bip001 R Finger1Nub
+    100058: Bip001 R Foot
+    100060: Bip001 R Forearm
+    100062: Bip001 R Hand
+    100064: Bip001 R Thigh
+    100066: Bip001 R Toe0
+    100068: Bip001 R Toe0Nub
+    100070: Bip001 R UpperArm
+    100072: Bip001 Spine
+    100074: Bip001 Spine1
+    100076: bolimeng002
+    100078: Bone001
+    100080: Bone002
+    100082: Bone003
+    100084: Bone004
+    100086: Bone005
+    100088: Bone006
+    100090: Bone007
+    100092: Bone008
+    100094: Bone009
+    100096: Bone010
+    100098: Camera001
+    100100: Camera001.Target
+    100102: chuanshen
+    100104: Dummy001
+    100106: Dummy002
+    100108: Dummy003
+    100110: Dummy004
+    100112: feichuan
+    100114: houzhao001
+    100116: jiqiren002
+    100118: Line001
+    100120: Line002
+    100122: Object003
+    100124: Pilot Seat
+    100126: Pilot Seat004
+    100128: qianzhao001
+    100130: Sphere001
+    100132: tkx001
+    100134: xiongtou
+    100136: yunshiA
+    100138: yunshiA001
+    100140: yunshiA002
+    100142: yunshiA003
+    100144: yunshiA004
+    100146: yunshiA005
+    100148: yunshiA006
+    100150: yunshiA007
+    100152: yunshiA008
+    100154: yunshiA009
+    100156: yunshiA010
+    100158: yunshiA011
+    100160: yunshiA012
+    100162: yunshiA013
+    100164: yunshiA014
+    100166: yunshiA015
+    100168: yunshiA016
+    100170: yunshiA017
+    100172: yunshiA018
+    100174: yunshiA019
+    100176: yunshiA020
+    100178: yunshiA021
+    100180: yunshiA022
+    100182: yunshiA023
+    100184: yunshiA024
+    100186: yunshiA025
+    100188: yunshiA026
+    100190: yunshiA027
+    100192: yunshiA028
+    100194: yunshiA029
+    100196: yunshiA030
+    100198: yunshiA031
+    100200: yunshiA032
+    100202: yunshiA033
+    100204: yunshiA034
+    100206: yunshiA035
+    100208: yunshiA036
+    100210: yunshiA037
+    100212: yunshiA038
+    100214: yunshiA039
+    100216: yunshiB
+    100218: yunshiB001
+    100220: yunshiB002
+    100222: yunshiB003
+    100224: yunshiB004
+    100226: yunshiB005
+    100228: yunshiB006
+    100230: yunshiB007
+    100232: yunshiB008
+    100234: yunshiB009
+    100236: yunshiB010
+    100238: yunshiB011
+    100240: yunshiB012
+    100242: yunshiB013
+    100244: yunshiB014
+    100246: yunshiB015
+    100248: yunshiB016
+    100250: yunshiB017
+    100252: yunshiB018
+    100254: yunshiB019
+    100256: yunshiB020
+    100258: yunshiB021
+    100260: yunshiB022
+    100262: yunshiB023
+    100264: yunshiB024
+    100266: yunshiB025
+    100268: yunshiB026
+    100270: yunshiB027
+    100272: yunshiB028
+    100274: yunshiB029
+    100276: yunshiB030
+    100278: yunshiB031
+    100280: yunshiB032
+    100282: yunshiB033
+    100284: yunshiB034
+    100286: yunshiB035
+    100288: yunshiB036
+    100290: yunshiB037
+    100292: yunshiB038
+    100294: yunshiB039
+    100296: yunshiB040
+    100298: yunshiB041
+    100300: yunshiC
+    100302: yunshiC001
+    100304: yunshiC002
+    100306: yunshiC003
+    100308: yunshiC004
+    100310: yunshiC005
+    100312: yunshiC006
+    100314: yunshiC007
+    100316: yunshiC008
+    100318: yunshiC009
+    100320: yunshiC010
+    100322: yunshiC011
+    100324: yunshiC012
+    100326: yunshiC013
+    100328: yunshiC014
+    100330: yunshiC015
+    100332: yunshiC016
+    100334: yunshiC017
+    100336: yunshiC018
+    100338: yunshiC019
+    100340: yunshiC020
+    100342: yunshiC021
+    100344: yunshiC022
+    100346: yunshiC023
+    100348: yunshiC024
+    100350: yunshiC025
+    100352: yunshiC026
+    100354: yunshiC027
+    100356: yunshiC028
+    100358: yunshiC029
+    100360: yunshiC030
+    100362: yunshiC031
+    100364: yunshiC032
+    100366: yunshiC033
+    100368: yunshiC034
+    100370: yunshiC035
+    100372: yunshiC036
+    100374: yunshiC037
+    100376: yunshiC038
+    100378: yunshiC039
+    100380: yunshiC040
+    100382: yunshiC041
+    100384: //RootNode
+    400000: Bip001
+    400002: Bip001 Footsteps
+    400004: Bip001 Head
+    400006: Bip001 HeadNub
+    400008: Bip001 L Calf
+    400010: Bip001 L Clavicle
+    400012: Bip001 L Finger0
+    400014: Bip001 L Finger01
+    400016: Bip001 L Finger0Nub
+    400018: Bip001 L Finger1
+    400020: Bip001 L Finger11
+    400022: Bip001 L Finger1Nub
+    400024: Bip001 L Foot
+    400026: Bip001 L Forearm
+    400028: Bip001 L Hand
+    400030: Bip001 L Thigh
+    400032: Bip001 L Toe0
+    400034: Bip001 L Toe0Nub
+    400036: Bip001 L UpperArm
+    400038: Bip001 Neck
+    400040: Bip001 Pelvis
+    400042: Bip001 R Calf
+    400044: Bip001 R Clavicle
+    400046: Bip001 R Finger0
+    400048: Bip001 R Finger01
+    400050: Bip001 R Finger0Nub
+    400052: Bip001 R Finger1
+    400054: Bip001 R Finger11
+    400056: Bip001 R Finger1Nub
+    400058: Bip001 R Foot
+    400060: Bip001 R Forearm
+    400062: Bip001 R Hand
+    400064: Bip001 R Thigh
+    400066: Bip001 R Toe0
+    400068: Bip001 R Toe0Nub
+    400070: Bip001 R UpperArm
+    400072: Bip001 Spine
+    400074: Bip001 Spine1
+    400076: bolimeng002
+    400078: Bone001
+    400080: Bone002
+    400082: Bone003
+    400084: Bone004
+    400086: Bone005
+    400088: Bone006
+    400090: Bone007
+    400092: Bone008
+    400094: Bone009
+    400096: Bone010
+    400098: Camera001
+    400100: Camera001.Target
+    400102: chuanshen
+    400104: Dummy001
+    400106: Dummy002
+    400108: Dummy003
+    400110: Dummy004
+    400112: feichuan
+    400114: houzhao001
+    400116: jiqiren002
+    400118: Line001
+    400120: Line002
+    400122: Object003
+    400124: Pilot Seat
+    400126: Pilot Seat004
+    400128: qianzhao001
+    400130: Sphere001
+    400132: tkx001
+    400134: xiongtou
+    400136: yunshiA
+    400138: yunshiA001
+    400140: yunshiA002
+    400142: yunshiA003
+    400144: yunshiA004
+    400146: yunshiA005
+    400148: yunshiA006
+    400150: yunshiA007
+    400152: yunshiA008
+    400154: yunshiA009
+    400156: yunshiA010
+    400158: yunshiA011
+    400160: yunshiA012
+    400162: yunshiA013
+    400164: yunshiA014
+    400166: yunshiA015
+    400168: yunshiA016
+    400170: yunshiA017
+    400172: yunshiA018
+    400174: yunshiA019
+    400176: yunshiA020
+    400178: yunshiA021
+    400180: yunshiA022
+    400182: yunshiA023
+    400184: yunshiA024
+    400186: yunshiA025
+    400188: yunshiA026
+    400190: yunshiA027
+    400192: yunshiA028
+    400194: yunshiA029
+    400196: yunshiA030
+    400198: yunshiA031
+    400200: yunshiA032
+    400202: yunshiA033
+    400204: yunshiA034
+    400206: yunshiA035
+    400208: yunshiA036
+    400210: yunshiA037
+    400212: yunshiA038
+    400214: yunshiA039
+    400216: yunshiB
+    400218: yunshiB001
+    400220: yunshiB002
+    400222: yunshiB003
+    400224: yunshiB004
+    400226: yunshiB005
+    400228: yunshiB006
+    400230: yunshiB007
+    400232: yunshiB008
+    400234: yunshiB009
+    400236: yunshiB010
+    400238: yunshiB011
+    400240: yunshiB012
+    400242: yunshiB013
+    400244: yunshiB014
+    400246: yunshiB015
+    400248: yunshiB016
+    400250: yunshiB017
+    400252: yunshiB018
+    400254: yunshiB019
+    400256: yunshiB020
+    400258: yunshiB021
+    400260: yunshiB022
+    400262: yunshiB023
+    400264: yunshiB024
+    400266: yunshiB025
+    400268: yunshiB026
+    400270: yunshiB027
+    400272: yunshiB028
+    400274: yunshiB029
+    400276: yunshiB030
+    400278: yunshiB031
+    400280: yunshiB032
+    400282: yunshiB033
+    400284: yunshiB034
+    400286: yunshiB035
+    400288: yunshiB036
+    400290: yunshiB037
+    400292: yunshiB038
+    400294: yunshiB039
+    400296: yunshiB040
+    400298: yunshiB041
+    400300: yunshiC
+    400302: yunshiC001
+    400304: yunshiC002
+    400306: yunshiC003
+    400308: yunshiC004
+    400310: yunshiC005
+    400312: yunshiC006
+    400314: yunshiC007
+    400316: yunshiC008
+    400318: yunshiC009
+    400320: yunshiC010
+    400322: yunshiC011
+    400324: yunshiC012
+    400326: yunshiC013
+    400328: yunshiC014
+    400330: yunshiC015
+    400332: yunshiC016
+    400334: yunshiC017
+    400336: yunshiC018
+    400338: yunshiC019
+    400340: yunshiC020
+    400342: yunshiC021
+    400344: yunshiC022
+    400346: yunshiC023
+    400348: yunshiC024
+    400350: yunshiC025
+    400352: yunshiC026
+    400354: yunshiC027
+    400356: yunshiC028
+    400358: yunshiC029
+    400360: yunshiC030
+    400362: yunshiC031
+    400364: yunshiC032
+    400366: yunshiC033
+    400368: yunshiC034
+    400370: yunshiC035
+    400372: yunshiC036
+    400374: yunshiC037
+    400376: yunshiC038
+    400378: yunshiC039
+    400380: yunshiC040
+    400382: yunshiC041
+    400384: //RootNode
+    2000000: Camera001
+    2100000: xiaoducaizhi
+    2100002: 'Material #sa159'
+    2100004: 'Material #1'
+    2100006: feichuana
+    2100008: 02 - Default
+    2100010: xiongtou
+    2100012: yune
+    2100014: yunahsiA
+    2100016: yunshiB
+    2100018: yunshiC
+    2300000: bolimeng002
+    2300002: chuanshen
+    2300004: houzhao001
+    2300006: Pilot Seat
+    2300008: Pilot Seat004
+    2300010: qianzhao001
+    2300012: Sphere001
+    2300014: xiongtou
+    2300016: yunshiA
+    2300018: yunshiA001
+    2300020: yunshiA002
+    2300022: yunshiA003
+    2300024: yunshiA004
+    2300026: yunshiA005
+    2300028: yunshiA006
+    2300030: yunshiA007
+    2300032: yunshiA008
+    2300034: yunshiA009
+    2300036: yunshiA010
+    2300038: yunshiA011
+    2300040: yunshiA012
+    2300042: yunshiA013
+    2300044: yunshiA014
+    2300046: yunshiA015
+    2300048: yunshiA016
+    2300050: yunshiA017
+    2300052: yunshiA018
+    2300054: yunshiA019
+    2300056: yunshiA020
+    2300058: yunshiA021
+    2300060: yunshiA022
+    2300062: yunshiA023
+    2300064: yunshiA024
+    2300066: yunshiA025
+    2300068: yunshiA026
+    2300070: yunshiA027
+    2300072: yunshiA028
+    2300074: yunshiA029
+    2300076: yunshiA030
+    2300078: yunshiA031
+    2300080: yunshiA032
+    2300082: yunshiA033
+    2300084: yunshiA034
+    2300086: yunshiA035
+    2300088: yunshiA036
+    2300090: yunshiA037
+    2300092: yunshiA038
+    2300094: yunshiA039
+    2300096: yunshiB
+    2300098: yunshiB001
+    2300100: yunshiB002
+    2300102: yunshiB003
+    2300104: yunshiB004
+    2300106: yunshiB005
+    2300108: yunshiB006
+    2300110: yunshiB007
+    2300112: yunshiB008
+    2300114: yunshiB009
+    2300116: yunshiB010
+    2300118: yunshiB011
+    2300120: yunshiB012
+    2300122: yunshiB013
+    2300124: yunshiB014
+    2300126: yunshiB015
+    2300128: yunshiB016
+    2300130: yunshiB017
+    2300132: yunshiB018
+    2300134: yunshiB019
+    2300136: yunshiB020
+    2300138: yunshiB021
+    2300140: yunshiB022
+    2300142: yunshiB023
+    2300144: yunshiB024
+    2300146: yunshiB025
+    2300148: yunshiB026
+    2300150: yunshiB027
+    2300152: yunshiB028
+    2300154: yunshiB029
+    2300156: yunshiB030
+    2300158: yunshiB031
+    2300160: yunshiB032
+    2300162: yunshiB033
+    2300164: yunshiB034
+    2300166: yunshiB035
+    2300168: yunshiB036
+    2300170: yunshiB037
+    2300172: yunshiB038
+    2300174: yunshiB039
+    2300176: yunshiB040
+    2300178: yunshiB041
+    2300180: yunshiC
+    2300182: yunshiC001
+    2300184: yunshiC002
+    2300186: yunshiC003
+    2300188: yunshiC004
+    2300190: yunshiC005
+    2300192: yunshiC006
+    2300194: yunshiC007
+    2300196: yunshiC008
+    2300198: yunshiC009
+    2300200: yunshiC010
+    2300202: yunshiC011
+    2300204: yunshiC012
+    2300206: yunshiC013
+    2300208: yunshiC014
+    2300210: yunshiC015
+    2300212: yunshiC016
+    2300214: yunshiC017
+    2300216: yunshiC018
+    2300218: yunshiC019
+    2300220: yunshiC020
+    2300222: yunshiC021
+    2300224: yunshiC022
+    2300226: yunshiC023
+    2300228: yunshiC024
+    2300230: yunshiC025
+    2300232: yunshiC026
+    2300234: yunshiC027
+    2300236: yunshiC028
+    2300238: yunshiC029
+    2300240: yunshiC030
+    2300242: yunshiC031
+    2300244: yunshiC032
+    2300246: yunshiC033
+    2300248: yunshiC034
+    2300250: yunshiC035
+    2300252: yunshiC036
+    2300254: yunshiC037
+    2300256: yunshiC038
+    2300258: yunshiC039
+    2300260: yunshiC040
+    2300262: yunshiC041
+    3300000: bolimeng002
+    3300002: chuanshen
+    3300004: houzhao001
+    3300006: Pilot Seat
+    3300008: Pilot Seat004
+    3300010: qianzhao001
+    3300012: Sphere001
+    3300014: xiongtou
+    3300016: yunshiA
+    3300018: yunshiA001
+    3300020: yunshiA002
+    3300022: yunshiA003
+    3300024: yunshiA004
+    3300026: yunshiA005
+    3300028: yunshiA006
+    3300030: yunshiA007
+    3300032: yunshiA008
+    3300034: yunshiA009
+    3300036: yunshiA010
+    3300038: yunshiA011
+    3300040: yunshiA012
+    3300042: yunshiA013
+    3300044: yunshiA014
+    3300046: yunshiA015
+    3300048: yunshiA016
+    3300050: yunshiA017
+    3300052: yunshiA018
+    3300054: yunshiA019
+    3300056: yunshiA020
+    3300058: yunshiA021
+    3300060: yunshiA022
+    3300062: yunshiA023
+    3300064: yunshiA024
+    3300066: yunshiA025
+    3300068: yunshiA026
+    3300070: yunshiA027
+    3300072: yunshiA028
+    3300074: yunshiA029
+    3300076: yunshiA030
+    3300078: yunshiA031
+    3300080: yunshiA032
+    3300082: yunshiA033
+    3300084: yunshiA034
+    3300086: yunshiA035
+    3300088: yunshiA036
+    3300090: yunshiA037
+    3300092: yunshiA038
+    3300094: yunshiA039
+    3300096: yunshiB
+    3300098: yunshiB001
+    3300100: yunshiB002
+    3300102: yunshiB003
+    3300104: yunshiB004
+    3300106: yunshiB005
+    3300108: yunshiB006
+    3300110: yunshiB007
+    3300112: yunshiB008
+    3300114: yunshiB009
+    3300116: yunshiB010
+    3300118: yunshiB011
+    3300120: yunshiB012
+    3300122: yunshiB013
+    3300124: yunshiB014
+    3300126: yunshiB015
+    3300128: yunshiB016
+    3300130: yunshiB017
+    3300132: yunshiB018
+    3300134: yunshiB019
+    3300136: yunshiB020
+    3300138: yunshiB021
+    3300140: yunshiB022
+    3300142: yunshiB023
+    3300144: yunshiB024
+    3300146: yunshiB025
+    3300148: yunshiB026
+    3300150: yunshiB027
+    3300152: yunshiB028
+    3300154: yunshiB029
+    3300156: yunshiB030
+    3300158: yunshiB031
+    3300160: yunshiB032
+    3300162: yunshiB033
+    3300164: yunshiB034
+    3300166: yunshiB035
+    3300168: yunshiB036
+    3300170: yunshiB037
+    3300172: yunshiB038
+    3300174: yunshiB039
+    3300176: yunshiB040
+    3300178: yunshiB041
+    3300180: yunshiC
+    3300182: yunshiC001
+    3300184: yunshiC002
+    3300186: yunshiC003
+    3300188: yunshiC004
+    3300190: yunshiC005
+    3300192: yunshiC006
+    3300194: yunshiC007
+    3300196: yunshiC008
+    3300198: yunshiC009
+    3300200: yunshiC010
+    3300202: yunshiC011
+    3300204: yunshiC012
+    3300206: yunshiC013
+    3300208: yunshiC014
+    3300210: yunshiC015
+    3300212: yunshiC016
+    3300214: yunshiC017
+    3300216: yunshiC018
+    3300218: yunshiC019
+    3300220: yunshiC020
+    3300222: yunshiC021
+    3300224: yunshiC022
+    3300226: yunshiC023
+    3300228: yunshiC024
+    3300230: yunshiC025
+    3300232: yunshiC026
+    3300234: yunshiC027
+    3300236: yunshiC028
+    3300238: yunshiC029
+    3300240: yunshiC030
+    3300242: yunshiC031
+    3300244: yunshiC032
+    3300246: yunshiC033
+    3300248: yunshiC034
+    3300250: yunshiC035
+    3300252: yunshiC036
+    3300254: yunshiC037
+    3300256: yunshiC038
+    3300258: yunshiC039
+    3300260: yunshiC040
+    3300262: yunshiC041
+    4300000: jiqiren002
+    4300002: Object003
+    4300004: Pilot Seat
+    4300006: Pilot Seat004
+    4300008: chuanshen
+    4300010: houzhao001
+    4300012: qianzhao001
+    4300014: bolimeng002
+    4300016: xiongtou
+    4300018: Sphere001
+    4300020: yunshiA
+    4300022: yunshiA001
+    4300024: yunshiA002
+    4300026: yunshiA003
+    4300028: yunshiA004
+    4300030: yunshiA005
+    4300032: yunshiA006
+    4300034: yunshiA007
+    4300036: yunshiA008
+    4300038: yunshiA009
+    4300040: yunshiA010
+    4300042: yunshiA011
+    4300044: yunshiA012
+    4300046: yunshiA013
+    4300048: yunshiA014
+    4300050: yunshiA015
+    4300052: yunshiA016
+    4300054: yunshiA017
+    4300056: yunshiA018
+    4300058: yunshiA019
+    4300060: yunshiA020
+    4300062: yunshiA021
+    4300064: yunshiA022
+    4300066: yunshiA023
+    4300068: yunshiA024
+    4300070: yunshiA025
+    4300072: yunshiA026
+    4300074: yunshiA027
+    4300076: yunshiA028
+    4300078: yunshiA029
+    4300080: yunshiA030
+    4300082: yunshiA031
+    4300084: yunshiA032
+    4300086: yunshiA033
+    4300088: yunshiA034
+    4300090: yunshiA035
+    4300092: yunshiA036
+    4300094: yunshiA037
+    4300096: yunshiA038
+    4300098: yunshiA039
+    4300100: yunshiB
+    4300102: yunshiB001
+    4300104: yunshiB002
+    4300106: yunshiB003
+    4300108: yunshiB004
+    4300110: yunshiB005
+    4300112: yunshiB006
+    4300114: yunshiB007
+    4300116: yunshiB008
+    4300118: yunshiB009
+    4300120: yunshiB010
+    4300122: yunshiB011
+    4300124: yunshiB012
+    4300126: yunshiB013
+    4300128: yunshiB014
+    4300130: yunshiB015
+    4300132: yunshiB016
+    4300134: yunshiB017
+    4300136: yunshiB018
+    4300138: yunshiB019
+    4300140: yunshiB020
+    4300142: yunshiB021
+    4300144: yunshiB022
+    4300146: yunshiB023
+    4300148: yunshiB024
+    4300150: yunshiB025
+    4300152: yunshiB026
+    4300154: yunshiB027
+    4300156: yunshiB028
+    4300158: yunshiB029
+    4300160: yunshiB030
+    4300162: yunshiB031
+    4300164: yunshiB032
+    4300166: yunshiB033
+    4300168: yunshiB034
+    4300170: yunshiB035
+    4300172: yunshiB036
+    4300174: yunshiB037
+    4300176: yunshiB038
+    4300178: yunshiB039
+    4300180: yunshiB040
+    4300182: yunshiB041
+    4300184: yunshiC
+    4300186: yunshiC001
+    4300188: yunshiC002
+    4300190: yunshiC003
+    4300192: yunshiC004
+    4300194: yunshiC005
+    4300196: yunshiC006
+    4300198: yunshiC007
+    4300200: yunshiC008
+    4300202: yunshiC009
+    4300204: yunshiC010
+    4300206: yunshiC011
+    4300208: yunshiC012
+    4300210: yunshiC013
+    4300212: yunshiC014
+    4300214: yunshiC015
+    4300216: yunshiC016
+    4300218: yunshiC017
+    4300220: yunshiC018
+    4300222: yunshiC019
+    4300224: yunshiC020
+    4300226: yunshiC021
+    4300228: yunshiC022
+    4300230: yunshiC023
+    4300232: yunshiC024
+    4300234: yunshiC025
+    4300236: yunshiC026
+    4300238: yunshiC027
+    4300240: yunshiC028
+    4300242: yunshiC029
+    4300244: yunshiC030
+    4300246: yunshiC031
+    4300248: yunshiC032
+    4300250: yunshiC033
+    4300252: yunshiC034
+    4300254: yunshiC035
+    4300256: yunshiC036
+    4300258: yunshiC037
+    4300260: yunshiC038
+    4300262: yunshiC039
+    4300264: yunshiC040
+    4300266: yunshiC041
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: jiqiren002
+    13700002: Object003
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 930
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

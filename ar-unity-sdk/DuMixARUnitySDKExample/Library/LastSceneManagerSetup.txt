@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/BaiduAR/ARExample/Scenes/ExampleCaseScene/ARExampleRecogGestrue.unity
+  isLoaded: 1
+  isActive: 1

@@ -1,0 +1,509 @@
+fileFormatVersion: 2
+guid: 4274d9da506f84806aba2289f6188fb9
+timeCreated: 1522313552
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: 000
+    100002: Bip001
+    100004: Bip001 Footsteps
+    100006: Bip001 Head
+    100008: Bip001 HeadNub
+    100010: Bip001 L Calf
+    100012: Bip001 L Clavicle
+    100014: Bip001 L Finger0
+    100016: Bip001 L Finger01
+    100018: Bip001 L Finger0Nub
+    100020: Bip001 L Finger1
+    100022: Bip001 L Finger11
+    100024: Bip001 L Finger1Nub
+    100026: Bip001 L Foot
+    100028: Bip001 L Forearm
+    100030: Bip001 L Hand
+    100032: Bip001 L Thigh
+    100034: Bip001 L Toe0
+    100036: Bip001 L Toe0Nub
+    100038: Bip001 L UpperArm
+    100040: Bip001 Neck
+    100042: Bip001 Pelvis
+    100044: Bip001 R Calf
+    100046: Bip001 R Clavicle
+    100048: Bip001 R Finger0
+    100050: Bip001 R Finger01
+    100052: Bip001 R Finger0Nub
+    100054: Bip001 R Finger1
+    100056: Bip001 R Finger11
+    100058: Bip001 R Finger1Nub
+    100060: Bip001 R Foot
+    100062: Bip001 R Forearm
+    100064: Bip001 R Hand
+    100066: Bip001 R Thigh
+    100068: Bip001 R Toe0
+    100070: Bip001 R Toe0Nub
+    100072: Bip001 R UpperArm
+    100074: Bip001 Spine
+    100076: Bip001 Spine1
+    100078: Bip002
+    100080: Bip002 Footsteps
+    100082: Bip002 Head
+    100084: Bip002 HeadNub
+    100086: Bip002 L Calf
+    100088: Bip002 L Clavicle
+    100090: Bip002 L Finger0
+    100092: Bip002 L Finger0Nub
+    100094: Bip002 L Foot
+    100096: Bip002 L Forearm
+    100098: Bip002 L Hand
+    100100: Bip002 L Thigh
+    100102: Bip002 L Toe0
+    100104: Bip002 L Toe0Nub
+    100106: Bip002 L UpperArm
+    100108: Bip002 Neck
+    100110: Bip002 Pelvis
+    100112: Bip002 R Calf
+    100114: Bip002 R Clavicle
+    100116: Bip002 R Finger0
+    100118: Bip002 R Finger0Nub
+    100120: Bip002 R Foot
+    100122: Bip002 R Forearm
+    100124: Bip002 R Hand
+    100126: Bip002 R Thigh
+    100128: Bip002 R Toe0
+    100130: Bip002 R Toe0Nub
+    100132: Bip002 R UpperArm
+    100134: Bip002 Spine
+    100136: Bip002 Spine1
+    100138: Bip01 Footsteps
+    100140: Bip01 HeadNub
+    100142: Bip01 L Finger0Nub
+    100144: Bip01 L Toe0Nub
+    100146: Bip01 R Finger0Nub
+    100148: Bip01 R Toe0Nub
+    100150: bolimeng002
+    100152: Bone001
+    100154: Bone002
+    100156: Bone003
+    100158: Bone004
+    100160: Bone005
+    100162: Bone006
+    100164: Bone007
+    100166: Bone008
+    100168: Bone009
+    100170: Bone01
+    100172: Bone010
+    100174: Bone013
+    100176: Bone014
+    100178: Bone015
+    100180: Bone016
+    100182: Bone019
+    100184: Bone02
+    100186: Bone020
+    100188: Bone021
+    100190: Bone022
+    100192: Bone023
+    100194: Bone024
+    100196: Bone025
+    100198: Bone026
+    100200: Bone027
+    100202: Bone028
+    100204: Bone029
+    100206: Bone03
+    100208: Bone034
+    100210: Bone035
+    100212: Bone036
+    100214: Bone037
+    100216: Bone04
+    100218: Bone06
+    100220: Camera001
+    100222: Camera001.Target
+    100224: changen003
+    100226: changgu00
+    100228: changgu01(gupen)
+    100230: changgu02(spline2)
+    100232: changgu03
+    100234: changgu04
+    100236: changgu05
+    100238: changgu06
+    100240: changgu07
+    100242: changgu08
+    100244: changgu09
+    100246: changgu10
+    100248: changgu11(spline1)
+    100250: changgu12(neck)
+    100252: changgu13(head)
+    100254: changgu14
+    100256: changgu15
+    100258: changgu16
+    100260: changgu17
+    100262: changgu18
+    100264: changgu19
+    100266: changgu20
+    100268: changgu21(zuoshang)
+    100270: changgu22(zuoqian)
+    100272: changgu23(lefthand)
+    100274: changgu24
+    100276: changgu25zuobaiA
+    100278: changgu26zuobaiB
+    100280: changgu27
+    100282: changgu31
+    100284: changgu32(youshang)
+    100286: changgu33
+    100288: changgu34
+    100290: changgu35
+    100292: changgu36youbaiA
+    100294: changgu37youbaiB
+    100296: changgu38
+    100298: changgu48
+    100300: changgu49
+    100302: changgu50
+    100304: changgu51
+    100306: changgu52
+    100308: changgu53
+    100310: changgu54
+    100312: changgu55
+    100314: changgu56
+    100316: changgu57(youqian)
+    100318: changgu58(reighthand)
+    100320: changgu59
+    100322: Dummy001
+    100324: Dummy002
+    100326: Dummy003
+    100328: Dummy004
+    100330: Dummy005
+    100332: jiqiren002
+    100334: lihe
+    100336: Object003
+    100338: piaodai001
+    100340: Sphere001
+    100342: Sphere002
+    100344: Sphere003
+    100346: tkx001
+    100348: tt
+    100350: xiongtou
+    100352: //RootNode
+    400000: 000
+    400002: Bip001
+    400004: Bip001 Footsteps
+    400006: Bip001 Head
+    400008: Bip001 HeadNub
+    400010: Bip001 L Calf
+    400012: Bip001 L Clavicle
+    400014: Bip001 L Finger0
+    400016: Bip001 L Finger01
+    400018: Bip001 L Finger0Nub
+    400020: Bip001 L Finger1
+    400022: Bip001 L Finger11
+    400024: Bip001 L Finger1Nub
+    400026: Bip001 L Foot
+    400028: Bip001 L Forearm
+    400030: Bip001 L Hand
+    400032: Bip001 L Thigh
+    400034: Bip001 L Toe0
+    400036: Bip001 L Toe0Nub
+    400038: Bip001 L UpperArm
+    400040: Bip001 Neck
+    400042: Bip001 Pelvis
+    400044: Bip001 R Calf
+    400046: Bip001 R Clavicle
+    400048: Bip001 R Finger0
+    400050: Bip001 R Finger01
+    400052: Bip001 R Finger0Nub
+    400054: Bip001 R Finger1
+    400056: Bip001 R Finger11
+    400058: Bip001 R Finger1Nub
+    400060: Bip001 R Foot
+    400062: Bip001 R Forearm
+    400064: Bip001 R Hand
+    400066: Bip001 R Thigh
+    400068: Bip001 R Toe0
+    400070: Bip001 R Toe0Nub
+    400072: Bip001 R UpperArm
+    400074: Bip001 Spine
+    400076: Bip001 Spine1
+    400078: Bip002
+    400080: Bip002 Footsteps
+    400082: Bip002 Head
+    400084: Bip002 HeadNub
+    400086: Bip002 L Calf
+    400088: Bip002 L Clavicle
+    400090: Bip002 L Finger0
+    400092: Bip002 L Finger0Nub
+    400094: Bip002 L Foot
+    400096: Bip002 L Forearm
+    400098: Bip002 L Hand
+    400100: Bip002 L Thigh
+    400102: Bip002 L Toe0
+    400104: Bip002 L Toe0Nub
+    400106: Bip002 L UpperArm
+    400108: Bip002 Neck
+    400110: Bip002 Pelvis
+    400112: Bip002 R Calf
+    400114: Bip002 R Clavicle
+    400116: Bip002 R Finger0
+    400118: Bip002 R Finger0Nub
+    400120: Bip002 R Foot
+    400122: Bip002 R Forearm
+    400124: Bip002 R Hand
+    400126: Bip002 R Thigh
+    400128: Bip002 R Toe0
+    400130: Bip002 R Toe0Nub
+    400132: Bip002 R UpperArm
+    400134: Bip002 Spine
+    400136: Bip002 Spine1
+    400138: Bip01 Footsteps
+    400140: Bip01 HeadNub
+    400142: Bip01 L Finger0Nub
+    400144: Bip01 L Toe0Nub
+    400146: Bip01 R Finger0Nub
+    400148: Bip01 R Toe0Nub
+    400150: bolimeng002
+    400152: Bone001
+    400154: Bone002
+    400156: Bone003
+    400158: Bone004
+    400160: Bone005
+    400162: Bone006
+    400164: Bone007
+    400166: Bone008
+    400168: Bone009
+    400170: Bone01
+    400172: Bone010
+    400174: Bone013
+    400176: Bone014
+    400178: Bone015
+    400180: Bone016
+    400182: Bone019
+    400184: Bone02
+    400186: Bone020
+    400188: Bone021
+    400190: Bone022
+    400192: Bone023
+    400194: Bone024
+    400196: Bone025
+    400198: Bone026
+    400200: Bone027
+    400202: Bone028
+    400204: Bone029
+    400206: Bone03
+    400208: Bone034
+    400210: Bone035
+    400212: Bone036
+    400214: Bone037
+    400216: Bone04
+    400218: Bone06
+    400220: Camera001
+    400222: Camera001.Target
+    400224: changen003
+    400226: changgu00
+    400228: changgu01(gupen)
+    400230: changgu02(spline2)
+    400232: changgu03
+    400234: changgu04
+    400236: changgu05
+    400238: changgu06
+    400240: changgu07
+    400242: changgu08
+    400244: changgu09
+    400246: changgu10
+    400248: changgu11(spline1)
+    400250: changgu12(neck)
+    400252: changgu13(head)
+    400254: changgu14
+    400256: changgu15
+    400258: changgu16
+    400260: changgu17
+    400262: changgu18
+    400264: changgu19
+    400266: changgu20
+    400268: changgu21(zuoshang)
+    400270: changgu22(zuoqian)
+    400272: changgu23(lefthand)
+    400274: changgu24
+    400276: changgu25zuobaiA
+    400278: changgu26zuobaiB
+    400280: changgu27
+    400282: changgu31
+    400284: changgu32(youshang)
+    400286: changgu33
+    400288: changgu34
+    400290: changgu35
+    400292: changgu36youbaiA
+    400294: changgu37youbaiB
+    400296: changgu38
+    400298: changgu48
+    400300: changgu49
+    400302: changgu50
+    400304: changgu51
+    400306: changgu52
+    400308: changgu53
+    400310: changgu54
+    400312: changgu55
+    400314: changgu56
+    400316: changgu57(youqian)
+    400318: changgu58(reighthand)
+    400320: changgu59
+    400322: Dummy001
+    400324: Dummy002
+    400326: Dummy003
+    400328: Dummy004
+    400330: Dummy005
+    400332: jiqiren002
+    400334: lihe
+    400336: Object003
+    400338: piaodai001
+    400340: Sphere001
+    400342: Sphere002
+    400344: Sphere003
+    400346: tkx001
+    400348: tt
+    400350: xiongtou
+    400352: //RootNode
+    2000000: Camera001
+    2100000: xiaoducaizhi
+    2100002: 'Material #sa159'
+    2100004: yune
+    2100006: 07 - Default
+    2100008: xiongtou
+    2100010: 'Material #1'
+    2100012: 07 - Defaults
+    2100014: 'Material #2'
+    2100016: chang
+    2300000: bolimeng002
+    2300002: lihe
+    2300004: Sphere001
+    2300006: Sphere002
+    2300008: Sphere003
+    2300010: xiongtou
+    3300000: bolimeng002
+    3300002: lihe
+    3300004: Sphere001
+    3300006: Sphere002
+    3300008: Sphere003
+    3300010: xiongtou
+    4300000: jiqiren002
+    4300002: Object003
+    4300004: Sphere001
+    4300006: bolimeng002
+    4300008: xiongtou
+    4300010: lihe
+    4300012: tt
+    4300014: Sphere002
+    4300016: Sphere003
+    4300018: changen003
+    4300020: piaodai001
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: changen003
+    13700002: jiqiren002
+    13700004: Object003
+    13700006: piaodai001
+    13700008: tt
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 1170
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

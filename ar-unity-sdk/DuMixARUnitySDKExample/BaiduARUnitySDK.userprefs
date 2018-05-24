@@ -1,0 +1,16 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/BaiduAR/SDK/Scripts/BaiduARGestureRecog.cs">
+    <Files>
+      <File FileName="Assets/BaiduAR/SDK/Scripts/BaiduARImageRecognitionResult.cs" Line="6" Column="70" />
+      <File FileName="Assets/BaiduAR/SDK/Scripts/BaiduARObjectTracker.cs" Line="8" Column="2" />
+      <File FileName="Assets/BaiduAR/SDK/Scripts/BaiduARObjectTrackable.cs" Line="7" Column="2" />
+      <File FileName="Assets/BaiduAR/ARExample/Scripts/ARExampleRecogGestrue.cs" Line="43" Column="3" />
+      <File FileName="Assets/BaiduAR/SDK/Scripts/BaiduARGestureRecog.cs" Line="8" Column="2" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
