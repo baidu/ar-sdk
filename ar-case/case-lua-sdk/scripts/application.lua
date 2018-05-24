@@ -170,7 +170,9 @@ function LOAD_APPLICATION()
 		local version = self.entity:get_engine_version()
 		local engine_version = REOMVE_SPECIAL_SYMBOL(version,"%.")
 		local version = tonumber(engine_version)
-		local eng_version_table = {[100] = 11, [110] = 12 ,[120] = 14, [121] = 16, [122] = 18, [123] = 19, [124] = 20,[125] = 23,[126] = 100,[130] = 110, [131] = 120}
+		local eng_version_table = {[100] = 11, [110] = 12, [120] = 14, [121] = 16, [122] = 18, 
+								   [123] = 19, [124] = 20, [125] = 23, [126] = 100, [130] = 110, 
+								   [131] = 120, [132] = 130, [133] = 135, [140] = 145, [141] = 150, [142] = 155}
 		local v = eng_version_table[version]
 		if(v == nil) then
 			v = 99999
@@ -197,6 +199,14 @@ function LOAD_APPLICATION()
         mapData:put_int("visibleType",type)
         self.lua_handler:send_message_tosdk(mapData)
         mapData:delete()
+    end
+
+	application.switch_case = function(self,arkey,artype)
+        local mapData = ae.MapData:new()
+        mapData:put_int("id", MSG_TYPE_SWITCH_CASE)
+        mapData:put_int("arkey",arkey)
+        mapData:put_int("artype",artype)
+        self.lua_handler:send_message_tosdk(mapData)
     end
 
 	return application

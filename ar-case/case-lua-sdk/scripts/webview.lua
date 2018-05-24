@@ -85,36 +85,45 @@ function LOAD_WEBVIEW()
 			return webview
 		end,
 
-		WebViewLoaded = function(self, texture_id)
-			ARLOG('WebView WebViewLoaded:'..texture_id)
-			local webview = self.WebViewDict[texture_id]
-			if WebView ~= nil then
-				ARLOG('WebView on_loal_finish:'..texture_id)
-				webview:on_load_finish()
-			end
-		end,
-
-		WebViewUpdateFinished = function(self, texture_id)
-			ARLOG('WebView WebViewUpdateFinished texture_id:'..texture_id)
-			local webview = self.WebViewDict[texture_id]
-			if WebView ~= nil then
-				ARLOG('WebView on_loal_finish texture_id:'..texture_id)
-				webview:update_texture()
-			end
-		end,
-
-		WebViewLoadError = function(self, texture_id, msg)
-			ARLOG('WebView WebViewLoadError texture_id:'..texture_id)
-			local webview = self.WebViewDict[texture_id]
-			if WebView ~= nil then
-				ARLOG('WebView on_loal_finish texture_id:'..texture_id)
-				webview:on_load_error(msg)
-			end
-		end,
-
 		WebViewDict = {}
 	}
+	
 	setmetatable(WebView,WebView)
+
+	function updateFinish(event)
+		texture_id = event.data['texture_id']
+		ARLOG('WebView WebViewUpdateFinished'..texture_id)
+		local webview = WebView.WebViewDict[texture_id]
+		if WebView ~= nil then
+			ARLOG('WebView on_loal_finish:'..texture_id)
+			webview:update_texture()
+		end
+	end
+
+	function loadFinshed(event)
+		texture_id = event.data['texture_id']
+		ARLOG('WebView WebViewLoaded:'..texture_id)
+		local webview = WebView.WebViewDict[texture_id]
+		if WebView ~= nil then
+			ARLOG('WebView on_loal_finish:'..texture_id)
+			webview:on_load_finish()
+		end
+	end
+
+	function loadfailed(event)
+		texture_id = event.data['texture_id']
+		ARLOG('WebView WebViewLoadError'..texture_id)
+		local webview = WebView.WebViewDict[texture_id]
+		if WebView ~= nil then
+			ARLOG('WebView on_loal_finish:'..texture_id)
+			webview:on_load_error(msg)
+		end
+	end
+
+	Event:addEventListener("webView_operation_load_finish", loadFinshed)
+	Event:addEventListener("webView_operation_load_failed", loadfailed)
+	Event:addEventListener("webView_operation_update_finish", updateFinish)
+
 	ARLOG('load WebView')
 end
 LOAD_WEBVIEW()

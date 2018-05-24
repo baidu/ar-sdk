@@ -7,12 +7,14 @@ function GET_DEVICE()
 	Device.close_imu = 0
 	Device.shake_enable = false
 	Device.on_camera_change = 0
-
+	Device.on_record_state_change = 0
 	Device.open_shake_listener = 0
 	Device.stop_shake_listner = 0
 	Device.set_shake_threshold = 0
 
 	Device.get_camera_pitch_angle = 0
+
+	Device.get_render_size_callback = nil
 
 	-- arkit
     Device.plane_detected = 0
@@ -40,6 +42,14 @@ function GET_DEVICE()
     	self.shake_enable = false
     	mapData:delete()
 	end
+
+		-- get_render_size--
+    function Device.get_render_size(self,callback) 
+    	Device.get_render_size_callback = callback
+        local mapData = ae.MapData:new()
+        mapData:put_int("id", MSG_TYPE_RENDER_SIZE)
+        self.application.lua_handler:send_message_tosdk(mapData)
+    end
 
 	function Device.open_track_service(self)
 		local mapData = ae.MapData:new() 
@@ -103,6 +113,12 @@ function GET_DEVICE()
 		mapData:put_int("id", MSG_TYPE_ENABLE_FRONT_CAMERA)
 		self.application.lua_handler:send_message_tosdk(mapData)
 		mapData:delete()
+	end
+
+	function Device.change_frontback_camera(self)
+		local mapData = ae.MapData:new()
+		mapData:put_int("id", MSG_TYPE_CHANGE_FRONTBACK_CAMERA)
+		self.application.lua_handler:send_message_tosdk(mapData)
 	end
     
     function Device.get_camera_pitch_angle(self)

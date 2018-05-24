@@ -29,6 +29,10 @@ function LOAD_VIDEO()
 				start = function (self)
 					local config = self:get_meta_action_priority_config()
 					local video_id = self._entity:play_texture_video(config, self._path, self._repeat_count, self._delay, self._is_remote, self._from_time)
+                    local engine_version = app:get_version()
+                    if engine_version < 150 then
+        				video_id = self._entity:play_texture_video(config,self._path, self._repeat_count, self._delay)
+        			end
 					config:delete()
 					ARLOG(' ----------- 系统 play_texture_video 调用 -----------')
 					if(self._on_complete ~= nil) then

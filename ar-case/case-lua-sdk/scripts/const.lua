@@ -80,6 +80,7 @@ function LOAD_CONST()
 	-- camera --
 	MSG_TYPE_CAMERA_CHANGE = 10200
 	MSG_TYPE_ENABLE_FRONT_CAMERA = 10201
+	MSG_TYPE_CHANGE_FRONTBACK_CAMERA = 10202
 
 	-- remote debug --
 	MST_TYPE_REMOTE_DEBUG_REC = 10300
@@ -100,6 +101,10 @@ function LOAD_CONST()
 	WebViewOperation.ModelUpdate = 2
 	WebViewOperation.UpdateFinish = 3
     WebViewOperation.LoadFailed = 4
+
+	-- render size --
+	MSG_TYPE_RENDER_SIZE = 10600
+	MSG_TYPE_RENDER_SIZE_ANSWER = 10601
 	
 	-- voice api --
 	MSG_TYPE_VOICE_START = 2001
@@ -158,7 +163,11 @@ function LOAD_CONST()
     GestureType.OK= 4
     GestureType.Other = 5
     -- paddle gesture end --
-	
+
+	-- paddle imgseg --
+    PADDLE_IMGSEG_CONTROL = 5011
+	-- paddle imgseg end --
+
 	-- action api --
 	MSG_TYPE_CLOSE_AR = 10301
 	MSG_TYPE_SEND_VALUE = 10401
@@ -222,6 +231,14 @@ function LOAD_CONST()
     MSG_TYPE_AUDIO = 5211
     
    -- MEDIA END --
+
+   -- switchcase --
+   MSG_TYPE_SWITCH_CASE = 22000
+   -- switchcase END --
+
+   -- record state --
+   MSG_TYPE_RECORD_STATE = 10700
+   -- record state END--
 
 	ARLOG('load const')
 end

@@ -153,7 +153,17 @@ function HANDLE_SDK_MSG(mapData)
 			AR.current_application.device.show_lay_status(show)
 		end
 	-- ARKit end-- 
-
+    elseif(msg_id == MSG_TYPE_RENDER_SIZE_ANSWER) then 
+		if (AR.current_application.device.get_render_size_callback  ~= nil) then
+            local width = mapData['width']
+            local height = mapData['height']
+            AR.current_application.device.get_render_size_callback(width,height)
+    	end
+    elseif(msg_id == MSG_TYPE_RECORD_STATE) then
+        if(AR.current_application.device.on_record_state_change ~= 0) then
+        	local is_record = mapData['record_state']
+        	AR.current_application.device.on_record_state_change(is_record)
+    	end
 	else
 		ARLOG("收到未知消息类型: "..msg_id)
     end
