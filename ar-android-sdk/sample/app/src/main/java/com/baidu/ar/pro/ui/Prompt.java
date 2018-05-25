@@ -12,6 +12,7 @@ import com.baidu.ar.bean.BrowserBean;
 import com.baidu.ar.bean.TrackRes;
 import com.baidu.ar.pro.R;
 import com.baidu.ar.pro.callback.PromptCallback;
+import com.baidu.ar.pro.module.Module;
 import com.baidu.ar.util.Res;
 import com.baidu.ar.util.UiThreadUtil;
 
@@ -20,6 +21,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -46,6 +48,13 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
      */
     private ImageView mIconFlash;
 
+    // 拍照按钮
+    private Button mTackPictureBtn;
+    // 开始录制按钮
+    private Button mStartRecordBtn;
+    // 停止录制按钮
+    private Button mStopRecordBtn;
+
     /**
      * 闪光灯是否处于关闭模式
      */
@@ -70,6 +79,11 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
      * 本地识图云端识图返回的arKey
      */
     private String arKey;
+
+    /**
+     * 依赖外部Module
+     */
+    private Module mModule;
 
     /**
      * 构造函数
@@ -118,9 +132,21 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
         mIconFlash = findViewById(R.id.bdar_titlebar_flash);
         mIconFlash.setOnClickListener(this);
 
+        mTackPictureBtn = findViewById(R.id.btn_take_picture);
+        mTackPictureBtn.setOnClickListener(this);
+
+        mStartRecordBtn = findViewById(R.id.btn_start_record);
+        mStartRecordBtn.setOnClickListener(this);
+
+        mStopRecordBtn = findViewById(R.id.btn_stop_record);
+        mStopRecordBtn.setOnClickListener(this);
+
         mDumixCallbackTips = findViewById(R.id.bdar_titlebar_tips);
 
         mDuMixCallback = this;
+
+
+        mModule = new Module(getContext());
     }
 
     public DuMixCallback getDuMixCallback() {
@@ -133,16 +159,16 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
 
     @Override
     public void onClick(View view) {
-        // back
-        if (view.getId() == R.id.bdar_titlebar_back) {
+        int viewId = view.getId();
+        if (viewId == R.id.bdar_titlebar_back) {
             if (mPromptCallback != null) {
                 mPromptCallback.onBackPressed();
             }
-        } else if (view.getId() == R.id.bdar_titlebar_camera) {
+        } else if (viewId == R.id.bdar_titlebar_camera) {
             if (mPromptCallback != null) {
                 mPromptCallback.onSwitchCamera();
             }
-        } else if (view.getId() == R.id.bdar_titlebar_flash) {
+        } else if (viewId == R.id.bdar_titlebar_flash) {
             if (mPromptCallback != null) {
                 mPromptCallback.onCameraFlashStatus(mIsFlashOff);
             }
@@ -154,7 +180,25 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
                 mIconFlash.setImageDrawable(getResources().getDrawable(R.drawable
                         .bdar_drawable_btn_flash_enable_selector));
             }
+        } else if (viewId == R.id.btn_take_picture) {
+            onTackPictureButtonClick();
+        } else if (viewId == R.id.btn_start_record) {
+            onStratRecordButtonClick();
+        } else if (viewId == R.id.btn_stop_record) {
+            onStopRecordButtonClick();
         }
+    }
+
+    private void onStratRecordButtonClick() {
+        mPromptCallback.onStartRecord();
+    }
+
+    private void onStopRecordButtonClick() {
+        mPromptCallback.onStropRecord();
+    }
+
+    private void onTackPictureButtonClick() {
+        mPromptCallback.onTackPicture();
     }
 
     public void release() {
@@ -331,6 +375,7 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
     @Override
     public void onLuaMessage(HashMap<String, Object> hashMap) {
         // TODO: 2018/5/10 接收lua信息到业务层
+        mModule.parseLuaMessage(hashMap);
     }
 
     @Override
@@ -351,12 +396,12 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
 
     @Override
     public void onPause(boolean b) {
-
+        mModule.onPause();
     }
 
     @Override
     public void onResume(boolean b) {
-
+        mModule.onResume();
     }
 
     @Override
@@ -366,6 +411,7 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
 
     @Override
     public void onRelease(boolean b) {
+        mModule.onRelease();
 
     }
     // callback end

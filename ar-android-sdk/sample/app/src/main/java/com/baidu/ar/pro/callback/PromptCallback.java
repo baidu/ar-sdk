@@ -29,4 +29,16 @@ public interface PromptCallback {
      * @param key
      */
     void onChangeCase(String key);
+    /**
+     * 拍照
+     */
+    void onTackPicture();
+    /**
+     * 开始录制
+     */
+    void onStartRecord();
+    /**
+     * 停止录制
+     */
+    void onStropRecord();
 }

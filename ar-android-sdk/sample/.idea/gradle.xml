@@ -10,6 +10,8 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/camera" />
+            <option value="$PROJECT_DIR$/speech" />
+            <option value="$PROJECT_DIR$/tts" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

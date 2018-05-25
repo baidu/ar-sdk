@@ -3,12 +3,14 @@
  */
 package com.baidu.ar.pro;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.baidu.ar.ARController;
 import com.baidu.ar.DuMixSource;
 import com.baidu.ar.DuMixTarget;
+import com.baidu.ar.TakePictureCallback;
 import com.baidu.ar.bean.ARConfig;
 import com.baidu.ar.pro.callback.PreviewCallback;
 import com.baidu.ar.pro.callback.PromptCallback;
@@ -18,6 +20,7 @@ import com.baidu.ar.pro.camera.ARStartCameraCallback;
 import com.baidu.ar.constants.ARConfigKey;
 import com.baidu.ar.pro.draw.ARRenderCallback;
 import com.baidu.ar.pro.draw.ARRenderer;
+import com.baidu.ar.recorder.MovieRecorderCallback;
 import com.baidu.ar.util.UiThreadUtil;
 import com.baidu.ar.pro.ui.Prompt;
 import com.baidu.baiduarsdk.ArBridge;
@@ -30,6 +33,7 @@ import android.graphics.SurfaceTexture;
 import android.opengl.GLSurfaceView;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.util.Log;
@@ -38,6 +42,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 /**
  * AR Fragment
@@ -65,7 +70,7 @@ public class ARFragment extends Fragment {
     /**
      * Prompt View 提示层View
      */
-    private Prompt mPromptView;
+    private Prompt mPromptUi;
 
     /**
      * AR Renderer
@@ -77,6 +82,8 @@ public class ARFragment extends Fragment {
      */
     private ARCameraManager mARCameraManager;
 
+    // 录制最长时间设置
+    private int mRecordMaxTime = 10 * 1000;
     /**
      * 需要手动申请的权限
      */
@@ -168,8 +175,8 @@ public class ARFragment extends Fragment {
             mARController = null;
         }
         mARCameraManager.setPreviewCallback(null);
-        if (mPromptView != null) {
-            mPromptView.release();
+        if (mPromptUi != null) {
+            mPromptUi.release();
         }
     }
 
@@ -233,8 +240,8 @@ public class ARFragment extends Fragment {
         mArGLSurfaceView.setRenderer(mARRenderer);
         mArGLSurfaceView.setRenderMode(GLSurfaceView.RENDERMODE_WHEN_DIRTY);
 
-        mPromptView = mRootView.findViewById(R.id.bdar_prompt_view);
-        mPromptView.setPromptCallback(promptCallback);
+        mPromptUi = mRootView.findViewById(R.id.bdar_prompt_view);
+        mPromptUi.setPromptCallback(promptCallback);
         mFragmentContainer.addView(mRootView);
     }
 
@@ -300,7 +307,7 @@ public class ARFragment extends Fragment {
                     mDuMixSource.setCameraSource(null);
                 }
                 if (mARController != null) {
-                    mARController.setup(mDuMixSource, mDuMixTarget, mPromptView.getDuMixCallback());
+                    mARController.setup(mDuMixSource, mDuMixTarget, mPromptUi.getDuMixCallback());
                     // todo update 需要封装此函数
                     mARController.onResume();
                 }
@@ -324,6 +331,9 @@ public class ARFragment extends Fragment {
         return false;
     }
 
+    /**
+     * prompt ui callback
+     */
     PromptCallback promptCallback = new PromptCallback() {
         @Override
         public void onCameraFlashStatus(boolean open) {
@@ -350,6 +360,77 @@ public class ARFragment extends Fragment {
                 mARController.switchCase(key, 0);
             }
         }
+
+        @Override
+        public void onTackPicture() {
+            String path = getCachePath() + File.separator + System.currentTimeMillis() + ".jpg";
+            mARController.takePicture(path, new TakePictureCallback() {
+                @Override
+                public void onPictureTake(final boolean result, final String filePath) {
+                    UiThreadUtil.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getContext(), "保存 :" + result + "\n" + filePath, Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+            });
+        }
+
+        @Override
+        public void onStartRecord() {
+            // 录像文件全路径为： 存储路径 + 当前时间戳 + .mp4
+            String path = getCachePath() + File.separator + System.currentTimeMillis() + ".mp4";
+            mARController.startRecord(path, mRecordMaxTime, new MovieRecorderCallback() {
+                @Override
+                public void onRecorderStart(boolean b) {
+
+                }
+
+                @Override
+                public void onRecorderProcess(int i) {
+
+                }
+
+                @Override
+                public void onRecorderComplete(final boolean b, final String result) {
+                    UiThreadUtil.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getContext(), b ? "成功..."+ result : "失败" + "保存 :" + result, Toast.LENGTH_SHORT)
+                                    .show();
+                        }
+                    });
+                }
+
+                @Override
+                public void onRecorderError(int i) {
+
+                }
+            });
+        }
+
+        @Override
+        public void onStropRecord() {
+            mARController.stopRecord();
+        }
     };
+
+    /**
+     * 文件存储路径，暂定为ar-uidemo文件夹下
+     *
+     * @return 路径
+     */
+    public static String getCachePath() {
+        String path = null;
+        if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+            path = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "ar-demo";
+        }
+        File dir = new File(path);
+        if (!dir.exists()) {
+            dir.mkdirs();
+        }
+        return path;
+    }
 
 }

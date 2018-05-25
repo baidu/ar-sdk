@@ -6,7 +6,6 @@ package com.baidu.ar.pro;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.baidu.ar.pro.ARFragment;
 import com.baidu.ar.constants.ARConfigKey;
 
 import android.os.Bundle;
