@@ -46,7 +46,7 @@ DuMixARConfig.setSecretKey("xxxxx");
 
 ```java
 // init arControler
-arControler = new ARContraler(context,false);
+arControler = new ARControler(context,false);
 // setup ar
 arControler.setup(DuMixSource source, DuMixTarget target, DuMixCallback callback)
 ```

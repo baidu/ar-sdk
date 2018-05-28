@@ -13,7 +13,7 @@ import android.opengl.GLES20;
 /**
  * Created by huxiaowen on 2017/10/23.
  *
- * 此类主要负责将serfaceTexture内容绘制到屏幕上
+ * 此类主要负责将surfaceTexture内容绘制到屏幕上
  */
 
 public class ARDrawer {
