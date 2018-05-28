@@ -17,10 +17,7 @@
 将libraries文件夹中的 dumixar.jar 拷贝到您的工程的 libs 文件夹中，并检查编译依赖。
 将libraries文件夹中的arm64-v8a和armeabi-v7a文件夹拷贝到Android Studio工程`src/main/jniLibs`目录中。
 
-### 第2步：导入资源
-将解压后的 res 文件夹中的所有资源拷贝到您的工程中对应的资源文件夹中。
-
-### 第3步：配置Mannifest文件，添加必要的权限
+### 第2步：配置Mannifest文件，添加必要的权限
 
 ```java
 <uses-permission android:name="android.permission.CAMERA"/>
@@ -35,7 +32,7 @@
 <uses-feature android:name="android.hardware.camera.autofocus"/>
 ```
 
-### 第4步：在代码中配置aip权限
+### 第3步：在代码中配置aip权限
 
 ```java
 // 设置App Id
@@ -45,7 +42,7 @@ DuMixARConfig.setAPIKey("xxxxxxxx");
 // 设置Secret Key
 DuMixARConfig.setSecretKey("xxxxx");
 ```
-### 第5步：在代码中启动AR
+### 第4步：在代码中启动AR
 
 ```java
 // init arControler
@@ -71,3 +68,5 @@ arControler.setup(DuMixSource source, DuMixTarget target, DuMixCallback callback
 
 
 其他API及参数说明参考 [API文档](https://github.com/baidu/ar-sdk/wiki/android-sdk-%E6%8E%A5%E5%8F%A3%E8%AF%B4%E6%98%8E)
+
+
