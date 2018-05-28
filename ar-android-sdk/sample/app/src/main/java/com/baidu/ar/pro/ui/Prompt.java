@@ -47,12 +47,17 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
      * 闪光灯按钮
      */
     private ImageView mIconFlash;
-
-    // 拍照按钮
+    /**
+     * 拍照按钮
+     */
     private Button mTackPictureBtn;
-    // 开始录制按钮
+    /**
+     * 开始录制按钮
+     */
     private Button mStartRecordBtn;
-    // 停止录制按钮
+    /**
+     * 停止录制按钮
+     */
     private Button mStopRecordBtn;
 
     /**
@@ -66,7 +71,7 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
     private DuMixCallback mDuMixCallback;
 
     /**
-     *
+     * Prompt callback
      */
     private PromptCallback mPromptCallback;
 
@@ -144,7 +149,6 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
         mDumixCallbackTips = findViewById(R.id.bdar_titlebar_tips);
 
         mDuMixCallback = this;
-
 
         mModule = new Module(getContext());
     }

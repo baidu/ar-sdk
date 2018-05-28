@@ -82,7 +82,9 @@ public class ARFragment extends Fragment {
      */
     private ARCameraManager mARCameraManager;
 
-    // 录制最长时间设置
+    /**
+     * 最长录制最长时间设置
+     */
     private int mRecordMaxTime = 10 * 1000;
     /**
      * 需要手动申请的权限
@@ -92,8 +94,17 @@ public class ARFragment extends Fragment {
             Manifest.permission.CAMERA,
             Manifest.permission.RECORD_AUDIO};
 
+    /**
+     * ar sdk 接口ARController
+     */
     private ARController mARController;
+    /**
+     * AR输入参数类
+     */
     private DuMixSource mDuMixSource;
+    /**
+     * 返回参数类
+     */
     private DuMixTarget mDuMixTarget;
 
     @Override
@@ -397,7 +408,8 @@ public class ARFragment extends Fragment {
                     UiThreadUtil.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            Toast.makeText(getContext(), b ? "成功..."+ result : "失败" + "保存 :" + result, Toast.LENGTH_SHORT)
+                            Toast.makeText(getContext(), b ? "成功..." + result : "失败" + "保存 :" + result,
+                                    Toast.LENGTH_SHORT)
                                     .show();
                         }
                     });
@@ -417,7 +429,7 @@ public class ARFragment extends Fragment {
     };
 
     /**
-     * 文件存储路径，暂定为ar-uidemo文件夹下
+     * 文件存储路径，业务层可以自定义
      *
      * @return 路径
      */
