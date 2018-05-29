@@ -84,7 +84,7 @@ public class MainActivity extends Activity {
         List<ListItemBean> list = new ArrayList<>();
 
         // SLAM AR 小熊
-        list.add(new ListItemBean(5, "10002502", mArName[0], mArDesciption[0]));
+        list.add(new ListItemBean(5, "10153755", mArName[0], mArDesciption[0]));
         // 本地识图
         list.add(new ListItemBean(6, "", mArName[1], mArDesciption[1]));
         // 云端识图

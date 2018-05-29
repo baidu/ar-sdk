@@ -400,7 +400,9 @@ public class ARFragment extends Fragment {
 
                 @Override
                 public void onRecorderProcess(int i) {
-
+                    if (i >= 100) {
+                        onStropRecord();
+                    }
                 }
 
                 @Override

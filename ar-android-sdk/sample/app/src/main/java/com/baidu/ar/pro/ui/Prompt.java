@@ -7,12 +7,14 @@ import java.util.HashMap;
 
 import com.baidu.ar.DuMixCallback;
 import com.baidu.ar.base.MsgField;
+import com.baidu.ar.bean.ARConfig;
 import com.baidu.ar.bean.ARResource;
 import com.baidu.ar.bean.BrowserBean;
 import com.baidu.ar.bean.TrackRes;
 import com.baidu.ar.pro.R;
 import com.baidu.ar.pro.callback.PromptCallback;
 import com.baidu.ar.pro.module.Module;
+import com.baidu.ar.pro.view.ScanView;
 import com.baidu.ar.util.Res;
 import com.baidu.ar.util.UiThreadUtil;
 
@@ -86,6 +88,11 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
     private String arKey;
 
     /**
+     * track 扫描view
+     */
+    private ScanView mScanView;
+
+    /**
      * 依赖外部Module
      */
     private Module mModule;
@@ -147,6 +154,8 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
         mStopRecordBtn.setOnClickListener(this);
 
         mDumixCallbackTips = findViewById(R.id.bdar_titlebar_tips);
+
+        mScanView = findViewById(R.id.bdar_gui_scan_view);
 
         mDuMixCallback = this;
 
@@ -296,6 +305,7 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
 
             // 2D算法跟踪成功
             case MsgField.IMSG_TRACK_FOUND:
+                hideScanView();
                 showToast(" 2D算法跟踪成功 ");
                 break;
             // 跟踪距离过远
@@ -340,6 +350,10 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
                 break;
 
             case MsgField.MSG_ID_TRACK_MODEL_CAN_DISAPPEARING:
+                boolean modelShowing = (boolean) msg;
+                if (!modelShowing) {
+                    showScanView();
+                }
                 break;
 
             case MsgField.MSG_ID_TRACK_MSG_ID_TRACK_LOST:
@@ -430,6 +444,34 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
             @Override
             public void run() {
                 mDumixCallbackTips.setText(s);
+            }
+        });
+    }
+
+    /**
+     * 显示扫描界面
+     */
+    protected void showScanView() {
+        UiThreadUtil.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if (mScanView != null) {
+                    mScanView.startScan();
+                }
+            }
+        });
+    }
+
+    /**
+     * 隐藏扫描界面
+     */
+    protected void hideScanView() {
+        UiThreadUtil.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if (mScanView != null) {
+                    mScanView.dismissScan();
+                }
             }
         });
     }
