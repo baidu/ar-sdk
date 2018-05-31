@@ -75,7 +75,6 @@
 		4267547A206CCAA100991402 /* BARImageMovieWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARImageMovieWriter.h; sourceTree = "<group>"; };
 		4267547C206CCAC800991402 /* BARImageFilterGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARImageFilterGroup.h; sourceTree = "<group>"; };
 		4267547D206CCAF300991402 /* BARImageFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARImageFilter.h; sourceTree = "<group>"; };
-		42675484206CCD8700991402 /* BARRouter+BARPaddleGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BARRouter+BARPaddleGesture.h"; sourceTree = "<group>"; };
 		42675486206CCD8800991402 /* BARRouter+BARTTS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BARRouter+BARTTS.h"; sourceTree = "<group>"; };
 		42675488206CCDC900991402 /* BARRouter+BARImageSearchModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BARRouter+BARImageSearchModule.h"; sourceTree = "<group>"; };
 		4267548A206CCE6B00991402 /* BARVideoRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARVideoRecorder.h; sourceTree = "<group>"; };
@@ -111,6 +110,8 @@
 		426754CD206CDF5A00991402 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		42AD49A220899070008BED27 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		42AD49A420899091008BED27 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		42DBF99820BFCE0B00EC238A /* BARRouter+BARLogoRecog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BARRouter+BARLogoRecog.h"; sourceTree = "<group>"; };
+		42DBF99920BFCE0C00EC238A /* BARMessageType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARMessageType.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,12 +186,13 @@
 		4267545F206CC6A300991402 /* ARSDKPro-OpenSDK */ = {
 			isa = PBXGroup;
 			children = (
+				42DBF99920BFCE0C00EC238A /* BARMessageType.h */,
+				42DBF99820BFCE0B00EC238A /* BARRouter+BARLogoRecog.h */,
 				42604565207378810059921D /* BARCaseManager.h */,
 				42604566207378810059921D /* BARCaseTask.h */,
 				426754CB206CDF3900991402 /* DumixARCore.a */,
 				4267548A206CCE6B00991402 /* BARVideoRecorder.h */,
 				42675488206CCDC900991402 /* BARRouter+BARImageSearchModule.h */,
-				42675484206CCD8700991402 /* BARRouter+BARPaddleGesture.h */,
 				42675486206CCD8800991402 /* BARRouter+BARTTS.h */,
 				42675460206CC6A300991402 /* BARGestureImageView.h */,
 				42675461206CC6A300991402 /* BARMainController+Public.h */,
