@@ -12,7 +12,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <UIKit/UIKit.h>
 #import "BARImageView.h"
-
+#import "BARMessageType.h"
 
 typedef enum : NSUInteger {
     BAROutputBlend = 0,
@@ -25,42 +25,44 @@ typedef enum : NSUInteger {
 
 #pragma mark - Block
 
-typedef void (^BARDownloadARCaseProgressBlock)(float progress);//下载过程回调
-typedef void (^BARVoiceIconChangedBlock)(BOOL showVoiceTip);
-typedef void (^BARDownloadARCaseCompleteBlock)(BOOL success,NSString * arKey,NSString * arType,NSString * filePath, id result);//下载完成回调
-typedef void (^BARUIDeviceOrientationDidChangeBlock)(UIDeviceOrientation orientation);
-typedef void (^BARCloseEventBlock)(void);
+/**
+ Case包下载进度回调
+
+ @param progress 进度值
+ */
+typedef void (^BARDownloadARCaseProgressBlock)(float progress);
+
+/**
+ Case资源包下载完成回调
+
+ @param success YES：成功 NO：失败
+ @param arKey case arkey
+ @param arType case artype
+ @param filePath case本地路径
+ @param result 结果
+ */
+typedef void (^BARDownloadARCaseCompleteBlock)(BOOL success,NSString * arKey,NSString * arType,NSString * filePath, id result);
+
+/**
+ 拍摄回调
+
+ @param image 拍摄的照片
+ */
 typedef void (^BARTakePictureFinishBlock)(UIImage *image);
-typedef void (^BAROpenURLBlock)(NSDictionary *dic);
-typedef void (^BARARKitRestartBlock)(void);
+
 
 typedef void (^BARShowAlertEventBlock)(BARSDKShowAlertType type,dispatch_block_t cancelBlock,dispatch_block_t ensureBlock,NSMutableDictionary *info);
 
-typedef void(^BARActivityBlock)(NSDictionary *dic);
-//typedef void(^BARVersionTooLowBlock)(NSDictionary *dic);
-typedef void(^BARAPaddleGestureOpenCloseBlock)(NSDictionary *dic, NSString *resPath);
-typedef void(^BARLogoRecogChangedBlock)(BOOL show);
+
+typedef void(^BARLuaMsgBlock)(BARMessageType msgType, NSDictionary *dic);
 
 @interface BARMainController : NSObject
-@property (nonatomic, copy) BARVoiceIconChangedBlock aRVoiceIconChangedBlock;
-@property (nonatomic ,copy) BARUIDeviceOrientationDidChangeBlock arOrientationDidChangeBlock;
-@property (nonatomic, copy) BARSDKUIStateEventBlock uiStateChangeBlock;
-@property (nonatomic, copy) BAROpenURLBlock openURLBlock;
-@property (nonatomic ,copy) BARShowAlertEventBlock showAlertEventBlock;
-@property (nonatomic, copy) BARCloseEventBlock closeEventBlock;
-@property (nonatomic, copy) dispatch_block_t queryArResourceSuccessBlock;
-@property (nonatomic, copy) BARActivityBlock activityBlock;
-@property (nonatomic, copy) BARAPaddleGestureOpenCloseBlock paddleGestureOpenCloseBlock;
-@property (nonatomic, copy) BARARKitRestartBlock arkitRestartBlock;
-@property (nonatomic, assign) BOOL isOpenPlaceStatus;
-@property (nonatomic, copy) BARLogoRecogChangedBlock logoRecogChangedBlock;
 
-//@property (nonatomic, copy) BARUpdateSLAMPos updateSLAMPosEventBlock;
-//@property (nonatomic, copy) BARUpdateIMUPos updateIMUPosEventBlock;
-//@property (nonatomic, copy) BARUpdateTrackingPos updateTrackingPosEventBlock;
-//@property (nonatomic, copy) BARSetSLAMRelocationType setSLAMRelocationTypeEventBlock;
-//typedef void (^BARSwitchARCaseStateBlock)(BARCaseState state);//case状态回调\
-//@property (nonatomic, copy) BARLUAConfigBlock arLuaConfigBlock;
+@property (nonatomic, copy) BARSDKUIStateEventBlock uiStateChangeBlock;
+@property (nonatomic, copy) BARLuaMsgBlock luaMsgBlock;
+
+@property (nonatomic,assign,readonly) BOOL frontCamera;
+
 #pragma mark - public - method
 
 
@@ -73,6 +75,7 @@ typedef void(^BARLogoRecogChangedBlock)(BOOL show);
 
  */
 - (id)initARWithCameraSize:(CGSize )cameraSize previewSize:(CGSize)previewSize;
+
 
 
 /**
@@ -94,6 +97,10 @@ typedef void(^BARLogoRecogChangedBlock)(BOOL show);
             complete:(BARDownloadARCaseCompleteBlock)complete;
 
 
+
+/**
+ 取消下载AR资源包
+ */
 - (void)cancelDownLoadArCase;
 
 /**
@@ -119,9 +126,15 @@ typedef void(^BARLogoRecogChangedBlock)(BOOL show);
 
 /**
  @param sampleBuffer 相机数据
- @return bgra数据
+ @return bgra 数据
  */
 - (void)updateSampleBuffer:(CMSampleBufferRef)sampleBuffer;
+
+/**
+ *  设置是否是前置摄像头
+ */
+
+- (void) changeToFrontCamera:(BOOL) front;
 
 /**
  手势相关
@@ -133,14 +146,87 @@ typedef void(^BARLogoRecogChangedBlock)(BOOL show);
 - (void)touchesCancelled:(CGPoint)point scale:(CGFloat)scale;
 
 - (void)switchFilter:(int)filterId type:(int)type;
+
+/**
+ 拍照
+
+ @param finishBlock 拍照回调
+ */
 - (void)takePicture:(BARTakePictureFinishBlock)finishBlock;
+
+/**
+ 销毁当前已经加载的case，重新调起识图
+
+ @param destroyFinish 销毁case后的回调
+ */
 - (void)destroyCaseForSameSearch:(dispatch_block_t)destroyFinish;
+
+/**
+ 销毁case
+ */
 - (void)destroyCase;
 
+
+/**
+ ARSDK版本
+
+ @return 当前ARSDK版本号
+ */
 + (NSString *)arSDKVersion;
 
+
+/**
+ 设置设备姿态
+
+ @param position 设备姿态
+ */
 - (void)setDevicePosition:(int)position;
+
+/**
+ 设置render容器
+
+ @param targetView 目标view
+ */
 - (void)setTargetView:(BARImageView *)targetView ;
+
+
+/**
+ 设置AR输出格式
+
+ @param type
+        BAROutputBlend ,
+        BAROutputVideo,
+        BAROutputEngine,
+ */
 - (void)setBAROutputType:(BAROutput)type;
+
+
+/**
+ 设置相机size、预览size数据
+
+ @param cameraSize 相机尺寸
+ @param previewSize 预览尺寸
+ */
+- (void)setArCameraSize:(CGSize)cameraSize previewSize:(CGSize)previewSize;
+
+/**
+ 向lua发送消息
+
+ @param eventName 消息名
+ @param msgData 消息内容
+ @discussion lua中通过注册监听，获得消息Event:addEventListener("session_find_anchor", find_anchor)
+ */
+- (void)sendMsgToLua:(NSString *)eventName msgData:(NSDictionary *)msgData;
+
+
+/**
+ 取消分布加载下载
+ */
+- (void)cancelDownloadBatchZip;
+
+/**
+ 继续分布加载下载
+ */
+- (void)retryDownloadBatchZip;
 
 @end

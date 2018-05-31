@@ -27,7 +27,7 @@ typedef NS_ENUM(NSInteger,BARSDKUIState) {
     BARSDKUIState_Enanle_Front_Camera,
     BARSDKUIState_Case_Initial_Click,
     BARSDKUIState_SetNativeUI_Visible,
-    
+    BARSDKUIState_Change_FrontBack_Camera,
     /*
       BARSDKUIState_Enanle_Front_Camera                   // 开启前置摄像头
      

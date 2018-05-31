@@ -35,4 +35,5 @@
 - (void)startRecordingWithAudioTrack:(BOOL)enable;
 - (void)stopRecording:(void (^)(void))handler;
 
+- (instancetype)initWithCamera:(id)camera;
 @end
