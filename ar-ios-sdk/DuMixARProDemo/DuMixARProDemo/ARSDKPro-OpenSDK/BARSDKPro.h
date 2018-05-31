@@ -53,10 +53,11 @@
 
 + (void) resetArID:(NSString *)arID
             arType:(NSString *)arType
-           arValue:(NSString *)arValue 
+           arValue:(NSString *)arValue
+            arFrom:(NSString *)arFrom
     previewAppInfo:(NSString *)previewAppInfo;
 
 + (void)useAsShell:(BOOL) use;
-
++ (BOOL)setARResourceName:(NSString *)resName ;
 
 @end

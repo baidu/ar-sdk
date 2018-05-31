@@ -72,31 +72,24 @@
 
 #pragma mark - Private
 - (void)setupBaseContainerView {
-    
-    self.cameraPreview = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.previewSize.width, self.previewSize.height)];
+
     self.arContentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.previewSize.width, self.previewSize.height)];
     [self.arContentView setBackgroundColor:[UIColor clearColor]];
     [self.view addSubview:self.arContentView];
-    [self.view addSubview:self.cameraPreview];
     
     if (self.isLandscape) {
-        self.cameraPreview.transform = CGAffineTransformIdentity;
         self.arContentView.transform = CGAffineTransformIdentity;
         
         UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
         if (UIInterfaceOrientationPortrait == orientation) {
             
-            self.cameraPreview.transform = CGAffineTransformMakeRotation(-M_PI/2);
             self.arContentView.transform = CGAffineTransformMakeRotation(-M_PI/2);
             
             self.arContentView.layer.position = CGPointMake(self.view.frame.size.height/2, self.view.frame.size.width/2);
-            self.cameraPreview.layer.position = CGPointMake(self.view.frame.size.height/2, self.view.frame.size.width/2);
             
         }else if (UIInterfaceOrientationPortraitUpsideDown == orientation) {
-            self.cameraPreview.transform = CGAffineTransformMakeRotation(M_PI/2);
             self.arContentView.transform = CGAffineTransformMakeRotation(M_PI/2);
             self.arContentView.layer.position = CGPointMake(self.view.frame.size.height/2, self.view.frame.size.width/2);
-            self.cameraPreview.layer.position = CGPointMake(self.view.frame.size.height/2, self.view.frame.size.width/2);
             
         }else {
             [self adjustViewsForOrientation:orientation];
@@ -108,7 +101,7 @@
 - (void)initVideoPreviewView
 {
     if(!self.videoPreviewView){
-        _videoPreviewView = [[BARGestureImageView alloc]initWithFrame:self.cameraPreview.bounds];
+        _videoPreviewView = [[BARGestureImageView alloc]initWithFrame:self.arContentView.bounds];
         [self.videoPreviewView setFillMode:kBARImageFillModePreserveAspectRatioAndFill];
         [self.videoPreviewView setBackgroundColor:[UIColor clearColor]];
         [self.arContentView addSubview:self.videoPreviewView];
@@ -120,7 +113,7 @@
 {
     self.previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:_captureSession];
     self.previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-    [self.previewLayer setFrame:self.cameraPreview.bounds];
+    [self.previewLayer setFrame:self.arContentView.bounds];
     [self.arContentView.layer addSublayer:self.previewLayer];
 }
 
@@ -223,8 +216,16 @@
             if (self.dataSource && [self.dataSource respondsToSelector:@selector(updateSampleBuffer:)]) {
                 [self.dataSource updateSampleBuffer:sampleBuffer];
             }
-            
-            [self showARView:YES];
+            if (self.videoPreviewView.enabled) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self showARView:YES];
+                });
+            }else {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self showARView:NO];
+                });
+            }
+
             CFRelease(sampleBuffer);
             
         });
@@ -241,25 +242,24 @@
 }
 
 - (void)changeToSystemCamera{
+    self.videoPreviewView.enabled = NO;
     self.videoPreviewView.hidden = YES;
 }
 
 - (void)changeToARCamera{
+    self.videoPreviewView.enabled = YES;
     self.videoPreviewView.hidden = NO;
 }
 
 - (void)showARView:(BOOL)show
 {
     if(show){
-        self.cameraPreview.alpha = 0;
-        self.arContentView.alpha = 1;
-        [self.view bringSubviewToFront:self.arContentView];
-        
+        self.videoPreviewView.hidden = NO;
+        self.videoPreviewView.enabled = YES;
     }
     else{
-        self.cameraPreview.alpha = 1;
-        self.arContentView.alpha = 0;
-        [self.view bringSubviewToFront:self.cameraPreview];
+        self.videoPreviewView.hidden = YES;
+        self.videoPreviewView.enabled = NO;
     }
 }
 
@@ -361,25 +361,19 @@
             break;
         case UIInterfaceOrientationLandscapeLeft:
         {
-            self.cameraPreview.transform = CGAffineTransformIdentity;
             self.arContentView.transform = CGAffineTransformIdentity;
             
-            self.cameraPreview.transform = CGAffineTransformMakeRotation(M_PI/2);
             self.arContentView.transform = CGAffineTransformMakeRotation(M_PI/2);
             self.arContentView.layer.position = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2);
-            self.cameraPreview.layer.position = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2);
             
         }
             break;
         case UIInterfaceOrientationLandscapeRight:
         {
-            self.cameraPreview.transform = CGAffineTransformIdentity;
             self.arContentView.transform = CGAffineTransformIdentity;
             
-            self.cameraPreview.transform = CGAffineTransformMakeRotation(-M_PI/2);
             self.arContentView.transform = CGAffineTransformMakeRotation(-M_PI/2);
             self.arContentView.layer.position = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2);
-            self.cameraPreview.layer.position = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2);
             
         }
             break;
@@ -391,7 +385,6 @@
     [super viewDidDisappear:animated];
     [[NSNotificationCenter defaultCenter]removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
 }
-
 
 - (void)stopCapture
 {

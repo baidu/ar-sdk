@@ -26,8 +26,13 @@ typedef void(^BARLoadFailedBlock)(void);
 - (void)loadAR:(NSString *)arKey success:(BARLoadSuccessBlock)successBlock
  failure:(BARLoadFailedBlock)failureBlock;
 
-- (void)stopARState;
-- (void)startARState;
+/**
+ 录制视频时，需要设置movieWriter
 
+ @param movieWriter 视频录制
+ */
 - (void)setRenderMovieWriter:(BARImageMovieWriter *)movieWriter;
+
+- (kBARType)arTypeFromServer:(NSString *)arType;
+
 @end

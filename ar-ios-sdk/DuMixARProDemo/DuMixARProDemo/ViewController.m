@@ -18,7 +18,7 @@
 - (IBAction)showAR:(id)sender {
 #if defined (__arm64__)
     BARBusinessDemoViewController *arVC = [[BARBusinessDemoViewController alloc] init];
-    arVC.isLandscape = YES;
+    arVC.isLandscape = NO;
     [self presentViewController:arVC animated:NO completion:^{
         
     }];
