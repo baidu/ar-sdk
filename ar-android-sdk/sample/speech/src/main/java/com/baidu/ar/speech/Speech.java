@@ -3,88 +3,89 @@
  */
 package com.baidu.ar.speech;
 
-import java.util.HashMap;
+import java.util.Map;
 
 import org.json.JSONObject;
 
-import com.baidu.mms.voicesearch.invoke.voicerecognition.IVoiceRecognitionCallback;
+import com.baidu.ar.speech.listener.RecogResult;
+import com.baidu.ar.speech.listener.SpeechRecogListener;
 import com.baidu.speech.EventListener;
 import com.baidu.speech.EventManager;
 import com.baidu.speech.EventManagerFactory;
 import com.baidu.speech.asr.SpeechConstant;
 
 import android.content.Context;
+import android.util.Log;
 
 /**
  * Created by xgx on 2017/6/9.
  * 声音识别
  */
-public class Speech {
+public class Speech implements EventListener {
 
     private Context mContext;
+    /**
+     * SDK 内部核心 EventManager 类
+     */
+    private EventManager asr;
 
-    private EventManager mEventManager;
+    private SpeechRecogListener speechRecogListener;
 
-    // 是否sdk层来显示语音错误信息
-    private boolean showErrorTips = true;
-
-    private SpeechStatus mSpeechStatus = SpeechStatus.SPEECH_IDLE;
-
-    public enum SpeechStatus {
-        SPEECH_IDLE,
-        SPEECH_INIT,
-        SPEECH_OPEN,
-        SPEECH_CANCEL,
-    }
-
-    private Speech(Context context) {
+    public Speech(Context context, SpeechRecogListener speechRecogListener) {
         mContext = context;
+        asr = EventManagerFactory.create(context, "asr");
+        asr.registerListener(this);
+        this.speechRecogListener = speechRecogListener;
 
     }
 
-    public void startARListener(HashMap map) {
-        if (null != mEventManager) {
-            // 开始识别
-            mEventManager.send(SpeechConstant.ASR_START, new JSONObject(map).toString(), null, 0, 0);
-        }
+    public void start(Map<String, Object> params) {
+        String json = new JSONObject(params).toString();
+        asr.send(SpeechConstant.ASR_START, json, null, 0, 0);
     }
 
     /**
-     * 停止语音识别
-     *
-     * @param ivoiceRecognitionCallback 可为null
+     * 提前结束录音等待识别结果。
      */
-    public void cancel(IVoiceRecognitionCallback ivoiceRecognitionCallback) {
-        if (null != mEventManager) {
-            mEventManager.send(SpeechConstant.ASR_CANCEL, new JSONObject().toString(), null, 0, 0);
+    public void stop() {
+        asr.send(SpeechConstant.ASR_STOP, "{}", null, 0, 0);
+    }
+
+    /**
+     * 取消本次识别，取消后将立即停止不会返回识别结果。
+     * cancel 与stop的区别是 cancel在stop的基础上，完全停止整个识别流程，
+     */
+    public void cancel() {
+        if (asr != null) {
+            asr.send(SpeechConstant.ASR_CANCEL, "{}", null, 0, 0);
         }
     }
 
-    public void destroy() {
-        mEventManager = null;
-        releaseAudioInputStream();
-        mContext = null;
-    }
+    //   EventListener  回调方法
+    @Override
+    public void onEvent(String name, String params, byte[] data, int offset, int length) {
+        String logTxt = "name: " + name;
+        Log.e("status = ", "" + name);
 
-    public void setARRecognitionListener(EventListener listener) {
-        if (null == mEventManager) {
-            mEventManager = EventManagerFactory.create(mContext, "asr");
+        if (params != null && !params.isEmpty()) {
+            logTxt += " ;params :" + params;
         }
-        mEventManager.registerListener(listener);
-    }
-
-    public SpeechStatus getSpeechStatus() {
-        return mSpeechStatus;
-    }
-
-    public void setSpeechStatus(SpeechStatus status) {
-        mSpeechStatus = status;
-    }
-
-    public static void releaseAudioInputStream() {
-        if (SpeechDataFactory.create8kInputStream() != null) {
-            ((AudioInputStream) SpeechDataFactory.create8kInputStream()).closeByUser();
+        if (name.equals(SpeechConstant.CALLBACK_EVENT_ASR_PARTIAL)) {
+            if (params.contains("\"nlu_result\"")) {
+                if (length > 0 && data.length > 0) {
+                    logTxt += ", 语义解析结果：" + new String(data, offset, length);
+                }
+            }
+        } else if (data != null) {
+            logTxt += " ;data length=" + data.length;
         }
-        SpeechDataFactory.release();
+        printLog(logTxt);
+        if (speechRecogListener != null) {
+            speechRecogListener.onSpeechRecog(name, params);
+        }
+    }
+
+    private void printLog(String text) {
+        Log.e("status", text);
     }
 }

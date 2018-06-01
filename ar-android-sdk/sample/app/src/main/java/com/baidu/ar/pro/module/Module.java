@@ -5,6 +5,7 @@ package com.baidu.ar.pro.module;
 
 import java.util.HashMap;
 
+import com.baidu.ar.speech.listener.SpeechRecogListener;
 import com.baidu.baiduarsdk.util.MsgParamsUtil;
 
 import android.content.Context;
@@ -19,6 +20,8 @@ public class Module {
     private TtsControler ttsControler;
     //  tts 管理器
     private SpeechControler speechControler;
+
+    private SpeechRecogListener speechRecogListener;
 
     public Module(Context context) {
         mContext = context;
@@ -42,7 +45,7 @@ public class Module {
                 case MsgType.MSG_TYPE_VOICE_SHOW_MIC_ICON:
                 case MsgType.MSG_TYPE_VOICE_HIDE_MIC_ICON:
                     if (speechControler == null) {
-                        speechControler = new SpeechControler(mContext);
+                        speechControler = new SpeechControler(mContext,speechRecogListener);
                     }
                     speechControler.parseMessage(luaMsg);
                     break;
@@ -68,5 +71,9 @@ public class Module {
         if (ttsControler != null) {
             ttsControler.pause();
         }
+    }
+
+    public void setSpeechRecogListener(SpeechRecogListener speechRecogListener) {
+        this.speechRecogListener = speechRecogListener;
     }
 }

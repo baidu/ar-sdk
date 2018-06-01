@@ -33,7 +33,20 @@
                 android:name=".ARActivity"
                 android:resizeableActivity="false"
                 android:configChanges="keyboardHidden|orientation|screenSize"/>
-
+        <!-- AR语音识别 start -->
+        <meta-data
+                android:name="com.baidu.speech.APP_ID"
+                android:value="10315470"/>
+        <meta-data
+                android:name="com.baidu.speech.API_KEY"
+                android:value="bgW5575sEj5m9CHEatxTGln6"/>
+        <meta-data
+                android:name="com.baidu.speech.SECRET_KEY"
+                android:value="kD9VCx8q56s3lAaAk0juQtkFfXj3Xsp4"/>
+        <service
+                android:name="com.baidu.speech.VoiceRecognitionService"
+                android:exported="false"/>
+        <!-- AR语音识别 end -->
     </application>
 
 </manifest>

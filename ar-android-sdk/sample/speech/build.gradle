@@ -22,5 +22,5 @@ android {
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'provided')
+    api files('provided/bdasr_V3_20180320_9066860.jar')
 }
