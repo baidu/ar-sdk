@@ -10,6 +10,7 @@ import com.baidu.ar.base.MsgField;
 import com.baidu.ar.bean.ARConfig;
 import com.baidu.ar.bean.ARResource;
 import com.baidu.ar.bean.BrowserBean;
+import com.baidu.ar.bean.TipBean;
 import com.baidu.ar.bean.TrackRes;
 import com.baidu.ar.pro.R;
 import com.baidu.ar.pro.callback.PromptCallback;
@@ -19,6 +20,7 @@ import com.baidu.ar.util.Res;
 import com.baidu.ar.util.UiThreadUtil;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -98,6 +100,11 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
     private Module mModule;
 
     /**
+     * 2D识图提示文案
+     */
+    private String mDefaultHint;
+
+    /**
      * 构造函数
      *
      * @param context context
@@ -155,7 +162,7 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
 
         mDumixCallbackTips = findViewById(R.id.bdar_titlebar_tips);
 
-        mScanView = findViewById(R.id.bdar_gui_scan_view);
+        //        mScanView = findViewById(R.id.bdar_gui_scan_view);
 
         mDuMixCallback = this;
 
@@ -331,8 +338,7 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
             // Track消息 tips提示
             case MsgField.IMSG_TRACKED_TIPS_INFO:
                 TrackRes trackRes = (TrackRes) msg;
-                //               Log.e("onStateChange " , trackRes.getTipBean().get());
-                //                initTipsInfo(trackRes);
+                initTipsInfo(trackRes);
                 break;
 
             case MsgField.IMSG_MODE_SHOWING:
@@ -366,8 +372,6 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
                 //                mUIController.getARCallback().openUrl(url);
                 break;
             case MsgField.MSG_PADDLE_INIT:
-                break;
-            case MsgField.MSG_PADDLE_ENABLE:
                 break;
             case MsgField.MSG_SHARE:
                 break;
@@ -433,6 +437,34 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
 
     }
     // callback end
+
+    /**
+     * 初始化提示信息
+     *
+     * @param trackRes track res
+     */
+    private void initTipsInfo(TrackRes trackRes) {
+        if (trackRes == null || trackRes.getTipBean() == null) {
+            return;
+        }
+
+        TipBean tipBean = trackRes.getTipBean();
+        if (!TextUtils.isEmpty(tipBean.getHint())) {
+            mDefaultHint = tipBean.getHint();
+        } else {
+            mDefaultHint = null;
+        }
+
+        if (!TextUtils.isEmpty(tipBean.getTooFarHint())) {
+            mDefaultHint = tipBean.getTooFarHint();
+        }
+
+        if (!TextUtils.isEmpty(tipBean.getTooNearHint())) {
+            mDefaultHint = tipBean.getTooNearHint();
+        }
+        showToast(mDefaultHint);
+
+    }
 
     /**
      * ui 界面提示信息

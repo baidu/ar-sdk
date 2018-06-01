@@ -145,7 +145,7 @@ public class ARFragment extends Fragment {
     public void onResume() {
         super.onResume();
         if (mARController != null) {
-            mARController.onResume();
+            mARController.resume();
             // TODO: 2018/5/10 需要封装一下 别暴露arbridge接口 
             ArBridge.getInstance().onResumeByUser();
         }
@@ -172,7 +172,7 @@ public class ARFragment extends Fragment {
     public void onPause() {
         super.onPause();
         if (mARController != null) {
-            mARController.onPause();
+            mARController.pause();
         }
         mARCameraManager.stopCamera(null, true);
     }
@@ -182,7 +182,6 @@ public class ARFragment extends Fragment {
         super.onDestroy();
         if (mARController != null) {
             mARController.release();
-            mARController.onDestroy();
             mARController = null;
         }
         mARCameraManager.setPreviewCallback(null);
@@ -320,7 +319,7 @@ public class ARFragment extends Fragment {
                 if (mARController != null) {
                     mARController.setup(mDuMixSource, mDuMixTarget, mPromptUi.getDuMixCallback());
                     // todo update 需要封装此函数
-                    mARController.onResume();
+                    mARController.resume();
                 }
             }
         });
@@ -400,6 +399,7 @@ public class ARFragment extends Fragment {
 
                 @Override
                 public void onRecorderProcess(int i) {
+                    // TODO: 2018/6/1 当进度大于100时停止录制
                     if (i >= 100) {
                         onStropRecord();
                     }
