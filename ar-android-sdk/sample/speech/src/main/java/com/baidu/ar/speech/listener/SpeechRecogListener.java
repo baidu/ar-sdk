@@ -7,5 +7,5 @@ package com.baidu.ar.speech.listener;
  * 语音识别回调接口
  */
 public interface SpeechRecogListener {
-    void onSpeechRecog(String status, String result);
+    void onSpeechRecog(int status, String result);
 }

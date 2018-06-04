@@ -7,6 +7,8 @@ import java.util.Map;
 
 import org.json.JSONObject;
 
+import com.baidu.ar.speech.listener.IRecogListener;
+import com.baidu.ar.speech.listener.RecogEventAdapter;
 import com.baidu.ar.speech.listener.RecogResult;
 import com.baidu.ar.speech.listener.SpeechRecogListener;
 import com.baidu.speech.EventListener;
@@ -21,7 +23,7 @@ import android.util.Log;
  * Created by xgx on 2017/6/9.
  * 声音识别
  */
-public class Speech implements EventListener {
+public class Speech {
 
     private Context mContext;
     /**
@@ -31,10 +33,12 @@ public class Speech implements EventListener {
 
     private SpeechRecogListener speechRecogListener;
 
+    private int status = -1;
+
     public Speech(Context context, SpeechRecogListener speechRecogListener) {
         mContext = context;
         asr = EventManagerFactory.create(context, "asr");
-        asr.registerListener(this);
+        asr.registerListener(adapter);
         this.speechRecogListener = speechRecogListener;
 
     }
@@ -61,31 +65,87 @@ public class Speech implements EventListener {
         }
     }
 
-    //   EventListener  回调方法
-    @Override
-    public void onEvent(String name, String params, byte[] data, int offset, int length) {
-        String logTxt = "name: " + name;
-        Log.e("status = ", "" + name);
-
-        if (params != null && !params.isEmpty()) {
-            logTxt += " ;params :" + params;
-        }
-        if (name.equals(SpeechConstant.CALLBACK_EVENT_ASR_PARTIAL)) {
-            if (params.contains("\"nlu_result\"")) {
-                if (length > 0 && data.length > 0) {
-                    logTxt += ", 语义解析结果：" + new String(data, offset, length);
-                }
+    RecogEventAdapter adapter = new RecogEventAdapter(new IRecogListener() {
+        @Override
+        public void onAsrReady() {
+            if (speechRecogListener != null) {
+                speechRecogListener.onSpeechRecog(SpeechStatus.READYFORSPEECH, null);
             }
-        } else if (data != null) {
-            logTxt += " ;data length=" + data.length;
         }
-        printLog(logTxt);
-        if (speechRecogListener != null) {
-            speechRecogListener.onSpeechRecog(name, params);
-        }
-    }
 
-    private void printLog(String text) {
-        Log.e("status", text);
-    }
+        @Override
+        public void onAsrBegin() {
+            if (speechRecogListener != null) {
+                speechRecogListener.onSpeechRecog(SpeechStatus.BEGINNINGOFSPEECH, null);
+            }
+        }
+
+        @Override
+        public void onAsrEnd() {
+            if (speechRecogListener != null) {
+                speechRecogListener.onSpeechRecog(SpeechStatus.ENDOFSPEECH, null);
+            }
+        }
+
+        @Override
+        public void onAsrPartialResult(String[] results, RecogResult recogResult) {
+            if (speechRecogListener != null && results.length > 0) {
+                speechRecogListener.onSpeechRecog(SpeechStatus.PARTIALRESULT, results[0]);
+            }
+        }
+
+        @Override
+        public void onAsrFinalResult(String[] results, RecogResult recogResult) {
+            if (speechRecogListener != null && results.length > 0) {
+                speechRecogListener.onSpeechRecog(SpeechStatus.RESULT, results[0]);
+            }
+        }
+
+        @Override
+        public void onAsrFinish(RecogResult recogResult) {
+        }
+
+        @Override
+        public void onAsrFinishError(int errorCode, int subErrorCode, String errorMessage, String descMessage,
+                                     RecogResult recogResult) {
+            if (speechRecogListener != null) {
+                speechRecogListener.onSpeechRecog(SpeechStatus.ERROR, errorMessage);
+            }
+        }
+
+        @Override
+        public void onAsrLongFinish() {
+
+        }
+
+        @Override
+        public void onAsrVolume(int volumePercent, int volume) {
+
+        }
+
+        @Override
+        public void onAsrAudio(byte[] data, int offset, int length) {
+
+        }
+
+        @Override
+        public void onAsrExit() {
+
+        }
+
+        @Override
+        public void onAsrOnlineNluResult(String nluResult) {
+
+        }
+
+        @Override
+        public void onOfflineLoaded() {
+
+        }
+
+        @Override
+        public void onOfflineUnLoaded() {
+
+        }
+    });
 }

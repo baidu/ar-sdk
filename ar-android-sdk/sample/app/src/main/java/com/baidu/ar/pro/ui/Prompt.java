@@ -16,6 +16,7 @@ import com.baidu.ar.pro.R;
 import com.baidu.ar.pro.callback.PromptCallback;
 import com.baidu.ar.pro.module.Module;
 import com.baidu.ar.pro.view.ScanView;
+import com.baidu.ar.speech.SpeechStatus;
 import com.baidu.ar.speech.listener.RecogResult;
 import com.baidu.ar.speech.listener.SpeechRecogListener;
 import com.baidu.ar.util.Res;
@@ -513,11 +514,9 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
 
     SpeechRecogListener speechRecogListener = new SpeechRecogListener() {
         @Override
-        public void onSpeechRecog(String status, String params) {
-            if (status.equals("asr.partial")) {
-                RecogResult recogResult = RecogResult.parseJson(params);
-                showToast(recogResult.getResultsRecognition()[0]);
-                Log.e("recogResult  ", "status = " + recogResult.getResultsRecognition()[0]);
+        public void onSpeechRecog(int status, String result) {
+            if (status == SpeechStatus.PARTIALRESULT) {
+                showToast(result);
             }
         }
     };
