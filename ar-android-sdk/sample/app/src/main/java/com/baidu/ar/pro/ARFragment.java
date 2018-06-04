@@ -20,6 +20,7 @@ import com.baidu.ar.pro.camera.ARStartCameraCallback;
 import com.baidu.ar.constants.ARConfigKey;
 import com.baidu.ar.pro.draw.ARRenderCallback;
 import com.baidu.ar.pro.draw.ARRenderer;
+import com.baidu.ar.pro.view.ARControllerManager;
 import com.baidu.ar.recorder.MovieRecorderCallback;
 import com.baidu.ar.util.UiThreadUtil;
 import com.baidu.ar.pro.ui.Prompt;
@@ -277,7 +278,7 @@ public class ARFragment extends Fragment {
      * 开始渲染AR View
      */
     public void showArView() {
-        mARController = new ARController(getActivity(), false);
+        mARController = ARControllerManager.getInstance(getActivity()).getArController();
         mArGLSurfaceView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {

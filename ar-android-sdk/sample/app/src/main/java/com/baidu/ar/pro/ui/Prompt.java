@@ -5,6 +5,7 @@ package com.baidu.ar.pro.ui;
 
 import java.util.HashMap;
 
+import com.baidu.ar.ARController;
 import com.baidu.ar.DuMixCallback;
 import com.baidu.ar.base.MsgField;
 import com.baidu.ar.bean.ARConfig;
@@ -15,6 +16,7 @@ import com.baidu.ar.bean.TrackRes;
 import com.baidu.ar.pro.R;
 import com.baidu.ar.pro.callback.PromptCallback;
 import com.baidu.ar.pro.module.Module;
+import com.baidu.ar.pro.view.ARControllerManager;
 import com.baidu.ar.pro.view.ScanView;
 import com.baidu.ar.speech.SpeechStatus;
 import com.baidu.ar.speech.listener.RecogResult;
@@ -108,6 +110,11 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
     private String mDefaultHint;
 
     /**
+     * ar sdk 接口ARController
+     */
+    private ARController mARController;
+
+    /**
      * 构造函数
      *
      * @param context context
@@ -144,7 +151,7 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
      * init layout
      */
     private void init(Context context) {
-
+        mARController = ARControllerManager.getInstance(context).getArController();
         LayoutInflater.from(context).inflate(R.layout.bdar_layout_prompt, this);
         // button
         mIconBack = findViewById(R.id.bdar_titlebar_back);
@@ -518,6 +525,7 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
             if (status == SpeechStatus.PARTIALRESULT) {
                 showToast(result);
             }
+//            mARController.sendMessage2Lua()
         }
     };
 
