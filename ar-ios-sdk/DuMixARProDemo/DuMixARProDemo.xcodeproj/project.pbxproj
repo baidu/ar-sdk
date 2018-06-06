@@ -1,0 +1,509 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		42675449206CC40F00991402 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42675448206CC40F00991402 /* AppDelegate.m */; };
+		4267544C206CC40F00991402 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4267544B206CC40F00991402 /* ViewController.m */; };
+		4267544F206CC40F00991402 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4267544D206CC40F00991402 /* Main.storyboard */; };
+		42675451206CC40F00991402 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42675450206CC40F00991402 /* Assets.xcassets */; };
+		42675454206CC40F00991402 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42675452206CC40F00991402 /* LaunchScreen.storyboard */; };
+		42675457206CC40F00991402 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42675456206CC40F00991402 /* main.m */; };
+		4267546D206CC97000991402 /* BARBusinessDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42675469206CC96F00991402 /* BARBusinessDemoViewController.m */; };
+		4267546E206CC97000991402 /* BARRenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4267546C206CC97000991402 /* BARRenderViewController.m */; };
+		4267548D206CCF9000991402 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4267548C206CCF9000991402 /* libstdc++.6.0.9.tbd */; };
+		4267548F206CCF9400991402 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4267548E206CCF9400991402 /* libsqlite3.0.tbd */; };
+		42675491206CCF9B00991402 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42675490206CCF9B00991402 /* Accelerate.framework */; };
+		4267549F206CD03200991402 /* libAR-AFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4267549A206CD03200991402 /* libAR-AFNetworking.a */; };
+		426754A0206CD03200991402 /* libAR-ZipArchive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4267549B206CD03200991402 /* libAR-ZipArchive.a */; };
+		426754A2206CD05200991402 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 426754A1206CD05200991402 /* libc++.tbd */; };
+		426754C1206CDF1D00991402 /* libAR-SameSearch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 426754A6206CDF1C00991402 /* libAR-SameSearch.a */; };
+		426754CC206CDF3900991402 /* DumixARCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 426754CB206CDF3900991402 /* DumixARCore.a */; };
+		426754CE206CDF5B00991402 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 426754CD206CDF5A00991402 /* libiconv.tbd */; };
+		42AD49A320899070008BED27 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AD49A220899070008BED27 /* libz.tbd */; };
+		42AD49A520899092008BED27 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AD49A420899091008BED27 /* CoreTelephony.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		42604565207378810059921D /* BARCaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARCaseManager.h; sourceTree = "<group>"; };
+		42604566207378810059921D /* BARCaseTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARCaseTask.h; sourceTree = "<group>"; };
+		42675444206CC40F00991402 /* DuMixARProDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuMixARProDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42675447206CC40F00991402 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		42675448206CC40F00991402 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4267544A206CC40F00991402 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4267544B206CC40F00991402 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4267544E206CC40F00991402 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		42675450206CC40F00991402 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		42675453206CC40F00991402 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		42675455206CC40F00991402 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42675456206CC40F00991402 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		42675460206CC6A300991402 /* BARGestureImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARGestureImageView.h; sourceTree = "<group>"; };
+		42675461206CC6A300991402 /* BARMainController+Public.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BARMainController+Public.h"; sourceTree = "<group>"; };
+		42675462206CC6A300991402 /* BARMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARMainController.h; sourceTree = "<group>"; };
+		42675463206CC6A300991402 /* BARRouter+BARVoice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BARRouter+BARVoice.h"; sourceTree = "<group>"; };
+		42675464206CC6A300991402 /* BARRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARRouter.h; sourceTree = "<group>"; };
+		42675465206CC6A300991402 /* BARSDKDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARSDKDef.h; sourceTree = "<group>"; };
+		42675466206CC6A300991402 /* BARSDKObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARSDKObj.h; sourceTree = "<group>"; };
+		42675467206CC6A300991402 /* BARSDKPro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARSDKPro.h; sourceTree = "<group>"; };
+		42675468206CC6A300991402 /* BARVideoCameraProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARVideoCameraProtocol.h; sourceTree = "<group>"; };
+		42675469206CC96F00991402 /* BARBusinessDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BARBusinessDemoViewController.m; sourceTree = "<group>"; };
+		4267546A206CC97000991402 /* BARBusinessDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARBusinessDemoViewController.h; sourceTree = "<group>"; };
+		4267546B206CC97000991402 /* BARRenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARRenderViewController.h; sourceTree = "<group>"; };
+		4267546C206CC97000991402 /* BARRenderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BARRenderViewController.m; sourceTree = "<group>"; };
+		42675470206CC9FA00991402 /* BARImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARImageView.h; sourceTree = "<group>"; };
+		42675471206CCA1100991402 /* BARImageContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARImageContext.h; sourceTree = "<group>"; };
+		42675472206CCA1100991402 /* BARImageQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARImageQueue.h; sourceTree = "<group>"; };
+		42675473206CCA2700991402 /* BARGLProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARGLProgram.h; sourceTree = "<group>"; };
+		42675474206CCA3800991402 /* BARImageFramebuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARImageFramebuffer.h; sourceTree = "<group>"; };
+		42675475206CCA4600991402 /* BARImageFramebufferCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARImageFramebufferCache.h; sourceTree = "<group>"; };
+		42675476206CCA5600991402 /* BARImageOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARImageOutput.h; sourceTree = "<group>"; };
+		42675477206CCA6800991402 /* BARImageVideoCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARImageVideoCamera.h; sourceTree = "<group>"; };
+		42675479206CCA9300991402 /* BARImagePicture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARImagePicture.h; sourceTree = "<group>"; };
+		4267547A206CCAA100991402 /* BARImageMovieWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARImageMovieWriter.h; sourceTree = "<group>"; };
+		4267547C206CCAC800991402 /* BARImageFilterGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARImageFilterGroup.h; sourceTree = "<group>"; };
+		4267547D206CCAF300991402 /* BARImageFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARImageFilter.h; sourceTree = "<group>"; };
+		42675486206CCD8800991402 /* BARRouter+BARTTS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BARRouter+BARTTS.h"; sourceTree = "<group>"; };
+		42675488206CCDC900991402 /* BARRouter+BARImageSearchModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BARRouter+BARImageSearchModule.h"; sourceTree = "<group>"; };
+		4267548A206CCE6B00991402 /* BARVideoRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARVideoRecorder.h; sourceTree = "<group>"; };
+		4267548C206CCF9000991402 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		4267548E206CCF9400991402 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		42675490206CCF9B00991402 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		4267549A206CD03200991402 /* libAR-AFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libAR-AFNetworking.a"; sourceTree = "<group>"; };
+		4267549B206CD03200991402 /* libAR-ZipArchive.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libAR-ZipArchive.a"; sourceTree = "<group>"; };
+		426754A1206CD05200991402 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		426754A6206CDF1C00991402 /* libAR-SameSearch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libAR-SameSearch.a"; sourceTree = "<group>"; };
+		426754CB206CDF3900991402 /* DumixARCore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = DumixARCore.a; sourceTree = "<group>"; };
+		426754CD206CDF5A00991402 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		42AD49A220899070008BED27 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		42AD49A420899091008BED27 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		42DBF99820BFCE0B00EC238A /* BARRouter+BARLogoRecog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BARRouter+BARLogoRecog.h"; sourceTree = "<group>"; };
+		42DBF99920BFCE0C00EC238A /* BARMessageType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARMessageType.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		42675441206CC40F00991402 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42AD49A520899092008BED27 /* CoreTelephony.framework in Frameworks */,
+				42AD49A320899070008BED27 /* libz.tbd in Frameworks */,
+				426754CE206CDF5B00991402 /* libiconv.tbd in Frameworks */,
+				426754A2206CD05200991402 /* libc++.tbd in Frameworks */,
+				426754C1206CDF1D00991402 /* libAR-SameSearch.a in Frameworks */,
+				426754CC206CDF3900991402 /* DumixARCore.a in Frameworks */,
+				42675491206CCF9B00991402 /* Accelerate.framework in Frameworks */,
+				4267549F206CD03200991402 /* libAR-AFNetworking.a in Frameworks */,
+				4267548F206CCF9400991402 /* libsqlite3.0.tbd in Frameworks */,
+				4267548D206CCF9000991402 /* libstdc++.6.0.9.tbd in Frameworks */,
+				426754A0206CD03200991402 /* libAR-ZipArchive.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4267543B206CC40F00991402 = {
+			isa = PBXGroup;
+			children = (
+				42675446206CC40F00991402 /* DuMixARProDemo */,
+				42675445206CC40F00991402 /* Products */,
+				4267548B206CCF9000991402 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		42675445206CC40F00991402 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				42675444206CC40F00991402 /* DuMixARProDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		42675446206CC40F00991402 /* DuMixARProDemo */ = {
+			isa = PBXGroup;
+			children = (
+				426754A5206CDF1C00991402 /* SameSearch */,
+				42675492206CD03200991402 /* Vendors */,
+				4267546F206CC9D200991402 /* Render */,
+				4267545F206CC6A300991402 /* ARSDKPro-OpenSDK */,
+				42675447206CC40F00991402 /* AppDelegate.h */,
+				42675448206CC40F00991402 /* AppDelegate.m */,
+				4267544A206CC40F00991402 /* ViewController.h */,
+				4267544B206CC40F00991402 /* ViewController.m */,
+				4267546A206CC97000991402 /* BARBusinessDemoViewController.h */,
+				42675469206CC96F00991402 /* BARBusinessDemoViewController.m */,
+				4267546B206CC97000991402 /* BARRenderViewController.h */,
+				4267546C206CC97000991402 /* BARRenderViewController.m */,
+				4267544D206CC40F00991402 /* Main.storyboard */,
+				42675450206CC40F00991402 /* Assets.xcassets */,
+				42675452206CC40F00991402 /* LaunchScreen.storyboard */,
+				42675455206CC40F00991402 /* Info.plist */,
+				42675456206CC40F00991402 /* main.m */,
+			);
+			path = DuMixARProDemo;
+			sourceTree = "<group>";
+		};
+		4267545F206CC6A300991402 /* ARSDKPro-OpenSDK */ = {
+			isa = PBXGroup;
+			children = (
+				42DBF99920BFCE0C00EC238A /* BARMessageType.h */,
+				42DBF99820BFCE0B00EC238A /* BARRouter+BARLogoRecog.h */,
+				42604565207378810059921D /* BARCaseManager.h */,
+				42604566207378810059921D /* BARCaseTask.h */,
+				426754CB206CDF3900991402 /* DumixARCore.a */,
+				4267548A206CCE6B00991402 /* BARVideoRecorder.h */,
+				42675488206CCDC900991402 /* BARRouter+BARImageSearchModule.h */,
+				42675486206CCD8800991402 /* BARRouter+BARTTS.h */,
+				42675460206CC6A300991402 /* BARGestureImageView.h */,
+				42675461206CC6A300991402 /* BARMainController+Public.h */,
+				42675462206CC6A300991402 /* BARMainController.h */,
+				42675463206CC6A300991402 /* BARRouter+BARVoice.h */,
+				42675464206CC6A300991402 /* BARRouter.h */,
+				42675465206CC6A300991402 /* BARSDKDef.h */,
+				42675466206CC6A300991402 /* BARSDKObj.h */,
+				42675467206CC6A300991402 /* BARSDKPro.h */,
+				42675468206CC6A300991402 /* BARVideoCameraProtocol.h */,
+			);
+			path = "ARSDKPro-OpenSDK";
+			sourceTree = "<group>";
+		};
+		4267546F206CC9D200991402 /* Render */ = {
+			isa = PBXGroup;
+			children = (
+				4267547D206CCAF300991402 /* BARImageFilter.h */,
+				4267547C206CCAC800991402 /* BARImageFilterGroup.h */,
+				4267547A206CCAA100991402 /* BARImageMovieWriter.h */,
+				42675479206CCA9300991402 /* BARImagePicture.h */,
+				42675477206CCA6800991402 /* BARImageVideoCamera.h */,
+				42675476206CCA5600991402 /* BARImageOutput.h */,
+				42675475206CCA4600991402 /* BARImageFramebufferCache.h */,
+				42675474206CCA3800991402 /* BARImageFramebuffer.h */,
+				42675473206CCA2700991402 /* BARGLProgram.h */,
+				42675471206CCA1100991402 /* BARImageContext.h */,
+				42675472206CCA1100991402 /* BARImageQueue.h */,
+				42675470206CC9FA00991402 /* BARImageView.h */,
+			);
+			path = Render;
+			sourceTree = "<group>";
+		};
+		4267548B206CCF9000991402 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42AD49A420899091008BED27 /* CoreTelephony.framework */,
+				42AD49A220899070008BED27 /* libz.tbd */,
+				426754CD206CDF5A00991402 /* libiconv.tbd */,
+				426754A1206CD05200991402 /* libc++.tbd */,
+				42675490206CCF9B00991402 /* Accelerate.framework */,
+				4267548E206CCF9400991402 /* libsqlite3.0.tbd */,
+				4267548C206CCF9000991402 /* libstdc++.6.0.9.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		42675492206CD03200991402 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				4267549A206CD03200991402 /* libAR-AFNetworking.a */,
+				4267549B206CD03200991402 /* libAR-ZipArchive.a */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		426754A5206CDF1C00991402 /* SameSearch */ = {
+			isa = PBXGroup;
+			children = (
+				426754A6206CDF1C00991402 /* libAR-SameSearch.a */,
+			);
+			path = SameSearch;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		42675443206CC40F00991402 /* DuMixARProDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4267545A206CC40F00991402 /* Build configuration list for PBXNativeTarget "DuMixARProDemo" */;
+			buildPhases = (
+				42675440206CC40F00991402 /* Sources */,
+				42675441206CC40F00991402 /* Frameworks */,
+				42675442206CC40F00991402 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DuMixARProDemo;
+			productName = DuMixARProDemo;
+			productReference = 42675444206CC40F00991402 /* DuMixARProDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4267543C206CC40F00991402 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "JIA CHUANSHENG";
+				TargetAttributes = {
+					42675443206CC40F00991402 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 4267543F206CC40F00991402 /* Build configuration list for PBXProject "DuMixARProDemo" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4267543B206CC40F00991402;
+			productRefGroup = 42675445206CC40F00991402 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				42675443206CC40F00991402 /* DuMixARProDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		42675442206CC40F00991402 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42675454206CC40F00991402 /* LaunchScreen.storyboard in Resources */,
+				42675451206CC40F00991402 /* Assets.xcassets in Resources */,
+				4267544F206CC40F00991402 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		42675440206CC40F00991402 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4267544C206CC40F00991402 /* ViewController.m in Sources */,
+				42675457206CC40F00991402 /* main.m in Sources */,
+				4267546E206CC97000991402 /* BARRenderViewController.m in Sources */,
+				42675449206CC40F00991402 /* AppDelegate.m in Sources */,
+				4267546D206CC97000991402 /* BARBusinessDemoViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4267544D206CC40F00991402 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4267544E206CC40F00991402 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		42675452206CC40F00991402 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42675453206CC40F00991402 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		42675458206CC40F00991402 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		42675459206CC40F00991402 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4267545B206CC40F00991402 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q5MN33EYDY;
+				INFOPLIST_FILE = DuMixARProDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DuMixARProDemo",
+					"$(PROJECT_DIR)/DuMixARProDemo/Vendors/BDVoice",
+					"$(PROJECT_DIR)/DuMixARProDemo/Vendors",
+					"$(PROJECT_DIR)/DuMixARProDemo/SameSearch",
+					"$(PROJECT_DIR)/DuMixARProDemo/TTS/BDTTS",
+					"$(PROJECT_DIR)/DuMixARProDemo/TTS",
+					"$(PROJECT_DIR)/DuMixARProDemo/Voice/BDVoice",
+					"$(PROJECT_DIR)/DuMixARProDemo/Voice",
+					"$(PROJECT_DIR)/DuMixARProDemo/ARSDKPro-OpenSDK",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gaapp.DuMixARProDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4267545C206CC40F00991402 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q5MN33EYDY;
+				INFOPLIST_FILE = DuMixARProDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DuMixARProDemo",
+					"$(PROJECT_DIR)/DuMixARProDemo/Vendors/BDVoice",
+					"$(PROJECT_DIR)/DuMixARProDemo/Vendors",
+					"$(PROJECT_DIR)/DuMixARProDemo/SameSearch",
+					"$(PROJECT_DIR)/DuMixARProDemo/TTS/BDTTS",
+					"$(PROJECT_DIR)/DuMixARProDemo/TTS",
+					"$(PROJECT_DIR)/DuMixARProDemo/Voice/BDVoice",
+					"$(PROJECT_DIR)/DuMixARProDemo/Voice",
+					"$(PROJECT_DIR)/DuMixARProDemo/ARSDKPro-OpenSDK",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gaapp.DuMixARProDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4267543F206CC40F00991402 /* Build configuration list for PBXProject "DuMixARProDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42675458206CC40F00991402 /* Debug */,
+				42675459206CC40F00991402 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4267545A206CC40F00991402 /* Build configuration list for PBXNativeTarget "DuMixARProDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4267545B206CC40F00991402 /* Debug */,
+				4267545C206CC40F00991402 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4267543C206CC40F00991402 /* Project object */;
+}
