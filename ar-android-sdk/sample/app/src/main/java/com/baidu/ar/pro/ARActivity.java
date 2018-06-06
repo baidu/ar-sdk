@@ -34,17 +34,11 @@ public class ARActivity extends FragmentActivity {
             String arkey = getIntent().getStringExtra(ARConfigKey.AR_KEY);
             int arType = getIntent().getIntExtra(ARConfigKey.AR_TYPE, 0);
 
-            // TODO: 2018/5/11 提示名字及描述 test
-            String name = getIntent().getStringExtra("name");
-            String description = getIntent().getStringExtra("description");
             Bundle data = new Bundle();
             JSONObject jsonObj = new JSONObject();
             try {
                 jsonObj.put(ARConfigKey.AR_KEY, arkey);
                 jsonObj.put(ARConfigKey.AR_TYPE, arType);
-
-                jsonObj.put("name", name);
-                jsonObj.put("description", description);
             } catch (JSONException e) {
                 e.printStackTrace();
             }

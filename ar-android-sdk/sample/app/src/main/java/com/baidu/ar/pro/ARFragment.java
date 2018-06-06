@@ -25,12 +25,16 @@ import com.baidu.ar.recorder.MovieRecorderCallback;
 import com.baidu.ar.util.UiThreadUtil;
 import com.baidu.ar.pro.ui.Prompt;
 import com.baidu.baiduarsdk.ArBridge;
+import com.baidu.recg.CornerPoint;
+import com.baidu.recg.ImgRecognitionClient;
 
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.graphics.Point;
 import android.graphics.SurfaceTexture;
+import android.hardware.Camera;
 import android.opengl.GLSurfaceView;
 import android.os.Build;
 import android.os.Bundle;
@@ -108,6 +112,14 @@ public class ARFragment extends Fragment {
      */
     private DuMixTarget mDuMixTarget;
 
+    /**
+     * 本地识图 云端识图扫描
+     */
+    private ImgRecognitionClient mImgRecognitionClient;
+
+    private int mCameraPriWidth = 1280;
+    private int mCameraPriHeight = 720;
+
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         // 进入时需要先配置环境
@@ -135,6 +147,10 @@ public class ARFragment extends Fragment {
             }
         }
 
+        if (ARConfig.getARType() == 6 || ARConfig.getARType() == 7) {
+            mImgRecognitionClient = new ImgRecognitionClient();
+            mPromptUi.initPreviewScreenScale(mCameraPriWidth, mCameraPriHeight);
+        }
     }
 
     @Override
@@ -188,6 +204,11 @@ public class ARFragment extends Fragment {
         mARCameraManager.setPreviewCallback(null);
         if (mPromptUi != null) {
             mPromptUi.release();
+        }
+
+        if (mImgRecognitionClient != null) {
+            mImgRecognitionClient.release();
+            mImgRecognitionClient = null;
         }
     }
 
@@ -293,6 +314,13 @@ public class ARFragment extends Fragment {
             public void onPreviewFrame(byte[] data, int width, int height) {
                 if (mARController != null) {
                     mARController.onCameraPreviewFrame(data, width, height);
+                }
+
+                if (mImgRecognitionClient != null) {
+                    byte[] rotatedData = rotateImage(data, mCameraPriWidth, mCameraPriHeight);
+                    CornerPoint[] cornerPoints = mImgRecognitionClient.extractCornerPoints(rotatedData,
+                            mCameraPriHeight, mCameraPriWidth);
+                    mPromptUi.setCornerPoint(cornerPoints);
                 }
             }
         });
@@ -446,6 +474,32 @@ public class ARFragment extends Fragment {
             dir.mkdirs();
         }
         return path;
+    }
+
+    /**
+     * 图片旋转90 度
+     *
+     * @param data
+     * @param width
+     * @param height
+     *
+     * @return
+     */
+    private byte[] rotateImage(byte[] data, int width, int height) {
+        byte[] rotatedData = null;
+        try {
+            if (null == rotatedData || rotatedData.length != data.length) {
+                rotatedData = new byte[data.length];
+            }
+            for (int y = 0; y < height; y++) {
+                for (int x = 0; x < width; x++) {
+                    rotatedData[x * height + height - y - 1] = data[x + y * width];
+                }
+            }
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+        return rotatedData;
     }
 
 }

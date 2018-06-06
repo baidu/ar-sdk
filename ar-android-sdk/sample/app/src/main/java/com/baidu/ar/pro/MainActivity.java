@@ -72,8 +72,6 @@ public class MainActivity extends Activity {
                 ListItemBean listItemBean = mListData.get(position);
                 bundle.putString(ARConfigKey.AR_KEY, listItemBean.getARKey());
                 bundle.putInt(ARConfigKey.AR_TYPE, listItemBean.getARType());
-                bundle.putString("name", listItemBean.getName());
-                bundle.putString("description", listItemBean.getDescription());
                 intent.putExtras(bundle);
                 startActivity(intent);
             }

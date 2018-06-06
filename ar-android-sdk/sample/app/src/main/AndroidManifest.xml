@@ -32,6 +32,7 @@
         <activity
                 android:name=".ARActivity"
                 android:resizeableActivity="false"
+                android:screenOrientation="portrait"
                 android:configChanges="keyboardHidden|orientation|screenSize"/>
         <!-- AR语音识别 start -->
         <meta-data

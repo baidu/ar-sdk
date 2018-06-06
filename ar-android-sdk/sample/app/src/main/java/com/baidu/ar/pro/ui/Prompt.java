@@ -17,16 +17,18 @@ import com.baidu.ar.pro.R;
 import com.baidu.ar.pro.callback.PromptCallback;
 import com.baidu.ar.pro.module.Module;
 import com.baidu.ar.pro.view.ARControllerManager;
+import com.baidu.ar.pro.view.PointsView;
 import com.baidu.ar.pro.view.ScanView;
 import com.baidu.ar.speech.SpeechStatus;
-import com.baidu.ar.speech.listener.RecogResult;
 import com.baidu.ar.speech.listener.SpeechRecogListener;
 import com.baidu.ar.util.Res;
 import com.baidu.ar.util.UiThreadUtil;
+import com.baidu.recg.CornerPoint;
 
 import android.content.Context;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -98,6 +100,14 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
      * track 扫描view
      */
     private ScanView mScanView;
+
+    /**
+     * 云点
+     */
+    private PointsView mPointsView;
+
+    private float mScaleWidth;
+    private float mScaleHeight;
 
     /**
      * 依赖外部Module
@@ -172,7 +182,12 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
 
         mDumixCallbackTips = findViewById(R.id.bdar_titlebar_tips);
 
-        //        mScanView = findViewById(R.id.bdar_gui_scan_view);
+        mScanView = findViewById(R.id.bdar_gui_scan_view);
+
+        mPointsView = findViewById(R.id.bdar_gui_point_view);
+        if (ARConfig.getARType() == 6 || ARConfig.getARType() == 7) {
+            mPointsView.setVisibility(View.VISIBLE);
+        }
 
         mDuMixCallback = this;
 
@@ -388,12 +403,14 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
                 break;
             // 本地识图 识别结果
             case MsgField.MSG_ON_DEVICE_IR_RESULT:
+                setPointViewVisible(false);
                 arKey = (String) msg;
                 // 根据本地识图结果 切换case
                 mPromptCallback.onChangeCase(arKey);
                 showToast(" 本地识图成功.切换CASE: " + arKey);
                 break;
             case MsgField.IMSG_CLOUDAR_RECG_RESULT:
+                setPointViewVisible(false);
                 arKey = (String) msg;
                 // 根据云端识图结果 切换case
                 mPromptCallback.onChangeCase(arKey);
@@ -525,8 +542,37 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
             if (status == SpeechStatus.PARTIALRESULT) {
                 showToast(result);
             }
-//            mARController.sendMessage2Lua()
+            //            mARController.sendMessage2Lua()
         }
     };
 
+    public void setCornerPoint(final CornerPoint[] cornerPoints) {
+        UiThreadUtil.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                mPointsView.setNrCornerAndCornersData(cornerPoints, mScaleWidth, mScaleHeight);
+                mPointsView.invalidate();
+            }
+        });
+    }
+
+    /**
+     * 计算屏幕和preview 的宽高比
+     */
+
+    public void initPreviewScreenScale(int cameraW, int cameraH) {
+        DisplayMetrics dm = getResources().getDisplayMetrics();
+        mScaleHeight = (float) ((dm.heightPixels * 1.0) / (cameraW * 1.0));
+        mScaleWidth = (float) ((dm.widthPixels * 1.0) / (cameraH * 1.0));
+    }
+
+    public void setPointViewVisible(final boolean visible) {
+        UiThreadUtil.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                mPointsView.clear();
+                mPointsView.setVisibility(visible ? View.VISIBLE : View.GONE);
+            }
+        });
+    }
 }
