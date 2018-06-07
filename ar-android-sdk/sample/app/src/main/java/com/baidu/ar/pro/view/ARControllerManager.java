@@ -33,4 +33,9 @@ public class ARControllerManager {
     public ARController getArController() {
         return arController;
     }
+
+    public void release() {
+        arController.release();
+        arControllerManager = null;
+    }
 }

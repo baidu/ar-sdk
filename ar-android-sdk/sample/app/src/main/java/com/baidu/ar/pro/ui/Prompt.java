@@ -186,7 +186,7 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
 
         mPointsView = findViewById(R.id.bdar_gui_point_view);
         if (ARConfig.getARType() == 6 || ARConfig.getARType() == 7) {
-            mPointsView.setVisibility(View.VISIBLE);
+            setPointViewVisible(true);
         }
 
         mDuMixCallback = this;
@@ -415,6 +415,9 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
                 // 根据云端识图结果 切换case
                 mPromptCallback.onChangeCase(arKey);
                 showToast(" 云端识图成功.切换CASE: " + arKey);
+                break;
+            case MsgField.IMSG_DEVICE_NOT_SUPPORT:
+                showToast("哎呦，机型硬件不支持");
                 break;
             default:
                 break;

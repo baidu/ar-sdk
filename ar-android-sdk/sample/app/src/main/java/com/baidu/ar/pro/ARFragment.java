@@ -22,6 +22,7 @@ import com.baidu.ar.pro.draw.ARRenderCallback;
 import com.baidu.ar.pro.draw.ARRenderer;
 import com.baidu.ar.pro.view.ARControllerManager;
 import com.baidu.ar.recorder.MovieRecorderCallback;
+import com.baidu.ar.util.SystemInfoUtil;
 import com.baidu.ar.util.UiThreadUtil;
 import com.baidu.ar.pro.ui.Prompt;
 import com.baidu.baiduarsdk.ArBridge;
@@ -163,7 +164,7 @@ public class ARFragment extends Fragment {
         super.onResume();
         if (mARController != null) {
             mARController.resume();
-            // TODO: 2018/5/10 需要封装一下 别暴露arbridge接口 
+            // TODO: 2018/5/10 需要封装一下 别暴露arbridge接口
             ArBridge.getInstance().onResumeByUser();
         }
         if (hasNecessaryPermission()) {
@@ -197,19 +198,19 @@ public class ARFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if (mARController != null) {
-            mARController.release();
-            mARController = null;
-        }
-        mARCameraManager.setPreviewCallback(null);
         if (mPromptUi != null) {
             mPromptUi.release();
+            mPromptUi = null;
         }
-
+        if (mARRenderer != null) {
+            mARRenderer.release();
+            mARRenderer = null;
+        }
         if (mImgRecognitionClient != null) {
             mImgRecognitionClient.release();
             mImgRecognitionClient = null;
         }
+        ARControllerManager.getInstance(getActivity()).release();
     }
 
     @Override
@@ -264,7 +265,6 @@ public class ARFragment extends Fragment {
                 new SurfaceTexture.OnFrameAvailableListener() {
                     @Override
                     public void onFrameAvailable(SurfaceTexture surfaceTexture) {
-                        Log.d(TAG, "onFrameAvailable");
                         mArGLSurfaceView.requestRender();
                     }
                 }
@@ -316,12 +316,13 @@ public class ARFragment extends Fragment {
                     mARController.onCameraPreviewFrame(data, width, height);
                 }
 
-                if (mImgRecognitionClient != null) {
-                    byte[] rotatedData = rotateImage(data, mCameraPriWidth, mCameraPriHeight);
-                    CornerPoint[] cornerPoints = mImgRecognitionClient.extractCornerPoints(rotatedData,
-                            mCameraPriHeight, mCameraPriWidth);
-                    mPromptUi.setCornerPoint(cornerPoints);
-                }
+                                if (mImgRecognitionClient != null) {
+                                    byte[] rotatedData = rotateImage(data, mCameraPriWidth, mCameraPriHeight);
+                                    CornerPoint[] cornerPoints = mImgRecognitionClient.extractCornerPoints
+                 (rotatedData,
+                                            mCameraPriHeight, mCameraPriWidth);
+                                    mPromptUi.setCornerPoint(cornerPoints);
+                                }
             }
         });
 
@@ -332,6 +333,7 @@ public class ARFragment extends Fragment {
                 mDuMixSource.setArType(ARConfig.getARType());
 
             }
+
 
             @Override
             public void onARDrawerCreated(SurfaceTexture surfaceTexture, SurfaceTexture.OnFrameAvailableListener
@@ -345,10 +347,22 @@ public class ARFragment extends Fragment {
                 if (mDuMixSource != null) {
                     mDuMixSource.setCameraSource(null);
                 }
+
                 if (mARController != null) {
                     mARController.setup(mDuMixSource, mDuMixTarget, mPromptUi.getDuMixCallback());
                     // todo update 需要封装此函数
                     mARController.resume();
+                }
+            }
+
+            @Override
+            public void onARDrawerChanged(SurfaceTexture surfaceTexture, int width, int height) {
+                if (mARController != null) {
+                    if (SystemInfoUtil.isScreenOrientationLandscape(getContext())) {
+                        mARController.reSetup(surfaceTexture, height, width);
+                    } else {
+                        mARController.reSetup(surfaceTexture, width, height);
+                    }
                 }
             }
         });
@@ -390,7 +404,7 @@ public class ARFragment extends Fragment {
 
         @Override
         public void onBackPressed() {
-            onFragmentBackPressed();
+            getActivity().onBackPressed();
         }
 
         @Override

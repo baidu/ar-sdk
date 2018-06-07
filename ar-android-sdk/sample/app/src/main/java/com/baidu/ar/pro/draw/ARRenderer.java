@@ -3,6 +3,10 @@ package com.baidu.ar.pro.draw;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
+import com.baidu.ar.pro.draw.ARDrawer;
+import com.baidu.ar.statistic.StatisticConstants;
+import com.baidu.ar.statistic.StatisticHelper;
+
 import android.graphics.SurfaceTexture;
 import android.opengl.GLES10;
 import android.opengl.GLES20;
@@ -18,6 +22,9 @@ public class ARRenderer implements GLSurfaceView.Renderer {
     private ARDrawer mCameraDrawer;
     private SurfaceTexture mCameraTexture;
     private int mCameraTextureID;
+    private int mCameraWidth;
+    private int mCameraHeight;
+    private SurfaceTexture.OnFrameAvailableListener mCameraFrameListener;
 
     private ARDrawer mARDrawer;
     private SurfaceTexture mARTexture;
@@ -28,11 +35,11 @@ public class ARRenderer implements GLSurfaceView.Renderer {
     private SurfaceTexture.OnFrameAvailableListener mARFrameListener;
 
     private volatile boolean mDrawAR = true;
-
     // 是否是横屏模式
     private boolean mScreenLandscape;
 
     public ARRenderer(boolean landscape) {
+
         mScreenLandscape = landscape;
         if (mCameraTexture == null) {
             int mCameraTextureID = createTexture(GLES10.GL_TEXTURE_2D);
@@ -42,19 +49,38 @@ public class ARRenderer implements GLSurfaceView.Renderer {
             int mARTextureID = createTexture(GLES10.GL_TEXTURE_2D);
             mARTexture = new SurfaceTexture(mARTextureID);
         }
-
     }
 
     public SurfaceTexture getCameraTexture() {
         return mCameraTexture;
     }
 
+    public void setDrawAR(boolean drawAR) {
+        mDrawAR = drawAR;
+        mDrawerChanged = true;
+    }
+
     private boolean mDrawerChanged = false;
+
+    //    public void setCameraRenderCallback(CameraRenderCallback callback) {
+    //        mCameraRenderCallback = callback;
+    //    }
+
+    public void setCameraFrameListener(SurfaceTexture.OnFrameAvailableListener listener) {
+        mCameraFrameListener = listener;
+        setCameraFrameListener();
+    }
+
+    private void setCameraFrameListener() {
+        if (mCameraTexture != null && mCameraFrameListener != null) {
+            mCameraTexture.setOnFrameAvailableListener(mCameraFrameListener);
+        }
+    }
 
     public void setARRenderCallback(ARRenderCallback callback) {
         mARRenderCallback = callback;
         if (mARRenderCallback != null) {
-            mARRenderCallback.onCameraDrawerCreated(mCameraTexture, mARWidth, mARHeight);
+            mARRenderCallback.onCameraDrawerCreated(mCameraTexture, 1280, 720);
         }
         if (mARRenderCallback != null) {
             mARRenderCallback.onARDrawerCreated(mARTexture, mARFrameListener, mARWidth, mARHeight);
@@ -85,34 +111,46 @@ public class ARRenderer implements GLSurfaceView.Renderer {
 
         if (mARDrawer == null) {
             mARDrawer = new ARDrawer(mARTextureID, GLES10.GL_TEXTURE_2D, mScreenLandscape);
+            // if (mARRenderCallback != null) {
+            // mARRenderCallback.onARDrawerCreated(mARTexture, width, height);
+            // }
+        }
 
+        if (mARRenderCallback != null) {
+            mARRenderCallback.onARDrawerChanged(mARTexture, mARWidth, mARHeight);
         }
     }
 
     @Override
     public void onDrawFrame(GL10 gl) {
         updateDrawer();
+        if (StatisticConstants.getIsRenderModel()) {
+            StatisticHelper.getInstance().statisticFrameRate(StatisticConstants.VIEW_RENDER_FRAME_TIME);
+        }
 
         GLES20.glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
         GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT | GLES20.GL_DEPTH_BUFFER_BIT);
 
-        if (mDrawAR) {
-            if (mARTexture != null) {
-                Log.d(TAG, "mARTexture.updateTexImage(); ");
-                mARTexture.updateTexImage();
-                float[] mtx = new float[16];
-                mARTexture.getTransformMatrix(mtx);
-                mARDrawer.draw(mtx);
+        try {
+            if (mDrawAR) {
+                if (mARTexture != null) {
+                    Log.d(TAG, "mARTexture.updateTexImage(); ");
+                    mARTexture.updateTexImage();
+                    float[] mtx = new float[16];
+                    mARTexture.getTransformMatrix(mtx);
+                    mARDrawer.draw(mtx);
+                }
+            } else {
+                if (mCameraTexture != null) {
+                    mCameraTexture.updateTexImage();
+                    float[] mtx = new float[16];
+                    mCameraTexture.getTransformMatrix(mtx);
+                    mCameraDrawer.draw(mtx);
+                }
             }
-        } else {
-            if (mCameraTexture != null) {
-                mCameraTexture.updateTexImage();
-                float[] mtx = new float[16];
-                mCameraTexture.getTransformMatrix(mtx);
-                mCameraDrawer.draw(mtx);
-            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-
     }
 
     private void updateDrawer() {
@@ -145,7 +183,6 @@ public class ARRenderer implements GLSurfaceView.Renderer {
 
     public void release() {
         if (mARDrawer != null) {
-            // TODO:release
             mARDrawer = null;
         }
         if (mARTexture != null) {
@@ -174,5 +211,4 @@ public class ARRenderer implements GLSurfaceView.Renderer {
 
         return texture[0];
     }
-
 }
