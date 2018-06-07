@@ -22,15 +22,6 @@
 		426754A0206CD03200991402 /* libAR-ZipArchive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4267549B206CD03200991402 /* libAR-ZipArchive.a */; };
 		426754A2206CD05200991402 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 426754A1206CD05200991402 /* libc++.tbd */; };
 		426754C1206CDF1D00991402 /* libAR-SameSearch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 426754A6206CDF1C00991402 /* libAR-SameSearch.a */; };
-		426754C2206CDF1D00991402 /* libBaiduTTSSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 426754B2206CDF1D00991402 /* libBaiduTTSSDK.a */; };
-		426754C3206CDF1D00991402 /* Chinese_And_English_Speech_Female.dat in Resources */ = {isa = PBXBuildFile; fileRef = 426754B4206CDF1D00991402 /* Chinese_And_English_Speech_Female.dat */; };
-		426754C4206CDF1D00991402 /* Chinese_And_English_Speech_Male.dat in Resources */ = {isa = PBXBuildFile; fileRef = 426754B5206CDF1D00991402 /* Chinese_And_English_Speech_Male.dat */; };
-		426754C5206CDF1D00991402 /* Chinese_And_English_Text.dat in Resources */ = {isa = PBXBuildFile; fileRef = 426754B6206CDF1D00991402 /* Chinese_And_English_Text.dat */; };
-		426754C6206CDF1D00991402 /* libAR-TTS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 426754B7206CDF1D00991402 /* libAR-TTS.a */; };
-		426754C7206CDF1D00991402 /* bds_easr_mfe_cmvn.dat in Resources */ = {isa = PBXBuildFile; fileRef = 426754BA206CDF1D00991402 /* bds_easr_mfe_cmvn.dat */; };
-		426754C8206CDF1D00991402 /* bds_easr_mfe_dnn.dat in Resources */ = {isa = PBXBuildFile; fileRef = 426754BB206CDF1D00991402 /* bds_easr_mfe_dnn.dat */; };
-		426754C9206CDF1D00991402 /* libBaiduSpeechSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 426754BF206CDF1D00991402 /* libBaiduSpeechSDK.a */; };
-		426754CA206CDF1D00991402 /* libAR-SClientSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 426754C0206CDF1D00991402 /* libAR-SClientSDK.a */; };
 		426754CC206CDF3900991402 /* DumixARCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 426754CB206CDF3900991402 /* DumixARCore.a */; };
 		426754CE206CDF5B00991402 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 426754CD206CDF5A00991402 /* libiconv.tbd */; };
 		42AD49A320899070008BED27 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AD49A220899070008BED27 /* libz.tbd */; };
@@ -85,27 +76,6 @@
 		4267549B206CD03200991402 /* libAR-ZipArchive.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libAR-ZipArchive.a"; sourceTree = "<group>"; };
 		426754A1206CD05200991402 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		426754A6206CDF1C00991402 /* libAR-SameSearch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libAR-SameSearch.a"; sourceTree = "<group>"; };
-		426754A9206CDF1D00991402 /* BDS_EttsModelManagerInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDS_EttsModelManagerInterface.h; sourceTree = "<group>"; };
-		426754AA206CDF1D00991402 /* BDSBuiltInPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSBuiltInPlayer.h; sourceTree = "<group>"; };
-		426754AB206CDF1D00991402 /* BDSMixedModeSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSMixedModeSynthesizer.h; sourceTree = "<group>"; };
-		426754AC206CDF1D00991402 /* BDSSpeechSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizer.h; sourceTree = "<group>"; };
-		426754AD206CDF1D00991402 /* BDSSpeechSynthesizerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerDelegate.h; sourceTree = "<group>"; };
-		426754AE206CDF1D00991402 /* BDSSpeechSynthesizerErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerErrors.h; sourceTree = "<group>"; };
-		426754AF206CDF1D00991402 /* BDSSpeechSynthesizerParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerParams.h; sourceTree = "<group>"; };
-		426754B0206CDF1D00991402 /* BDSSynthesizerLogLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSSynthesizerLogLevel.h; sourceTree = "<group>"; };
-		426754B1206CDF1D00991402 /* BDSTTSEventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSTTSEventManager.h; sourceTree = "<group>"; };
-		426754B2206CDF1D00991402 /* libBaiduTTSSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduTTSSDK.a; sourceTree = "<group>"; };
-		426754B4206CDF1D00991402 /* Chinese_And_English_Speech_Female.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_And_English_Speech_Female.dat; sourceTree = "<group>"; };
-		426754B5206CDF1D00991402 /* Chinese_And_English_Speech_Male.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_And_English_Speech_Male.dat; sourceTree = "<group>"; };
-		426754B6206CDF1D00991402 /* Chinese_And_English_Text.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chinese_And_English_Text.dat; sourceTree = "<group>"; };
-		426754B7206CDF1D00991402 /* libAR-TTS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libAR-TTS.a"; sourceTree = "<group>"; };
-		426754BA206CDF1D00991402 /* bds_easr_mfe_cmvn.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bds_easr_mfe_cmvn.dat; sourceTree = "<group>"; };
-		426754BB206CDF1D00991402 /* bds_easr_mfe_dnn.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = bds_easr_mfe_dnn.dat; sourceTree = "<group>"; };
-		426754BC206CDF1D00991402 /* BDSASRDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSASRDefines.h; sourceTree = "<group>"; };
-		426754BD206CDF1D00991402 /* BDSASRParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSASRParameters.h; sourceTree = "<group>"; };
-		426754BE206CDF1D00991402 /* BDSEventManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDSEventManager.h; sourceTree = "<group>"; };
-		426754BF206CDF1D00991402 /* libBaiduSpeechSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduSpeechSDK.a; sourceTree = "<group>"; };
-		426754C0206CDF1D00991402 /* libAR-SClientSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libAR-SClientSDK.a"; sourceTree = "<group>"; };
 		426754CB206CDF3900991402 /* DumixARCore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = DumixARCore.a; sourceTree = "<group>"; };
 		426754CD206CDF5A00991402 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		42AD49A220899070008BED27 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -122,18 +92,14 @@
 				42AD49A520899092008BED27 /* CoreTelephony.framework in Frameworks */,
 				42AD49A320899070008BED27 /* libz.tbd in Frameworks */,
 				426754CE206CDF5B00991402 /* libiconv.tbd in Frameworks */,
-				426754C2206CDF1D00991402 /* libBaiduTTSSDK.a in Frameworks */,
 				426754A2206CD05200991402 /* libc++.tbd in Frameworks */,
 				426754C1206CDF1D00991402 /* libAR-SameSearch.a in Frameworks */,
 				426754CC206CDF3900991402 /* DumixARCore.a in Frameworks */,
-				426754CA206CDF1D00991402 /* libAR-SClientSDK.a in Frameworks */,
 				42675491206CCF9B00991402 /* Accelerate.framework in Frameworks */,
-				426754C9206CDF1D00991402 /* libBaiduSpeechSDK.a in Frameworks */,
 				4267549F206CD03200991402 /* libAR-AFNetworking.a in Frameworks */,
 				4267548F206CCF9400991402 /* libsqlite3.0.tbd in Frameworks */,
 				4267548D206CCF9000991402 /* libstdc++.6.0.9.tbd in Frameworks */,
 				426754A0206CD03200991402 /* libAR-ZipArchive.a in Frameworks */,
-				426754C6206CDF1D00991402 /* libAR-TTS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,8 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				426754A5206CDF1C00991402 /* SameSearch */,
-				426754A7206CDF1D00991402 /* TTS */,
-				426754B8206CDF1D00991402 /* Voice */,
 				42675492206CD03200991402 /* Vendors */,
 				4267546F206CC9D200991402 /* Render */,
 				4267545F206CC6A300991402 /* ARSDKPro-OpenSDK */,
@@ -257,65 +221,6 @@
 			path = SameSearch;
 			sourceTree = "<group>";
 		};
-		426754A7206CDF1D00991402 /* TTS */ = {
-			isa = PBXGroup;
-			children = (
-				426754A8206CDF1D00991402 /* BDTTS */,
-				426754B7206CDF1D00991402 /* libAR-TTS.a */,
-			);
-			path = TTS;
-			sourceTree = "<group>";
-		};
-		426754A8206CDF1D00991402 /* BDTTS */ = {
-			isa = PBXGroup;
-			children = (
-				426754A9206CDF1D00991402 /* BDS_EttsModelManagerInterface.h */,
-				426754AA206CDF1D00991402 /* BDSBuiltInPlayer.h */,
-				426754AB206CDF1D00991402 /* BDSMixedModeSynthesizer.h */,
-				426754AC206CDF1D00991402 /* BDSSpeechSynthesizer.h */,
-				426754AD206CDF1D00991402 /* BDSSpeechSynthesizerDelegate.h */,
-				426754AE206CDF1D00991402 /* BDSSpeechSynthesizerErrors.h */,
-				426754AF206CDF1D00991402 /* BDSSpeechSynthesizerParams.h */,
-				426754B0206CDF1D00991402 /* BDSSynthesizerLogLevel.h */,
-				426754B1206CDF1D00991402 /* BDSTTSEventManager.h */,
-				426754B2206CDF1D00991402 /* libBaiduTTSSDK.a */,
-				426754B3206CDF1D00991402 /* Res */,
-			);
-			path = BDTTS;
-			sourceTree = "<group>";
-		};
-		426754B3206CDF1D00991402 /* Res */ = {
-			isa = PBXGroup;
-			children = (
-				426754B4206CDF1D00991402 /* Chinese_And_English_Speech_Female.dat */,
-				426754B5206CDF1D00991402 /* Chinese_And_English_Speech_Male.dat */,
-				426754B6206CDF1D00991402 /* Chinese_And_English_Text.dat */,
-			);
-			path = Res;
-			sourceTree = "<group>";
-		};
-		426754B8206CDF1D00991402 /* Voice */ = {
-			isa = PBXGroup;
-			children = (
-				426754B9206CDF1D00991402 /* BDVoice */,
-				426754C0206CDF1D00991402 /* libAR-SClientSDK.a */,
-			);
-			path = Voice;
-			sourceTree = "<group>";
-		};
-		426754B9206CDF1D00991402 /* BDVoice */ = {
-			isa = PBXGroup;
-			children = (
-				426754BA206CDF1D00991402 /* bds_easr_mfe_cmvn.dat */,
-				426754BB206CDF1D00991402 /* bds_easr_mfe_dnn.dat */,
-				426754BC206CDF1D00991402 /* BDSASRDefines.h */,
-				426754BD206CDF1D00991402 /* BDSASRParameters.h */,
-				426754BE206CDF1D00991402 /* BDSEventManager.h */,
-				426754BF206CDF1D00991402 /* libBaiduSpeechSDK.a */,
-			);
-			path = BDVoice;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -375,12 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42675454206CC40F00991402 /* LaunchScreen.storyboard in Resources */,
-				426754C7206CDF1D00991402 /* bds_easr_mfe_cmvn.dat in Resources */,
 				42675451206CC40F00991402 /* Assets.xcassets in Resources */,
-				426754C3206CDF1D00991402 /* Chinese_And_English_Speech_Female.dat in Resources */,
-				426754C8206CDF1D00991402 /* bds_easr_mfe_dnn.dat in Resources */,
-				426754C5206CDF1D00991402 /* Chinese_And_English_Text.dat in Resources */,
-				426754C4206CDF1D00991402 /* Chinese_And_English_Speech_Male.dat in Resources */,
 				4267544F206CC40F00991402 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
