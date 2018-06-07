@@ -5,10 +5,14 @@ package com.baidu.ar.pro.module;
 
 import java.util.HashMap;
 
+import com.baidu.ar.ARController;
 import com.baidu.ar.speech.listener.SpeechRecogListener;
+import com.baidu.ar.util.UiThreadUtil;
 import com.baidu.baiduarsdk.util.MsgParamsUtil;
 
 import android.content.Context;
+import android.util.Log;
+import android.widget.RelativeLayout;
 
 /**
  * Module 控制器
@@ -23,8 +27,13 @@ public class Module {
 
     private SpeechRecogListener speechRecogListener;
 
-    public Module(Context context) {
+    private ARController mARController;
+
+    private RelativeLayout mPluginContainer;
+
+    public Module(Context context, ARController arController) {
         mContext = context;
+        mARController = arController;
     }
 
     public void parseLuaMessage(HashMap<String, Object> luaMsg) {
@@ -45,7 +54,12 @@ public class Module {
                 case MsgType.MSG_TYPE_VOICE_SHOW_MIC_ICON:
                 case MsgType.MSG_TYPE_VOICE_HIDE_MIC_ICON:
                     if (speechControler == null) {
-                        speechControler = new SpeechControler(mContext,speechRecogListener);
+                        speechControler = new SpeechControler(mContext, speechRecogListener, mARController);
+                        UiThreadUtil.runOnUiThread(new Runnable() {
+                            public void run() {
+                                speechControler.initView(mPluginContainer);
+                            }
+                        });
                     }
                     speechControler.parseMessage(luaMsg);
                     break;
@@ -76,4 +90,22 @@ public class Module {
     public void setSpeechRecogListener(SpeechRecogListener speechRecogListener) {
         this.speechRecogListener = speechRecogListener;
     }
+
+
+    public void parseResult(String result) {
+        if (null != speechControler) {
+            speechControler.parseResult(result);
+        }
+    }
+
+    public void setPluginContainer(RelativeLayout pluginContainer) {
+        mPluginContainer = pluginContainer;
+    }
+
+    public void setVoiceStatus(int status) {
+        if (null != speechControler) {
+            speechControler.setVoiceStatus(status);
+        }
+    }
+
 }

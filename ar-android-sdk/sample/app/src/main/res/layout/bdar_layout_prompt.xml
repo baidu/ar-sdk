@@ -43,9 +43,10 @@
             android:src="@drawable/bdar_drawable_btn_flash_disable_selector"/>
 
     <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
     >
 
         <Button
@@ -69,6 +70,14 @@
                 android:layout_weight="1"
                 android:text="@string/stop_record"/>
     </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/bdar_id_plugin_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/linear"
+        android:layout_alignRight="@id/linear">
+
+    </RelativeLayout>
 
     <TextView
             android:id="@+id/bdar_titlebar_tips"

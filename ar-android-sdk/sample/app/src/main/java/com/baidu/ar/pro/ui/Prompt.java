@@ -124,6 +124,8 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
      */
     private ARController mARController;
 
+    private RelativeLayout mPluginContainer;
+
     /**
      * 构造函数
      *
@@ -185,14 +187,18 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
         mScanView = findViewById(R.id.bdar_gui_scan_view);
 
         mPointsView = findViewById(R.id.bdar_gui_point_view);
+
+        mPluginContainer = findViewById(R.id.bdar_id_plugin_container);
+
         if (ARConfig.getARType() == 6 || ARConfig.getARType() == 7) {
             setPointViewVisible(true);
         }
 
         mDuMixCallback = this;
 
-        mModule = new Module(getContext());
+        mModule = new Module(getContext(), mARController);
         mModule.setSpeechRecogListener(speechRecogListener);
+        mModule.setPluginContainer(mPluginContainer);
     }
 
     public DuMixCallback getDuMixCallback() {
@@ -429,6 +435,7 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
     public void onLuaMessage(HashMap<String, Object> hashMap) {
         // TODO: 2018/5/10 接收lua信息到业务层
         mModule.parseLuaMessage(hashMap);
+
     }
 
     @Override
@@ -542,10 +549,12 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
     SpeechRecogListener speechRecogListener = new SpeechRecogListener() {
         @Override
         public void onSpeechRecog(int status, String result) {
-            if (status == SpeechStatus.PARTIALRESULT) {
+            if (status == SpeechStatus.PARTIALRESULT|| status == SpeechStatus.RESULT) {
                 showToast(result);
+                mModule.parseResult(result);
             }
-            //            mARController.sendMessage2Lua()
+            mModule.setVoiceStatus(status);
+
         }
     };
 
@@ -578,4 +587,5 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
             }
         });
     }
+
 }
