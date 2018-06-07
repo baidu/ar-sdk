@@ -15,7 +15,7 @@ import android.content.Context;
  * tts控制器
  * 参考case:
  */
-public class TtsControler {
+public class TtsController {
 
     protected String appId = "10315470";
     protected String appKey = "bgW5575sEj5m9CHEatxTGln6";
@@ -23,7 +23,7 @@ public class TtsControler {
 
     private Tts mTts;
 
-    public TtsControler(Context context) {
+    public TtsController(Context context) {
         mTts = new Tts(context, appId, appKey, secretKey);
     }
 

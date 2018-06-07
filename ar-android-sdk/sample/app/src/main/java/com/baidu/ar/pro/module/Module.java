@@ -11,7 +11,6 @@ import com.baidu.ar.util.UiThreadUtil;
 import com.baidu.baiduarsdk.util.MsgParamsUtil;
 
 import android.content.Context;
-import android.util.Log;
 import android.widget.RelativeLayout;
 
 /**
@@ -21,9 +20,9 @@ public class Module {
 
     private Context mContext;
     //  tts 管理器
-    private TtsControler ttsControler;
+    private TtsController ttsControler;
     //  tts 管理器
-    private SpeechControler speechControler;
+    private SpeechController speechControler;
 
     private SpeechRecogListener speechRecogListener;
 
@@ -45,7 +44,7 @@ public class Module {
                 case MsgType.MSG_TYPE_TTS_PAUSE:
                 case MsgType.MSG_TYPE_TTS_RESUME:
                     if (ttsControler == null) {
-                        ttsControler = new TtsControler(mContext);
+                        ttsControler = new TtsController(mContext);
                     }
                     ttsControler.parseMessage(luaMsg);
                     break;
@@ -54,7 +53,7 @@ public class Module {
                 case MsgType.MSG_TYPE_VOICE_SHOW_MIC_ICON:
                 case MsgType.MSG_TYPE_VOICE_HIDE_MIC_ICON:
                     if (speechControler == null) {
-                        speechControler = new SpeechControler(mContext, speechRecogListener, mARController);
+                        speechControler = new SpeechController(mContext, speechRecogListener, mARController);
                         UiThreadUtil.runOnUiThread(new Runnable() {
                             public void run() {
                                 speechControler.initView(mPluginContainer);

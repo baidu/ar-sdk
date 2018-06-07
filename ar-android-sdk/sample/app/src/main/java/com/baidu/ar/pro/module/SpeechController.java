@@ -33,7 +33,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class SpeechControler {
+public class SpeechController {
 
     private Speech mSpeech;
     private ARController mARController;
@@ -44,7 +44,7 @@ public class SpeechControler {
     private Context mContext;
     private Button mSpeechButton;
 
-    public SpeechControler(Context context, SpeechRecogListener speechRecogListener, ARController arController) {
+    public SpeechController(Context context, SpeechRecogListener speechRecogListener, ARController arController) {
         mSpeech = new Speech(context, speechRecogListener);
         mARController = arController;
         mContext = context;
