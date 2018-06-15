@@ -16,7 +16,6 @@
         <item>语音识别（Speech Recognition）</item>
         <item>语音合成（TTS）</item>
         <item>滤镜</item>
-        <item>LOGO识别</item>
         <item>加载本地CASE（将asset下的pinkskirt.zip解压到sdcard）</item>
     </string-array>
     <string-array name="ar_description">
@@ -43,9 +42,6 @@
         </item>
         <item>
             支持对相机背景、模型叠加滤镜效果。
-        </item>
-        <item>
-            结合logo识别，实现logo识别能力与AR内容之间的交互能力。在调起AR后，通过扫描特定的logo，触发对应的AR交互内容。例如：引导用户扫描“百度logo”，可跳转到百度的网站或者展示出模型。
         </item>
         <item>
             可以不依赖与AR内容平台，将内容CASE放到本地进行加载。

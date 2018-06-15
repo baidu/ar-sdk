@@ -101,11 +101,9 @@ public class MainActivity extends Activity {
         list.add(new ListItemBean(0, "10002505", null, mArName[6], mArDesciption[6]));
         // 滤镜
         list.add(new ListItemBean(0, "10062568", null, mArName[7], mArDesciption[7]));
-        // LOGO识别
-        list.add(new ListItemBean(0, "10074867", null, mArName[8], mArDesciption[8]));
 
         // 本地case 入口
-        list.add(new ListItemBean(0, "", "/sdcard/001_pinkskirt", mArName[9], mArDesciption[9]));
+        list.add(new ListItemBean(0, "", "/sdcard/001_pinkskirt", mArName[8], mArDesciption[8]));
 
         return list;
     }
