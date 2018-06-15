@@ -20,7 +20,7 @@ public class ARControllerManager {
     private ARController arController;
 
     private ARControllerManager(Context context) {
-        arController = new ARController(context, false);
+        arController = new ARController(context);
     }
 
     public static ARControllerManager getInstance(Context context) {

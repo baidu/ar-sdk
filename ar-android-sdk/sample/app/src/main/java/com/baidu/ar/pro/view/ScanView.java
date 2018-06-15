@@ -220,14 +220,7 @@ public class ScanView extends View {
         mContext = context;
         initPaint();
         mScanMatrix = new Matrix();
-        mCenterPointIcon = Res.getDrawable("bdar_drawable_scan_center");
-        //        if (ChannelUtils.isNuomiChannel(context)) {
-        //            mCenterPointIconId = R.drawable.plugin_bdar_drawable_scan_center_nuomi;
-        //        } else if (ChannelUtils.isShouzhuChannel(context)) {
-        //            mCenterPointIconId = R.drawable.plugin_bdar_drawable_scan_center_shouzhu;
-        //        } else {
-        //            mCenterPointIconId = R.drawable.bdar_drawable_scan_center;
-        //        }
+        mCenterPointIcon = mContext.getResources().getDrawable(R.drawable.bdar_drawable_scan_center);
     }
 
     /**
@@ -314,9 +307,6 @@ public class ScanView extends View {
      * @param canvas 画布
      */
     private void drawCircleImg(Canvas canvas) {
-        if (mCenterPointIcon == null) {
-            mCenterPointIcon = getResources().getDrawable(R.drawable.bdar_drawable_scan_center);
-        }
         Bitmap centerPoint =
                 ((BitmapDrawable) (mCenterPointIcon)).getBitmap();
         if (null == centerPoint) {

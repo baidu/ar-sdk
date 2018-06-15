@@ -3,18 +3,20 @@
  */
 package com.baidu.ar.pro;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.baidu.ar.ARController;
 import com.baidu.ar.bean.DuMixARConfig;
-import com.baidu.ar.constants.ARConfigKey;
+import com.baidu.ar.pro.view.ARControllerManager;
 import com.baidu.ar.resloader.ArCaseDownloadListener;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewStub;
 import android.widget.AdapterView;
@@ -24,6 +26,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
+
     private String[] mArName;
     private String[] mArDesciption;
     private ListView mListView;
@@ -49,7 +52,7 @@ public class MainActivity extends Activity {
     }
 
     private void initCache() {
-        mARController = new ARController(this, false);
+        mARController = ARControllerManager.getInstance(this).getArController();
     }
 
     private void initData() {
@@ -70,8 +73,9 @@ public class MainActivity extends Activity {
                 Intent intent = new Intent(MainActivity.this, ARActivity.class);
                 Bundle bundle = new Bundle();
                 ListItemBean listItemBean = mListData.get(position);
-                bundle.putString(ARConfigKey.AR_KEY, listItemBean.getARKey());
-                bundle.putInt(ARConfigKey.AR_TYPE, listItemBean.getARType());
+                bundle.putString(Config.AR_KEY, listItemBean.getARKey());
+                bundle.putInt(Config.AR_TYPE, listItemBean.getARType());
+                bundle.putString(Config.AR_FILE, listItemBean.getCasePath());
                 intent.putExtras(bundle);
                 startActivity(intent);
             }
@@ -82,23 +86,26 @@ public class MainActivity extends Activity {
         List<ListItemBean> list = new ArrayList<>();
 
         // SLAM AR 小熊
-        list.add(new ListItemBean(5, "10002502", mArName[0], mArDesciption[0]));
+        list.add(new ListItemBean(5, "10181763", null, mArName[0], mArDesciption[0]));
         // 本地识图
-        list.add(new ListItemBean(6, "", mArName[1], mArDesciption[1]));
+        list.add(new ListItemBean(6, "", null, mArName[1], mArDesciption[1]));
         // 云端识图
-        list.add(new ListItemBean(7, "", mArName[2], mArDesciption[2]));
+        list.add(new ListItemBean(7, "", null, mArName[2], mArDesciption[2]));
         // Track AR城市地图case
-        list.add(new ListItemBean(0, "10096034", mArName[3], mArDesciption[3]));
+        list.add(new ListItemBean(0, "10096034", null, mArName[3], mArDesciption[3]));
         // IMU AR 请财神case
-        list.add(new ListItemBean(0, "10109642", mArName[4], mArDesciption[4]));
+        list.add(new ListItemBean(0, "10109642", null, mArName[4], mArDesciption[4]));
         // 语音
-        list.add(new ListItemBean(0, "10002504", mArName[5], mArDesciption[5]));
+        list.add(new ListItemBean(0, "10002504", null, mArName[5], mArDesciption[5]));
         // TTS
-        list.add(new ListItemBean(0, "10002505", mArName[6], mArDesciption[6]));
+        list.add(new ListItemBean(0, "10002505", null, mArName[6], mArDesciption[6]));
         // 滤镜
-        list.add(new ListItemBean(0, "10062568", mArName[7], mArDesciption[7]));
+        list.add(new ListItemBean(0, "10062568", null, mArName[7], mArDesciption[7]));
         // LOGO识别
-        list.add(new ListItemBean(0, "10074867", mArName[8], mArDesciption[8]));
+        list.add(new ListItemBean(0, "10074867", null, mArName[8], mArDesciption[8]));
+
+        // 本地case 入口
+        list.add(new ListItemBean(0, "", "/sdcard/001_pinkskirt", mArName[9], mArDesciption[9]));
 
         return list;
     }
@@ -106,14 +113,16 @@ public class MainActivity extends Activity {
     private class ListItemBean {
         String mARKey;
         int mARType;
+        String mCasePath;
         String mName;
         String mDescription;
 
-        public ListItemBean(int arType, String arKey, String name, String description) {
+        public ListItemBean(int arType, String arKey, String path, String name, String description) {
             this.mARType = arType;
             this.mARKey = arKey;
             this.mName = name;
             this.mDescription = description;
+            this.mCasePath = path;
         }
 
         public String getARKey() {
@@ -130,6 +139,10 @@ public class MainActivity extends Activity {
 
         public String getDescription() {
             return mDescription;
+        }
+
+        public String getCasePath() {
+            return mCasePath;
         }
     }
 
@@ -153,5 +166,12 @@ public class MainActivity extends Activity {
 
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mARController.release();
+        ARControllerManager.getInstance(this).release();
     }
 }

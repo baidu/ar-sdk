@@ -7,35 +7,36 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import com.baidu.ar.ARController;
 import com.baidu.ar.DuMixSource;
 import com.baidu.ar.DuMixTarget;
 import com.baidu.ar.TakePictureCallback;
 import com.baidu.ar.bean.ARConfig;
+import com.baidu.ar.constants.ARConfigKey;
 import com.baidu.ar.pro.callback.PreviewCallback;
 import com.baidu.ar.pro.callback.PromptCallback;
 import com.baidu.ar.pro.camera.ARCameraCallback;
 import com.baidu.ar.pro.camera.ARCameraManager;
 import com.baidu.ar.pro.camera.ARStartCameraCallback;
-import com.baidu.ar.constants.ARConfigKey;
 import com.baidu.ar.pro.draw.ARRenderCallback;
 import com.baidu.ar.pro.draw.ARRenderer;
+import com.baidu.ar.pro.ui.Prompt;
 import com.baidu.ar.pro.view.ARControllerManager;
+import com.baidu.ar.recg.CornerPoint;
+import com.baidu.ar.recg.ImgRecognitionClient;
 import com.baidu.ar.recorder.MovieRecorderCallback;
 import com.baidu.ar.util.SystemInfoUtil;
 import com.baidu.ar.util.UiThreadUtil;
-import com.baidu.ar.pro.ui.Prompt;
 import com.baidu.baiduarsdk.ArBridge;
-import com.baidu.recg.CornerPoint;
-import com.baidu.recg.ImgRecognitionClient;
 
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
-import android.graphics.Point;
 import android.graphics.SurfaceTexture;
-import android.hardware.Camera;
 import android.opengl.GLSurfaceView;
 import android.os.Build;
 import android.os.Bundle;
@@ -121,6 +122,11 @@ public class ARFragment extends Fragment {
     private int mCameraPriWidth = 1280;
     private int mCameraPriHeight = 720;
 
+    // 接收 参数
+    private String mArKey;
+    private int mArTpye;
+    private String mArFile;
+
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         // 进入时需要先配置环境
@@ -130,10 +136,9 @@ public class ARFragment extends Fragment {
         // 初始化ARConfig
         Bundle bundle = getArguments();
         if (bundle != null) {
-            String arValue = bundle.getString(ARConfigKey.AR_VALUE);
-            if (!TextUtils.isEmpty(arValue)) {
-                ARConfig.initARConfig(arValue);
-            }
+            mArKey = bundle.getString(Config.AR_KEY);
+            mArTpye = bundle.getInt(Config.AR_TYPE);
+            mArFile = bundle.getString(Config.AR_FILE);
         }
         mARCameraManager = new ARCameraManager();
 
@@ -148,9 +153,10 @@ public class ARFragment extends Fragment {
             }
         }
 
-        if (ARConfig.getARType() == 6 || ARConfig.getARType() == 7) {
+        if (mArTpye == 6 || mArTpye == 7) {
             mImgRecognitionClient = new ImgRecognitionClient();
             mPromptUi.initPreviewScreenScale(mCameraPriWidth, mCameraPriHeight);
+            mPromptUi.setPointViewVisible(true);
         }
     }
 
@@ -210,7 +216,13 @@ public class ARFragment extends Fragment {
             mImgRecognitionClient.release();
             mImgRecognitionClient = null;
         }
+
         ARControllerManager.getInstance(getActivity()).release();
+
+        if (mARController != null) {
+            mARController.release();
+            mARController = null;
+        }
     }
 
     @Override
@@ -316,24 +328,31 @@ public class ARFragment extends Fragment {
                     mARController.onCameraPreviewFrame(data, width, height);
                 }
 
-                                if (mImgRecognitionClient != null) {
-                                    byte[] rotatedData = rotateImage(data, mCameraPriWidth, mCameraPriHeight);
-                                    CornerPoint[] cornerPoints = mImgRecognitionClient.extractCornerPoints
-                 (rotatedData,
-                                            mCameraPriHeight, mCameraPriWidth);
-                                    mPromptUi.setCornerPoint(cornerPoints);
-                                }
+                if (mImgRecognitionClient != null) {
+                    byte[] rotatedData = rotateImage(data, mCameraPriWidth, mCameraPriHeight);
+                    CornerPoint[] cornerPoints = mImgRecognitionClient.extractCornerPoints
+                            (rotatedData,
+                                    mCameraPriHeight, mCameraPriWidth);
+                    if (mPromptUi != null) {
+                        mPromptUi.setCornerPoint(cornerPoints);
+                    }
+                }
             }
         });
 
         mARRenderer.setARRenderCallback(new ARRenderCallback() {
             @Override
             public void onCameraDrawerCreated(SurfaceTexture surfaceTexture, int width, int height) {
-                mDuMixSource = new DuMixSource(ARConfig.getARKey(), surfaceTexture, width, height);
-                mDuMixSource.setArType(ARConfig.getARType());
+                mDuMixSource = new DuMixSource(surfaceTexture, width, height);
+                if (TextUtils.isEmpty(mArFile)) {
+                    mDuMixSource.setArKey(mArKey);
+                    mDuMixSource.setArType(mArTpye);
+                } else {
+                    // TODO: 2018/6/13 本地case路径加载 
+                    mDuMixSource.setResFilePath(mArFile);
+                }
 
             }
-
 
             @Override
             public void onARDrawerCreated(SurfaceTexture surfaceTexture, SurfaceTexture.OnFrameAvailableListener

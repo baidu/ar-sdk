@@ -4,7 +4,7 @@
 package com.baidu.ar.pro.view;
 
 import com.baidu.ar.pro.R;
-import com.baidu.recg.CornerPoint;
+import com.baidu.ar.recg.CornerPoint;
 
 import android.content.Context;
 import android.graphics.Bitmap;

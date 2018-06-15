@@ -19,11 +19,11 @@ import com.baidu.ar.pro.module.Module;
 import com.baidu.ar.pro.view.ARControllerManager;
 import com.baidu.ar.pro.view.PointsView;
 import com.baidu.ar.pro.view.ScanView;
+import com.baidu.ar.recg.CornerPoint;
 import com.baidu.ar.speech.SpeechStatus;
 import com.baidu.ar.speech.listener.SpeechRecogListener;
 import com.baidu.ar.util.Res;
 import com.baidu.ar.util.UiThreadUtil;
-import com.baidu.recg.CornerPoint;
 
 import android.content.Context;
 import android.text.TextUtils;
@@ -36,6 +36,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * 提示层UI
@@ -190,16 +191,14 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
 
         mPluginContainer = findViewById(R.id.bdar_id_plugin_container);
 
-        if (ARConfig.getARType() == 6 || ARConfig.getARType() == 7) {
-            setPointViewVisible(true);
-        }
-
         mDuMixCallback = this;
 
         mModule = new Module(getContext(), mARController);
         mModule.setSpeechRecogListener(speechRecogListener);
         mModule.setPluginContainer(mPluginContainer);
     }
+
+
 
     public DuMixCallback getDuMixCallback() {
         return mDuMixCallback;
@@ -238,6 +237,7 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
             onStratRecordButtonClick();
         } else if (viewId == R.id.btn_stop_record) {
             onStopRecordButtonClick();
+
         }
     }
 
@@ -264,6 +264,22 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
         Log.e(TAG, "onStateChange, state = " + state + " msg = " + msg);
 
         switch (state) {
+            case MsgField.MSG_AUTH_FAIL:
+                UiThreadUtil.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getContext(), getContext().getText(R.string.auth_fail), Toast.LENGTH_SHORT)
+                                .show();
+                        if (mPromptCallback != null) {
+                            mPromptCallback.onBackPressed();
+                        }
+                    }
+                });
+                break;
+            case MsgField.MSG_ON_QUERY_RESOURCE:
+                // 初始隐藏scanview
+                hideScanView();
+                break;
             // so加载成功
             case MsgField.IMSG_SO_LOAD_SUCCESS:
                 showToast("so load success");
@@ -444,14 +460,17 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
 
     @Override
     public void onSetup(boolean b) {
+        Log.e(TAG, "onStateChange, state = " + " onSetup ");
     }
 
     @Override
     public void onCaseChange(boolean b) {
+        Log.e(TAG, "onStateChange, state = " + " onCaseChange ");
     }
 
     @Override
     public void onCaseCreated(ARResource arResource) {
+        Log.e(TAG, "onStateChange, state = " + " onCaseCreated ");
     }
 
     @Override
@@ -549,7 +568,7 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
     SpeechRecogListener speechRecogListener = new SpeechRecogListener() {
         @Override
         public void onSpeechRecog(int status, String result) {
-            if (status == SpeechStatus.PARTIALRESULT|| status == SpeechStatus.RESULT) {
+            if (status == SpeechStatus.PARTIALRESULT || status == SpeechStatus.RESULT) {
                 showToast(result);
                 mModule.parseResult(result);
             }
