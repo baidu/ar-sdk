@@ -264,6 +264,7 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
         Log.e(TAG, "onStateChange, state = " + state + " msg = " + msg);
 
         switch (state) {
+            case MsgField.MSG_STAT_FIRST_LOAD_QUERY_FAILURE:
             case MsgField.MSG_AUTH_FAIL:
                 UiThreadUtil.runOnUiThread(new Runnable() {
                     @Override

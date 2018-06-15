@@ -86,13 +86,13 @@ public class MainActivity extends Activity {
         List<ListItemBean> list = new ArrayList<>();
 
         // SLAM AR 小熊
-        list.add(new ListItemBean(5, "10181763", null, mArName[0], mArDesciption[0]));
-        // 本地识图
+        list.add(new ListItemBean(5, "10002502", null, mArName[0], mArDesciption[0]));
+        // 本地识图 扫描assets下面的识别图
         list.add(new ListItemBean(6, "", null, mArName[1], mArDesciption[1]));
-        // 云端识图
+        // 云端识图 扫描assets下面的识别图
         list.add(new ListItemBean(7, "", null, mArName[2], mArDesciption[2]));
-        // Track AR城市地图case
-        list.add(new ListItemBean(0, "10096034", null, mArName[3], mArDesciption[3]));
+        // Track AR城市地图case 扫描assets下面的识别图
+        list.add(new ListItemBean(0, "10146301", null, mArName[3], mArDesciption[3]));
         // IMU AR 请财神case
         list.add(new ListItemBean(0, "10109642", null, mArName[4], mArDesciption[4]));
         // 语音

@@ -254,7 +254,9 @@ public class ARFragment extends Fragment {
                             @Override
                             public void run() {
                                 if (result) {
-                                    getActivity().finish();
+                                    if (getActivity() != null) {
+                                        getActivity().finish();
+                                    }
                                 }
                             }
                         });
