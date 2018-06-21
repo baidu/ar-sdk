@@ -11,6 +11,7 @@ import com.baidu.ar.ARController;
 import com.baidu.ar.bean.DuMixARConfig;
 import com.baidu.ar.pro.view.ARControllerManager;
 import com.baidu.ar.resloader.ArCaseDownloadListener;
+import com.baidu.ar.util.Constants;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -44,6 +45,11 @@ public class MainActivity extends Activity {
         DuMixARConfig.setAPIKey("2288883fb087c4a37fbaf12bce65916e");
         // 设置Secret Key
         DuMixARConfig.setSecretKey("");
+
+        // todo 添加下面这句就可以测试本地case
+        // todo 运行sample后，将本地case导入到 /sdcard/AR/.ARResource/com.baidu.ar.prodemo
+        Constants.RE_EXTRACT = false;
+        // end
 
         setContentView(R.layout.activity_main);
         initData();
@@ -164,6 +170,16 @@ public class MainActivity extends Activity {
 
             }
         });
+    }
+
+    /**
+     * 停止缓存case
+     *
+     * @param view
+     */
+    public void cancelCase(View view) {
+        String caseId = ((EditText) findViewById(R.id.cache_id)).getText().toString();
+        mARController.cancelDownloadCase(caseId);
     }
 
     @Override

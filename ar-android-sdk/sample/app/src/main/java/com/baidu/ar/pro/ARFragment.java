@@ -21,6 +21,7 @@ import com.baidu.ar.pro.callback.PromptCallback;
 import com.baidu.ar.pro.camera.ARCameraCallback;
 import com.baidu.ar.pro.camera.ARCameraManager;
 import com.baidu.ar.pro.camera.ARStartCameraCallback;
+import com.baidu.ar.pro.camera.ARSwitchCameraCallback;
 import com.baidu.ar.pro.draw.ARRenderCallback;
 import com.baidu.ar.pro.draw.ARRenderer;
 import com.baidu.ar.pro.ui.Prompt;
@@ -177,6 +178,9 @@ public class ARFragment extends Fragment {
             // 打开相机
             startCamera();
         }
+        if (mPromptUi != null) {
+            mPromptUi.resume();
+        }
 
     }
 
@@ -199,6 +203,9 @@ public class ARFragment extends Fragment {
             mARController.pause();
         }
         mARCameraManager.stopCamera(null, true);
+        if (mPromptUi != null) {
+            mPromptUi.pause();
+        }
     }
 
     @Override
@@ -420,7 +427,14 @@ public class ARFragment extends Fragment {
 
         @Override
         public void onSwitchCamera() {
-            mARCameraManager.switchCamera(null);
+            mARCameraManager.switchCamera(new ARSwitchCameraCallback() {
+                @Override
+                public void onCameraSwitch(boolean result, boolean rear) {
+                    if (mARController != null) {
+                        mARController.switchCamera(!rear);
+                    }
+                }
+            });
         }
 
         @Override

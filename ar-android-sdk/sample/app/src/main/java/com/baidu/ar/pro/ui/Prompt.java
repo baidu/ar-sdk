@@ -198,8 +198,6 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
         mModule.setPluginContainer(mPluginContainer);
     }
 
-
-
     public DuMixCallback getDuMixCallback() {
         return mDuMixCallback;
     }
@@ -386,8 +384,8 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
 
             // Track消息 tips提示
             case MsgField.IMSG_TRACKED_TIPS_INFO:
+                // TODO: 2018/6/21 case配置
                 TrackRes trackRes = (TrackRes) msg;
-                initTipsInfo(trackRes);
                 break;
 
             case MsgField.IMSG_MODE_SHOWING:
@@ -496,32 +494,12 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
     }
     // callback end
 
-    /**
-     * 初始化提示信息
-     *
-     * @param trackRes track res
-     */
-    private void initTipsInfo(TrackRes trackRes) {
-        if (trackRes == null || trackRes.getTipBean() == null) {
-            return;
-        }
+    public void pause() {
+        mModule.onPause();
+    }
 
-        TipBean tipBean = trackRes.getTipBean();
-        if (!TextUtils.isEmpty(tipBean.getHint())) {
-            mDefaultHint = tipBean.getHint();
-        } else {
-            mDefaultHint = null;
-        }
-
-        if (!TextUtils.isEmpty(tipBean.getTooFarHint())) {
-            mDefaultHint = tipBean.getTooFarHint();
-        }
-
-        if (!TextUtils.isEmpty(tipBean.getTooNearHint())) {
-            mDefaultHint = tipBean.getTooNearHint();
-        }
-        showToast(mDefaultHint);
-
+    public void resume() {
+        mModule.onResume();
     }
 
     /**

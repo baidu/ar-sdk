@@ -72,6 +72,9 @@ public class Module {
         if (ttsControler != null) {
             ttsControler.stop();
         }
+        if (speechControler != null) {
+            speechControler.stopVoice();
+        }
     }
 
     public void onResume() {
@@ -84,12 +87,14 @@ public class Module {
         if (ttsControler != null) {
             ttsControler.pause();
         }
+        if (speechControler != null) {
+            speechControler.stopVoice();
+        }
     }
 
     public void setSpeechRecogListener(SpeechRecogListener speechRecogListener) {
         this.speechRecogListener = speechRecogListener;
     }
-
 
     public void parseResult(String result) {
         if (null != speechControler) {
