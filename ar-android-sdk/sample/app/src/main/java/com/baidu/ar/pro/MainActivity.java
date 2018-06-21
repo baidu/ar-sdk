@@ -47,7 +47,7 @@ public class MainActivity extends Activity {
         DuMixARConfig.setSecretKey("");
 
         // todo 添加下面这句就可以测试本地case
-        // todo 运行sample后，将本地case导入到 /sdcard/AR/.ARResource/com.baidu.ar.prodemo
+        // todo 运行sample后，将本地case导入到 adb psuh ar/* /sdcard/AR/.ARResource/
         Constants.RE_EXTRACT = false;
         // end
 
@@ -110,6 +110,10 @@ public class MainActivity extends Activity {
 
         // 本地case 入口
         list.add(new ListItemBean(0, "", "/sdcard/001_pinkskirt", mArName[8], mArDesciption[8]));
+
+        list.add(new ListItemBean(5, "", "/sdcard/slam", mArName[9], mArDesciption[9]));
+        list.add(new ListItemBean(0, "", "/sdcard/track", mArName[10], mArDesciption[10]));
+        list.add(new ListItemBean(0, "", "/sdcard/imu", mArName[11], mArDesciption[11]));
 
         return list;
     }

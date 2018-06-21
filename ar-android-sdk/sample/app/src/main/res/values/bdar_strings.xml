@@ -17,6 +17,10 @@
         <item>语音合成（TTS）</item>
         <item>滤镜</item>
         <item>加载本地CASE（将asset下的pinkskirt.zip解压到sdcard）</item>
+
+        <item>slam（/sdcard/slam）</item>
+        <item>track（/sdcard/track）</item>
+        <item>imu（/sdcard/imu）</item>
     </string-array>
     <string-array name="ar_description">
         <item>
@@ -45,6 +49,15 @@
         </item>
         <item>
             可以不依赖与AR内容平台，将内容CASE放到本地进行加载。
+        </item>
+        <item>
+            本地测试
+        </item>
+        <item>
+            本地测试
+        </item>
+        <item>
+            本地测试
         </item>
     </string-array>
 </resources>
