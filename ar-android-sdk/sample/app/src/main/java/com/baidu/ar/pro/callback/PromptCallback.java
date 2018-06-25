@@ -40,5 +40,5 @@ public interface PromptCallback {
     /**
      * 停止录制
      */
-    void onStropRecord();
+    void onStopRecord();
 }

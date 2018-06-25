@@ -17,7 +17,6 @@
         <item>语音合成（TTS）</item>
         <item>滤镜</item>
         <item>加载本地CASE（将asset下的pinkskirt.zip解压到sdcard）</item>
-
         <item>slam（/sdcard/slam）</item>
         <item>track（/sdcard/track）</item>
         <item>imu（/sdcard/imu）</item>

@@ -357,7 +357,8 @@ public class ARFragment extends Fragment {
                     mDuMixSource.setArKey(mArKey);
                     mDuMixSource.setArType(mArTpye);
                 } else {
-                    // TODO: 2018/6/13 本地case路径加载 
+                    // TODO: 2018/6/13 本地case路径加载
+                    mDuMixSource.setArType(mArTpye);
                     mDuMixSource.setResFilePath(mArFile);
                 }
 
@@ -479,7 +480,7 @@ public class ARFragment extends Fragment {
                 public void onRecorderProcess(int i) {
                     // TODO: 2018/6/1 当进度大于100时停止录制
                     if (i >= 100) {
-                        onStropRecord();
+                        onStopRecord();
                     }
                 }
 
@@ -503,7 +504,7 @@ public class ARFragment extends Fragment {
         }
 
         @Override
-        public void onStropRecord() {
+        public void onStopRecord() {
             mARController.stopRecord();
         }
     };

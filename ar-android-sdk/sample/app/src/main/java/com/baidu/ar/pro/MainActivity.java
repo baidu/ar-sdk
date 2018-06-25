@@ -98,7 +98,7 @@ public class MainActivity extends Activity {
         // 云端识图 扫描assets下面的识别图
         list.add(new ListItemBean(7, "", null, mArName[2], mArDesciption[2]));
         // Track AR城市地图case 扫描assets下面的识别图
-        list.add(new ListItemBean(0, "10146301", null, mArName[3], mArDesciption[3]));
+        list.add(new ListItemBean(0, "10187229", null, mArName[3], mArDesciption[3]));
         // IMU AR 请财神case
         list.add(new ListItemBean(0, "10109642", null, mArName[4], mArDesciption[4]));
         // 语音
@@ -109,7 +109,7 @@ public class MainActivity extends Activity {
         list.add(new ListItemBean(0, "10062568", null, mArName[7], mArDesciption[7]));
 
         // 本地case 入口
-        list.add(new ListItemBean(0, "", "/sdcard/001_pinkskirt", mArName[8], mArDesciption[8]));
+        list.add(new ListItemBean(5, "", "/sdcard/001_pinkskirt", mArName[8], mArDesciption[8]));
 
         list.add(new ListItemBean(5, "", "/sdcard/slam", mArName[9], mArDesciption[9]));
         list.add(new ListItemBean(0, "", "/sdcard/track", mArName[10], mArDesciption[10]));

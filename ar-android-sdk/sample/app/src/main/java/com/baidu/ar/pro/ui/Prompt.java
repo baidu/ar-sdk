@@ -8,10 +8,8 @@ import java.util.HashMap;
 import com.baidu.ar.ARController;
 import com.baidu.ar.DuMixCallback;
 import com.baidu.ar.base.MsgField;
-import com.baidu.ar.bean.ARConfig;
 import com.baidu.ar.bean.ARResource;
 import com.baidu.ar.bean.BrowserBean;
-import com.baidu.ar.bean.TipBean;
 import com.baidu.ar.bean.TrackRes;
 import com.baidu.ar.pro.R;
 import com.baidu.ar.pro.callback.PromptCallback;
@@ -26,7 +24,6 @@ import com.baidu.ar.util.Res;
 import com.baidu.ar.util.UiThreadUtil;
 
 import android.content.Context;
-import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -244,16 +241,11 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
     }
 
     private void onStopRecordButtonClick() {
-        mPromptCallback.onStropRecord();
+        mPromptCallback.onStopRecord();
     }
 
     private void onTackPictureButtonClick() {
         mPromptCallback.onTackPicture();
-    }
-
-    public void release() {
-        mDuMixCallback = null;
-        mPromptCallback = null;
     }
 
     // callback
@@ -489,7 +481,6 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
 
     @Override
     public void onRelease(boolean b) {
-        mModule.onRelease();
 
     }
     // callback end
@@ -500,6 +491,12 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
 
     public void resume() {
         mModule.onResume();
+    }
+
+    public void release() {
+        mModule.onRelease();
+        mDuMixCallback = null;
+        mPromptCallback = null;
     }
 
     /**
