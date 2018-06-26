@@ -46,11 +46,8 @@ DuMixARConfig.setSecretKey("xxxxx");
 
 ```java
 
-// init arValue参数 example:{"ar_key":"10002505","ar_type":0}
-ARConfig.initARConfig(arValue);
-
 // init arControler
-arControler = new ARControler(context,false);
+arControler = new ARControler(context);
 // setup ar
 arControler.setup(DuMixSource source, DuMixTarget target, DuMixCallback callback)
 ```
