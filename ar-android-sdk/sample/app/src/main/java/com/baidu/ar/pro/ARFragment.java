@@ -153,12 +153,6 @@ public class ARFragment extends Fragment {
                 requestPermissions(ALL_PERMISSIONS, 1123);
             }
         }
-
-        if (mArTpye == 6 || mArTpye == 7) {
-            mImgRecognitionClient = new ImgRecognitionClient();
-            mPromptUi.initPreviewScreenScale(mCameraPriWidth, mCameraPriHeight);
-            mPromptUi.setPointViewVisible(true);
-        }
     }
 
     @Override
@@ -395,6 +389,12 @@ public class ARFragment extends Fragment {
                 }
             }
         });
+
+        if (mArTpye == 6 || mArTpye == 7) {
+            mImgRecognitionClient = new ImgRecognitionClient();
+            mPromptUi.initPreviewScreenScale(mCameraPriWidth, mCameraPriHeight);
+            mPromptUi.setPointViewVisible(true);
+        }
     }
 
     /**

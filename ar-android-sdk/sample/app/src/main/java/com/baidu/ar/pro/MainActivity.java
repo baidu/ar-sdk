@@ -54,11 +54,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         initData();
         initView();
-        initCache();
-    }
 
-    private void initCache() {
-        mARController = ARControllerManager.getInstance(this).getArController();
     }
 
     private void initData() {
@@ -163,6 +159,7 @@ public class MainActivity extends Activity {
     public void cacheCase(View view) {
         final TextView progress = findViewById(R.id.progress);
         String caseId = ((EditText) findViewById(R.id.cache_id)).getText().toString();
+        mARController = ARControllerManager.getInstance(this).getArController();
         mARController.downloadCase(caseId, new ArCaseDownloadListener() {
             @Override
             public void onProgress(String s, int i) {
