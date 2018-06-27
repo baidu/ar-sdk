@@ -180,13 +180,17 @@ public class MainActivity extends Activity {
      */
     public void cancelCase(View view) {
         String caseId = ((EditText) findViewById(R.id.cache_id)).getText().toString();
-        mARController.cancelDownloadCase(caseId);
+        if (mARController != null) {
+            mARController.cancelDownloadCase(caseId);
+        }
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mARController.release();
+        if (mARController != null) {
+            mARController.release();
+        }
         ARControllerManager.getInstance(this).release();
     }
 }

@@ -33,8 +33,6 @@ public class Speech {
 
     private SpeechRecogListener speechRecogListener;
 
-    private int status = -1;
-
     public Speech(Context context, SpeechRecogListener speechRecogListener) {
         mContext = context;
         asr = EventManagerFactory.create(context, "asr");
