@@ -452,6 +452,9 @@ public class ARFragment extends Fragment {
 
         @Override
         public void onTackPicture() {
+            if (mARController == null) {
+                return;
+            }
             String path = getCachePath() + File.separator + System.currentTimeMillis() + ".jpg";
             mARController.takePicture(path, new TakePictureCallback() {
                 @Override
@@ -468,6 +471,9 @@ public class ARFragment extends Fragment {
 
         @Override
         public void onStartRecord() {
+            if (mARController == null) {
+                return;
+            }
             // 录像文件全路径为： 存储路径 + 当前时间戳 + .mp4
             String path = getCachePath() + File.separator + System.currentTimeMillis() + ".mp4";
             mARController.startRecord(path, mRecordMaxTime, new MovieRecorderCallback() {
@@ -505,7 +511,9 @@ public class ARFragment extends Fragment {
 
         @Override
         public void onStopRecord() {
-            mARController.stopRecord();
+            if (mARController != null) {
+                mARController.stopRecord();
+            }
         }
     };
 

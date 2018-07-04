@@ -8,6 +8,7 @@ import java.util.HashMap;
 import com.baidu.ar.ARController;
 import com.baidu.ar.DuMixCallback;
 import com.baidu.ar.base.MsgField;
+import com.baidu.ar.base.RequestController;
 import com.baidu.ar.bean.ARResource;
 import com.baidu.ar.bean.BrowserBean;
 import com.baidu.ar.bean.TrackRes;
@@ -321,12 +322,12 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
 
             // 识图初始化
             case MsgField.IMSG_ON_DEVICE_IR_START:
-                showToast(" 识图初始化");
+                showToast(" 识图初始化成功，请对准识别图");
                 break;
 
             // 云端识图初始化
             case MsgField.IMSG_CLORD_ID_START:
-                showToast(" 云端识图初始化");
+                showToast(" 云端识图初始化，请对准识别图");
                 break;
 
             // track 模型显示
@@ -431,6 +432,13 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
                 break;
             case MsgField.IMSG_DEVICE_NOT_SUPPORT:
                 showToast("哎呦，机型硬件不支持");
+                break;
+            case MsgField.MSG_MOBILE_NETWORK_FOR_START_QUERY_RES:
+                // TODO: 2018/7/2 4G状态下
+                RequestController mRequestController = (RequestController) msg;
+                if (mRequestController != null) {
+                    mRequestController.startRequest();
+                }
                 break;
             default:
                 break;
