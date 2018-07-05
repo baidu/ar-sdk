@@ -1,0 +1,364 @@
+fileFormatVersion: 2
+guid: e630ac499e7444518975c14d94e0bd4e
+timeCreated: 1522313675
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bip001
+    100002: Bip001 Head
+    100004: Bip001 HeadNub
+    100006: Bip001 L Calf
+    100008: Bip001 L Clavicle
+    100010: Bip001 L Finger0
+    100012: Bip001 L Finger01
+    100014: Bip001 L Finger0Nub
+    100016: Bip001 L Finger1
+    100018: Bip001 L Finger11
+    100020: Bip001 L Finger1Nub
+    100022: Bip001 L Foot
+    100024: Bip001 L Forearm
+    100026: Bip001 L Hand
+    100028: Bip001 L Thigh
+    100030: Bip001 L Toe0
+    100032: Bip001 L Toe0Nub
+    100034: Bip001 L UpperArm
+    100036: Bip001 Neck
+    100038: Bip001 Pelvis
+    100040: Bip001 R Calf
+    100042: Bip001 R Clavicle
+    100044: Bip001 R Finger0
+    100046: Bip001 R Finger01
+    100048: Bip001 R Finger0Nub
+    100050: Bip001 R Finger1
+    100052: Bip001 R Finger11
+    100054: Bip001 R Finger1Nub
+    100056: Bip001 R Foot
+    100058: Bip001 R Forearm
+    100060: Bip001 R Hand
+    100062: Bip001 R Thigh
+    100064: Bip001 R Toe0
+    100066: Bip001 R Toe0Nub
+    100068: Bip001 R UpperArm
+    100070: Bip001 Spine
+    100072: Bip001 Spine1
+    100074: Bip001 Tail
+    100076: Bip001 Tail1
+    100078: Bip001 TailNub
+    100080: Box013
+    100082: Box014
+    100084: Box015
+    100086: Camera001
+    100088: Camera001.Target
+    100090: Cylinder013
+    100092: Cylinder022
+    100094: Cylinder023
+    100096: Cylinder024
+    100098: deiercengYOU
+    100100: diercengY
+    100102: diercengZ
+    100104: dimian
+    100106: disancengYOU
+    100108: disancengZUO
+    100110: diyicengY
+    100112: diyicengYU
+    100114: diyicengZ
+    100116: diysancengY
+    100118: Dummy001
+    100120: hj
+    100122: jiazi
+    100124: jiazi001
+    100126: jiazi002
+    100128: jiazi003
+    100130: jiazi004
+    100132: jiazi005
+    100134: jiazi006
+    100136: jiazi007
+    100138: jiazi008
+    100140: jiazi009
+    100142: luoxiong001
+    100144: Object002
+    100146: //RootNode
+    100148: camera1_group
+    100150: camera2
+    400000: Bip001
+    400002: Bip001 Head
+    400004: Bip001 HeadNub
+    400006: Bip001 L Calf
+    400008: Bip001 L Clavicle
+    400010: Bip001 L Finger0
+    400012: Bip001 L Finger01
+    400014: Bip001 L Finger0Nub
+    400016: Bip001 L Finger1
+    400018: Bip001 L Finger11
+    400020: Bip001 L Finger1Nub
+    400022: Bip001 L Foot
+    400024: Bip001 L Forearm
+    400026: Bip001 L Hand
+    400028: Bip001 L Thigh
+    400030: Bip001 L Toe0
+    400032: Bip001 L Toe0Nub
+    400034: Bip001 L UpperArm
+    400036: Bip001 Neck
+    400038: Bip001 Pelvis
+    400040: Bip001 R Calf
+    400042: Bip001 R Clavicle
+    400044: Bip001 R Finger0
+    400046: Bip001 R Finger01
+    400048: Bip001 R Finger0Nub
+    400050: Bip001 R Finger1
+    400052: Bip001 R Finger11
+    400054: Bip001 R Finger1Nub
+    400056: Bip001 R Foot
+    400058: Bip001 R Forearm
+    400060: Bip001 R Hand
+    400062: Bip001 R Thigh
+    400064: Bip001 R Toe0
+    400066: Bip001 R Toe0Nub
+    400068: Bip001 R UpperArm
+    400070: Bip001 Spine
+    400072: Bip001 Spine1
+    400074: Bip001 Tail
+    400076: Bip001 Tail1
+    400078: Bip001 TailNub
+    400080: Box013
+    400082: Box014
+    400084: Box015
+    400086: Camera001
+    400088: Camera001.Target
+    400090: Cylinder013
+    400092: Cylinder022
+    400094: Cylinder023
+    400096: Cylinder024
+    400098: deiercengYOU
+    400100: diercengY
+    400102: diercengZ
+    400104: dimian
+    400106: disancengYOU
+    400108: disancengZUO
+    400110: diyicengY
+    400112: diyicengYU
+    400114: diyicengZ
+    400116: diysancengY
+    400118: Dummy001
+    400120: hj
+    400122: jiazi
+    400124: jiazi001
+    400126: jiazi002
+    400128: jiazi003
+    400130: jiazi004
+    400132: jiazi005
+    400134: jiazi006
+    400136: jiazi007
+    400138: jiazi008
+    400140: jiazi009
+    400142: luoxiong001
+    400144: Object002
+    400146: //RootNode
+    400148: camera1_group
+    400150: camera2
+    2000000: Camera001
+    2000002: camera2
+    2100000: sdas
+    2100002: "_\u840C\u718ACylinder04_mso"
+    2100004: 'Material #0'
+    2100006: 12 - Defaultas
+    2100008: defaults
+    2100010: 07 - Default
+    2100012: 13 - Default
+    2300000: Box013
+    2300002: Box014
+    2300004: Box015
+    2300006: Cylinder013
+    2300008: Cylinder022
+    2300010: Cylinder023
+    2300012: Cylinder024
+    2300014: deiercengYOU
+    2300016: diercengY
+    2300018: diercengZ
+    2300020: dimian
+    2300022: disancengYOU
+    2300024: disancengZUO
+    2300026: diyicengY
+    2300028: diyicengYU
+    2300030: diyicengZ
+    2300032: diysancengY
+    2300034: jiazi
+    2300036: jiazi001
+    2300038: jiazi002
+    2300040: jiazi003
+    2300042: jiazi004
+    2300044: jiazi005
+    2300046: jiazi006
+    2300048: jiazi007
+    2300050: jiazi008
+    2300052: jiazi009
+    2300054: Object002
+    3300000: Box013
+    3300002: Box014
+    3300004: Box015
+    3300006: Cylinder013
+    3300008: Cylinder022
+    3300010: Cylinder023
+    3300012: Cylinder024
+    3300014: deiercengYOU
+    3300016: diercengY
+    3300018: diercengZ
+    3300020: dimian
+    3300022: disancengYOU
+    3300024: disancengZUO
+    3300026: diyicengY
+    3300028: diyicengYU
+    3300030: diyicengZ
+    3300032: diysancengY
+    3300034: jiazi
+    3300036: jiazi001
+    3300038: jiazi002
+    3300040: jiazi003
+    3300042: jiazi004
+    3300044: jiazi005
+    3300046: jiazi006
+    3300048: jiazi007
+    3300050: jiazi008
+    3300052: jiazi009
+    3300054: Object002
+    4300000: luoxiong001
+    4300002: Box013
+    4300004: diercengY
+    4300006: diercengZ
+    4300008: deiercengYOU
+    4300010: diysancengY
+    4300012: Box015
+    4300014: disancengZUO
+    4300016: disancengYOU
+    4300018: diyicengY
+    4300020: diyicengZ
+    4300022: diyicengYU
+    4300024: dimian
+    4300026: jiazi
+    4300028: jiazi001
+    4300030: jiazi002
+    4300032: jiazi003
+    4300034: jiazi004
+    4300036: jiazi005
+    4300038: jiazi006
+    4300040: jiazi007
+    4300042: jiazi008
+    4300044: jiazi009
+    4300046: Cylinder022
+    4300048: Box014
+    4300050: Cylinder023
+    4300052: Cylinder013
+    4300054: Object002
+    4300056: Cylinder024
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: luoxiong001
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 522
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
