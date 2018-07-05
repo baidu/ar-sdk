@@ -28,9 +28,10 @@ public class ARExampleGestrue : MonoBehaviour
     void Start()
     {
         _target = transform.gameObject;
-		_arObjectTrackle = transform.GetComponent<BaiduARObjectTrackable>();
-		_cameraDevice = FindObjectOfType<BaiduARWebCamera>();
+        _arObjectTrackle = transform.GetComponent<BaiduARObjectTrackable>();
+		_cameraDevice = FindObjectOfType<BaiduARWebCamera> ();
 		canvas = GameObject.Find ("Canvas");
+
     }
 
     // Update is called once per frame
@@ -57,7 +58,8 @@ public class ARExampleGestrue : MonoBehaviour
     {
         if (touch.phase == TouchPhase.Began)
         {
-            ARObjectTracker.Instance.StopAR();
+            BaiduARObjectTracker.Instance.StopAR();
+
             _beginMovePosition = new Vector3(touch.position.x, touch.position.y, 0);
         }
 
@@ -75,14 +77,10 @@ public class ARExampleGestrue : MonoBehaviour
 
         if (touch.phase == TouchPhase.Ended)
         {
-            Vector3 viewPos = Camera.main.WorldToViewportPoint(_target.transform.position);
-            Vector3 pos = new Vector3(viewPos.y * _cameraDevice.width, viewPos.x * _cameraDevice.height, 0);
+			_arObjectTrackle.UpdateSlamPos();
 
+            BaiduARObjectTracker.Instance.StartAR();
 
-            _arObjectTrackle.x = _cameraDevice.width - pos.x;
-            _arObjectTrackle.y = _cameraDevice.height - pos.y;
-
-            ARObjectTracker.Instance.StartAR();
         }
     }
 
@@ -95,6 +93,7 @@ public class ARExampleGestrue : MonoBehaviour
         if (newTouch_2.phase == TouchPhase.Began)
         {
             BaiduARObjectTracker.Instance.StopAR();
+            //_target = GameObject.Find("Cube").gameObject;
             _beginRotatePosition = new Vector3(touch_1.position.x, touch_1.position.y, 0);
 
             oldTouch_1 = newTouch_1;
@@ -145,9 +144,7 @@ public class ARExampleGestrue : MonoBehaviour
         }
         if (newTouch_1.phase == TouchPhase.Ended || newTouch_2.phase == TouchPhase.Ended)
         {
-			_arObjectTrackle.rotateAngleX = _target.transform.eulerAngles.x;
-			_arObjectTrackle.rotateAngleY = _target.transform.eulerAngles.y;
-			_arObjectTrackle.rotateAngleZ = _target.transform.eulerAngles.z;
+			_arObjectTrackle.UpdateSlamPos();
             BaiduARObjectTracker.Instance.StartAR();
         }
     }

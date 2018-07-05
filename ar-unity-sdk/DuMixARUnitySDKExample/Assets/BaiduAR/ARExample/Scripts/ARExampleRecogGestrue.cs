@@ -7,38 +7,36 @@ using System.Reflection;
 public class ARExampleRecogGestrue : MonoBehaviour {
 
 	private BaiduARGestureRecog gestureRecog;
+	//private List<RecogGesture> recogList;
 	public GameObject particleObj;
 
 	private ParticleSystem particle;
 
-	public bool isStartHandTracking = false;
+	public bool isStartHandTracking = true;
 
 	// Use this for initialization
 	void Start () {
 
 		gestureRecog = gameObject.GetComponent<BaiduARGestureRecog> ();
-
 		particle = particleObj.transform.GetComponent<ParticleSystem> ();
-
+      
 		if (isStartHandTracking) {
-			System.Type type = particle.main.GetType ();
-			PropertyInfo property = type.GetProperty ("loop");
-			property.SetValue (particle.main, true, null);
+            var main = particle.main;
+            main.loop = true;
+  
 		}
 
 		//手势识别
 		gestureRecog.OnResultCallBack((bool result) =>{
 			if (!isStartHandTracking) {
-
 			   ShowObject(result);
 			}
 
 		});
-
+			
 		//实验室功能 手势跟踪
 		gestureRecog.OnResultTrackCallBack((List<RecogGesture> lstRecg) =>{
-			//ARDebug.Log("lstRecg.Count; "+lstRecg.Count);
-			//recogList = lstRecg;
+			
 			if (isStartHandTracking) {
 				MoveObject (lstRecg);
 			}
@@ -49,8 +47,6 @@ public class ARExampleRecogGestrue : MonoBehaviour {
 
 
 	void MoveObject(List<RecogGesture> recog){
-		
-		//obj.transform.position = recog [0].GetCenterPos;
 
 		particleObj.transform.position = recog [0].GetCenterPos;
 		if (!particle.isPlaying) {
@@ -59,6 +55,7 @@ public class ARExampleRecogGestrue : MonoBehaviour {
 	}
 
 	void ShowObject(bool isrecognition){
+		ARDebug.Log("isrecognition: "+isrecognition);
 		if (isrecognition) {
 			if (!particle.isPlaying) {
 				particle.Play ();

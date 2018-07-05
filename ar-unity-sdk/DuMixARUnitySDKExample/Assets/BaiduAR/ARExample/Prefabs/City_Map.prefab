@@ -615,6 +615,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4592180461363562}
   - component: {fileID: 95697050884933256}
+  - component: {fileID: 114204599015151394}
   m_Layer: 0
   m_Name: City_Map
   m_TagString: Untagged
@@ -4056,7 +4057,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6859a8926371e4ea491b25e30e3fb4d7, type: 2}
+  - {fileID: 2100000, guid: d5d1dcfcec0d941ba883f2dd04f268f6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5854,3 +5855,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114204599015151394
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1436496630567414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9351201d20aa4e27b221f5edab34e53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  filePath: ar/city
+  rotateAngleX: 180
+  rotateAngleY: -90
+  rotateAngleZ: 90
+  isLossVisible: 0
+  fileName: 

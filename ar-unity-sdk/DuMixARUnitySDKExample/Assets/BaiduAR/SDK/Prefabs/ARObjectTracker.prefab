@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4353738789833826}
-  - component: {fileID: 114116798009176876}
+  - component: {fileID: 114602853576578838}
   m_Layer: 0
   m_Name: ARObjectTracker
   m_TagString: Untagged
@@ -40,7 +40,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114116798009176876
+--- !u!114 &114602853576578838
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1245856685830524}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61bce229d93eb4a47975d905f855600b, type: 3}
+  m_Script: {fileID: 11500000, guid: d5e9a12aa29d6424c92eeab2523efdd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OnErrorEvent:

@@ -13,15 +13,13 @@ namespace BaiduARInternal
 
         public enum MenuItem
         {
-            //ARExampleImageTrackerBee,
             ARExampleMainMenu,
-
             ARExampleObjectTrackerBear,
 			ARExampleImageRecognition,
             ARExampleImageTrackerCity,
-            //ARExampleObjectTrackerDragon,
             ARExampleContinuous,
-			ARExampleRecogGestrue
+			ARExampleRecogGestrue,
+			ARExampleCloudRecognition
 
         }
 
@@ -47,11 +45,7 @@ namespace BaiduARInternal
         {
             switch (scene)
             {
-//                case "ARExampleImageTrackerBee":
-//                    {
-//                        _item = MenuItem.ARExampleImageTrackerBee;
-//                        break;
-//                    }
+
                 case "ARExampleMainMenu":
                     {
                         _item = MenuItem.ARExampleMainMenu;
@@ -72,11 +66,6 @@ namespace BaiduARInternal
                         _item = MenuItem.ARExampleImageTrackerCity;
                         break;
                     }
-//                case "ARExampleObjectTrackerDragon":
-//                    {
-//                        _item = MenuItem.ARExampleObjectTrackerDragon;
-//                        break;
-//                    }
                 case "ARExampleContinuous":
                     {
                         _item = MenuItem.ARExampleContinuous;
@@ -87,6 +76,11 @@ namespace BaiduARInternal
 					_item = MenuItem.ARExampleRecogGestrue;
                         break;
                     }
+			   case "ARExampleCloudRecognition":
+				   {
+					_item = MenuItem.ARExampleCloudRecognition;
+					break;
+				   }
                 default:
                     {
                         print("没有该场景");

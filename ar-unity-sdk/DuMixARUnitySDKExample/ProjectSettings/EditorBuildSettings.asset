@@ -23,3 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/BaiduAR/ARExample/Scenes/ExampleCaseScene/ARExampleContinuous.unity
     guid: 06fba549b1bfa4b7d9d185fc8d65e697
+  - enabled: 1
+    path: Assets/BaiduAR/ARExample/Scenes/ExampleCaseScene/ARExampleCloudRecognition.unity
+    guid: 40d67623cb82c4e9ab8683bd2557e700

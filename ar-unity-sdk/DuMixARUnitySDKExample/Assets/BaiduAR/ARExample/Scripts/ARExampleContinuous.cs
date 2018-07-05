@@ -21,7 +21,7 @@ public class ARExampleContinuous : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-		results = GameObject.FindObjectsOfType<BaiduARImageRecognitionResult>();
+        results = GameObject.FindObjectsOfType<BaiduARImageRecognitionResult>();
 
 		BaiduARImageTracker tracker = imageTracker.GetComponent<BaiduARImageTracker>();
         for (int i = 0; i < results.Length; i++)
@@ -35,6 +35,7 @@ public class ARExampleContinuous : MonoBehaviour
 
                 if (results[i].filePath.Contains(trackable.filePath))
                 {
+					ARDebug.Log("trackable object: "+trackable.name);
                     results[i].OnRespond.AddListener(
                         delegate ()
                         {
@@ -46,7 +47,9 @@ public class ARExampleContinuous : MonoBehaviour
             }
 
         }
-		tracker.OnTrackFail.AddListener(OutFocus);
+        tracker.OnTrackFail.AddListener(OutFocus);
+		ARDebug.Log("imageTracker.transform.childCount: "+imageTracker.transform.childCount);
+
     }
 
     void ShowObject(GameObject obj)
@@ -75,7 +78,7 @@ public class ARExampleContinuous : MonoBehaviour
             }
 
             ARDebug.Log("trackable.filePath: " + trackable.filePath);
-            ARImageTracker.Instance.SetActiveTrack(trackable.filePath);
+            BaiduARImageTracker.Instance.SetActiveTrack(trackable.filePath);
         }
 
     }

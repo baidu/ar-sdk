@@ -8,19 +8,17 @@ public class ARExampleResultA : MonoBehaviour
 
     private BaiduARImageRecognitionResult _result;
     private ARExampleResultB _resultB;
-	[HideInInspector]
 	public GameObject bear;
-	[HideInInspector]
 	public bool _isShowA;
     // Use this for initialization
     void Start()
     {
         _isShowA = false;
 
-		_result = gameObject.GetComponent<BaiduARImageRecognitionResult>();
+        _result = gameObject.GetComponent<BaiduARImageRecognitionResult>();
         _result.OnRespond.AddListener(CreateObject);
         _resultB = GameObject.FindObjectOfType<ARExampleResultB>();
-        //CreateObject();
+
     }
 
     public void CreateObject()

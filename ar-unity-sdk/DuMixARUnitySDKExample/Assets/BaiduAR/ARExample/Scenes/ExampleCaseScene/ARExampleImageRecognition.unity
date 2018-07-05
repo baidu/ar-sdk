@@ -185,7 +185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 207853963}
   - component: {fileID: 207853965}
-  - component: {fileID: 207853966}
+  - component: {fileID: 207853964}
   m_Layer: 0
   m_Name: ResultA
   m_TagString: Untagged
@@ -206,6 +206,25 @@ Transform:
   m_Father: {fileID: 1589592080}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &207853964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 207853962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca3d042d0fe62465e9a7b7aa77e7595b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  filePath: ar/bear
+  isUserAbsolutePath: 0
+  fileName: 
+  OnRespond:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &207853965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,24 +238,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bear: {fileID: 0}
   _isShowA: 0
---- !u!114 &207853966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 207853962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b9be785675b04e2a8354e8620676dcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  filePath: ar/bear
-  fileName: 
-  OnRespond:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1 &233212828
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,7 +361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.50980395, g: 0.85882354, b: 0.8745098, a: 0.627451}
+  m_Color: {r: 0.78039217, g: 0.78039217, b: 0.78039217, a: 0.627451}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -805,7 +806,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -892,10 +893,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1274779079}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b9be785675b04e2a8354e8620676dcd, type: 3}
+  m_Script: {fileID: 11500000, guid: ca3d042d0fe62465e9a7b7aa77e7595b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   filePath: ar/city
+  isUserAbsolutePath: 0
   fileName: 
   OnRespond:
     m_PersistentCalls:
@@ -923,7 +925,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1589592080}
-  - component: {fileID: 1589592082}
+  - component: {fileID: 1589592081}
   m_Layer: 0
   m_Name: ARImageRecognition
   m_TagString: Untagged
@@ -946,7 +948,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1589592082
+--- !u!114 &1589592081
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -954,7 +956,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1589592079}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9f39d0aca84e4ebaba3d739084af3b9, type: 3}
+  m_Script: {fileID: 11500000, guid: 2931d8901a8104b59b20e6d173b7889f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OnErrorEvent:
@@ -971,7 +973,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: BaiduARInternal.UnityEventEx, BaiduARUnitySDK, Version=1.0.6712.24659,
+    m_TypeName: BaiduARInternal.UnityEventEx, BaiduARUnitySDK, Version=1.0.6757.30248,
       Culture=neutral, PublicKeyToken=null
   intervalTime: 0.1
 --- !u!1 &1780041555

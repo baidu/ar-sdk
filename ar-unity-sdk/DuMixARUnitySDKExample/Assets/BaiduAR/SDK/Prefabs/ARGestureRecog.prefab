@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4893168904790626}
-  - component: {fileID: 114072713925429260}
+  - component: {fileID: 114033228310892262}
   m_Layer: 0
   m_Name: ARGestureRecog
   m_TagString: Untagged
@@ -40,7 +40,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114072713925429260
+--- !u!114 &114033228310892262
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1714736007368158}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01528d4af13f842ca9fe7584c9353bb6, type: 3}
+  m_Script: {fileID: 11500000, guid: 0aa540c8e9b164e2dafeffea59484aee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OnErrorEvent:
@@ -56,8 +56,3 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: BaiduARInternal.UnityEventEx, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  OnResultFail:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
