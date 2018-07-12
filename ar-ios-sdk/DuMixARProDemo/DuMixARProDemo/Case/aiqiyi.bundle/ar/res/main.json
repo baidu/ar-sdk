@@ -1,0 +1,428 @@
+{
+	"showImmediately": 1,
+	"showOffscreenGuidance": 1,
+	"imuRelayCtrlWhenTrackLost": 0,
+	"userInteraction": {
+		"disableAll": 0,
+		"disablePinch": 0,
+		"disableClick": 0,
+		"disableLongPress": 0,
+		"disableSingleFingerScroll": 0,
+		"disableTwoFingerScroll": 0,
+		"disableDoubleClick": 0,
+		"enableTouchZone": 1
+	},
+	"cameraDefaultLookAt": {
+		"eyePos": "0, 0, 1536",
+		"centerPos": "0, 0, 0",
+		"upDirection": "0, 1, 0"
+	},
+	"nodeList": [{
+		"name": "mainCamera",
+		"type": "camera",
+		"visible": "1",
+		"position": "0,0,0",
+		"scale": "1,1,1",
+		"rotation": "0,0,0",
+		"children": [],
+		"cameraNodeSuppl": {
+			"fov": 60,
+			"zNear": 10,
+			"zFar": 5000
+		},
+		"resId": "10"
+	}, {
+		"name": "info_card_left",
+		"resId": "10000796",
+		"type": "plane",
+		"visible": 1,
+		"touchable": 1,
+		"scale": "100,100,100",
+		"position": "0,0,0",
+		"rotation": "90,-90,0",
+		"transparentObject": 1,
+		"material": {
+			"common": {
+				"defaultShaderName": "planeShader",
+				"textureList": [{
+					"textureName": "res\/plane\/10000796\/cat_card.png"
+				}]
+			}
+		},
+		"hudDisplay": {
+			"marginLeft": 0.5,
+			"marginTop": 0.14,
+			"depthPosition": 20000,
+			"screenRatio": {
+				"screenWidthRatio": 0.5,
+				"screenHeightRatio": 0.2
+			}
+		},
+		"children": [],
+		"batchNum": 0
+	}, {
+		"name": "click_Close_Book",
+		"resId": "10000797",
+		"type": "plane",
+		"visible": 1,
+		"touchable": 1,
+		"scale": "100,100,100",
+		"position": "0,0,0",
+		"rotation": "90,-90,0",
+		"transparentObject": 1,
+		"material": {
+			"common": {
+				"defaultShaderName": "planeShader",
+				"textureList": [{
+					"textureName": "res\/plane\/10000797\/hint_close.png"
+				}]
+			}
+		},
+		"hudDisplay": {
+			"marginLeft": 0.89,
+			"marginTop": 0.84,
+			"depthPosition": 20000,
+			"screenRatio": {
+				"screenWidthRatio": 0.1,
+				"screenHeightRatio": 0
+			}
+		},
+		"children": [],
+		"batchNum": 0
+	}, {
+		"name": "click_Open_Book",
+		"resId": "10000798",
+		"type": "plane",
+		"visible": 0,
+		"touchable": 1,
+		"scale": "100,100,100",
+		"position": "0,0,0",
+		"rotation": "90,-90,0",
+		"transparentObject": 1,
+		"material": {
+			"common": {
+				"defaultShaderName": "planeShader",
+				"textureList": [{
+					"textureName": "res\/plane\/10000798\/hint_open.png"
+				}]
+			}
+		},
+		"hudDisplay": {
+			"marginLeft": 0.89,
+			"marginTop": 0.84,
+			"depthPosition": 20000,
+			"screenRatio": {
+				"screenWidthRatio": 0.1,
+				"screenHeightRatio": 0
+			}
+		},
+		"children": [],
+		"batchNum": 0
+	}, {
+		"name": "guide_video_onefinger_scroll",
+		"type": "video",
+		"visible": 1,
+		"touchable": 1,
+		"material": {
+			"common": {
+				"textureType": "video",
+				"uvUnwrapedTextureName": "res\/video\/10000799\/video_onefinger_scroll.mp4"
+			},
+			"android": {
+				"defaultShaderName": "androidVideoShader",
+				"textureType": "video",
+				"uvUnwrapedTextureName": "res\/video\/10000799\/video_onefinger_scroll.mp4"
+			}
+		},
+		"hudDisplay": {
+			"marginLeft": 0.5,
+			"marginTop": 0.5,
+			"depthPosition": 20000,
+			"screenRatio": {
+				"screenWidthRatio": 0.532,
+				"screenHeightRatio": 0.18
+			}
+		},
+		"transparentObject": 1,
+		"position": "0,0,0",
+		"scale": "100,100,100",
+		"rotation": "90,-90,0",
+		"children": [],
+		"resId": "10000799",
+		"batchNum": 0
+	}, {
+		"name": "guide_video_twofinger_scroll",
+		"type": "video",
+		"visible": 0,
+		"touchable": 1,
+		"material": {
+			"common": {
+				"textureType": "video",
+				"uvUnwrapedTextureName": "res\/video\/10000801\/video_twofinger_scroll.mp4"
+			},
+			"android": {
+				"defaultShaderName": "androidVideoShader",
+				"textureType": "video",
+				"uvUnwrapedTextureName": "res\/video\/10000801\/video_twofinger_scroll.mp4"
+			}
+		},
+		"hudDisplay": {
+			"marginLeft": 0.5,
+			"marginTop": 0.5,
+			"depthPosition": 20000,
+			"screenRatio": {
+				"screenWidthRatio": 0.532,
+				"screenHeightRatio": 0.18
+			}
+		},
+		"transparentObject": 1,
+		"position": "0,0,0",
+		"scale": "100,100,100",
+		"rotation": "90,-90,0",
+		"children": [],
+		"resId": "10000801",
+		"batchNum": 0
+	},
+	 {
+		"name": "guide_video_single_click",
+		"type": "video",
+		"visible": 0,
+		"touchable": 1,
+		"material": {
+			"common": {
+				"textureType": "video",
+				"uvUnwrapedTextureName": "res\/video\/10000800\/video_single_click.mp4"
+			},
+			"android": {
+				"defaultShaderName": "androidVideoShader",
+				"textureType": "video",
+				"uvUnwrapedTextureName": "res\/video\/10000800\/video_single_click.mp4"
+			}
+		},
+		"hudDisplay": {
+			"marginLeft": 0.5,
+			"marginTop": 0.5,
+			"depthPosition": 20000,
+			"screenRatio": {
+				"screenWidthRatio": 0.532,
+				"screenHeightRatio": 0.18
+			}
+		},
+		"transparentObject": 1,
+		"position": "0,0,0",
+		"scale": "100,100,100",
+		"rotation": "90,-90,0",
+		"children": [],
+		"resId": "10000800",
+		"batchNum": 0
+	},
+	{
+	 "name": "guide_video_two_separate",
+	 "type": "video",
+	 "visible": 0,
+	 "touchable": 1,
+	 "material": {
+		 "common": {
+			 "textureType": "video",
+			 "uvUnwrapedTextureName": "res\/video\/10000802\/video_onefinger_separate.mp4"
+		 },
+		 "android": {
+			 "defaultShaderName": "androidVideoShader",
+			 "textureType": "video",
+			 "uvUnwrapedTextureName": "res\/video\/10000802\/video_onefinger_separate.mp4"
+		 }
+	 },
+	 "hudDisplay": {
+		 "marginLeft": 0.5,
+		 "marginTop": 0.5,
+		 "depthPosition": 20000,
+		 "screenRatio": {
+			 "screenWidthRatio": 0.532,
+			 "screenHeightRatio": 0.18
+		 }
+	 },
+	 "transparentObject": 1,
+	 "position": "0,0,0",
+	 "scale": "100,100,100",
+	 "rotation": "90,-90,0",
+	 "children": [],
+	 "resId": "10000800",
+	 "batchNum": 0
+ },
+	{
+		"name": "guide_up",
+		"resId": "10000809",
+		"type": "plane",
+		"visible": 0,
+		"touchable": 1,
+		"scale": "100,100,100",
+		"position": "0,0,0",
+		"rotation": "90,-90,0",
+		"transparentObject": 1,
+		"material": {
+			"common": {
+				"defaultShaderName": "planeShader",
+				"textureList": [{
+					"textureName": "res\/plane\/10000809\/guide_up.png"
+				}]
+			}
+		},
+		"hudDisplay": {
+			"marginLeft": 0.5,
+			"marginTop": 0.5,
+			"depthPosition": 10,
+			"screenRatio": {
+				"screenWidthRatio": 0.49,
+				"screenHeightRatio": 0.07
+			}
+		},
+		"children": [],
+		"batchNum": 0
+	}, {
+		"name": "guide_down",
+		"resId": "10000808",
+		"type": "plane",
+		"visible": 0,
+		"touchable": 1,
+		"scale": "100,100,100",
+		"position": "0,0,0",
+		"rotation": "90,-90,0",
+		"transparentObject": 1,
+		"material": {
+			"common": {
+				"defaultShaderName": "planeShader",
+				"textureList": [{
+					"textureName": "res\/plane\/10000808\/guide_down.png"
+				}]
+			}
+		},
+		"hudDisplay": {
+			"marginLeft": 0.5,
+			"marginTop": 0.5,
+			"depthPosition": 10,
+			"screenRatio": {
+				"screenWidthRatio": 0.49,
+				"screenHeightRatio": 0.07
+			}
+		},
+		"children": [],
+		"batchNum": 0
+	}, {
+		"name": "arrow_guide",
+		"resId": "10000807",
+		"type": "plane",
+		"visible": 0,
+		"touchable": 1,
+		"scale": "100,100,100",
+		"position": "0,0,0",
+		"rotation": "90,-90,0",
+		"transparentObject": 1,
+		"material": {
+			"common": {
+				"defaultShaderName": "planeShader",
+				"textureList": [{
+					"textureName": "res\/plane\/10000807\/arrow_guide.png"
+				}]
+			}
+		},
+		"hudDisplay": {
+			"marginLeft": 0.5,
+			"marginTop": 0.5,
+			"depthPosition": 10,
+			"screenRatio": {
+				"screenWidthRatio": 0.49,
+				"screenHeightRatio": 0.07
+			}
+		},
+		"children": [],
+		"batchNum": 0
+	}, {
+		"name": "reset",
+		"type": "framePicture",
+		"visible": 1,
+		"touchable": 1,
+		"transparentObject": 0,
+		"framePictureSuppl": {
+			"picturePath": "res\/framePicture\/10000849",
+			"pictureName": "",
+			"pictureFmtExtend": ".png",
+			"startNumber": 1,
+			"endNumber": 70,
+			"frameInterval": 1,
+			"bufferVolume": 1
+		},
+		"material": {
+			"common": {
+				"defaultShaderName": "frameShader",
+				"textureList": [{
+					"texturePath": "res\/framePicture\/10000849\/1.png"
+				}]
+			}
+		},
+		"hudDisplay": {
+			"marginLeft": 0.5,
+			"marginTop": 0.5,
+			"depthPosition": 20000,
+			"screenRatio": {
+				"screenWidthRatio": 0.2,
+				"screenHeightRatio": 0
+			}
+		},
+		"position": "0,0,0",
+		"scale": "100,100,100",
+		"rotation": "90,0,0",
+		"children": [],
+		"resId": "10000849",
+		"batchNum": 0
+	}, {
+		"name": "info_card_right",
+		"resId": "10000881",
+		"type": "plane",
+		"visible": 0,
+		"touchable": 1,
+		"scale": "100,100,100",
+		"position": "0,0,0",
+		"rotation": "90,90,0",
+		"transparentObject": 1,
+		"material": {
+			"common": {
+				"defaultShaderName": "planeShader",
+				"textureList": [{
+					"textureName": "res\/plane\/10000881\/cat_card.png"
+				}]
+			}
+		},
+		"hudDisplay": {
+			"marginLeft": 0.5,
+			"marginTop": 0.14,
+			"depthPosition": 20000,
+			"screenRatio": {
+				"screenWidthRatio": 0.5,
+				"screenHeightRatio": 0.2
+			}
+		},
+		"children": [],
+		"batchNum": 0
+	}, {
+		"name": "model",
+		"type": "gltf",
+		"visible": 1,
+		"touchable": 1,
+		"meshFileName": "res\/gltf\/10000997\/honglvjingangyingwu.gltf",
+		"transparentObject": 0,
+		"position": "0,0,0",
+		"scale": "8000,8000,8000",
+		"rotation": "90,60,0",
+		"touchZone":1000,
+		"minScale":4000,
+		"maxScale":16000,
+		"material": {
+			"common": {
+				"offsetRepeat": "0,0,1,1"
+			}
+		},
+		"children": [],
+		"resId": "10000997",
+		"batchNum": 0
+	}]
+}

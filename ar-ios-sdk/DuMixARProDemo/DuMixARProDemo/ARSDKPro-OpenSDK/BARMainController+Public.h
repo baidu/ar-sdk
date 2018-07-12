@@ -6,6 +6,8 @@
 //  Copyright © 2018年 Baidu. All rights reserved.
 //
 
+#if !TARGET_OS_SIMULATOR
+
 #import "BARMainController.h"
 #import "BARImageMovieWriter.h"
 
@@ -19,12 +21,27 @@ typedef void(^BARLoadSuccessBlock)(NSString *arKey, kBARType arType);
 typedef void(^BARLoadFailedBlock)(void);
 
 @interface BARMainController (Public)
+
 /**
- Loading process：pass ARKey-->Query downloadAR-->Load AR-->Callbacks to callers
- @param arKey Generated ARkey
+ 从网络加载AR
+
+ @param arKey ARKey
+ @param successBlock 加载成功回调
+ @param failureBlock 加载失败回调
  */
 - (void)loadAR:(NSString *)arKey success:(BARLoadSuccessBlock)successBlock
  failure:(BARLoadFailedBlock)failureBlock;
+
+
+/**
+ 从本地路径加载AR
+
+ @param filePath case资源包路径,下载并解压完后的路径：比如 ../bar_10070173/ar/...，传递的参数filePath为../bar_10070173
+ @param arType case对应的artype
+ @param successBlock 加载成功回调
+ @param failureBlock 加载失败回调：case包有问题或者鉴权失败
+ */
+- (void)loadARFromFilePath:(NSString *)filePath arType:(NSString *)arType success:(BARLoadSuccessBlock)successBlock failure:(BARLoadFailedBlock)failureBlock;
 
 /**
  录制视频时，需要设置movieWriter
@@ -35,4 +52,7 @@ typedef void(^BARLoadFailedBlock)(void);
 
 - (kBARType)arTypeFromServer:(NSString *)arType;
 
+
 @end
+
+#endif

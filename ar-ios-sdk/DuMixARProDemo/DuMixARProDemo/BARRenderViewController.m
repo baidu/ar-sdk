@@ -404,6 +404,13 @@
     }
 }
 
+- (void)startCapture {
+    if (self.captureSession) {
+        if (NO == [self.captureSession isRunning]) {
+            [self.captureSession startRunning];
+        }
+    }
+}
 @end
 
 #endif

@@ -9,6 +9,7 @@
 #import "BARBusinessDemoViewController.h"
 
 #if defined (__arm64__)
+
 #import "BARMainController.h"
 #import "BARRenderViewController.h"
 #import "BARRouter.h"
@@ -21,6 +22,7 @@
 #import "BARCaseTask.h"
 #import "BARCaseManager.h"
 #import "BARRouter+BARLogoRecog.h"
+#import <Photos/Photos.h>
 
 #define IPAD     (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 #define ASPECT_RATIO (IPAD ? (4.0/3.0) : (16.0/9.0))
@@ -31,6 +33,7 @@
     BOOL _sameSearching;
     BOOL _logoInRecognition;
     BOOL _recording;
+    BOOL _loadARFinished;
 }
 
 /**
@@ -95,18 +98,43 @@
         [self loadActionData];//设置操作列表
         [self setupARView];//设置ARView
         [self setupActionView];//设置UI
-        [self setupARController];//设置AR控制器
         
-        //#error 设置ARKey&ARType
-        self.arKey = @"";
-        self.arType = @"";
-        
-        //#error 设置申请的APPID、APIKey https://dumix.baidu.com/dumixar
-        [BARSDKPro setAppID:@"" APIKey:@"" andSecretKey:@""];
-        
-        [self setupARVoice];//设置语音组件
-        [self setupTTS];//设置TTS组件
+        AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+        if (status == AVAuthorizationStatusDenied) {
+            [self showalert:@"请在设置中打开相机权限"];
+        } else if(status == AVAuthorizationStatusAuthorized) {
+            [self cameraAuthorizedFinished];
+        } else if(status == AVAuthorizationStatusNotDetermined) {
+            [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    if (granted) {
+                        [self cameraAuthorizedFinished];
+                    } else {
+                        [self showalert:@"请在设置中打开相机权限"];
+                    }
+                });
+            }];
+        } else {
+            [self showalert:@"请在设置中打开相机权限"];
+        }
     }
+}
+
+- (void)cameraAuthorizedFinished{
+    [self setupARController];//设置AR控制器
+    #error 设置ARKey&ARType
+    self.arKey = @"";
+    self.arType = @"";
+    
+    #error 设置申请的APPID、APIKey https://dumix.baidu.com/dumixar
+    [BARSDKPro setAppID:@"" APIKey:@"" andSecretKey:@""];
+    [self setupComponents];
+    
+}
+
+- (void)setupComponents{
+    [self setupARVoice];//设置语音组件
+    [self setupTTS];//设置TTS组件
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
@@ -147,7 +175,7 @@
     [[BARRouter sharedInstance] voice_cleanUpWithConfigure:self.voiceConfigure];
     [[BARRouter sharedInstance] cleanUpTTS];
     [[BARRouter sharedInstance] logo_cleanUpWithCaller:self.logoRecogHandler];
-
+    
     [self stop:nil];
 }
 
@@ -227,7 +255,7 @@
                     
                 case BARSDKUIState_DistanceNormal:
                 {
-                    weakSelf.tipsLabel.text = @"";
+                    
                 }
                     break;
                     
@@ -235,21 +263,16 @@
                 case BARSDKUIState_DistanceTooNear:
                 {
                     NSLog(@"过远，过近");
-                    weakSelf.tipsLabel.text = @"距离触发图 过远，过近";
-                    [weakSelf.tipsLabel sizeToFit];
                 }
                     break;
                 case BARSDKUIState_TrackLost_HideModel:
                 {
-                    weakSelf.tipsLabel.text = @"跟踪丢失，隐藏模型";
-                    [weakSelf.tipsLabel sizeToFit];
                     [weakSelf.arController setBAROutputType:BAROutputVideo];
                 }
                     break;
                 case BARSDKUIState_TrackLost_ShowModel:
                 {
                     NSLog(@"跟踪丢失,显示模型");
-                    weakSelf.tipsLabel.text = @"";
                 }
                     break;
                     
@@ -264,7 +287,7 @@
                     //跟踪超时
                 }
                     break;
-            
+                    
                 default:
                     break;
             }
@@ -274,14 +297,14 @@
     self.arController.luaMsgBlock = ^(BARMessageType msgType, NSDictionary *dic) {
         switch (msgType) {
             case BARMessageTypeOpenURL:
-                {
-                    //打开浏览器
-                    NSString *urlStr = dic[@"url"];
-                    if (urlStr) {
-                        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlStr]];
-                    }
-
+            {
+                //打开浏览器
+                NSString *urlStr = dic[@"url"];
+                if (urlStr) {
+                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlStr]];
                 }
+                
+            }
                 break;
             case BARMessageTypeEnableFrontCamera:
             {
@@ -375,7 +398,7 @@
 }
 
 - (void)openNewCase:(NSString *)arKey arType:(NSString *)arType{
- 
+    
     dispatch_async(dispatch_get_main_queue(), ^{
         [self unLoadCase];
         kBARType curType = [self.arController arTypeFromServer:arType];
@@ -388,7 +411,7 @@
 
 - (void)handleBatchDownload {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"网络不给力" message:@"是否重试？"
-                                                                  preferredStyle:UIAlertControllerStyleAlert];
+                                                            preferredStyle:UIAlertControllerStyleAlert];
     
     __weak typeof(self) weakSelf = self;
     
@@ -401,51 +424,55 @@
     }];
     
     [self presentViewController:alert animated:YES completion:NULL];
-
+    
 }
 
 - (void)loadActionData{
     
     self.actionArray = @[
-                        @{@"action":@"downloadAR:",
-                          @"des":@"预下载AR",
-                          },
-                        @{@"action":@"cancelAllTask:",
-                          @"des":@"取消下载",
-                          },
-                        @{@"action":@"loadAR:",
-                          @"des":@"加载AR",
-                          }
-                        ,@{@"action":@"pause:",
-                           @"des":@"暂停AR",
+                         @{@"action":@"downloadAR:",
+                           @"des":@"预下载AR",
+                           },
+                         @{@"action":@"cancelAllTask:",
+                           @"des":@"取消下载",
+                           },
+                         @{@"action":@"loadAR:",
+                           @"des":@"加载AR",
                            }
-                        ,@{@"action":@"resume:",
-                           @"des":@"恢复AR",
+                         ,@{@"action":@"pause:",
+                            @"des":@"暂停AR",
+                            }
+                         ,@{@"action":@"resume:",
+                            @"des":@"恢复AR",
+                            }
+                         ,@{@"action":@"stop:",
+                            @"des":@"停止AR",
+                            }
+                         ,
+                         @{@"action":@"switchAR:",
+                           @"des":@"切换AR",
+                           },
+                         
+                         @{@"action":@"loadLocalAR:",
+                           @"des":@"从本地加载AR",
+                           },
+                         @{@"action":@"startSameSearch",
+                           @"des":@"开始识图",
+                           },
+                         @{@"action":@"stopSameSearch",
+                           @"des":@"停止识图",
+                           },
+                         
+                         @{@"action":@"startVoice:",
+                           @"des":@"启动语音",
+                           },
+                         @{@"action":@"stopVoice:",
+                           @"des":@"结束语音",
+                           },
+                         @{@"action":@"closeAR:",
+                           @"des":@"关闭页面",
                            }
-                        ,@{@"action":@"stop:",
-                           @"des":@"停止AR",
-                           }
-                        ,
-                        @{@"action":@"switchAR:",
-                          @"des":@"切换AR",
-                          },
-                        @{@"action":@"startSameSearch",
-                          @"des":@"开始识图",
-                          },
-                        @{@"action":@"stopSameSearch",
-                          @"des":@"停止识图",
-                          },
-                        
-                        @{@"action":@"startVoice:",
-                          @"des":@"启动语音",
-                          },
-                        @{@"action":@"stopVoice:",
-                          @"des":@"结束语音",
-                          },
-                        @{@"action":@"closeAR:",
-                          @"des":@"关闭页面",
-                          }
-                        ];
+                         ];
 }
 
 - (void)setupARView{
@@ -625,8 +652,8 @@
 
 //加载AR
 - (void)loadAR:(id)sender {
+    _loadARFinished = NO;
     [self.indicatorView startAnimating];
-    
     self.renderVC.videoPreviewView.enabled = NO;
     [self unLoadCase];
     [self.renderVC changeToSystemCamera];
@@ -637,7 +664,24 @@
         [weakSelf handleARKey:arKey arType:arType];
     } failure:^{
         [weakSelf.indicatorView stopAnimating];
-        NSLog(@"LoadAR Failed");
+    }];
+    
+}
+
+- (void)loadLocalAR:(id)sender {
+    _loadARFinished = NO;
+    [self.indicatorView startAnimating];
+    self.renderVC.videoPreviewView.enabled = NO;
+    [self unLoadCase];
+    [self.renderVC changeToSystemCamera];
+    
+    __weak typeof(self) weakSelf = self;
+    NSString *localPath = [[NSBundle mainBundle] pathForResource:@"aiqiyi" ofType:@"bundle"];
+    [self.arController loadARFromFilePath:localPath arType:@"5" success:^(NSString *arKey, kBARType arType) {
+        [weakSelf.indicatorView stopAnimating];
+        [weakSelf handleARKey:arKey arType:arType];
+    } failure:^{
+        [weakSelf.indicatorView stopAnimating];
     }];
 }
 
@@ -647,7 +691,9 @@
  else               --->启动AR
  */
 - (void)handleARKey:(NSString *)arKey arType:(kBARType)arType {
-    self.arKey = arKey;
+    if (arKey && ![arKey isEqualToString:@""]) {
+        self.arKey = arKey;
+    }
     self.arType = [NSString stringWithFormat:@"%i",arType];
     if (kBARTypeLocalSameSearch == arType || kBARTypeCloudSameSearch == arType) {
         [self startSameSearch];
@@ -660,6 +706,7 @@
 
 //启动AR
 - (void)start:(id)sender{
+    _loadARFinished = YES;
     [self.arController startAR];
     if(self.renderVC.videoPreviewView){
         self.renderVC.videoPreviewView.enabled = YES;
@@ -670,21 +717,34 @@
     }
 }
 
+- (void)changeToBackCamera{
+    if(1 == [self.renderVC devicePosition]){//front
+        [self.renderVC rotateCamera];
+    }
+}
+
 //停止AR
 - (void)stop:(id)sender{
     //打点
-    [self.arController stopAR];
+    [self unLoadCase];
+    _loadARFinished = NO;
+    self.renderVC.videoPreviewView.enabled = NO;
     [self.renderVC changeToSystemCamera];
+    [[BARRouter sharedInstance] cancelTTS];
+    [self.arController destroyCaseForSameSearch:^{
+    }];
 }
 
 //暂停AR
 - (void)pause:(id)sender{
     [self.arController pauseAR];
+    [[BARRouter sharedInstance] pauseTTS];
 }
 
 //恢复AR
 - (void)resume:(id)sender{
     [self.arController resumeAR];
+    [[BARRouter sharedInstance] resumeTTS];
 }
 
 //停止AR并关闭相机
@@ -713,6 +773,16 @@
 
 //视频录制
 - (void)shootVideo:(id)sender {
+    
+    if (!_loadARFinished) {
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"还没有加载AR" delegate:nil
+                                                  cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        [alertView show];
+        
+        return;
+    }
+    
     if (_recording) {
         [self stopShootVideo:sender];
         [(UIButton *)sender setTitle:@" 录制 " forState:UIControlStateNormal];
@@ -757,27 +827,30 @@
             NSLog(@"videoDuration %f",self.videoRecorder.videoDuration);
             NSString *videoPath = [BARSDKPro getVideoPath];
             NSLog(@"videoPath %@",videoPath);
-            UISaveVideoAtPathToSavedPhotosAlbum([NSURL URLWithString:videoPath].path, self, @selector(video:didFinishSavingWithError:contextInfo:), nil);
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"录制成功" message:[@"已经保存至" stringByAppendingString:videoPath] delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-            [alertView show];
+            [self save:nil videoPath:videoPath];
+
         });
     }];
     
 }
 
-- (void)video:(NSString *)videoPath didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
-    NSLog(@"didFinishSavingWithError %@",error);
-}
-
 //拍照
 - (void)takePic:(id)sender {
+    
+    if (!_loadARFinished) {
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"还没有加载AR" delegate:nil
+                                                  cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        [alertView show];
+        
+        return;
+    }
+    
+    
     [self.arController takePicture:^(UIImage *image) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (image) {
-                UIImageWriteToSavedPhotosAlbum(image, nil, nil, NULL);
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"已保存至相册" delegate:nil
-                                                          cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-                [alertView show];
+                [self save:image videoPath:nil];
             }
         });
     }];
@@ -792,7 +865,7 @@
 - (void)cameraSwitchBtnClick:(id)resp {
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        
+        //        [self.renderVC stopCapture];
         [self.renderVC rotateCamera];
         [self.arController setDevicePosition:[self.renderVC devicePosition]];
         
@@ -804,11 +877,89 @@
             anim.duration = .5f;
             [weakSelf.view.layer addAnimation:anim forKey:@"rotate"];
         });
+        
+        //        [self.renderVC startCapture];
+        
+        [self.arController sendMsgToLuaWithMapData:@{@"id":[NSNumber numberWithInteger:10200],
+                                                     @"front_camera": [NSNumber numberWithInteger:[self.renderVC devicePosition]]}];
+        
     });
 }
 
 #pragma mark - BARRenderViewControllerDataSource
 
+
+- (void)save:(UIImage*)image videoPath:(NSString *)videoPath {
+    
+    __weak typeof(self) weakSelf = self;
+    PHAuthorizationStatus authorStatus = [PHPhotoLibrary authorizationStatus];
+    
+    if (authorStatus == PHAuthorizationStatusNotDetermined) {
+        [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+            if (status == PHAuthorizationStatusAuthorized) {
+                [weakSelf save:image videoPath:videoPath];
+                return ;
+            }
+        }];
+        return;
+        
+    } else if (authorStatus == PHAuthorizationStatusRestricted || authorStatus == PHAuthorizationStatusDenied) {
+        [self showtoast:@"请设置相册访问权限"];
+        return;
+    }
+    
+    if(image){
+        UIImageWriteToSavedPhotosAlbum(image, self, @selector(sender:didFinishSavingWithError:contextInfo:), NULL);
+    }
+    else if(videoPath &&videoPath.length>0){
+        UISaveVideoAtPathToSavedPhotosAlbum(videoPath, self, @selector(sender:didFinishSavingWithError:contextInfo:), nil);
+    }
+}
+
+- (void)showalert:(NSString *)alertinfo{
+    UIAlertController *vc = [UIAlertController alertControllerWithTitle:@"提示" message:alertinfo
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [vc dismissViewControllerAnimated:YES completion:^{
+            
+        }];
+    }];
+    [vc addAction:cancelAction];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self presentViewController:vc animated:YES completion:NULL];
+    });
+
+    
+}
+
+
+- (void)showtoast:(NSString *)alert{
+    UIAlertController *alertview = [UIAlertController alertControllerWithTitle:@"提示" message:alert
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    
+    
+    [self presentViewController:alertview animated:YES completion:^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [alertview dismissViewControllerAnimated:YES completion:^{
+                
+            }];
+        });
+    }];
+
+}
+                                             
+                                             
+- (void)sender:(id )sender didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
+     if (!error) {
+         [self showtoast:@"保存成功"];
+     } else {
+         [self showtoast:@"保存失败"];
+         
+    }
+}
 /**
  Render DataSource
  @param srcBuffer 相机buffer源
@@ -955,6 +1106,41 @@
         
         [[BARRouter sharedInstance] imageSearch_setErrorBlock:^(NSError * _Nonnull error) {
             
+            NSDictionary *userInfo = error.userInfo;
+            switch(error.code){
+                case BARImageSearchError_NetWrong:
+                {
+                    dispatch_block_t ensurreBlock = userInfo[@"ensureBlock"];
+                    NSLog(@"网络错误，继续访问");
+                    if(ensurreBlock){
+                        ensurreBlock();
+                    }
+                }
+                    break;
+                case BARImageSearchError_DataWrong:
+                {
+                    NSLog(@"参数错误");
+                }
+                    break;
+                case BARImageSearchError_DownLoadFeaWrong:
+                {
+                    NSLog(@"下载错误，继续下载");
+                    dispatch_block_t ensurreBlock = userInfo[@"ensureBlock"];
+                    if(ensurreBlock){
+                        ensurreBlock();
+                    }
+                }
+                    break;
+                case BARImageSearchError_ImageSearchTimeout:{
+                    NSLog(@"没有识别出case，继续识别");
+                    dispatch_block_t dismissBlock = userInfo[@"dismissBlock"];
+                    if(dismissBlock){
+                        dismissBlock();
+                    }
+                }
+                    break;
+            }
+            
         } withCaller:self.searchModule];
     }else{
         [[BARRouter sharedInstance] imageSearch_switchARType:kBARTypeCloudSameSearch withCaller:self.searchModule];
@@ -965,7 +1151,8 @@
 - (void)startSameSearch {
     self.renderVC.videoPreviewView.enabled = NO;
     [self unLoadCase];//卸载当前case
-
+    _loadARFinished = NO;
+    
     __weak typeof(self) weakSelf = self;
     [self.arController destroyCaseForSameSearch:^{
         if(weakSelf){
@@ -989,6 +1176,7 @@
 //卸载当前case，以及当前case使用的组件能力
 - (void)unLoadCase {
     [self.arController cancelDownLoadArCase];
+    [self changeToBackCamera];
     [[BARRouter sharedInstance] cancelTTS];
     [[BARRouter sharedInstance] voice_stopVoiceWithConfigure:self.voiceConfigure];
     [[BARRouter sharedInstance] logo_startLogoRecog:NO withCaller:self.logoRecogHandler];
@@ -1001,7 +1189,7 @@
         self.logoRecogHandler = [[BARRouter sharedInstance] logo_init];
         __weak typeof(self) weakSelf = self;
         [[BARRouter sharedInstance] logo_setLogoRecogErrorBlock:^(NSError *error) {
-          //Error
+            //Error
             
         } withCaller:self.logoRecogHandler];
     }
@@ -1083,8 +1271,30 @@
 }
 
 - (void)caseTask:(BARCaseTask *)task taskResult:(NSDictionary *)taskResult error:(NSError *)error {
-
+    
     [self removeCaseTasking:task];
+    if (error) {
+        
+    }else {
+        //下载完成后，可以从本地加载AR
+        /*
+         dispatch_async(dispatch_get_main_queue(), ^{
+         [self.indicatorView startAnimating];
+         self.renderVC.videoPreviewView.enabled = NO;
+         [self unLoadCase];
+         [self.renderVC changeToSystemCamera];
+         __weak typeof(self) weakSelf = self;
+         NSString *arPath = [taskResult objectForKey:@"path"];
+         NSDictionary *queryresult = [taskResult objectForKey:@"queryresult"];
+         NSDictionary *queryresultRet = [queryresult objectForKey:@"ret"];
+         NSString *arTypeInServer = [queryresultRet objectForKey:@"ar_type"];
+         [self.arController loadARFromFilePath:arPath arType:arTypeInServer success:^(NSString *arKey, kBARType arType) {
+         [weakSelf handleARKey:arKey arType:arType];
+         } failure:^{
+         
+         }];
+         });*/
+    }
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.indicatorView stopAnimating];
         self.progressLabel.text = @"";
@@ -1119,6 +1329,5 @@
 }
 
 @end
+
 #endif
-
-

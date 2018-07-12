@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#if defined (__arm64__)
+
 #import "BARGestureImageView.h"
 
 @protocol BARRenderViewControllerDataSource<NSObject>
@@ -47,6 +49,7 @@
 @property (nonatomic, assign) CGSize previewSizeInPixels;//预览尺寸
 @property (nonatomic, assign) CGSize cameraSize;//相机尺寸
 @property (nonatomic, assign) CGFloat aspect;//屏占比
+
 @property (nonatomic, strong) BARGestureImageView *videoPreviewView;//AR渲染view
 @property (nonatomic, assign) BOOL isLandscape;//是否横屏
 
@@ -73,9 +76,16 @@
  */
 - (int)devicePosition;
 
+
+/**
+ 开启相机
+ */
+- (void)startCapture;
+
 /**
  停止相机
  */
 - (void)stopCapture;
 
 @end
+#endif

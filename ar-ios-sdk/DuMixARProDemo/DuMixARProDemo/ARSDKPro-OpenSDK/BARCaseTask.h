@@ -6,6 +6,8 @@
 //  Copyright © 2017 Baidu. All rights reserved.
 //
 
+#if !TARGET_OS_SIMULATOR
+
 #define BARCASTTASKBEGINTODOWNLOADZIP       @"BARCASTTASKBEGINTODOWNLOADZIP"
 
 #import <Foundation/Foundation.h>
@@ -31,3 +33,5 @@
 @property (nonatomic, copy) NSString *arkey;
 
 @end
+
+#endif

@@ -1,0 +1,409 @@
+{
+  "showImmediately": 1,
+  "showOffscreenGuidance": 1,
+  "imuRelayCtrlWhenTrackLost": 1,
+  "userInteraction": {
+    "disableAll": 0,
+    "disablePinch": 0,
+    "disableClick": 0,
+    "disableScroll": 0,
+    "disbleLongPress": 0,
+    "disableSingleFingerScroll": 0,
+    "disableTwoFingerScroll": 0,
+    "disableDoubleClick": 0,
+    "disableAccompany": 1
+  },
+  "nodeList": [
+    {
+      "name": "mainCamera",
+      "type": "camera",
+      "visiable": "1",
+      "position": "0,0,0",
+      "scale": "1,1,1",
+      "rotation": "0,0,0",
+      "chirlden": [],
+      "cameraNodeSuppl": {
+        "fov": 56,
+        "zNear": 50,
+        "zFar": 10000
+      }
+    },
+    {
+      "name": "directLight",
+      "type": "directLight",
+      "lightNodeSuppl": {
+        "color": "255.0,255.0,255.0",
+        "intensity": 1.0,
+        "direction": "0,1,0",
+        "enableShadow": 0
+      }
+    },
+    {
+      "name": "arrow_guide",
+      "type": "plane",
+      "visible": 0,
+      "touchable": 0,
+      "material": {
+        "common": {
+          "defaultShaderName": "planeShader",
+          "textureList": [
+            {
+              "textureName": "res/texture/slamTip/arrow_guide.png"
+            }
+          ]
+        }
+      },
+      "hudDisplay": {
+        "marginLeft": 0.5,
+        "marginTop": 0.5,
+        "depthPosition": 10,
+        "screenRatio": {
+          "screenWidthRatio": 0.49,
+          "screenHeightRatio": 0.07
+        }
+      },
+      "transparentObject": 1,
+      "rotation": "90,-90,0",
+      "children": []
+    },
+    {
+      "name": "guide_up",
+      "type": "plane",
+      "visible": 0,
+      "touchable": 0,
+      "material": {
+        "common": {
+          "defaultShaderName": "planeShader",
+          "textureList": [
+            {
+              "textureName": "res/texture/slamTip/guide_up.png"
+            }
+          ]
+        }
+      },
+      "hudDisplay": {
+        "marginLeft": 0.5,
+        "marginTop": 0.5,
+        "depthPosition": 10,
+        "screenRatio": {
+          "screenWidthRatio": 0.49,
+          "screenHeightRatio": 0.07
+        }
+      },
+      "transparentObject": 1,
+      "rotation": "90,-90,0",
+      "children": []
+    },
+    {
+      "name": "guide_down",
+      "type": "plane",
+      "visible": 0,
+      "touchable": 0,
+      "material": {
+        "common": {
+          "defaultShaderName": "planeShader",
+          "textureList": [
+            {
+              "textureName": "res/texture/slamTip/guide_down.png"
+            }
+          ]
+        }
+      },
+      "hudDisplay": {
+        "marginLeft": 0.5,
+        "marginTop": 0.5,
+        "depthPosition": 10,
+        "screenRatio": {
+          "screenWidthRatio": 0.49,
+          "screenHeightRatio": 0.07
+        }
+      },
+      "transparentObject": 1,
+      "rotation": "90,-90,0",
+      "children": []
+    },
+    {
+            "name": "reset",
+            "type": "framePicture",
+            "visible": 0,
+            "touchable": 1,
+            "framePictureSuppl": {
+                "picturePath": "res/media/icon4",
+                "pictureName": "",
+                "pictureFmtExtend": ".png",
+                "startNumber": 1,
+                "endNumber": 109,
+                "frameInterval": 1,
+                "bufferVolume": 5
+            },
+            "material": {
+                "common": {
+                    "defaultShaderName":"frameShader",
+                    "textureList": [
+                        {
+                            "texturePath": "res/media/icon4/1.png"
+                        }
+                    ]
+                }
+            },
+           "hudDisplay": {
+                "marginLeft": 0.5,
+                "marginTop": 0.5,
+                "screenRatio": {
+                    "screenWidthRatio": 0.21,
+                    "screenHeightRatio": 0.118
+                }
+            },
+            "transparentObject":0,
+            "rotation": "90,-90,0",
+            "children": []
+    },
+    {
+      "name": "cat_group",
+      "type": "group",
+      "visible": 1,
+      "children": [
+        {
+          "name": "cat1before",
+          "type": "pod",
+          "visible": 0,
+          "touchable": 1,
+          "meshFileName": "res/model/cat_walk.pod",
+          "material": {
+            "common": {
+              "texturePath": "res/texture/",
+              "disableLightEffect": 1
+            }
+          },
+          "position": "0,0,0",
+          "rotation": "90,-30,0",
+          "scale": "2,2,2",
+          "children": [],
+          "podSuppl": {
+            "allSubnodeTouchable": 1
+          }
+        },
+        {
+          "name": "cat1after",
+          "type": "pod",
+          "visible": 0,
+          "touchable": 1,
+          "meshFileName": "res/model/Cat_46272.pod",
+          "material": {
+            "common": {
+              "texturePath": "res/texture/",
+              "disableLightEffect": 1
+            }
+          },
+          "position": "0,0,0",
+          "scale": "2,2,2",
+          "rotation": "90,-30,0",
+          "chirlden": [],
+          "podSuppl": {
+            "allSubnodeTouchable": 1
+          }
+        }
+      ]
+    },
+
+
+
+    {
+            "name": "guide_video_single_click",
+            "type": "video",
+            "visible": 0,
+            "touchable": 0,
+            "material": {
+                "common": {
+                    "textureType": "video",
+                    "uvUnwrapedTextureName": "res/media/video_single_click.mp4"
+                 },
+                "android": {
+                    "defaultShaderName": "androidVideoShader",
+                    "textureType": "video",
+                    "uvUnwrapedTextureName": "res/media/video_single_click.mp4"
+                }
+            },
+            "hudDisplay": {
+                "marginLeft": -0.5,
+                "marginTop": -0.5,
+                "screenRatio": {
+                    "screenWidthRatio": 0.532,
+                    "screenHeightRatio": 0.18
+                }
+            },
+            "transparentObject": 1,
+            "rotation": "90,-90,0",
+            "children": []
+    },
+
+    {
+            "name": "guide_video_twofinger_scroll",
+            "type": "video",
+            "visible": 0,
+            "touchable": 0,
+            "material": {
+                "common": {
+                    "textureType": "video",
+                    "uvUnwrapedTextureName": "res/media/video_twofinger_scroll.mp4"
+                 },
+                "android": {
+                    "defaultShaderName": "androidVideoShader",
+                    "textureType": "video",
+                    "uvUnwrapedTextureName": "res/media/video_twofinger_scroll.mp4"
+                }
+            },
+            "hudDisplay": {
+                "marginLeft": -0.5,
+                "marginTop": -0.5,
+                "screenRatio": {
+                    "screenWidthRatio": 0.532,
+                    "screenHeightRatio": 0.18
+                }
+            },
+            "transparentObject": 1,
+            "rotation": "90,-90,0",
+            "children": []
+    },
+
+    {
+            "name": "guide_video_onefinger_scroll",
+            "type": "video",
+            "visible": 0,
+            "touchable": 0,
+            "material": {
+                "common": {
+                    "textureType": "video",
+                    "uvUnwrapedTextureName": "res/media/video_onefinger_scroll.mp4"
+                 },
+                "android": {
+                    "defaultShaderName": "androidVideoShader",
+                    "textureType": "video",
+                    "uvUnwrapedTextureName": "res/media/video_onefinger_scroll.mp4"
+                }
+            },
+            "hudDisplay": {
+                "marginLeft": -0.5,
+                "marginTop": -0.5,
+                "screenRatio": {
+                    "screenWidthRatio": 0.532,
+                    "screenHeightRatio": 0.18
+                }
+            },
+            "transparentObject": 1,
+            "rotation": "90,-90,0",
+            "children": []
+        },
+
+
+    {
+      "name": "show_TextCard",
+      "type": "plane",
+      "visible": 0,
+      "touchable": 1,
+      "material": {
+        "common": {
+          "defaultShaderName": "planeShader",
+          "textureList": [
+            {
+              "textureName": "res/texture/cat_card.png"
+            }
+          ]
+        }
+      },
+      "hudDisplay": {
+        "marginLeft": 0.5,
+        "marginTop": 0.2,
+        "screenRatio": {
+          "screenWidthRatio": 0.5,
+          "screenHeightRatio": 0.2
+        }
+      },
+      "transparentObject": 1,
+      "rotation": "90,-90,0",
+      "children": []
+    },
+
+    {
+      "name": "click_Close_Book",
+      "type": "plane",
+      "visible": 0,
+      "touchable": 1,
+      "material": {
+        "common": {
+          "defaultShaderName": "planeShader",
+          "textureList": [
+            {
+              "textureName": "res/texture/hint_close.png"
+            }
+          ]
+        }
+      },
+      "hudDisplay": {
+        "marginLeft": 0.92,
+        "marginTop": 0.55,
+        "screenRatio": {
+          "screenWidthRatio": 0.1
+        }
+      },
+      "transparentObject": 1,
+      "rotation": "90,-90,0",
+      "children": []
+    },
+    {
+      "name": "click_Open_Book",
+      "type": "plane",
+      "visible": 0,
+      "touchable": 1,
+      "material": {
+        "common": {
+          "defaultShaderName": "planeShader",
+          "textureList": [
+            {
+              "textureName": "res/texture/hint_open.png"
+            }
+          ]
+        }
+      },
+      "hudDisplay": {
+        "marginLeft": 0.92,
+        "marginTop": 0.55,
+        "screenRatio": {
+          "screenWidthRatio": 0.1,
+          "depthPosition":1000
+        }
+      },
+      "transparentObject": 1,
+      "rotation": "90,-90,0",
+      "children": []
+    },
+
+    {
+      "name": "click_OpenUrl",
+      "type": "plane",
+      "visible": 0,
+      "touchable": 1,
+      "material": {
+        "common": {
+          "defaultShaderName": "planeShader",
+          "textureList": [
+            {
+              "textureName": "res/texture/more_anim.png"
+            }
+          ]
+        }
+      },
+      "hudDisplay": {
+        "marginLeft": 0.92,
+        "marginTop": 0.65,
+        "screenRatio": {
+          "screenWidthRatio": 0.1,
+          "depthPosition":1000
+        }
+      },
+      "transparentObject": 1,
+      "rotation": "90,-90,0",
+      "children": []
+    }
+  ]
+}

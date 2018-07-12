@@ -6,6 +6,8 @@
 //  Copyright © 2017年 Baidu. All rights reserved.
 //
 
+#if !TARGET_OS_SIMULATOR
+
 #import <Foundation/Foundation.h>
 #import "BARSDKPro.h"
 #import "BARSDKObj.h"
@@ -60,6 +62,7 @@ typedef void(^BARLuaMsgBlock)(BARMessageType msgType, NSDictionary *dic);
 
 @property (nonatomic, copy) BARSDKUIStateEventBlock uiStateChangeBlock;
 @property (nonatomic, copy) BARLuaMsgBlock luaMsgBlock;
+@property (nonatomic ,copy) BARShowAlertEventBlock showAlertEventBlock;
 
 @property (nonatomic,assign,readonly) BOOL frontCamera;
 
@@ -161,6 +164,14 @@ typedef void(^BARLuaMsgBlock)(BARMessageType msgType, NSDictionary *dic);
  */
 - (void)destroyCaseForSameSearch:(dispatch_block_t)destroyFinish;
 
+
+/**
+ 销毁当前已经加载的case，重新调起识图
+ 
+ @param destroyFinish 销毁case后的回调
+ */
+- (void)destroyCase:(dispatch_block_t)destroyFinish;
+
 /**
  销毁case
  */
@@ -210,14 +221,21 @@ typedef void(^BARLuaMsgBlock)(BARMessageType msgType, NSDictionary *dic);
 - (void)setArCameraSize:(CGSize)cameraSize previewSize:(CGSize)previewSize;
 
 /**
- 向lua发送消息
+ 向lua发送消息(新方式)
 
  @param eventName 消息名
- @param msgData 消息内容
+ @param eventData 消息内容
  @discussion lua中通过注册监听，获得消息Event:addEventListener("session_find_anchor", find_anchor)
  */
-- (void)sendMsgToLua:(NSString *)eventName msgData:(NSDictionary *)msgData;
+- (void)sendMsgToLua:(NSString *)eventName eventData:(NSDictionary *)eventData;
 
+
+/**
+ 向lua发送消息(旧方式)
+
+ @param mapData 消息体
+ */
+- (void)sendMsgToLuaWithMapData:(NSDictionary *)mapData;
 
 /**
  取消分布加载下载
@@ -230,3 +248,5 @@ typedef void(^BARLuaMsgBlock)(BARMessageType msgType, NSDictionary *dic);
 - (void)retryDownloadBatchZip;
 
 @end
+
+#endif

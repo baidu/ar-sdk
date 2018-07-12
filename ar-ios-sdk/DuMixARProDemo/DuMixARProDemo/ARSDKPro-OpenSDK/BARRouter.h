@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+#if !TARGET_OS_SIMULATOR
 
 /**
  README
@@ -40,3 +41,5 @@
 - (void)releaseCachedTargetWithTargetName:(NSString *)targetName;
 
 @end
+
+#endif

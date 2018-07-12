@@ -1,0 +1,12 @@
+
+paddle能力下载地址：
+
+链接: https://pan.baidu.com/s/1MdgLl6USJyDZMQWsQDVxTA 密码: 7btp
+
+如果使用paddle能力，需要在工程配置中加入如下force_load以及libpaddle_capi_layers.a的路径：
+
+-force_load
+$(SRCROOT)/DuMixARProDemo/paddle/libpaddle_capi_layers.a
+
+	
+

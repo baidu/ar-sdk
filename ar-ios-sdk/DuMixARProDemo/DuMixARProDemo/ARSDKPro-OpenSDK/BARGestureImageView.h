@@ -6,6 +6,8 @@
 //  Copyright © 2017年 Asa. All rights reserved.
 //
 
+#if !TARGET_OS_SIMULATOR
+
 #import <UIKit/UIKit.h>
 
 #import "BARImageQueue.h"
@@ -32,3 +34,5 @@
 @property (nonatomic, weak) id<BARGestureImageViewDelegate> gesturedelegate;
 
 @end
+
+#endif

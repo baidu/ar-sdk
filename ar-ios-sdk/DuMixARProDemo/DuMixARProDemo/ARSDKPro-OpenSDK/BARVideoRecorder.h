@@ -6,6 +6,8 @@
 //  Copyright © 2017 Baidu. All rights reserved.
 //
 
+#if !TARGET_OS_SIMULATOR
+
 #import <Foundation/Foundation.h>
 #import "BARImageVideoCamera.h"
 
@@ -37,3 +39,5 @@
 
 - (instancetype)initWithCamera:(id)camera;
 @end
+
+#endif
