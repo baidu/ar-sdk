@@ -110,7 +110,7 @@ private int mSourceHeight = 0;
 | 本地识图    | 6 |  在手机端进行图像识别检索，用于实现基于2D图片的AR内容识别触发。 |
 | 云端识图    | 7 | 云端图像识别检索，用于实现基于2D图片的AR内容识别触发。  |
 | IMU类型     | 8|基于手机IMU，实时获取手机在空间中的相对位置和姿态，将AR内容定位呈现在手机当前所处的三维空间中|
-DuMixTarget:  AR返回参数类
+#### DuMixTarget:  AR返回参数类
 ```
 // ar绘制目标，用于将最终绘制完的图像返回
 private SurfaceTexture mDrawTarget;
@@ -124,7 +124,7 @@ private ScaleType mScaleType;
 private boolean mDrawPreview;
 ```
 
-#DuMixCallback接口回调说明
+#### DuMixCallback接口回调说明
 
 ```
 /**
@@ -200,7 +200,8 @@ void onReset(boolean result);
 void onRelease(boolean result);
 ```
 
-##onStateChange 状态说明
+#### onStateChange 状态说明
+
 | 类型      | 字段（MsgField）|   ID | 说明  |
 | :-------- | :-------- | :--------:| :--: |
 | 通用型  |MSG_ON_QUERY_RESOURCE| 2300 | 开始查询资源|
@@ -233,9 +234,9 @@ void onRelease(boolean result);
 |设备不支持AR   |IMSG_DEVICE_NOT_SUPPORT| 30001 | 设备不支持AR|
 |网络   |IMSG_NO_NETWORK| 2511 | 网络未连接|
 
-#接口说明
+## 接口说明
 
-##下载Case 接口
+## 下载Case 接口
 
     arKey：需要下载的内容id
     mARController.downloadCase(arKey, new ArCaseDownloadListener() {
@@ -248,7 +249,7 @@ void onRelease(boolean result);
                  //下载成回调
                 }
             });
-##拍摄
+## 拍摄
 	path: 拍照后图片文件保存路径
     mARController.takePicture(path, new TakePictureCallback() {
                 @Override
@@ -256,7 +257,7 @@ void onRelease(boolean result);
                 //result 拍照状态, filePath 返回路径
                 }
             });
-##录制
+## 录制
 	path: 拍照后图片文件保存路径
     mARController.startRecord(path, mRecordMaxTime, new MovieRecorderCallback() {
                 @Override
@@ -279,17 +280,17 @@ void onRelease(boolean result);
                 // error
                 }
             });
-##停止录制
+## 停止录制
 
     mARController.stopRecord();
 
-#Demo 说明
+# Demo 说明
 
  1. Camera Module 对系统Camera进行的封装.包括打开，关闭和PreviewFrame的获取等接口。
  2. Speech Module  语音识别能力的封装
  3. TTS Modle         TTS能力封装
 
-#注意事项
+# 注意事项
  4. DuMix AR引擎正常运行依赖必要的硬件基础，因此对硬件有一定的要求，对不满足的手机采用“黑名单”策略，也就是命中“黑名单”的手机会被屏蔽，不能正常使用DuMix AR。屏蔽依据的参数主要有内存大小，CPU核数，安卓版本等等手机基本信息；还有针对特殊机型的屏蔽，依据手机型号。
  5. DuMix AR SDK的 minSdkVersion为 19；targetSdkVersion 建议设为 24。
  6. AR内容平台的项目只有“审核通过”并执行“上线”后，才能通过SDK被调起。
