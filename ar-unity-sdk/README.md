@@ -1,16 +1,15 @@
 # 简介
-本文档主要介绍DuMix AR Unity SDK的安装和使用。在使用本文档前，您需要先了解AR（Augmented Reality）的基础知识，并已经开通了AR服务（您可以在 [DuMix AR官网](http://ar.baidu.com) 的“开放平台”页面申请AR服务）。
-## 运行环境
+本文档主要介绍DuMix AR Unity SDK的安装和使用。在使用本文档前，您需要先了解AR（Augmented Reality）的基础知识，并已经开通了AR应用授权，目前仅支持试用应用授权，请前往[DuMix AR技术开放平台](https://ar.baidu.com/developer)了解详情，[点击此处](https://ar.baidu.com/testapply)（需登录）创建您的试用应用授权，后续SDK鉴权需用到相关信息。
 
+## 运行环境
 此SDK支持发布Android和IOS应用，并且手机需要保持联网状态。
 
 |      功能      | Android |      IOS      | Mac | Window |
 |:----------:|:---------------:|:-------------:|:-------:|:-------:|
 | 单目Slam    | ✓  |   ✓ | |  |
 | 2D跟踪      | ✓ |  ✓  | ✓   | ✓ |
-| 本地识图     |✓  | ✓   |  |  |
-| 手势识别    |✓  | ✓   |  |  |
-
+| 本地识图     |✓  | ✓   |  |  || 手势识别    |✓  | ✓   |  |  |
+| 云端识图    |✓  | ✓   | ✓ | ✓ |
 # 快速入门
 ##    开发包说明
 DuMix AR Unity SDK.zip
@@ -31,7 +30,7 @@ DuMix AR Unity SDK开发环境如下：
 ## SDK集成步骤
 ### 第1步：下载SDK
 
-1.前往 [DuMix AR官网](http://ar.baidu.com) ，创建试用版AR应用，在“开放平台”页面创建您的试用版AR应用。
+1.前往[DuMix AR技术开放平台](https://ar.baidu.com/developer)了解详情（如图所示），点击“立即使用”或“应用控制台”进行应用授权，目前仅支持试用应用授权，[点击此处](https://ar.baidu.com/testapply)（需登录）创建您的试用应用授权。
 
 2.申请AR应用（试用版）后，您会得到试用版App ID和API Key。点击[SDK下载](https://ai.baidu.com/sdk#ar)。
 
@@ -65,13 +64,13 @@ DuMix AR Unity SDK开发环境如下：
 
 1.在Assets下创建StreamingAssets文件夹（如果已经存在，则不用创建），将平台上生成的资源包导入到场景StreamingAssets文件夹中。
 
-2.资源包导入后，在目录中找到ARImageTracker prefab，将ARImageTracker prefab添加到场景中。在ARImageTracker的节点下添加想要识别的模型，并在模型上添加BaiduARImageTrackable组件，在File Path的位置填上资源包的相对路径。IsLossVisible用来控制跟踪失败后物体是否显示。
+2.资源包导入后，在目录中找到ARImageTracker prefab，将ARImageTracker prefab添加到场景中。在ARImageTracker的节点下添加想要识别的模型，并在模型上添加BaiduARImageTrackable组件，在File Path的位置填上资源包的相对路径。如果想要从外部加载资源包，需要填写完整的路径，例如：“/Users/zhang/Desktop/picture/city/model/8e364efdba81cbec8ffed55b6f591d96_13042018171528.feam”，若要在代码中进行赋值，需要在Awake()中进行赋值。IsLossVisible用来控制跟踪失败后物体是否显示。
 
 注：目前只能跟踪一个模型，并且模型的大小需要根据显示效果进行调整。只有2D跟踪功能支持Unity直接预览。
 
 ### Slam功能
 
-Slam功能使用过程如下。将ARObjectTracker prefab添加到场景中，将模型添加到ARObjectTracker节点下，在模型上添加BaiduARObjectTrackable组件。在BaiduARObjectTrackable组件中， X和Y用来设置物体在屏幕中的位置。
+Slam功能使用过程如下。将ARObjectTracker prefab添加到场景中，将模型添加到ARObjectTracker节点下，在模型上添加BaiduARObjectTrackable组件。通过调整模型的Tranform中的Rotation的值，对模型初始角度进行控制；调整Transform中Position的X，Y的值，对模型在屏幕中的初始位置进行控制；调整Transform中Position的Z值，对相机的距离进行控制。
 
 
 **注**：目前只支持定位一个模型。如果想要进行进一步的功能扩展，相关接口的调用请查看样例介绍。
@@ -90,13 +89,21 @@ Slam功能使用过程如下。将ARObjectTracker prefab添加到场景中，将
 
 **注**：目前只支持手掌手势，后续会进行扩展。
 
+### 云端识图
+
+1.云端识图是将AI平台上[图像识别](https://ai.baidu.com/docs#/ImageClassify-API/top)中的部分功能进行了封装，提供给开发者进行使用。主要包含的功能有场景识别，菜品识别，车型识别，动物识别和植物识别。先要在AI平台上创建应用，获得API Key和Secret Key。
+
+2.将ARCloudRecognition prefab添加到场景中。将在平台获得的API Key和Secret Key填入BaiduARCloudRecognition组件中。
+
+3.相关接口的调用可以参考[官方Unity技术文档](https://ai.baidu.com/docs#/DuMixAR-Unity-SDK/top)。
+
 ## Android配置
 
 若要发布Android应用，首先需要下载安装JDK和SDK。JDK需要配置环境变量，具体操作可以搜索一下（参考链接：<https://jingyan.baidu.com/article/908080221f3cfefd91c80fbf.html>）。安装配置完毕后，将路径填写到Unity中。
 
 ## IOS配置
 
-XCode 9.x：将“-force_load；$(SRCROOT)/libpaddle_capi_layers.a”添加到Other Linker Flags中。修改Project和Targets的配置。设置Build Active Architecture Only为“Yes”，设置 Enable Bitcode 为“NO”。如图所示：
+XCode 9.x：将“-force_load；$(SRCROOT)/libpaddle_capi_layers.a”添加到Other Linker Flags中。修改Project和Targets的配置。设置Build Active Architecture Only为“Yes”，设置 Enable Bitcode 为“NO”。
 
 
 # DuMix AR Unity SDK样例介绍
@@ -105,19 +112,25 @@ XCode 9.x：将“-force_load；$(SRCROOT)/libpaddle_capi_layers.a”添加到Ot
 2.运行样例前需要填写API Key和App ID（每个场景都需要填写）。
 
 **注**：详细的内容可以参考[官方Unity技术文档](https://ai.baidu.com/docs#/DuMixAR-Unity-SDK/top)。
-# 开发者反馈
-我们试用版一上线就得到了很多开发者的反馈，以下是问题和答复的内容。
 
-|    问题   |     答复内容    |
-|:----------:|:---------------:|
-| 我想知道这个做平面识别有设备限制没？ 百度AR那些机型支持那些机型不支持 | 我们的SDK支持Android和IOS的手机，对机型目前还没有什么限制。  |
-| Unity环境下 测试Slam功能 获取内容时 资源包在哪里获取呢  | Slam不需要上传资源，只需要给将你需要定位的模型挂上相应的组件就可以了。具体的可以参考文档 。|
-| 那本地识图除了有这个回调其他和2d跟踪有区别吗|2D跟踪是可以将模型定位到图片上的，但本地识图不行，本地识图给开发者提供了空间，开发者可以自己定义加载的是模型还是UI等等。 |
+# 常见问题
+试用阶段得到了很多开发者的反馈，以下是常见问题和答复的内容。
+
+**问**：我想知道这个做平面识别有设备限制没？ 百度AR支持哪些机型？
+
+**答**：SDK支持Android和IOS的手机，目前对机型没有限制，可以根据使用效果要求，对机型做取舍。 
+
+**问**：Unity环境下 测试SLAM功能 获取内容时 资源包在哪里获取呢  
+
+**答**：SLAM不需要上传资源，只需要给将你需要定位的模型挂上相应的组件就可以了。具体的可以参考文档 。
+
+**问**：本地识图除了有回调，其他和图像跟踪有区别吗？
+
+**答**：图像跟踪是可以将模型定位到图片上的，但本地识图不行，本地识图给开发者提供了空间，开发者可以自己定义加载的是模型还是UI等等。 
 
 
 
 # 版本更新说明
 DuMix AR Unity SDK 1.1版（试用版） - 2018年5月 提供单目Slam、2D图像跟踪、本地识图、手势识别等功能。
 
-正式版将于7月份上线。
-
+DuMix AR Unity SDK 1.2版 - 2018年7月 提供单目Slam、2D图像跟踪、本地识图、手势识别,云端识图等功能。
