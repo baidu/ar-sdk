@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <com.baidu.ar.pro.view.ScanView
+            android:id="@+id/bdar_gui_scan_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+    <com.baidu.ar.pro.view.PointsView
+            android:id="@+id/bdar_gui_point_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+    <!-- 返回按钮 -->
+    <ImageView
+            android:id="@+id/bdar_titlebar_back"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_margin="15dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/bdar_drawable_btn_back_selector"/>
+
+    <!-- 摄像头切换 -->
+    <ImageView
+            android:id="@+id/bdar_titlebar_camera"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/bdar_drawable_btn_camera_selector"/>
+
+    <!-- 闪光灯开关 -->
+    <ImageView
+            android:id="@+id/bdar_titlebar_flash"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignParentRight="true"
+            android:layout_margin="15dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/bdar_drawable_btn_flash_disable_selector"/>
+
+    <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+    >
+
+        <Button
+                android:id="@+id/btn_take_picture"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/take_picture"/>
+
+        <Button
+                android:id="@+id/btn_start_record"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/start_record"/>
+
+        <Button
+                android:id="@+id/btn_stop_record"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/stop_record"/>
+    </LinearLayout>
+    <LinearLayout
+            android:id="@+id/third_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/linear"
+    >
+
+        <Button
+                android:id="@+id/show_case"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text="显示/隐藏模型"/>
+
+    </LinearLayout>
+    <RelativeLayout
+            android:id="@+id/bdar_id_plugin_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/linear"
+            android:layout_alignRight="@id/linear">
+
+    </RelativeLayout>
+
+    <TextView
+            android:id="@+id/bdar_titlebar_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/bdar_titlebar_flash"
+            android:layout_marginRight="15dp"
+            android:textColor="@android:color/holo_blue_bright"/>
+    <!-- 加载提示界面 -->
+
+    <com.baidu.ar.pro.view.LoadingView
+            android:id="@+id/lv_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+</RelativeLayout>

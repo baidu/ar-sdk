@@ -1,7 +1,0 @@
-/*
- * Copyright (C) 2018 Baidu, Inc. All Rights Reserved.
- */
-include ':app'
-include ':camera'
-include ':tts'
-include ':speech'

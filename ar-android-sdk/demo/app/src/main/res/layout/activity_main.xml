@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2018 Baidu, Inc. All Rights Reserved.
+  -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/activity_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_marginTop="200dp">>
+
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:layout_alignParentBottom="true"
+                  android:id="@+id/cache_layout"
+                  android:orientation="horizontal"
+                  android:focusable="true"
+                  android:focusableInTouchMode="true">
+        <EditText android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="10002502"
+                  android:layout_margin="6dp"
+                  android:inputType="number"
+                  android:id="@+id/cache_id"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="下载进度："
+                  android:layout_gravity="center_vertical"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="0"
+                  android:id="@+id/progress"
+                  android:layout_margin="6dp"
+                  android:layout_gravity="center_vertical"/>
+        <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="缓存"
+                android:onClick="cacheCase"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"/>
+        <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="停止"
+                android:onClick="cancelCase"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"/>
+
+    </LinearLayout>
+    <ListView
+            android:id="@+id/demo_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/cache_layout"
+    />
+
+
+</RelativeLayout>
