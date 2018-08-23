@@ -1,5 +1,5 @@
 # iOS SDK Pro版
-
+(请至官网下载最新SDK：https://ai.baidu.com/sdk#ar)
 # 简介
 
 本文档主要介绍基于DuMix AR iOS SDK Pro版进行开发。
