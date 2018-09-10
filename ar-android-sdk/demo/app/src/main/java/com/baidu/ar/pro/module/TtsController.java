@@ -7,9 +7,11 @@ import java.util.HashMap;
 
 import com.baidu.ar.tts.TTSCallback;
 import com.baidu.ar.tts.Tts;
+import com.baidu.ar.util.UiThreadUtil;
 import com.baidu.baiduarsdk.util.MsgParamsUtil;
 
 import android.content.Context;
+import android.widget.Toast;
 
 /**
  * tts控制器
@@ -17,14 +19,24 @@ import android.content.Context;
  */
 public class TtsController {
 
-    protected String appId = "10315470";
-    protected String appKey = "bgW5575sEj5m9CHEatxTGln6";
-    protected String secretKey = "kD9VCx8q56s3lAaAk0juQtkFfXj3Xsp4";
+    /**
+     * 用户自定义设置appId，appKey，secretKey
+     * http://ai.baidu.com/sdk#tts
+     */
+    protected String appId = "请输入APPID";
+    protected String appKey = "请输入APPKEY";
+    protected String secretKey = "请输入SECRETKEY";
+
 
     private Tts mTts;
 
+
+    private Context context;
+
+
     public TtsController(Context context) {
         mTts = new Tts(context, appId, appKey, secretKey);
+        this.context = context;
     }
 
     public void parseMessage(HashMap<String, Object> luaMsg) {
@@ -69,6 +81,16 @@ public class TtsController {
                 @Override
                 public void onTtsError(int errorCode) {
                     // TODO: 2018/5/23 播放异常
+                    if (errorCode == -4 || errorCode == -8) {
+                        UiThreadUtil.runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(context.getApplicationContext(), "appid和appkey的鉴权失败", Toast.LENGTH_SHORT)
+                                        .show();
+                            }
+                        });
+                        return;
+                    }
                 }
             });
         }

@@ -286,6 +286,18 @@ public class Prompt extends RelativeLayout implements View.OnClickListener, DuMi
                     }
                 });
                 break;
+            case MsgField.MSG_STAT_FIRST_LOAD_QUERY_FAILURE:
+                UiThreadUtil.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getContext(), getContext().getText(R.string.auth_fail), Toast.LENGTH_SHORT)
+                                .show();
+                        if (mPromptCallback != null) {
+                            mPromptCallback.onBackPressed();
+                        }
+                    }
+                });
+                break;
             case MsgField.MSG_ON_QUERY_RESOURCE:
                 // 初始隐藏scanview
                 hideScanView();
