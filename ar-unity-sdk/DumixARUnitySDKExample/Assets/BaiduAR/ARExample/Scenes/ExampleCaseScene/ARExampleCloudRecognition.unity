@@ -141,12 +141,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 589379582}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -0.000010490422, y: -0.00000023842142}
-  m_SizeDelta: {x: -260.8, y: 83.6}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 539.2, y: 83.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &42863140
 MonoBehaviour:
@@ -326,12 +326,12 @@ Prefab:
     - target: {fileID: 224159450339619684, guid: a81f6b57cee434066a36e88f28bef74b,
         type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 224159450339619684, guid: a81f6b57cee434066a36e88f28bef74b,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224159450339619684, guid: a81f6b57cee434066a36e88f28bef74b,
         type: 2}
@@ -547,7 +547,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 263712164}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07a146d83edc348fb93915612c72e265, type: 3}
+  m_Script: {fileID: 11500000, guid: c0d6da82c078d4cd3a5c95e689ee4daf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rotateAngleX: 0
@@ -771,7 +771,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 480843085}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07a146d83edc348fb93915612c72e265, type: 3}
+  m_Script: {fileID: 11500000, guid: c0d6da82c078d4cd3a5c95e689ee4daf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rotateAngleX: 0
@@ -814,9 +814,9 @@ RectTransform:
   - {fileID: 256340912}
   - {fileID: 778139693}
   - {fileID: 2070169505}
-  - {fileID: 137222442}
   - {fileID: 42863139}
   - {fileID: 1196748999}
+  - {fileID: 137222442}
   m_Father: {fileID: 84503570}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -889,6 +889,19 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1045825936961976, guid: 413ac0db6b1e844a8bdc8a36dcf41689, type: 2}
+      propertyPath: m_TagString
+      value: MainCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 1266616340929534, guid: 413ac0db6b1e844a8bdc8a36dcf41689, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 114217646459803650, guid: 413ac0db6b1e844a8bdc8a36dcf41689,
+        type: 2}
+      propertyPath: appID
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 114217646459803650, guid: 413ac0db6b1e844a8bdc8a36dcf41689,
         type: 2}
       propertyPath: APIKey
@@ -896,7 +909,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114217646459803650, guid: 413ac0db6b1e844a8bdc8a36dcf41689,
         type: 2}
-      propertyPath: appID
+      propertyPath: secretKey
       value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1124,7 +1137,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 851809794}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07a146d83edc348fb93915612c72e265, type: 3}
+  m_Script: {fileID: 11500000, guid: c0d6da82c078d4cd3a5c95e689ee4daf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rotateAngleX: 0
@@ -1432,7 +1445,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1112855490}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53b1048b907be43829329b371bae8402, type: 3}
+  m_Script: {fileID: 11500000, guid: 662504c2123b844d8931fb9882261f18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   APIKey: 
@@ -1451,7 +1464,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: BaiduARInternal.UnityEventEx, BaiduARUnitySDK, Version=1.0.6757.30248,
+    m_TypeName: BaiduARInternal.UnityEventEx, BaiduARUnitySDK, Version=1.0.6820.38427,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1112855493
 MonoBehaviour:
@@ -1591,7 +1604,7 @@ Prefab:
     - target: {fileID: 224457893244504326, guid: 2097c6bbb532849449eee08b05c0ec7f,
         type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 224457893244504326, guid: 2097c6bbb532849449eee08b05c0ec7f,
         type: 2}
@@ -1759,13 +1772,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1243398305}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5e9a12aa29d6424c92eeab2523efdd9, type: 3}
+  m_Script: {fileID: 11500000, guid: 84107ee956b0d4fefbb74b2d105beeef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OnErrorEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: BaiduARInternal.UnityEventEx, BaiduARUnitySDK, Version=1.0.6757.30248,
+    m_TypeName: BaiduARInternal.UnityEventEx, BaiduARUnitySDK, Version=1.0.6820.38427,
       Culture=neutral, PublicKeyToken=null
   OnSlamSuccess:
     m_PersistentCalls:
@@ -1868,7 +1881,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f9e7ed08898d80148b9f645cd07c8b8e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f9e7ed08898d80148b9f645cd07c8b8e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1925,7 +1938,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1431807813}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07a146d83edc348fb93915612c72e265, type: 3}
+  m_Script: {fileID: 11500000, guid: c0d6da82c078d4cd3a5c95e689ee4daf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rotateAngleX: 0
@@ -2017,7 +2030,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1533430422}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07a146d83edc348fb93915612c72e265, type: 3}
+  m_Script: {fileID: 11500000, guid: c0d6da82c078d4cd3a5c95e689ee4daf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rotateAngleX: 0
@@ -2039,7 +2052,7 @@ GameObject:
   - component: {fileID: 1556131019}
   - component: {fileID: 1556131021}
   m_Layer: 5
-  m_Name: ScrollView
+  m_Name: Scroll View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2457,7 +2470,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 18.999939, y: -144.99994}
-  m_SizeDelta: {x: 268.9, y: 367.2}
+  m_SizeDelta: {x: 254.1, y: 362.3}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1792920763
 MonoBehaviour:

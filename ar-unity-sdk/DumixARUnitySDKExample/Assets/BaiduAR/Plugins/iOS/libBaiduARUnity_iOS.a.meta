@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 6c6330b9b77ec4bce93b7059bd6b49c3
-timeCreated: 1519724456
+guid: 68eecee88dc444306bf3bcda3df0e3b3
+timeCreated: 1533867775
 licenseType: Free
 PluginImporter:
   externalObjects: {}
@@ -21,6 +21,7 @@ PluginImporter:
         Exclude Linux64: 1
         Exclude LinuxUniversal: 1
         Exclude OSXUniversal: 1
+        Exclude WebGL: 1
         Exclude Win: 1
         Exclude Win64: 1
         Exclude iOS: 0

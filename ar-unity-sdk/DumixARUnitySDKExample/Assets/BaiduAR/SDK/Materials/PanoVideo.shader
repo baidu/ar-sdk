@@ -16,7 +16,7 @@ Shader "BaiduAR/PlaneVideo"
 		CGPROGRAM
 #pragma vertex vert
 #pragma fragment frag 
-#pragma multi_compile android iphone editor
+#pragma multi_compile android iphone editor  androidfront iphonefront
 #include "UnityCG.cginc"
 
 		struct appdata
@@ -62,6 +62,13 @@ Shader "BaiduAR/PlaneVideo"
         #endif
         #ifdef android
         uv=float2(1-uv.x, uv.y);
+        #endif
+
+        #ifdef androidfront
+        uv=float2(uv.x, uv.y);
+        #endif
+        #ifdef iphonefront
+        uv=float2(-uv.x, uv.y);
         #endif
      //   #endif
        // uv+=float2(0.5,0.5);

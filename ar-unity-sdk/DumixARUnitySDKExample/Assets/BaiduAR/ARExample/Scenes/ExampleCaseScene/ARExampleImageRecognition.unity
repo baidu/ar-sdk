@@ -214,7 +214,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 207853962}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca3d042d0fe62465e9a7b7aa77e7595b, type: 3}
+  m_Script: {fileID: 11500000, guid: 9a2ad8b6996f84ad5b804e1b3f9e28f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   filePath: ar/bear
@@ -619,6 +619,16 @@ Prefab:
       propertyPath: appID
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 114217646459803650, guid: 413ac0db6b1e844a8bdc8a36dcf41689,
+        type: 2}
+      propertyPath: APIKey
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114217646459803650, guid: 413ac0db6b1e844a8bdc8a36dcf41689,
+        type: 2}
+      propertyPath: secretKey
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 413ac0db6b1e844a8bdc8a36dcf41689, type: 2}
   m_IsPrefabParent: 0
@@ -893,7 +903,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1274779079}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca3d042d0fe62465e9a7b7aa77e7595b, type: 3}
+  m_Script: {fileID: 11500000, guid: 9a2ad8b6996f84ad5b804e1b3f9e28f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   filePath: ar/city
@@ -925,7 +935,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1589592080}
-  - component: {fileID: 1589592081}
+  - component: {fileID: 1589592082}
   m_Layer: 0
   m_Name: ARImageRecognition
   m_TagString: Untagged
@@ -948,7 +958,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1589592081
+--- !u!114 &1589592082
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -956,7 +966,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1589592079}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2931d8901a8104b59b20e6d173b7889f, type: 3}
+  m_Script: {fileID: 11500000, guid: ea495573eee1d4862a5bad5a5dc8e471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OnErrorEvent:
@@ -973,7 +983,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: BaiduARInternal.UnityEventEx, BaiduARUnitySDK, Version=1.0.6757.30248,
+    m_TypeName: BaiduARInternal.UnityEventEx, BaiduARUnitySDK, Version=1.0.6820.19470,
       Culture=neutral, PublicKeyToken=null
   intervalTime: 0.1
 --- !u!1 &1780041555
