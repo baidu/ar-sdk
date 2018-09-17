@@ -36,11 +36,11 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // 设置App Id
-        DuMixARConfig.setAppId("XXXXX");
+        DuMixARConfig.setAppId("10000");
         // 设置API Key
-        DuMixARConfig.setAPIKey("XXXXXXXXXXXXX");
+        DuMixARConfig.setAPIKey("2288883fb087c4a37fbaf12bce65916e");
         // 设置Secret Key
-        DuMixARConfig.setSecretKey("XXXXXXX");
+        DuMixARConfig.setSecretKey("");
 
         setContentView(R.layout.activity_main);
         initData();
