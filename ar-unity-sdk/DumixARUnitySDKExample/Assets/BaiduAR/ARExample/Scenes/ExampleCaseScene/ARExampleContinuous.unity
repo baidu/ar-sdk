@@ -5168,11 +5168,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114296491924623934, guid: 86f91b77e0b71400f8bae4f88516fe54,
-        type: 2}
-      propertyPath: OnErrorEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4541757063691996, guid: 86f91b77e0b71400f8bae4f88516fe54, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5214,39 +5209,9 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114296491924623934, guid: 86f91b77e0b71400f8bae4f88516fe54,
-        type: 2}
-      propertyPath: intervalTime
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114296491924623934, guid: 86f91b77e0b71400f8bae4f88516fe54,
-        type: 2}
-      propertyPath: OnErrorEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114296491924623934, guid: 86f91b77e0b71400f8bae4f88516fe54,
-        type: 2}
-      propertyPath: OnErrorEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114296491924623934, guid: 86f91b77e0b71400f8bae4f88516fe54,
-        type: 2}
-      propertyPath: OnErrorEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1676046248}
-    - target: {fileID: 114296491924623934, guid: 86f91b77e0b71400f8bae4f88516fe54,
-        type: 2}
-      propertyPath: OnErrorEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ErrorInfo
-      objectReference: {fileID: 0}
-    - target: {fileID: 114296491924623934, guid: 86f91b77e0b71400f8bae4f88516fe54,
-        type: 2}
-      propertyPath: OnErrorEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114635638598934610, guid: 86f91b77e0b71400f8bae4f88516fe54, type: 2}
-    - {fileID: 114296491924623934, guid: 86f91b77e0b71400f8bae4f88516fe54, type: 2}
+    - {fileID: 114613238881275356, guid: 86f91b77e0b71400f8bae4f88516fe54, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 86f91b77e0b71400f8bae4f88516fe54, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &377106080 stripped
@@ -5280,7 +5245,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 377106081}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2931d8901a8104b59b20e6d173b7889f, type: 3}
+  m_Script: {fileID: 11500000, guid: ea495573eee1d4862a5bad5a5dc8e471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OnErrorEvent:
@@ -5297,8 +5262,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: BaiduARInternal.UnityEventEx, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
+    m_TypeName: BaiduARInternal.UnityEventEx, BaiduARUnitySDK, Version=1.0.6820.19470,
+      Culture=neutral, PublicKeyToken=null
   intervalTime: 0.1
 --- !u!1 &378282676
 GameObject:
@@ -8466,7 +8431,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 584658188}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca3d042d0fe62465e9a7b7aa77e7595b, type: 3}
+  m_Script: {fileID: 11500000, guid: 9a2ad8b6996f84ad5b804e1b3f9e28f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   filePath: ar/Continuous/picture_2
@@ -8836,7 +8801,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 612633085}
-  - component: {fileID: 612633086}
+  - component: {fileID: 612633087}
   m_Layer: 0
   m_Name: ResultZhuangping
   m_TagString: Untagged
@@ -8857,7 +8822,7 @@ Transform:
   m_Father: {fileID: 377106080}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &612633086
+--- !u!114 &612633087
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -8865,7 +8830,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 612633084}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca3d042d0fe62465e9a7b7aa77e7595b, type: 3}
+  m_Script: {fileID: 11500000, guid: 9a2ad8b6996f84ad5b804e1b3f9e28f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   filePath: ar/Continuous/picture_7
@@ -9401,7 +9366,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 647367627}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca3d042d0fe62465e9a7b7aa77e7595b, type: 3}
+  m_Script: {fileID: 11500000, guid: 9a2ad8b6996f84ad5b804e1b3f9e28f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   filePath: ar/Continuous/picture_5
@@ -15503,7 +15468,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1237550790}
-  - component: {fileID: 1237550791}
+  - component: {fileID: 1237550792}
   m_Layer: 0
   m_Name: ResultYunshizhen
   m_TagString: Untagged
@@ -15524,7 +15489,7 @@ Transform:
   m_Father: {fileID: 377106080}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1237550791
+--- !u!114 &1237550792
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -15532,7 +15497,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1237550789}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca3d042d0fe62465e9a7b7aa77e7595b, type: 3}
+  m_Script: {fileID: 11500000, guid: 9a2ad8b6996f84ad5b804e1b3f9e28f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   filePath: ar/Continuous/picture_1
@@ -16441,6 +16406,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1323699911}
   - component: {fileID: 1323699912}
+  - component: {fileID: 1323699913}
   m_Layer: 0
   m_Name: ResultXiuhuojian
   m_TagString: Untagged
@@ -16469,7 +16435,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 1323699910}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca3d042d0fe62465e9a7b7aa77e7595b, type: 3}
+  m_Script: {fileID: 11500000, guid: faba24f42eda04ec39584c53ef5ee70a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  filePath: ar/Continuous/picture_3
+  isUserAbsolutePath: 0
+  fileName: 
+  OnRespond:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1323699913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1323699910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a2ad8b6996f84ad5b804e1b3f9e28f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   filePath: ar/Continuous/picture_3
@@ -20399,6 +20384,21 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114217646459803650, guid: 413ac0db6b1e844a8bdc8a36dcf41689,
+        type: 2}
+      propertyPath: appID
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114217646459803650, guid: 413ac0db6b1e844a8bdc8a36dcf41689,
+        type: 2}
+      propertyPath: APIKey
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114217646459803650, guid: 413ac0db6b1e844a8bdc8a36dcf41689,
+        type: 2}
+      propertyPath: secretKey
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114787560546921350, guid: 413ac0db6b1e844a8bdc8a36dcf41689, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 413ac0db6b1e844a8bdc8a36dcf41689, type: 2}
@@ -24078,7 +24078,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1980487227}
-  - component: {fileID: 1980487228}
+  - component: {fileID: 1980487229}
   m_Layer: 0
   m_Name: ResultYueqiu
   m_TagString: Untagged
@@ -24099,7 +24099,7 @@ Transform:
   m_Father: {fileID: 377106080}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1980487228
+--- !u!114 &1980487229
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -24107,7 +24107,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1980487226}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca3d042d0fe62465e9a7b7aa77e7595b, type: 3}
+  m_Script: {fileID: 11500000, guid: 9a2ad8b6996f84ad5b804e1b3f9e28f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   filePath: ar/Continuous/picture_6

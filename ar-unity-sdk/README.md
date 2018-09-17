@@ -1,7 +1,8 @@
 # 简介
-本文档主要介绍DuMix AR Unity SDK的安装和使用。在使用本文档前，您需要先了解AR（Augmented Reality）的基础知识，并已经开通了AR应用授权，目前仅支持试用应用授权，请前往[DuMix AR技术开放平台](https://ar.baidu.com/developer)了解详情，[点击此处](https://ar.baidu.com/testapply)（需登录）创建您的试用应用授权，后续SDK鉴权需用到相关信息。
+本文档主要介绍DuMix AR Unity SDK 的集成和使用。在使用本文档前，您需要先了解AR（Augmented Reality）的基础知识，并已经开通了百度AR应用授权，您可以在 [AR技术开放平台](https://ar.baidu.com/developer) 的[应用控制台](https://ar.baidu.com/console#) 申请应用授权。
 
 ## 运行环境
+
 此SDK支持发布Android和IOS应用，并且手机需要保持联网状态。
 
 |      功能      | Android |      IOS      | Mac | Window |
@@ -10,8 +11,9 @@
 | 2D跟踪      | ✓ |  ✓  | ✓   | ✓ |
 | 本地识图     |✓  | ✓   |  |  || 手势识别    |✓  | ✓   |  |  |
 | 云端识图    |✓  | ✓   | ✓ | ✓ |
+| 肢体识别    |✓  | ✓   |   | |
 # 快速入门
-##    开发包说明
+## 开发包说明
 DuMix AR Unity SDK.zip
 
 ```
@@ -28,11 +30,13 @@ DuMix AR Unity SDK开发环境如下：
 *    架构：armeabi-v7a 和arm64-v8a。
 
 ## SDK集成步骤
-### 第1步：下载SDK
+### 第1步：创建AR应用
 
-1.前往[DuMix AR技术开放平台](https://ar.baidu.com/developer)了解详情（如图所示），点击“立即使用”或“应用控制台”进行应用授权，目前仅支持试用应用授权，[点击此处](https://ar.baidu.com/testapply)（需登录）创建您的试用应用授权。
+1.前往[DuMix AR技术开放平台](https://ar.baidu.com/developer)了解详情，点击“立即使用”或“应用控制台”申请应用授权。
 
-2.申请AR应用（试用版）后，您会得到试用版App ID和API Key。点击[SDK下载](https://ai.baidu.com/sdk#ar)。
+2.点击**创建应用**，创建AR应用。
+
+3.建应用后，会得到相应的AppID，APIKey，SecretKey，包名和License文件。在开发完成后生成应用时，需要将包名修改成创建时填写的包名。并下载对应的**License文件**，放到StreamingAssets目录下。Android的License文件直接放到StreamingAssets文件的根目录下，iOS的License文件需要在StreamingAssets文件下创建文件夹，文件夹的名称为“iOS”，将License文件放进去。
 
 ### 第2步：导入SDK
 
@@ -97,19 +101,337 @@ Slam功能使用过程如下。将ARObjectTracker prefab添加到场景中，将
 
 3.相关接口的调用可以参考[官方Unity技术文档](https://ai.baidu.com/docs#/DuMixAR-Unity-SDK/top)。
 
+### 肢体识别
+
+1.肢体识别功能的使用过程如下。将ARHumanPose prefab添加到场景中。
+
+2.在使用此功能时，需要调用BaiduARHumanPose组件中的InvokePosMessage监听回调事件，得到一个List< OutPutData > lstVet，用来获取肢体各个部位的信息。OutPutData这个类中包含的信息包括：VectorWorldPos（世界坐标），VectorScreenPos（屏幕坐标）和score（可信度），score代表可信度，是这个点位置的准确程度。得到的List中一共包含18个部位信息，从0～17索引所代表的部位如下：
+
+```
+[0] : Nose               [1] : Neck
+[2] : RShoulder          [3] : RElbow
+[4] : RWrist             [5] : LShoulder
+[6] : LElbow             [7] : LWrist
+[8] : RHip               [9] : RKnee
+[10]: RAnkle             [11]: LHip
+[12]: LKnee              [13]: LAnkle
+[14]: REye               [15]: LEye
+[16]: REar               [17]: LEar
+
+```
+
+
+
 ## Android配置
 
 若要发布Android应用，首先需要下载安装JDK和SDK。JDK需要配置环境变量，具体操作可以搜索一下（参考链接：<https://jingyan.baidu.com/article/908080221f3cfefd91c80fbf.html>）。安装配置完毕后，将路径填写到Unity中。
 
 ## IOS配置
 
-XCode 9.x：将“-force_load；$(SRCROOT)/libpaddle_capi_layers.a”添加到Other Linker Flags中。修改Project和Targets的配置。设置Build Active Architecture Only为“Yes”，设置 Enable Bitcode 为“NO”。
+XCode 9.x：将“pose”和“opencv2.framework”文件添加到XCode工程中（pose文件肢体识别使用，opencv2.framework文件可以自行下载，也可以使用压缩包内提供的opencv2.framework文件），把“libBaiduARUnity_iOS.a”文件和“-force_load；$(SRCROOT)/libpaddle_capi_layers.a”添加到Other Linker Flags中。修改Project和Targets的配置。设置Build Active Architecture Only为“Yes”，设置 Enable Bitcode 为“NO”。
+
+# 接口说明
+
+## BaiduARWebCamera
+
+```
+/*
+切换摄像头（目前只支持肢体识别功能，其他功能暂不支持前置摄像头）
+*/
+void SwitchCamera();
+
+```
+## BaiduARObjectTracker
+
+```
+/*
+启动AR 开始对物体位置的实时监控
+*/
+void StartAR();
+
+/*
+停止AR 停止对物体位置的实时传送
+*/
+void StopAR();
+
+/*
+暂停AR
+*/
+void PauseAR();
+
+/*
+继续AR
+*/
+void ResumeAR();
+
+/*
+切换模型
+参数：index 索引，模型的序列号
+*/
+bool SetActiveTrack(int index);
+
+/*
+定位成功（具体使用方式参考功能开发介绍中的Slam章节）
+*/
+UnityEvent OnSlamSuccess;
+
+/*
+定位失败（具体使用方式参考功能开发介绍中的Slam章节）
+*/
+UnityEvent OnSlamFail;
+
+/*
+身份报错信息（具体使用方式参考功能开发介绍中的Slam章节）
+*/
+UnityEventEx OnErrorEvent;
+```
+## BaiduARObjectTrackable
+
+```
+/*
+更新物体的位置，角度信息
+*/
+void UpdateSlamPos()；
+```
+
+## BaiduARImageTracker
+
+```
+/*
+启动AR
+*/
+void StartAR();
+
+/*
+停止AR
+*/
+void StopAR();
+
+/*
+暂停AR
+*/
+void PauseAR();
+
+/*
+继续AR
+*/
+void ResumeAR();
+
+/*
+切换模型
+参数 ：path 路径，模型上BaiduARImageTrackable组件中的filePath
+*/
+bool SetActiveTrack (string path);
+
+/*
+跟踪成功（具体使用方式参考功能开发介绍中的2D跟踪章节）
+*/
+UnityEvent OnTrackSuccess;
+  
+/*
+跟踪失败（具体使用方式参考功能开发介绍中的2D跟踪章节）
+*/  
+UnityEvent OnTrackFail; 
+
+/*
+身份报错信息（具体使用方式参考功能开发介绍中的2D跟踪章节）
+*/
+UnityEventEx OnErrorEvent;   
+```
+
+## BaiduARImageTrackable
+
+```
+/*
+自定义资源包的加载路径
+参数 ：path 绝对路径，比如”/Users/zhang/Desktop/picture/city/model/8e364efdba81cbec8ffed55b6f591d96_13042018171528.feam“
+*/
+SetAbsolutePath(string path)
+```
+
+## BaiduARImageRecognition
+
+```
+/*
+启动AR
+*/
+void StartAR();
+
+/*
+停止AR
+*/
+void StopAR();
+
+/*
+暂停AR
+*/
+void PauseAR();
+
+/*
+继续AR
+*/
+void ResumeAR();
+
+/*
+身份报错信息（具体使用方式参考功能开发介绍中的本地识图章节）
+*/
+UnityEventEx OnErrorEvent;
+```
+
+## BaiduARImageRecognitionResult
+
+```
+/*
+自定义资源包的加载路径
+参数 ：path 绝对路径，比如”/Users/zhang/Desktop/picture/city/feature/20180208173518.fea“
+*/
+SetAbsolutePath(string path)
+
+/*
+识别成功（具体使用方式参考功能开发介绍中的本地识图章节）
+*/
+UnityEvent OnRespond;
+```
+## BaiduARGestureRecog
+```
+/*
+启动AR
+*/
+void StartAR();
+
+/*
+停止AR
+*/
+void StopAR();
+
+/*
+暂停AR
+*/
+void PauseAR();
+
+/*
+继续AR
+*/
+void ResumeAR();
+
+/*
+手势识别（具体使用方式参考功能开发介绍中的手势识别章节）
+*/
+void OnResultCallBack(Action<bool> callback);
+
+/*
+手势跟踪（具体使用方式参考功能开发介绍中的手势识别章节）
+*/
+void OnResultTrackCallBack(Action<List<RecogGesture>> callback);
+
+/*
+身份报错信息（具体使用方式参考功能开发介绍中的手势识别章节）
+*/
+UnityEventEx OnErrorEvent;
+```
+
+## BaiduARCloudRecognition
+
+```
+/*
+拍摄菜品
+*/
+void TakePictureDish()；
+
+/*
+拍摄场景
+*/
+void TakePictureScene()；
+
+/*
+拍摄车型
+*/
+void TakePictureCar()；
+
+/*
+拍摄动物
+*/
+void TakePictureAnimal()；
+
+/*
+拍摄植物
+*/
+void TakePicturePlant()；
+
+/*
+普通场景识别监听（具体使用方式参考功能开发介绍中的云端识图章节）
+*/
+void ResultSceneRecognition(Action<List<SceneDataItem>> call);
+
+/*
+菜品识别监听（具体使用方式参考功能开发介绍中的云端识图章节）
+*/
+void ResultDishRecognition(Action<List<DishDataItem>> call);
+
+/*
+车识别监听（具体使用方式参考功能开发介绍中的云端识图章节）
+*/
+void ResultCarRecognition(Action<List<CommonDataItem>> call);
+
+/*
+动物识别监听（具体使用方式参考功能开发介绍中的云端识图章节）
+*/
+void ResultAnimalRecognition(Action<List<CommonDataItem>> call);
+
+/*
+植物识别监听（具体使用方式参考功能开发介绍中的云端识图章节）
+*/
+ResultPlantRecognition(Action<List<CommonDataItem>> call);
+
+/*
+身份报错信息（具体使用方式参考功能开发介绍中的云端识图章节）
+*/
+UnityEventEx OnErrorEvent;
+```
+## BaiduARHumanPose
+
+```
+/*
+启动AR
+*/
+void StartAR();
+
+/*
+停止AR
+*/
+void StopAR();
+
+/*
+暂停AR
+*/
+void PauseAR();
+
+/*
+继续AR
+*/
+void ResumeAR();
+
+/*
+清理坐标点（具体使用方式参考功能开发介绍中的肢体识别章节）
+*/
+void InvokeClearMessage(Action clear);
+
+/*
+获得肢体点（具体使用方式参考功能开发介绍中的肢体识别章节）
+*/
+void InvokePosMessage(Action<List<OutPutData>> posCallback);
+
+/*
+返回报错信息（具体使用方式参考功能开发介绍中的肢体识别章节）
+*/
+void InvokeErrorMessage(Action<string,string> errorCallback);
+```
 
 
 # DuMix AR Unity SDK样例介绍
 1.在平台上下载样例的工程文件，用Unity打开查看。样例中包括2D跟踪，Slam，本地识图和手势识别等功能的展示。
 
-2.运行样例前需要填写API Key和App ID（每个场景都需要填写）。
+2.运行样例前需要填写APIKey，AppID和SecretKey（每个场景都需要填写）。
 
 **注**：详细的内容可以参考[官方Unity技术文档](https://ai.baidu.com/docs#/DuMixAR-Unity-SDK/top)。
 
@@ -131,6 +453,7 @@ XCode 9.x：将“-force_load；$(SRCROOT)/libpaddle_capi_layers.a”添加到Ot
 
 
 # 版本更新说明
-DuMix AR Unity SDK 1.1版（试用版） - 2018年5月 提供单目Slam、2D图像跟踪、本地识图、手势识别等功能。
+DuMix AR Unity SDK 1.1版（试用版）- 2018年5月 提供单目SLAM、2D图像跟踪、本地识图、手势识别等功能。
 
-DuMix AR Unity SDK 1.2版 - 2018年7月 提供单目Slam、2D图像跟踪、本地识图、手势识别,云端识图等功能。
+DuMix AR Unity SDK 1.2版 - 2018年7月 提供云端识图功能。
+DuMix AR Unity SDK 2.0版 - 2018年8月 提供肢体识别功能。

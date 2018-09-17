@@ -158,8 +158,9 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.baidu.ar
-    iOS: com.Baidu.ARAPP
+    Android: com.baidu.ardemo
+    Standalone: com.baidu.ar
+    iOS: com.baidu.ARAPP-Basic
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 16

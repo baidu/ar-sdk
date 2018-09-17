@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4893168904790626}
-  - component: {fileID: 114033228310892262}
+  - component: {fileID: 114822345589442788}
   m_Layer: 0
   m_Name: ARGestureRecog
   m_TagString: Untagged
@@ -40,7 +40,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114033228310892262
+--- !u!114 &114822345589442788
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1714736007368158}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0aa540c8e9b164e2dafeffea59484aee, type: 3}
+  m_Script: {fileID: 11500000, guid: f6962c63def5c47aba1d6afb892b6661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OnErrorEvent:

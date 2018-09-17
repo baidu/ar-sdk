@@ -61,19 +61,22 @@ public class IOSPostBuildProcessor
 
 		File.WriteAllText(projPath, proj.WriteToString());
 
-        CopyFile("libpaddle_capi_layers.a" ,pathToBuiltProject);
+        CopyFile("GestureFile/libpaddle_capi_layers.a","libpaddle_capi_layers.a",pathToBuiltProject);
+        CopyFile("pose/pose.bin","pose.bin",pathToBuiltProject);
+      //  CopyFile("pose/opencv2.framework.zip", "opencv2.framework.zip", pathToBuiltProject);
+       // CopyFile("IOS_Pose/libpaddle_capi_layers.a" ,pathToBuiltProject);
 
 #endif
     }
     /// 复制文件
-    public static void CopyFile(string srcFileName, string destPath)
+    public static void CopyFile(string srcFileName,string fileName, string destPath)
     {
         if (IsFileExists(srcFileName))
         {
-            string desfileName = destPath + "/" + srcFileName;
+            string desfileName = destPath + "/" + fileName;
             string srcFullName = GetFullPath(srcFileName);
-         //   Debug.LogError("srcFullName ="+srcFullName);
-          //  Debug.LogError("desfileName =" + desfileName);
+          //  Debug.Log("desfileName = "+desfileName);
+           // Debug.Log("srcFullName = " + srcFullName);
             File.Copy(srcFullName, desfileName, true);
 
             AssetDatabase.Refresh();
@@ -92,8 +95,8 @@ public class IOSPostBuildProcessor
     /// 返回Application.dataPath下完整目录
     private static string GetFullPath(string srcName)
     {
-        string ret = Application.streamingAssetsPath + "/GestureFile" + "/" + srcName;
-   //     Debug.LogError("ret = "+ret);
+        string ret = Application.streamingAssetsPath + "/" + srcName;
+      //  Debug.Log("ret = "+ret);
         return ret;
     }
 }

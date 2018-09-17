@@ -9,17 +9,17 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1526347237602564}
+  m_RootGameObject: {fileID: 1332596876684744}
   m_IsPrefabParent: 1
---- !u!1 &1526347237602564
+--- !u!1 &1332596876684744
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4476211312073712}
-  - component: {fileID: 114355576670047170}
+  - component: {fileID: 4785276711490472}
+  - component: {fileID: 114331258189801082}
   m_Layer: 0
   m_Name: ARCloudRecognition
   m_TagString: Untagged
@@ -27,28 +27,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4476211312073712
+--- !u!4 &4785276711490472
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1526347237602564}
+  m_GameObject: {fileID: 1332596876684744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 203.26544, y: 363.16293, z: 12.777677}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114355576670047170
+--- !u!114 &114331258189801082
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1526347237602564}
+  m_GameObject: {fileID: 1332596876684744}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53b1048b907be43829329b371bae8402, type: 3}
+  m_Script: {fileID: 11500000, guid: 662504c2123b844d8931fb9882261f18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   APIKey: 
@@ -56,5 +56,5 @@ MonoBehaviour:
   OnErrorEvent:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: BaiduARInternal.UnityEventEx, BaiduARUnitySDK, Version=1.0.6753.27908,
+    m_TypeName: BaiduARInternal.UnityEventEx, BaiduARUnitySDK, Version=1.0.6820.19470,
       Culture=neutral, PublicKeyToken=null

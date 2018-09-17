@@ -4199,6 +4199,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114822345589442788, guid: a4440776729e04faebe4ee4a026541da,
+        type: 2}
+      propertyPath: OnErrorEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4893168904790626, guid: a4440776729e04faebe4ee4a026541da, type: 2}
       propertyPath: m_LocalPosition.x
       value: -3010
@@ -4231,9 +4236,33 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114822345589442788, guid: a4440776729e04faebe4ee4a026541da,
+        type: 2}
+      propertyPath: OnErrorEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114822345589442788, guid: a4440776729e04faebe4ee4a026541da,
+        type: 2}
+      propertyPath: OnErrorEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114822345589442788, guid: a4440776729e04faebe4ee4a026541da,
+        type: 2}
+      propertyPath: OnErrorEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1423402412}
+    - target: {fileID: 114822345589442788, guid: a4440776729e04faebe4ee4a026541da,
+        type: 2}
+      propertyPath: OnErrorEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ErrorInfo
+      objectReference: {fileID: 0}
+    - target: {fileID: 114822345589442788, guid: a4440776729e04faebe4ee4a026541da,
+        type: 2}
+      propertyPath: OnErrorEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114539523080489354, guid: a4440776729e04faebe4ee4a026541da, type: 2}
-    - {fileID: 114033228310892262, guid: a4440776729e04faebe4ee4a026541da, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a4440776729e04faebe4ee4a026541da, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1679824579 stripped
@@ -4246,33 +4275,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1714736007368158, guid: a4440776729e04faebe4ee4a026541da,
     type: 2}
   m_PrefabInternal: {fileID: 1679824578}
---- !u!114 &1679824581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1679824580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0aa540c8e9b164e2dafeffea59484aee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnErrorEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1423402412}
-        m_MethodName: ErrorInfo
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: BaiduARInternal.UnityEventEx, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
 --- !u!114 &1679824582
 MonoBehaviour:
   m_ObjectHideFlags: 0

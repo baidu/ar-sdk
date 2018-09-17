@@ -564,7 +564,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1215712071}
-  - component: {fileID: 1215712072}
+  - component: {fileID: 1215712073}
   m_Layer: 0
   m_Name: ARImageTracker
   m_TagString: Untagged
@@ -586,7 +586,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1215712072
+--- !u!114 &1215712073
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -594,7 +594,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1215712070}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ebc38763a7c94adfa3b6c7eb23c191c, type: 3}
+  m_Script: {fileID: 11500000, guid: 036663569c0f7490ab584a2c2ef1826f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OnErrorEvent:
@@ -611,7 +611,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: BaiduARInternal.UnityEventEx, BaiduARUnitySDK, Version=1.0.6757.30248,
+    m_TypeName: BaiduARInternal.UnityEventEx, BaiduARUnitySDK, Version=1.0.6820.19470,
       Culture=neutral, PublicKeyToken=null
   OnTrackSuccess:
     m_PersistentCalls:
@@ -958,6 +958,16 @@ Prefab:
       value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 114802952979074442, guid: 413ac0db6b1e844a8bdc8a36dcf41689,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114217646459803650, guid: 413ac0db6b1e844a8bdc8a36dcf41689,
+        type: 2}
+      propertyPath: secretKey
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114217646459803650, guid: 413ac0db6b1e844a8bdc8a36dcf41689,
         type: 2}
       propertyPath: m_Enabled
       value: 1
