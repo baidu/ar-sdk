@@ -1,0 +1,1086 @@
+fileFormatVersion: 2
+guid: b34c0b9715d7745eea03e721e5a43df4
+timeCreated: 1516090967
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: aa
+    100002: Bip001
+    100004: Bip001 Footsteps
+    100006: Bip001 Head
+    100008: Bip001 HeadNub
+    100010: Bip001 L Calf
+    100012: Bip001 L Clavicle
+    100014: Bip001 L Finger0
+    100016: Bip001 L Finger01
+    100018: Bip001 L Finger0Nub
+    100020: Bip001 L Finger1
+    100022: Bip001 L Finger11
+    100024: Bip001 L Finger1Nub
+    100026: Bip001 L Finger2
+    100028: Bip001 L Finger21
+    100030: Bip001 L Finger2Nub
+    100032: Bip001 L Finger3
+    100034: Bip001 L Finger31
+    100036: Bip001 L Finger3Nub
+    100038: Bip001 L Finger4
+    100040: Bip001 L Finger41
+    100042: Bip001 L Finger4Nub
+    100044: Bip001 L Foot
+    100046: Bip001 L Forearm
+    100048: Bip001 L Hand
+    100050: Bip001 L Thigh
+    100052: Bip001 L Toe0
+    100054: Bip001 L Toe0Nub
+    100056: Bip001 L UpperArm
+    100058: Bip001 Neck
+    100060: Bip001 Pelvis
+    100062: Bip001 R Calf
+    100064: Bip001 R Clavicle
+    100066: Bip001 R Finger0
+    100068: Bip001 R Finger01
+    100070: Bip001 R Finger0Nub
+    100072: Bip001 R Finger1
+    100074: Bip001 R Finger11
+    100076: Bip001 R Finger1Nub
+    100078: Bip001 R Finger2
+    100080: Bip001 R Finger21
+    100082: Bip001 R Finger2Nub
+    100084: Bip001 R Finger3
+    100086: Bip001 R Finger31
+    100088: Bip001 R Finger3Nub
+    100090: Bip001 R Finger4
+    100092: Bip001 R Finger41
+    100094: Bip001 R Finger4Nub
+    100096: Bip001 R Foot
+    100098: Bip001 R Forearm
+    100100: Bip001 R Hand
+    100102: Bip001 R Thigh
+    100104: Bip001 R Toe0
+    100106: Bip001 R Toe0Nub
+    100108: Bip001 R UpperArm
+    100110: Bip001 Spine
+    100112: Bip001 Spine1
+    100114: Box003
+    100116: bozi
+    100118: bozi00
+    100120: bozi01
+    100122: //RootNode
+    100124: chenei00
+    100126: chenei01
+    100128: chenei02
+    100130: chenei03
+    100132: chenei04
+    100134: chenei05
+    100136: chenei06
+    100138: chenei07
+    100140: chenei08
+    100142: chenei09
+    100144: chenei10
+    100146: chenei11
+    100148: chenei12
+    100150: chenei13
+    100152: chenei14
+    100154: chenei15
+    100156: chenei16
+    100158: chenei17
+    100160: chenei18
+    100162: chenei19
+    100164: cheti
+    100166: cheti00
+    100168: cheti01
+    100170: cheti02
+    100172: cheti03
+    100174: cheti04
+    100176: cheti05
+    100178: cheti06
+    100180: chewai00
+    100182: chewai01
+    100184: chewai02
+    100186: chewai03
+    100188: chewai04
+    100190: chewai05
+    100192: chewai06
+    100194: chewai07
+    100196: chewai08
+    100198: chewai09
+    100200: chewai10
+    100202: chewai11
+    100204: chewai12
+    100206: chewai13
+    100208: chewai14
+    100210: chewai15
+    100212: chewai16
+    100214: chewai17
+    100216: chewai18
+    100218: chewai19
+    100220: chewai20
+    100222: chewai21
+    100224: chewai22
+    100226: chewai23
+    100228: chewai24
+    100230: chewai25
+    100232: chewai26
+    100234: chewai27
+    100236: chewai28
+    100238: chewai29
+    100240: chewai30
+    100242: chewai31
+    100244: chewai32
+    100246: chewai33
+    100248: chewai34
+    100250: chewai35
+    100252: chewai36
+    100254: chewai37
+    100256: chewai38
+    100258: chewai39
+    100260: chewai40
+    100262: chewai41
+    100264: chewai42
+    100266: chewai43
+    100268: chewai44
+    100270: chewai45
+    100272: chewai46
+    100274: chewai47
+    100276: chewai48
+    100278: chewai49
+    100280: chewai50
+    100282: chewai51
+    100284: chewai52
+    100286: chewai53
+    100288: chewai54
+    100290: chewai55
+    100292: chewai56
+    100294: chewai57
+    100296: chewai58
+    100298: dhfjqr
+    100300: Dummy001
+    100302: Dummy002
+    100304: jizhuiA
+    100306: jizhuiB
+    100308: Line001
+    100310: Object
+    100312: Object001
+    100314: Object002
+    100316: Object004
+    100318: Object005
+    100320: Object006
+    100322: Plane001
+    100324: Plane002
+    100326: polySurface1265
+    100328: renY
+    100330: shangshen00
+    100332: shangshen01
+    100334: shangshen02
+    100336: shangshen03
+    100338: shangshen04
+    100340: shangshen05
+    100342: shangshen06
+    100344: shangshen07
+    100346: shangshen08
+    100348: shangshen09
+    100350: shangshen10
+    100352: shangshen11
+    100354: shangshen12
+    100356: shangshen13
+    100358: tou
+    100360: tou00
+    100362: tou01
+    100364: xiashen00
+    100366: xiashen01
+    100368: youbi
+    100370: youbiqian00
+    100372: youbiqian01
+    100374: youbiqian02
+    100376: youbishang
+    100378: youbishang00
+    100380: youbishang01
+    100382: youdatui
+    100384: youdatui00
+    100386: youdatui01
+    100388: youjiao
+    100390: youjiao00
+    100392: youjiao01
+    100394: youshou
+    100396: youshou00
+    100398: youshou01
+    100400: youshou02
+    100402: youshou03
+    100404: youshou04
+    100406: youshou05
+    100408: youshou06
+    100410: youshou07
+    100412: youshou08
+    100414: youshou09
+    100416: youshou10
+    100418: youxiaotui
+    100420: youxiaotui00
+    100422: youxiaotui01
+    100424: youxiaotui02
+    100426: youxiaotui03
+    100428: zuobi
+    100430: zuobishang
+    100432: zuodatui
+    100434: zuodatui00
+    100436: zuodatui01
+    100438: zuojiao
+    100440: zuojiao00
+    100442: zuojiao01
+    100444: zuoqianbi00
+    100446: zuoqianbi01
+    100448: zuoqianbi02
+    100450: zuoshangbi00
+    100452: zuoshangbi01
+    100454: zuoshou00
+    100456: zuoshou01
+    100458: zuoshou02
+    100460: zuoshou03
+    100462: zuoshou04
+    100464: zuoshou05
+    100466: zuoshou06
+    100468: zuoshou08
+    100470: zuoshou09
+    100472: zuoshou10
+    100474: zuoxiaotui
+    100476: zuoxiaotui00
+    100478: zuoxiaotui01
+    100480: zuoxiaotui02
+    100482: zuoxiaotui03
+    100484: "\u6ED1\u575701"
+    400000: aa
+    400002: Bip001
+    400004: Bip001 Footsteps
+    400006: Bip001 Head
+    400008: Bip001 HeadNub
+    400010: Bip001 L Calf
+    400012: Bip001 L Clavicle
+    400014: Bip001 L Finger0
+    400016: Bip001 L Finger01
+    400018: Bip001 L Finger0Nub
+    400020: Bip001 L Finger1
+    400022: Bip001 L Finger11
+    400024: Bip001 L Finger1Nub
+    400026: Bip001 L Finger2
+    400028: Bip001 L Finger21
+    400030: Bip001 L Finger2Nub
+    400032: Bip001 L Finger3
+    400034: Bip001 L Finger31
+    400036: Bip001 L Finger3Nub
+    400038: Bip001 L Finger4
+    400040: Bip001 L Finger41
+    400042: Bip001 L Finger4Nub
+    400044: Bip001 L Foot
+    400046: Bip001 L Forearm
+    400048: Bip001 L Hand
+    400050: Bip001 L Thigh
+    400052: Bip001 L Toe0
+    400054: Bip001 L Toe0Nub
+    400056: Bip001 L UpperArm
+    400058: Bip001 Neck
+    400060: Bip001 Pelvis
+    400062: Bip001 R Calf
+    400064: Bip001 R Clavicle
+    400066: Bip001 R Finger0
+    400068: Bip001 R Finger01
+    400070: Bip001 R Finger0Nub
+    400072: Bip001 R Finger1
+    400074: Bip001 R Finger11
+    400076: Bip001 R Finger1Nub
+    400078: Bip001 R Finger2
+    400080: Bip001 R Finger21
+    400082: Bip001 R Finger2Nub
+    400084: Bip001 R Finger3
+    400086: Bip001 R Finger31
+    400088: Bip001 R Finger3Nub
+    400090: Bip001 R Finger4
+    400092: Bip001 R Finger41
+    400094: Bip001 R Finger4Nub
+    400096: Bip001 R Foot
+    400098: Bip001 R Forearm
+    400100: Bip001 R Hand
+    400102: Bip001 R Thigh
+    400104: Bip001 R Toe0
+    400106: Bip001 R Toe0Nub
+    400108: Bip001 R UpperArm
+    400110: Bip001 Spine
+    400112: Bip001 Spine1
+    400114: Box003
+    400116: bozi
+    400118: bozi00
+    400120: bozi01
+    400122: //RootNode
+    400124: chenei00
+    400126: chenei01
+    400128: chenei02
+    400130: chenei03
+    400132: chenei04
+    400134: chenei05
+    400136: chenei06
+    400138: chenei07
+    400140: chenei08
+    400142: chenei09
+    400144: chenei10
+    400146: chenei11
+    400148: chenei12
+    400150: chenei13
+    400152: chenei14
+    400154: chenei15
+    400156: chenei16
+    400158: chenei17
+    400160: chenei18
+    400162: chenei19
+    400164: cheti
+    400166: cheti00
+    400168: cheti01
+    400170: cheti02
+    400172: cheti03
+    400174: cheti04
+    400176: cheti05
+    400178: cheti06
+    400180: chewai00
+    400182: chewai01
+    400184: chewai02
+    400186: chewai03
+    400188: chewai04
+    400190: chewai05
+    400192: chewai06
+    400194: chewai07
+    400196: chewai08
+    400198: chewai09
+    400200: chewai10
+    400202: chewai11
+    400204: chewai12
+    400206: chewai13
+    400208: chewai14
+    400210: chewai15
+    400212: chewai16
+    400214: chewai17
+    400216: chewai18
+    400218: chewai19
+    400220: chewai20
+    400222: chewai21
+    400224: chewai22
+    400226: chewai23
+    400228: chewai24
+    400230: chewai25
+    400232: chewai26
+    400234: chewai27
+    400236: chewai28
+    400238: chewai29
+    400240: chewai30
+    400242: chewai31
+    400244: chewai32
+    400246: chewai33
+    400248: chewai34
+    400250: chewai35
+    400252: chewai36
+    400254: chewai37
+    400256: chewai38
+    400258: chewai39
+    400260: chewai40
+    400262: chewai41
+    400264: chewai42
+    400266: chewai43
+    400268: chewai44
+    400270: chewai45
+    400272: chewai46
+    400274: chewai47
+    400276: chewai48
+    400278: chewai49
+    400280: chewai50
+    400282: chewai51
+    400284: chewai52
+    400286: chewai53
+    400288: chewai54
+    400290: chewai55
+    400292: chewai56
+    400294: chewai57
+    400296: chewai58
+    400298: dhfjqr
+    400300: Dummy001
+    400302: Dummy002
+    400304: jizhuiA
+    400306: jizhuiB
+    400308: Line001
+    400310: Object
+    400312: Object001
+    400314: Object002
+    400316: Object004
+    400318: Object005
+    400320: Object006
+    400322: Plane001
+    400324: Plane002
+    400326: polySurface1265
+    400328: renY
+    400330: shangshen00
+    400332: shangshen01
+    400334: shangshen02
+    400336: shangshen03
+    400338: shangshen04
+    400340: shangshen05
+    400342: shangshen06
+    400344: shangshen07
+    400346: shangshen08
+    400348: shangshen09
+    400350: shangshen10
+    400352: shangshen11
+    400354: shangshen12
+    400356: shangshen13
+    400358: tou
+    400360: tou00
+    400362: tou01
+    400364: xiashen00
+    400366: xiashen01
+    400368: youbi
+    400370: youbiqian00
+    400372: youbiqian01
+    400374: youbiqian02
+    400376: youbishang
+    400378: youbishang00
+    400380: youbishang01
+    400382: youdatui
+    400384: youdatui00
+    400386: youdatui01
+    400388: youjiao
+    400390: youjiao00
+    400392: youjiao01
+    400394: youshou
+    400396: youshou00
+    400398: youshou01
+    400400: youshou02
+    400402: youshou03
+    400404: youshou04
+    400406: youshou05
+    400408: youshou06
+    400410: youshou07
+    400412: youshou08
+    400414: youshou09
+    400416: youshou10
+    400418: youxiaotui
+    400420: youxiaotui00
+    400422: youxiaotui01
+    400424: youxiaotui02
+    400426: youxiaotui03
+    400428: zuobi
+    400430: zuobishang
+    400432: zuodatui
+    400434: zuodatui00
+    400436: zuodatui01
+    400438: zuojiao
+    400440: zuojiao00
+    400442: zuojiao01
+    400444: zuoqianbi00
+    400446: zuoqianbi01
+    400448: zuoqianbi02
+    400450: zuoshangbi00
+    400452: zuoshangbi01
+    400454: zuoshou00
+    400456: zuoshou01
+    400458: zuoshou02
+    400460: zuoshou03
+    400462: zuoshou04
+    400464: zuoshou05
+    400466: zuoshou06
+    400468: zuoshou08
+    400470: zuoshou09
+    400472: zuoshou10
+    400474: zuoxiaotui
+    400476: zuoxiaotui00
+    400478: zuoxiaotui01
+    400480: zuoxiaotui02
+    400482: zuoxiaotui03
+    400484: "\u6ED1\u575701"
+    2100000: Bumblebee_13
+    2100002: Bumblebee_03
+    2100004: Bumblebee_02
+    2100006: Bumblebee_16
+    2100008: Bumblebee_04
+    2100010: Bumblebee_15
+    2100012: Bumblebee_14
+    2100014: Bumblebee_01
+    2100016: Bumblebee_12
+    2100018: Bumblebee_08
+    2100020: Bumblebee_05
+    2100022: Bumblebee_09
+    2100024: Bumblebee_11
+    2100026: Bumblebee_10
+    2100028: Bumblebee_07
+    2100030: Bumblebee_06
+    2300000: Box003
+    2300002: bozi00
+    2300004: bozi01
+    2300006: chenei00
+    2300008: chenei01
+    2300010: chenei02
+    2300012: chenei03
+    2300014: chenei04
+    2300016: chenei05
+    2300018: chenei06
+    2300020: chenei07
+    2300022: chenei08
+    2300024: chenei09
+    2300026: chenei10
+    2300028: chenei11
+    2300030: chenei12
+    2300032: chenei13
+    2300034: chenei14
+    2300036: chenei15
+    2300038: chenei16
+    2300040: chenei17
+    2300042: chenei18
+    2300044: chenei19
+    2300046: cheti00
+    2300048: cheti01
+    2300050: cheti02
+    2300052: cheti03
+    2300054: cheti04
+    2300056: cheti05
+    2300058: cheti06
+    2300060: chewai00
+    2300062: chewai01
+    2300064: chewai02
+    2300066: chewai03
+    2300068: chewai04
+    2300070: chewai05
+    2300072: chewai06
+    2300074: chewai07
+    2300076: chewai08
+    2300078: chewai09
+    2300080: chewai10
+    2300082: chewai11
+    2300084: chewai12
+    2300086: chewai13
+    2300088: chewai14
+    2300090: chewai15
+    2300092: chewai16
+    2300094: chewai17
+    2300096: chewai18
+    2300098: chewai19
+    2300100: chewai20
+    2300102: chewai21
+    2300104: chewai22
+    2300106: chewai23
+    2300108: chewai24
+    2300110: chewai25
+    2300112: chewai26
+    2300114: chewai27
+    2300116: chewai28
+    2300118: chewai29
+    2300120: chewai30
+    2300122: chewai31
+    2300124: chewai32
+    2300126: chewai33
+    2300128: chewai34
+    2300130: chewai35
+    2300132: chewai36
+    2300134: chewai37
+    2300136: chewai38
+    2300138: chewai39
+    2300140: chewai40
+    2300142: chewai41
+    2300144: chewai42
+    2300146: chewai43
+    2300148: chewai44
+    2300150: chewai45
+    2300152: chewai46
+    2300154: chewai47
+    2300156: chewai48
+    2300158: chewai49
+    2300160: chewai50
+    2300162: chewai51
+    2300164: chewai52
+    2300166: chewai53
+    2300168: chewai54
+    2300170: chewai55
+    2300172: chewai56
+    2300174: chewai57
+    2300176: chewai58
+    2300178: Line001
+    2300180: Object
+    2300182: Object001
+    2300184: Object002
+    2300186: Object004
+    2300188: Object005
+    2300190: Object006
+    2300192: Plane001
+    2300194: Plane002
+    2300196: polySurface1265
+    2300198: renY
+    2300200: shangshen00
+    2300202: shangshen01
+    2300204: shangshen02
+    2300206: shangshen03
+    2300208: shangshen04
+    2300210: shangshen05
+    2300212: shangshen06
+    2300214: shangshen07
+    2300216: shangshen08
+    2300218: shangshen09
+    2300220: shangshen10
+    2300222: shangshen11
+    2300224: shangshen12
+    2300226: shangshen13
+    2300228: tou00
+    2300230: tou01
+    2300232: xiashen00
+    2300234: xiashen01
+    2300236: youbiqian00
+    2300238: youbiqian01
+    2300240: youbiqian02
+    2300242: youbishang00
+    2300244: youbishang01
+    2300246: youdatui00
+    2300248: youdatui01
+    2300250: youjiao00
+    2300252: youjiao01
+    2300254: youshou00
+    2300256: youshou01
+    2300258: youshou02
+    2300260: youshou03
+    2300262: youshou04
+    2300264: youshou05
+    2300266: youshou06
+    2300268: youshou07
+    2300270: youshou08
+    2300272: youshou09
+    2300274: youshou10
+    2300276: youxiaotui00
+    2300278: youxiaotui01
+    2300280: youxiaotui02
+    2300282: youxiaotui03
+    2300284: zuodatui00
+    2300286: zuodatui01
+    2300288: zuojiao00
+    2300290: zuojiao01
+    2300292: zuoqianbi00
+    2300294: zuoqianbi01
+    2300296: zuoqianbi02
+    2300298: zuoshangbi00
+    2300300: zuoshangbi01
+    2300302: zuoshou00
+    2300304: zuoshou01
+    2300306: zuoshou02
+    2300308: zuoshou03
+    2300310: zuoshou04
+    2300312: zuoshou05
+    2300314: zuoshou06
+    2300316: zuoshou08
+    2300318: zuoshou09
+    2300320: zuoshou10
+    2300322: zuoxiaotui00
+    2300324: zuoxiaotui01
+    2300326: zuoxiaotui02
+    2300328: zuoxiaotui03
+    3300000: Box003
+    3300002: bozi00
+    3300004: bozi01
+    3300006: chenei00
+    3300008: chenei01
+    3300010: chenei02
+    3300012: chenei03
+    3300014: chenei04
+    3300016: chenei05
+    3300018: chenei06
+    3300020: chenei07
+    3300022: chenei08
+    3300024: chenei09
+    3300026: chenei10
+    3300028: chenei11
+    3300030: chenei12
+    3300032: chenei13
+    3300034: chenei14
+    3300036: chenei15
+    3300038: chenei16
+    3300040: chenei17
+    3300042: chenei18
+    3300044: chenei19
+    3300046: cheti00
+    3300048: cheti01
+    3300050: cheti02
+    3300052: cheti03
+    3300054: cheti04
+    3300056: cheti05
+    3300058: cheti06
+    3300060: chewai00
+    3300062: chewai01
+    3300064: chewai02
+    3300066: chewai03
+    3300068: chewai04
+    3300070: chewai05
+    3300072: chewai06
+    3300074: chewai07
+    3300076: chewai08
+    3300078: chewai09
+    3300080: chewai10
+    3300082: chewai11
+    3300084: chewai12
+    3300086: chewai13
+    3300088: chewai14
+    3300090: chewai15
+    3300092: chewai16
+    3300094: chewai17
+    3300096: chewai18
+    3300098: chewai19
+    3300100: chewai20
+    3300102: chewai21
+    3300104: chewai22
+    3300106: chewai23
+    3300108: chewai24
+    3300110: chewai25
+    3300112: chewai26
+    3300114: chewai27
+    3300116: chewai28
+    3300118: chewai29
+    3300120: chewai30
+    3300122: chewai31
+    3300124: chewai32
+    3300126: chewai33
+    3300128: chewai34
+    3300130: chewai35
+    3300132: chewai36
+    3300134: chewai37
+    3300136: chewai38
+    3300138: chewai39
+    3300140: chewai40
+    3300142: chewai41
+    3300144: chewai42
+    3300146: chewai43
+    3300148: chewai44
+    3300150: chewai45
+    3300152: chewai46
+    3300154: chewai47
+    3300156: chewai48
+    3300158: chewai49
+    3300160: chewai50
+    3300162: chewai51
+    3300164: chewai52
+    3300166: chewai53
+    3300168: chewai54
+    3300170: chewai55
+    3300172: chewai56
+    3300174: chewai57
+    3300176: chewai58
+    3300178: Line001
+    3300180: Object
+    3300182: Object001
+    3300184: Object002
+    3300186: Object004
+    3300188: Object005
+    3300190: Object006
+    3300192: Plane001
+    3300194: Plane002
+    3300196: polySurface1265
+    3300198: renY
+    3300200: shangshen00
+    3300202: shangshen01
+    3300204: shangshen02
+    3300206: shangshen03
+    3300208: shangshen04
+    3300210: shangshen05
+    3300212: shangshen06
+    3300214: shangshen07
+    3300216: shangshen08
+    3300218: shangshen09
+    3300220: shangshen10
+    3300222: shangshen11
+    3300224: shangshen12
+    3300226: shangshen13
+    3300228: tou00
+    3300230: tou01
+    3300232: xiashen00
+    3300234: xiashen01
+    3300236: youbiqian00
+    3300238: youbiqian01
+    3300240: youbiqian02
+    3300242: youbishang00
+    3300244: youbishang01
+    3300246: youdatui00
+    3300248: youdatui01
+    3300250: youjiao00
+    3300252: youjiao01
+    3300254: youshou00
+    3300256: youshou01
+    3300258: youshou02
+    3300260: youshou03
+    3300262: youshou04
+    3300264: youshou05
+    3300266: youshou06
+    3300268: youshou07
+    3300270: youshou08
+    3300272: youshou09
+    3300274: youshou10
+    3300276: youxiaotui00
+    3300278: youxiaotui01
+    3300280: youxiaotui02
+    3300282: youxiaotui03
+    3300284: zuodatui00
+    3300286: zuodatui01
+    3300288: zuojiao00
+    3300290: zuojiao01
+    3300292: zuoqianbi00
+    3300294: zuoqianbi01
+    3300296: zuoqianbi02
+    3300298: zuoshangbi00
+    3300300: zuoshangbi01
+    3300302: zuoshou00
+    3300304: zuoshou01
+    3300306: zuoshou02
+    3300308: zuoshou03
+    3300310: zuoshou04
+    3300312: zuoshou05
+    3300314: zuoshou06
+    3300316: zuoshou08
+    3300318: zuoshou09
+    3300320: zuoshou10
+    3300322: zuoxiaotui00
+    3300324: zuoxiaotui01
+    3300326: zuoxiaotui02
+    3300328: zuoxiaotui03
+    4300000: renY
+    4300002: zuoshou06
+    4300004: zuoshou05
+    4300006: zuoshou09
+    4300008: zuoshou04
+    4300010: zuoshou10
+    4300012: zuoshou03
+    4300014: zuoshou08
+    4300016: zuoshou02
+    4300018: zuoshou01
+    4300020: zuoshou00
+    4300022: zuoqianbi00
+    4300024: zuoqianbi01
+    4300026: zuoqianbi02
+    4300028: zuoshangbi00
+    4300030: zuoshangbi01
+    4300032: youshou08
+    4300034: youshou05
+    4300036: youshou07
+    4300038: youshou04
+    4300040: youshou06
+    4300042: youshou03
+    4300044: youshou09
+    4300046: youshou02
+    4300048: youshou00
+    4300050: youshou01
+    4300052: youshou10
+    4300054: Box003
+    4300056: youbiqian00
+    4300058: youbiqian01
+    4300060: youbiqian02
+    4300062: youbishang00
+    4300064: youbishang01
+    4300066: tou00
+    4300068: tou01
+    4300070: bozi00
+    4300072: bozi01
+    4300074: shangshen01
+    4300076: shangshen02
+    4300078: shangshen03
+    4300080: shangshen04
+    4300082: shangshen05
+    4300084: shangshen06
+    4300086: shangshen00
+    4300088: shangshen08
+    4300090: shangshen09
+    4300092: shangshen10
+    4300094: shangshen11
+    4300096: shangshen12
+    4300098: polySurface1265
+    4300100: shangshen13
+    4300102: shangshen07
+    4300104: zuojiao00
+    4300106: zuojiao01
+    4300108: zuoxiaotui00
+    4300110: zuoxiaotui01
+    4300112: zuoxiaotui02
+    4300114: zuoxiaotui03
+    4300116: zuodatui00
+    4300118: zuodatui01
+    4300120: youjiao00
+    4300122: youjiao01
+    4300124: youxiaotui00
+    4300126: youxiaotui02
+    4300128: youxiaotui01
+    4300130: youxiaotui03
+    4300132: youdatui00
+    4300134: youdatui01
+    4300136: xiashen00
+    4300138: xiashen01
+    4300140: chewai00
+    4300142: chewai01
+    4300144: chewai02
+    4300146: chewai03
+    4300148: chewai04
+    4300150: chewai05
+    4300152: chenei00
+    4300154: chenei01
+    4300156: chenei02
+    4300158: chenei04
+    4300160: chenei05
+    4300162: chenei06
+    4300164: chenei07
+    4300166: chewai06
+    4300168: chewai07
+    4300170: chewai08
+    4300172: chewai09
+    4300174: chewai10
+    4300176: chewai11
+    4300178: chewai12
+    4300180: chewai13
+    4300182: chewai14
+    4300184: chewai15
+    4300186: chenei08
+    4300188: chenei09
+    4300190: chenei10
+    4300192: chenei11
+    4300194: chenei12
+    4300196: chenei13
+    4300198: chenei14
+    4300200: chenei15
+    4300202: chenei16
+    4300204: chenei17
+    4300206: chenei18
+    4300208: chenei19
+    4300210: chewai16
+    4300212: chewai17
+    4300214: chewai18
+    4300216: chewai19
+    4300218: chewai20
+    4300220: chewai21
+    4300222: chewai22
+    4300224: chewai23
+    4300226: chewai24
+    4300228: chewai25
+    4300230: chewai26
+    4300232: chewai27
+    4300234: chewai28
+    4300236: chewai29
+    4300238: chewai30
+    4300240: chewai31
+    4300242: chewai32
+    4300244: chewai33
+    4300246: chewai34
+    4300248: chewai35
+    4300250: chewai36
+    4300252: chewai37
+    4300254: chewai38
+    4300256: chewai39
+    4300258: chewai40
+    4300260: chewai41
+    4300262: chewai42
+    4300264: chewai43
+    4300266: chewai44
+    4300268: chewai45
+    4300270: chewai46
+    4300272: chewai47
+    4300274: chewai48
+    4300276: chewai49
+    4300278: chewai50
+    4300280: chewai51
+    4300282: chewai52
+    4300284: chewai53
+    4300286: chewai54
+    4300288: chewai55
+    4300290: chewai56
+    4300292: chewai57
+    4300294: chewai58
+    4300296: chenei03
+    4300298: Line001
+    4300300: Object005
+    4300302: Plane001
+    4300304: Object004
+    4300306: Object
+    4300308: Object002
+    4300310: Object001
+    4300312: Object006
+    4300314: cheti00
+    4300316: cheti01
+    4300318: cheti02
+    4300320: cheti03
+    4300322: cheti04
+    4300324: cheti06
+    4300326: cheti05
+    4300328: Plane002
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

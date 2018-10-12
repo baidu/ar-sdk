@@ -1,0 +1,36 @@
+{
+    "UI": {
+        "hint": "",
+        "not_found_tip": "未找到扫描物，请重新对准",
+        "too_far_hint": "距离太远,请将镜头靠近目标",
+        "too_near_hint": "距离太近,请将镜头远离目标",
+        "far_threshold": "1400",
+        "near_threshold": "700",
+        "image_target_path": "",
+        "hide_shot_immediately": 0,
+        "show_tips_by_case": 0
+    },
+    "targets": [
+        {
+            "id": "000",
+            "name": "TrackTarget",
+            "model_path": "models\/model",
+            "template_width": 480,
+            "template_height": 480,
+            "target_width": 480,
+            "target_height": 480,
+            "centre_pos": "240,240,0"
+        }
+    ],
+    "service": {
+        "open_track_service": 0
+    },
+    "slam_model": {
+        "id": "bear",
+        "place_type": 1,
+        "position": "0.5,0.5",
+        "distance": 1500,
+        "pitch_angle": -45,
+        "rotate": "0, 0,0"
+    }
+}
