@@ -15,7 +15,7 @@
 	![Layout](http://ar-fm.cdn.bcebos.com/content-online/upload/20180911/png/140217_8495701f3a47c7d180d8bffa35349b7f/Unity_Layout.png)
 
 
-2. 下载预览App 扫描下图二维码，下载预览App。（下载安装完成后，需在设置中信任企业证书，才能正常打开App）
+2. 安装预览App, /preview app/Preview.ipa （安装完成后，需在设置中信任企业证书，才能正常打开App）
 
 3. 联机调试。保持Mac和iPhone在同一局域网下（项目中unity和预览App使用局域网ip地址进行连接，需保证Mac和iPhone之间可以互相ping通），在Unity3D顶部菜单栏中选择DuMix/Settings，输入手机上展示的IP地址。点击 DuMix/Connect 完成连接。点击DuMix/Sync 启动联机调试。
 
