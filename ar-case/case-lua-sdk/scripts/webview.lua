@@ -33,18 +33,54 @@ function LOAD_WEBVIEW()
 				load = function (self)
 					ARLOG('webview load:')
 					local texture_id = self._entity:get_texture_id('uWebViewTexture')
-					local mapData = ae.MapData:new()
-					ARLOG('webview send_message_tosdk:'..texture_id)
-					mapData:put_int("id", MSG_TYPE_WEBVIEW_OPERATION)
-					mapData:put_int("operation", WebViewOperation.WebViewLoad)
-					mapData:put_int("texture_id", texture_id)
-					mapData:put_int('width', self._width)
-					mapData:put_int('height', self._height)
-					mapData:put_int('is_remote', self._is_remote)
-					mapData:put_string("url", self._url)
+					-- local mapData = ae.MapData:new()
+					-- ARLOG('webview send_message_tosdk:'..texture_id)
+					-- mapData:put_int("id", MSG_TYPE_WEBVIEW_OPERATION)
+					-- mapData:put_string("operation", "webview_operation_load")
+					-- mapData:put_int("texture_id", texture_id)
+					-- mapData:put_int('width', self._width)
+					-- mapData:put_int('height', self._height)
+					-- mapData:put_int('is_remote', self._is_remote)
+					-- mapData:put_string("url", self._url)
+					-- WebView.WebViewDict[texture_id] = self
+					-- AR.current_application.lua_handler:send_message_tosdk(mapData)
+					-- mapData:delete()
+					
+					local msg = {}
+					msg["event_name"] = "load_webview"
+					msg["texture_id"] = texture_id
+					msg["width"] = self._width
+					msg["height"] = self._height
+					msg["is_remote"] = self._is_remote
+					msg["url"] = self._url
+					app_controller:send_message_to_native(msg)
 					WebView.WebViewDict[texture_id] = self
-					AR.current_application.lua_handler:send_message_tosdk(mapData)
-                    mapData:delete()
+
+					return self
+				end,
+
+				load_native = function (self)
+					ARLOG('webview load:')
+					-- local texture_id = self._entity:get_texture_id('uWebViewTexture')
+					-- local mapData = ae.MapData:new()
+					-- ARLOG('webview send_message_tosdk:'..texture_id)
+					-- mapData:put_int("id", MSG_TYPE_WEBVIEW_OPERATION)
+					-- mapData:put_string("operation", "webview_operation_load_native")
+					-- mapData:put_string("url", self._url)
+					-- mapData:put_int('is_remote', self._is_remote)
+					-- WebView.WebViewDict[texture_id] = self
+					-- AR.current_application.lua_handler:send_message_tosdk(mapData)
+					-- mapData:delete()
+					
+					local msg = {}
+					msg["event_name"] = "load_native_webview"
+					msg["texture_id"] = texture_id
+					msg["width"] = self._width
+					msg["height"] = self._height
+					msg["is_remote"] = self._is_remote
+					msg["url"] = self._url
+					app_controller:send_message_to_native(msg)
+					WebView.WebViewDict[texture_id] = self
 
 					return self
 				end,
@@ -54,14 +90,20 @@ function LOAD_WEBVIEW()
 			webview._entity = entity
 			
 			webview.update_js = function(self,value)
-				local mapData = ae.MapData:new()
+				-- local mapData = ae.MapData:new()
 				local texture_id = self._entity:get_texture_id('uWebViewTexture')
-				mapData:put_int("id", MSG_TYPE_WEBVIEW_OPERATION)
-				mapData:put_int("texture_id", texture_id)
-				mapData:put_int("operation", WebViewOperation.ModelUpdate)
-				mapData:put_string("js_code", value)
-				AR.current_application.lua_handler:send_message_tosdk(mapData)
-                mapData:delete()
+				-- mapData:put_int("id", MSG_TYPE_WEBVIEW_OPERATION)
+				-- mapData:put_int("texture_id", texture_id)
+				-- mapData:put_string("operation", "webview_operation_model_update")
+				-- mapData:put_string("js_code", value)
+				-- AR.current_application.lua_handler:send_message_tosdk(mapData)
+				-- mapData:delete()
+				
+				local msg = {}
+				msg["event_name"] = "update_webview_js"
+				msg["texture_id"] = texture_id
+				msg["js_code"] = value
+				app_controller:send_message_to_native(msg)
 
 				return self
 			end
@@ -106,12 +148,14 @@ function LOAD_WEBVIEW()
 		local webview = WebView.WebViewDict[texture_id]
 		if WebView ~= nil then
 			ARLOG('WebView on_loal_finish:'..texture_id)
+            webview:update_texture()
 			webview:on_load_finish()
 		end
 	end
 
 	function loadfailed(event)
 		texture_id = event.data['texture_id']
+		msg = event.data['data']
 		ARLOG('WebView WebViewLoadError'..texture_id)
 		local webview = WebView.WebViewDict[texture_id]
 		if WebView ~= nil then
@@ -126,4 +170,7 @@ function LOAD_WEBVIEW()
 
 	ARLOG('load WebView')
 end
+
 LOAD_WEBVIEW()
+
+

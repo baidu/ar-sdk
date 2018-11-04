@@ -15,6 +15,7 @@ function GET_DEVICE()
 	Device.get_camera_pitch_angle = 0
 
 	Device.get_render_size_callback = nil
+	Device.mirror_driven_data = 0
 
 	-- arkit
     Device.plane_detected = 0
@@ -95,9 +96,7 @@ function GET_DEVICE()
 		imu_type = imu_type or 0
 		init_position = init_position or 0
 		local version = self.application:get_version()
-        ARLOG('version : '..version)
-		--判断引擎版本：如果大于等于20, 调用新接口
-		if version >= 20 and version < 10000 then
+		if version >= 20 then
 			self.application:open_imu_service(imu_type, init_position)
 		else 
 			self.application:open_imu_service(imu_type)
@@ -122,7 +121,7 @@ function GET_DEVICE()
 	end
     
     function Device.get_camera_pitch_angle(self)
-    	local scene = application.get_current_scene()
+    	local scene = self.application:get_current_scene()
     	if (scene ~= nil) then
     		return scene:get_camera_pitch_angle()
     	end
@@ -149,7 +148,22 @@ function GET_DEVICE()
 		mapData:delete()
     end
 
+    function Device.mirror_driven_data(self, is_mirrored)
+    	local version = self.application:get_version()
+    	if (version < 165) then
+    		return
+    	end
+        self.application:mirror_driven_data(is_mirrored)
+    	--打开mirror data时同步关闭离屏引导，此处进行兼容
+    	local scene = self.application:get_current_scene()
+    	if (scene ~= nil) then
+    	    if (is_mirrored == true) then
+    		    scene:set_show_offscreen_guidance(false)
+    	    else
+    		    scene:set_show_offscreen_guidance(true)
+    	    end
+        end
+    end
+
 	return Device
 end
-
-

@@ -126,7 +126,7 @@ function LOAD_ANIM()
 
 				end,
 				get_meta_action_priority_config = function(self)
-					local action_config = ae.ActionPriorityConfig:new() 
+					local action_config = ae.ActionPriorityConfig:new_local() 
 					action_config.forward_logic = self._forward_logic
 					action_config.backward_logic = self._backward_logic
 					ARLOG("Get Action Config")

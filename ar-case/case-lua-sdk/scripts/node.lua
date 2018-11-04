@@ -43,14 +43,14 @@ function LOAD_NODE()
                  ARLOG('NULL NODE created')
             return NULL_NODE
             end
-            ARLOG('engine_version :'..engine_version)
+            -- ARLOG('engine_version :'..engine_version)
 
         else
             if node.entity:is_empty_node() then
             ARLOG('NULL NODE created')
             return NULL_NODE
         end
-            ARLOG('engine_version :'..engine_version)
+            -- ARLOG('engine_version :'..engine_version)
         end
 
 		node.lua_handler = scene.application.lua_handler

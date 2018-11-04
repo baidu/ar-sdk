@@ -4,6 +4,16 @@ function LOAD_UTILS()
 		io.write('[LUA-LOG] '..line)
 	end
 
+	-- Editor使用的LOG方法，请勿修改
+	function EDLOG(line)
+		local lua_h = AR.current_application:get_lua_handler()
+		local mapData = ae.MapData:new()
+		mapData:put_int("id", 10302)
+		mapData:put_string("log", line)
+		lua_handler:send_message_tosdk(mapData)
+	end
+	-- END
+
 	function DELOG(line)
 		local lua_h = AR.current_application:get_lua_handler()
 		local mapData = ae.MapData:new()

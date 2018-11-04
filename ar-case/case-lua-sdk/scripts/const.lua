@@ -95,12 +95,6 @@ function LOAD_CONST()
 
 	-- webview --
 	MSG_TYPE_WEBVIEW_OPERATION = 10800
-	WebViewOperation = {}
-	WebViewOperation.WebViewLoad = 0
-	WebViewOperation.LoadFinish = 1
-	WebViewOperation.ModelUpdate = 2
-	WebViewOperation.UpdateFinish = 3
-    WebViewOperation.LoadFailed = 4
 
 	-- render size --
 	MSG_TYPE_RENDER_SIZE = 10600
@@ -147,11 +141,27 @@ function LOAD_CONST()
     -- loading status end --
 	
 
-    -- slam 
+    -- slam --
     MSG_TYPE_SLAM_RESET = 4100
     MSG_TYPE_SLAM_DIRECTION_GUIDE = 4101
-    
     MSG_TYPE_START_SLAM = 4200
+
+    -- 以下为 slam 高级功能 artype = 9 时可用
+
+    MSG_TYPE_PlANE_DETECTED = 7001
+    MSG_TYPE_PlANE_LOST     = 7002
+
+    DetectionType = {}
+    DetectionType.Horizontal = 0
+    DetectionType.Vertical = 1
+    DetectionType.VerticalAndHorizontal = 2
+
+    MSG_TYPE_SHOW_PLACE_MODEL     = 8000
+    MSG_TYPE_OPEN_PLACE_STATUE    = 8001
+    MSG_TYPE_CLOSE_PLACE_STATUE   = 8002
+    MSG_TYPE_REDETECT             = 8003
+
+    -- slam end --
 
     -- paddle gesture --
 	PADDLE_GESTURE_CONTROL = 5001

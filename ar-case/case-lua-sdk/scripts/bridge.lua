@@ -4,9 +4,13 @@ function HANDLE_SDK_MSG(mapData)
 
 	msg_name = mapData['event_name']
 	msg_data = mapData['event_data']
+
 	if msg_name then  Event:dispatchEvent({name=msg_name,data=msg_data}) end
 
 	msg_id = mapData['id']
+
+    	if msg_id == nil then return end
+
 	if (msg_id == MSG_TYPE_SHAKE) then
         max_acc = mapData['max_acc']
         ARLOG('got max acc '..max_acc)
@@ -129,32 +133,32 @@ function HANDLE_SDK_MSG(mapData)
     		Alert.CallBack(mapData)
     	end
 
-	-- ARKit -- 
-	elseif(msg_id == MSG_TYPE_ARKIT_PlANE_DETECTED) then
-		if(AR.current_application.device.plane_detected ~= 0) then
-			AR.current_application.device.plane_detected()
-			local plane_pos = {}
-			plane_pos.x= mapData['plane_position_x']
-			plane_pos.y= mapData['plane_position_y']
-			plane_pos.z= mapData['plane_position_z']
+	-- Slam pro --
+	elseif(msg_id == MSG_TYPE_PlANE_DETECTED) then
+		if(Slam.on_first_plane_detected ~= 0) then
 
-			AR.current_application.device.get_plane_position(plane_pos)
+			x= mapData['plane_position_x']
+			y= mapData['plane_position_y']
+			z= mapData['plane_position_z']
+            pos = Vector3(x,y,z)
+
+            Slam.on_first_plane_detected(pos)
 		end
 
-	elseif(msg_id == MSG_TYPE_ARKIT_PlANE_CLEAR) then
-		if(AR.current_application.device.plane_clear ~= 0) then
-			AR.current_application.device.plane_clear()
+	elseif(msg_id == MSG_TYPE_PlANE_LOST) then
+		if(Slam.on_all_plane_lost ~= 0) then
+			Slam.on_all_plane_lost()
 		end
 
-	-- show_lay_status
-	elseif(msg_id == MSG_TYPE_SHOW_LAY_STATUS) then
-		if(AR.current_application.device.show_lay_status ~= 0) then
-			local show = mapData['show']
-			AR.current_application.device.show_lay_status(show)
-		end
-	-- ARKit end-- 
+	-- elseif(msg_id == MSG_TYPE_SHOW_PLACE_MODEL) then
+	-- 	if(Slam.is_show_lay_model ~= 0) then
+	-- 		local show = mapData['show']
+	-- 		Slam.is_show_lay_model(show)
+	-- 	end
+	-- Slam pro end--
+
     elseif(msg_id == MSG_TYPE_RENDER_SIZE_ANSWER) then 
-		if (AR.current_application.device.get_render_size_callback  ~= nil) then
+		if (AR.current_application.device.get_render_size_callback ~= nil) then
             local width = mapData['width']
             local height = mapData['height']
             AR.current_application.device.get_render_size_callback(width,height)

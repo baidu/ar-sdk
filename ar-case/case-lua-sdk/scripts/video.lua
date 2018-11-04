@@ -19,21 +19,16 @@ function LOAD_VIDEO()
                 _video_play_length = 0,
                 _video_is_played = false,
 
-				get_meta_action_priority_config = function(self)
-					local action_config = ae.ActionPriorityConfig:new() 
-					action_config.forward_logic = self._forward_logic
-					action_config.backward_logic = self._backward_logic
-					ARLOG("Get Action Config")
-					return action_config
-				end,
 				start = function (self)
-					local config = self:get_meta_action_priority_config()
+					local config = ae.ActionPriorityConfig:new_local()
+					config.forward_logic = self._forward_logic
+					config.backward_logic = self._backward_logic
+					ARLOG("Get Action Config")
 					local video_id = self._entity:play_texture_video(config, self._path, self._repeat_count, self._delay, self._is_remote, self._from_time)
                     local engine_version = app:get_version()
                     if engine_version < 150 then
         				video_id = self._entity:play_texture_video(config,self._path, self._repeat_count, self._delay)
         			end
-					config:delete()
 					ARLOG(' ----------- 系统 play_texture_video 调用 -----------')
 					if(self._on_complete ~= nil) then
 						if type(self._on_complete) == 'string' then

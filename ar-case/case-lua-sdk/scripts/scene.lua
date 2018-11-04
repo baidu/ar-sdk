@@ -66,9 +66,22 @@ function CREATE_SCENE()
 		end
 	end
 
-     NEW_SCENE.delete_node_by_name = function(self, node_name)
+    NEW_SCENE.delete_node_by_name = function(self, node_name)
         AR_NODE_CACHE[node_name] = nil
         self:remove_node_by_name(node_name)
+    end
+
+    NEW_SCENE.set_user_interaction_config = function(self, config_name, value)
+    	local active_name = config_name
+    	if (active_name == "disable_single_finger_scroll") then
+    		local engine_version_str = self.application:get_engine_version()
+    		local engine_version = REOMVE_SPECIAL_SYMBOL(engine_version_str,"%.")
+    		local version = tonumber(engine_version)
+    		if (version < 143) then
+    			active_name = "disable_scroll"
+    		end
+    	end
+    	self.entity:set_user_interaction_config(active_name, value)
     end
 
 	return NEW_SCENE

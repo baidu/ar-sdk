@@ -15,6 +15,8 @@ function LOAD_APPLICATION()
 	application.current_scene = 0
 
 	application.slam = SLAM()
+   	Slam = application.slam
+
 	application.slam.application = application;
 
 	application.webContent = WebContent()
@@ -172,7 +174,8 @@ function LOAD_APPLICATION()
 		local version = tonumber(engine_version)
 		local eng_version_table = {[100] = 11, [110] = 12, [120] = 14, [121] = 16, [122] = 18, 
 								   [123] = 19, [124] = 20, [125] = 23, [126] = 100, [130] = 110, 
-								   [131] = 120, [132] = 130, [133] = 135, [140] = 145, [141] = 150, [142] = 155}
+								   [131] = 120, [132] = 130, [133] = 135, [140] = 145, [141] = 150, 
+								   [142] = 155, [143] = 160, [144] = 165, [200] = 185, [201] = 190}
 		local v = eng_version_table[version]
 		if(v == nil) then
 			v = 99999
@@ -207,6 +210,32 @@ function LOAD_APPLICATION()
         mapData:put_int("arkey",arkey)
         mapData:put_int("artype",artype)
         self.lua_handler:send_message_tosdk(mapData)
+    end
+
+    application.switch_app_type = function(self,app_type)
+    	local version = self:get_version()
+    	if (version < 165) then 
+    		return
+    	end
+    	self.entity:switch_app_type(app_type)
+    	if (version < 190) then
+    		return
+    	end
+    	-- 190之后版本需要设定交互模型，切换业务类型，同时切换对应的交互模式
+    	local scene = self:get_current_scene()
+    	if (scene ~= nil) then
+    		local input_con = scene:get_input_controller()
+    		if (input_con ~= nil) then
+	            local gesture_con = input_con:get_gesture_controller()
+	            if (gesture_con ~= nil) then
+		    		if (app_type == "None") then
+		    			gesture_con:set_property_string("continuous_interaction_mapping", "gesture_single_finger_scroll-interaction_space_move")
+					elseif (app_type == "Slam") then
+						gesture_con:set_property_string("continuous_interaction_mapping", "gesture_single_finger_scroll-interaction_plane_move")
+					end
+				end
+    		end
+    	end
     end
 
 	return application
