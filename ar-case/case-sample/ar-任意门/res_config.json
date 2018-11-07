@@ -1,0 +1,13 @@
+{
+    "res": [
+        {
+            "resPath": "batch1",
+            "resId": "local",
+            "encoding": "gzip",
+            "md5": ""
+        }
+    ],
+    "updateinfo":{
+    	"flg":"1233"
+    }
+}

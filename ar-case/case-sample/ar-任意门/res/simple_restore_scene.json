@@ -1,0 +1,811 @@
+{
+    "showImmediately": 1,
+    "imuRelayCtrlWhenTrackLost": 1,
+    "showOffscreenGuidance": 1,
+    "userInteraction": {
+        "disableAll": 0,
+        "disablePinch": 1,
+        "disableClick": 0,
+        "enableTouchZone": 1,
+        "disbleLongPress": 1,
+        "disableSingleFingerScroll": 0,
+        "disableTwoFingerScroll": 1,
+        "disableDoubleClick": 1,
+        "disableAccompany": 1
+    },
+    "nodeList": [
+        {
+            "name": "mainCamera",
+            "type": "camera",
+            "visiable": "1",
+            "position": "0,0,0",
+            "scale": "1,1,1",
+            "rotation": "0,0,0",
+            "chirlden": [],
+            "cameraNodeSuppl": {
+                "fov": 60,
+                "zNear": 0.001,
+                "zFar": 1000
+            }
+        },
+        {
+            "name": "directLight",
+            "type": "directLight",
+            "rotation": "0,0,0",
+            "chirlden": [],
+            "lightNodeSuppl": {
+                "color": "255.0,255.0,255.0",
+                "intensity": 1,
+                "direction": "0,-1,-2"
+            }
+        },
+        {
+            "name": "welcome_Show",
+            "type": "plane",
+            "batchNum": 0,
+            "visible": 0,
+            "touchable": 0,
+            "material": {
+                "common": {
+                    "defaultShaderName": "planeShader",
+                    "textureList": [
+                        {
+                            "textureName": "res/texture/welcome.png"
+                        }
+                    ]
+                }
+            },
+            "hudElement":{
+                "marginLeft":0.11352657,
+                "marginTop":0.25181159,
+                "depthPosition":9000,
+                "ratio":{
+                    "widthRatio":0.77294686,
+                    "keepAspectRatio":1
+                }
+            },
+            "transparentObject": 1,
+            "rotation": "0,0,0",
+            "children": []
+        },
+        {
+            "name": "school_Name",
+            "type": "plane",
+            "batchNum": 0,
+            "visible": 0,
+            "touchable": 0,
+            "material": {
+                "common": {
+                    "defaultShaderName": "planeShader",
+                    "textureList": [
+                        {
+                            "textureName": "res/texture/school_name.png"
+                        }
+                    ]
+                }
+            },
+            "hudElement":{
+                "marginLeft":0.15217391,
+                "marginTop":0.37862319,
+                "depthPosition":9000,
+                "ratio":{
+                    "widthRatio":0.69565217,
+                    "keepAspectRatio":1
+                }
+            },
+            "transparentObject": 1,
+            "rotation": "0,0,0",
+            "children": []
+        },
+        {
+            "name": "progressBar",
+            "type": "plane",
+            "batchNum": 0,
+            "visible": 0,
+            "touchable": 0,
+            "material": {
+                "common": {
+                    "defaultShaderName": "planeShader",
+                    "textureList": [
+                        {
+                            "textureName": "res/media/progress_bar/bar0.png"
+                        }
+                    ]
+                }
+            },
+            "hudElement":{
+                "marginLeft":0.35386473,
+                "marginTop":0.51947464,
+                "depthPosition":9000,
+                "ratio":{
+                    "widthRatio":0.29227053,
+                    "keepAspectRatio":1
+                }
+            },
+            "transparentObject": 1,
+            "rotation": "0,0,0",
+            "children": []
+        },
+        {
+            "name": "onloadingTip",
+            "type": "plane",
+            "batchNum": 0,
+            "visible": 0,
+            "touchable": 0,
+            "material": {
+                "common": {
+                    "defaultShaderName": "planeShader",
+                    "textureList": [
+                        {
+                            "textureName": "res/texture/on_loading_tip.png"
+                        }
+                    ]
+                }
+            },
+            "hudElement":{
+                "marginLeft":0.35386473,
+                "marginTop":0.51947464,
+                "depthPosition":9000,
+                "ratio":{
+                    "widthRatio":0.29227053,
+                    "keepAspectRatio":1
+                }
+            },
+            "transparentObject": 1,
+            "rotation": "0,0,0",
+            "scale": "1, 1 ,1",
+            "children": []
+        },
+        {
+            "name": "go_Show",
+            "type": "plane",
+            "batchNum": 0,
+            "visible": 0,
+            "touchable": 1,
+            "touchZone": 500,
+            "material": {
+                "common": {
+                    "defaultShaderName": "planeShader",
+                    "textureList": [
+                        {
+                            "textureName": "res/texture/go.png"
+                        }
+                    ]
+                }
+            },
+            "hudElement":{
+                "marginLeft":0.35386473,
+                "marginTop":0.51947464,
+                "depthPosition":9000,
+                "ratio":{
+                    "widthRatio":0.29227053,
+                    "keepAspectRatio":1
+                }
+            },
+            "transparentObject": 1,
+            "rotation": "0,0,0",
+            "children": []
+        },
+        {
+            "name": "lookingFor",
+            "type": "framePicture",
+            "batchNum": 1,
+            "visible": 0,
+            "touchable": 0,
+            "framePictureSuppl": {
+                "picturePath": "res/media/looking_for",
+                "pictureName": "",
+                "pictureFmtExtend": ".png",
+                "startNumber": 0,
+                "endNumber": 29,
+                "frameInterval": 0,
+                "bufferVolume": 10
+            },
+            "material": {
+                "common": {
+                    "defaultShaderName":"frameShader",
+                    "textureList": [
+                        {
+                            "texturePath": "res/media/looking_for/0.png"
+                        }
+                    ]
+                }
+            },
+            "hudElement":{
+                "marginLeft":0.18133333,
+                "marginTop":0.38830585,
+                "depthPosition":9000,
+                "ratio":{
+                    "widthRatio":0.64,
+                    "keepAspectRatio":1
+                }
+            },
+            "transparentObject": 1,
+            "position": "0,0,0",
+            "scale": "0.75,0.1,0.35",
+            "rotation": "0,0,0",
+            "children": []
+        },
+        {
+            "name": "lookingForTip",
+            "type": "plane",
+            "batchNum": 1,
+            "visible": 0,
+            "touchable": 0,
+            "touchZone": 0,
+            "material": {
+                "common": {
+                    "defaultShaderName": "planeShader",
+                    "textureList": [
+                        {
+                            "textureName": "res/texture/findPlaneTip.png"
+                        }
+                    ]
+                }
+            },
+            "hudElement":{
+                "marginLeft":0.30133333,
+                "marginTop":0.5832084,
+                "depthPosition":9000,
+                "ratio":{
+                    "widthRatio":0.4,
+                    "keepAspectRatio":1
+                }
+            },
+            "scale": "0.5,0.3,0.3",
+            "position": "0,0,0",
+            "rotation": "0,0,0"
+        },
+        {
+            "name": "alphaImage",
+            "type": "plane",
+            "batchNum": 1,
+            "visible": 0,
+            "touchable": 1,
+            "touchZone": 5000,
+            "material": {
+                "common": {
+                    "defaultShaderName": "planeShader",
+                    "textureList": [
+                        {
+                            "textureName": "res/texture/alpha_image.png"
+                        }
+                    ]
+                }
+            },
+            "hudElement":{
+                "marginLeft":0,
+                "marginTop":0,
+                "depthPosition":11000,
+                "ratio":{
+                    "widthRatio":1,
+                    "keepAspectRatio":1
+                }
+            },
+            "transparentObject": 1,
+            "scale": "0.1,0.1,0.1",
+            "position": "0,0,0",
+            "rotation": "0,0,0"
+        },
+        {
+            "name": "palmClickScreen",
+            "type": "plane",
+            "batchNum": 1,
+            "visible": 0,
+            "touchable": 0,
+            "touchZone": 0,
+            "material": {
+                "common": {
+                    "defaultShaderName": "planeShader",
+                    "textureList": [
+                        {
+                            "textureName": "res/texture/click_screen_tip.png"
+                        }
+                    ]
+                }
+            },
+            "hudElement":{
+                "marginLeft":0.288,
+                "marginTop":0.47376312,
+                "depthPosition":9000,
+                "ratio":{
+                    "widthRatio":0.42666667,
+                    "keepAspectRatio":1
+                }
+            },
+            "transparentObject": 1,
+            "scale": "0.1,0.1,0.1",
+            "position": "0,0,0",
+            "rotation": "0,0,0"
+        },
+        {
+            "name": "ARKitPortal",
+            "type": "group",
+            "visible": 0,
+            "touchable": 0,
+            "touchZone": 10000,
+            "position": "0,-5.5,-2",
+            "rotation": "0,0,0",
+            "children": [
+                {
+                    "name": "Left_OpacityWall",
+                    "type": "pod",
+                    "batchNum": 1,
+                    "visible": 0,
+                    "touchable": 0,
+                    "touchZone": 0,
+                    "meshFileName": "res/model/left_opacityWall.pod",
+                    "material": {
+                        "common": {
+                            "texturePath": "res/texture/",
+                            "disableLightEffect": 1
+                        }
+                    },
+                    "position": "0,0,0",
+                    "scale": "0.01,0.01,0.01",
+                    "rotation": "0,0,0",
+                    "children": [],
+                    "podSuppl": {
+                        "allSubnodeTouchable": 1
+                    }
+                },
+                {
+                    "name": "Right_OpacityWall",
+                    "type": "pod",
+                    "batchNum": 1,
+                    "visible": 0,
+                    "touchable": 0,
+                    "touchZone": 0,
+                    "meshFileName": "res/model/right_opacityWall.pod",
+                    "material": {
+                        "common": {
+                            "texturePath": "res/texture/",
+                            "disableLightEffect": 1
+                        }
+                    },
+                    "position": "0,0,0",
+                    "scale": "0.01,0.01,0.01",
+                    "rotation": "0,0,0",
+                    "children": [],
+                    "podSuppl": {
+                        "allSubnodeTouchable": 1
+                    }
+                },
+                {
+                    "name": "Left_MDoor",
+                    "type": "pod",
+                    "batchNum": 1,
+                    "visible": 0,
+                    "touchable": 0,
+                    "touchZone": 0,
+                    "meshFileName": "res/model/left_maskDoor.pod",
+                    "material": {
+                        "common": {
+                            "texturePath": "res/texture/",
+                            "disableLightEffect": 1
+                        }
+                    },
+                    "position": "0,-0.7,0",
+                    "scale": "0.01,0.01,0.01",
+                    "rotation": "0,0,0",
+                    "chirlden": [],
+                    "podSuppl": {
+                        "allSubnodeTouchable": 1
+                    }
+                },
+                {
+                    "name": "Right_MDoor",
+                    "type": "pod",
+                    "batchNum": 1,
+                    "visible": 0,
+                    "touchable": 0,
+                    "touchZone": 0,
+                    "meshFileName": "res/model/right_maskDoor.pod",
+                    "material": {
+                        "common": {
+                            "texturePath": "res/texture/",
+                            "disableLightEffect": 1
+                        }
+                    },
+                    "position": "0,-0.7,0",
+                    "scale": "0.01,0.01,0.01",
+                    "rotation": "0,180,0",
+                    "chirlden": [],
+                    "podSuppl": {
+                        "allSubnodeTouchable": 1
+                    }
+                },
+                {
+                    "name": "Left_Halfsphere",
+                    "type": "pod",
+                    "batchNum": 1,
+                    "visible": 0,
+                    "touchable": 0,
+                    "touchZone": 0,
+                    "meshFileName": "res/model/left_halfsphere.pod",
+                    "material": {
+                        "common": {
+                            "texturePath": "res/texture/",
+                            "disableLightEffect": 1
+                        }
+                    },
+                    "position": "0,0,0",
+                    "scale": "0.01,0.01,0.01",
+                    "rotation": "0,0,0",
+                    "chirlden": [],
+                    "podSuppl": {
+                        "allSubnodeTouchable": 1
+                    }
+                },
+                {
+                    "name": "Middle_Halfsphere",
+                    "type": "pod",
+                    "batchNum": 1,
+                    "visible": 0,
+                    "touchable": 0,
+                    "touchZone": 0,
+                    "meshFileName": "res/model/middle_halfsphere.pod",
+                    "material": {
+                        "common": {
+                            "texturePath": "res/texture/",
+                            "disableLightEffect": 1
+                        }
+                    },
+                    "position": "0,0,0",
+                    "scale": "0.01,0.01,0.01",
+                    "rotation": "0,0,0",
+                    "chirlden": [],
+                    "podSuppl": {
+                        "allSubnodeTouchable": 1
+                    }
+                },
+                {
+                    "name": "Right_Halfsphere",
+                    "type": "pod",
+                    "batchNum": 1,
+                    "visible": 0,
+                    "touchable": 0,
+                    "touchZone": 0,
+                    "meshFileName": "res/model/right_halfsphere.pod",
+                    "material": {
+                        "common": {
+                            "texturePath": "res/texture/",
+                            "disableLightEffect": 1
+                        }
+                    },
+                    "position": "0,0,0",
+                    "scale": "0.01,0.01,0.01",
+                    "rotation": "0,0,0",
+                    "chirlden": [],
+                    "podSuppl": {
+                        "allSubnodeTouchable": 1
+                    }
+                },
+                {
+                    "name": "warpGate_inDoor",
+                    "type": "video",
+                    "batchNum": 1,
+                    "visible": 0,
+                    "touchable": 0,
+                    "touchZone": 0,
+                    "material": {
+                        "common": {
+                            "textureType": "video",
+                            "uvUnwrapedTextureName": "res/media/gate.mp4"
+                        },
+                        "android": {
+                            "defaultShaderName": "androidVideoShader",
+                            "textureType": "video",
+                            "uvUnwrapedTextureName": "res/media/gate.mp4"
+                        }
+                    },
+                    "transparentObject": 0,
+                    "position":"0,6.1,0.17",
+                    "scale":"3.8,2.6,2.6",
+                    "rotation": "90,0,0",
+                    "children": []
+                },
+                {
+                    "name": "Door",
+                    "type": "pod",
+                    "batchNum": 1,
+                    "visible": 0,
+                    "touchable": 1,
+                    "touchZone": 0,
+                    "meshFileName": "res/model/door.pod",
+                    "material": {
+                        "common": {
+                            "texturePath": "res/texture/",
+                            "disableLightEffect": 1
+                        }
+                    },
+                    "transparent":1,
+                    "position": "0,-0.7,0",
+                    "scale": "0.01,0.01,0.01",
+                    "rotation": "0,0,0",
+                    "chirlden": [],
+                    "podSuppl": {
+                        "allSubnodeTouchable": 1
+                    }
+                },
+                {
+                    "name": "initial",
+                    "type": "video",
+                    "batchNum": 1,
+                    "visible": 0,
+                    "touchable": 0,
+                    "touchZone": 0,
+                    "material": {
+                        "common": {
+                            "textureType": "video",
+                            "uvUnwrapedTextureName": "res/media/initial.mp4"
+                        },
+                        "android": {
+                            "defaultShaderName": "androidVideoShader",
+                            "textureType": "video",
+                            "uvUnwrapedTextureName": "res/media/initial.mp4"
+                        }
+                    },
+                    "transparentObject": 1,
+                    "position":"0,6.1,-0.17",
+                    "scale":"3.8,2.6,2.6",
+                    "rotation": "90,0,0",
+                    "children": []
+                },
+                {
+                    "name": "warpGate_outDoor",
+                    "type": "video",
+                    "batchNum": 1,
+                    "visible": 0,
+                    "touchable": 0,
+                    "touchZone": 0,
+                    "material": {
+                        "common": {
+                            "textureType": "video",
+                            "uvUnwrapedTextureName": "res/media/gate.mp4"
+                        },
+                        "android": {
+                            "defaultShaderName": "androidVideoShader",
+                            "textureType": "video",
+                            "uvUnwrapedTextureName": "res/media/gate.mp4"
+                        }
+                    },
+                    "transparentObject": 1,
+                    "position":"0,6.1,-0.17",
+                    "scale":"3.8,2.6,2.6",
+                    "rotation": "90,0,0",
+                    "children": []
+                },
+                {
+                    "name": "invisible_Box",
+                    "type": "pod",
+                    "batchNum": 1,
+                    "visible": 0,
+                    "touchable": 0,
+                    "touchZone": 0,
+                    "meshFileName": "res/model/box.pod",
+                    "material": {
+                        "common": {
+                            "texturePath": "res/texture/",
+                            "disableLightEffect": 1
+                        }
+                    },
+                    "position": "0,0,0",
+                    "scale": "0.014,0.014,0.014",
+                    "rotation": "0,0,0",
+                    "chirlden": [],
+                    "podSuppl": {
+                        "allSubnodeTouchable": 1
+                    }
+                }
+            ]
+        },
+        {
+            "name": "goIntoTip",
+            "type": "plane",
+            "batchNum": 1,
+            "visible": 0,
+            "touchable": 0,
+            "touchZone": 0,
+            "material": {
+                "common": {
+                    "defaultShaderName": "planeShader",
+                    "textureList": [
+                        {
+                            "textureName": "res/texture/gointo.png"
+                        }
+                    ]
+                }
+            },
+            "hudElement":{
+                "marginLeft":0.26133333,
+                "marginTop":0.47376312,
+                "depthPosition":10000,
+                "ratio":{
+                    "widthRatio":0.48,
+                    "keepAspectRatio":1
+                }
+            },
+            "position": "0,0,0.5",
+            "scale": "0.7,0.25,0.25",
+            "rotation": "0,0,0",
+            "children": []
+        },
+        {
+            "name": "goAroundTip",
+            "type": "plane",
+            "batchNum": 1,
+            "touchZone": 0,
+            "visible": 0,
+            "touchable": 0,
+            "material": {
+                "common": {
+                    "defaultShaderName": "planeShader",
+                    "textureList": [
+                        {
+                            "textureName": "res/texture/go_around.png"
+                        }
+                    ]
+                }
+            },
+            "hudElement":{
+                "marginLeft":0.26133333,
+                "marginTop":0.47376312,
+                "depthPosition":9000,
+                "ratio":{
+                    "widthRatio":0.48,
+                    "keepAspectRatio":1
+                }
+            },
+            "scale": "0.1,0.1,0.1",
+            "position": "0,0,0",
+            "rotation": "0,0,0"
+        },
+        {
+            "name": "goBackTip",
+            "type": "plane",
+            "batchNum": 1,
+            "touchZone": 0,
+            "visible": 0,
+            "touchable": 0,
+            "material": {
+                "common": {
+                    "defaultShaderName": "planeShader",
+                    "textureList": [
+                        {
+                            "textureName": "res/texture/go_back.png"
+                        }
+                    ]
+                }
+            },
+            "hudElement":{
+                "marginLeft":0.26133333,
+                "marginTop":0.47376312,
+                "depthPosition":9000,
+                "ratio":{
+                    "widthRatio":0.48,
+                    "keepAspectRatio":1
+                }
+            },
+            "scale": "0.1,0.1,0.1",
+            "position": "0,0,0",
+            "rotation": "0,0,0"
+        },
+        {
+            "name": "reset",
+            "type": "plane",
+            "batchNum": 1,
+            "visible": 0,
+            "touchable": 1,
+            "touchZone": 0,
+            "material": {
+                "common": {
+                    "defaultShaderName": "planeShader",
+                    "textureList": [
+                        {
+                            "textureName": "res/texture/reset.png"
+                        }
+                    ]
+                }
+            },
+            "hudElement":{
+                "marginLeft":0.042,
+                "marginTop":0.86,
+                "depthPosition":9000,
+                "ratio":{
+                    "widthRatio":0.093,
+                    "keepAspectRatio":1
+                }
+            },
+            "transparentObject": 1,
+            "rotation": "0,0,0",
+            "children": []
+        },
+       {
+            "name": "button1",
+            "type": "plane",
+            "batchNum": 1,
+            "visible": 0,
+            "touchable": 1,
+            "touchZone": 500,
+            "material": {
+                "common": {
+                    "defaultShaderName": "planeShader",
+                    "textureList": [
+                        {
+                            "textureName": "res/texture/btn1.png"
+                        }
+                    ]
+                }
+            },
+            "hudElement":{
+                "marginLeft":0.888,
+                "marginTop":0.46626687,
+                "depthPosition":12000,
+                "ratio":{
+                    "widthRatio":0.112,
+                    "keepAspectRatio":1
+                }
+            },
+            "transparentObject": 1,
+            "rotation": "0,0,0"
+        },
+        {
+            "name": "button2",
+            "type": "plane",
+            "batchNum": 1,
+            "visible": 0,
+            "touchable": 1,
+            "touchZone": 500,
+            "material": {
+                "common": {
+                    "defaultShaderName": "planeShader",
+                    "textureList": [
+                        {
+                            "textureName": "res/texture/btn2.png"
+                        }
+                    ]
+                }
+            },
+            "hudElement":{
+                "marginLeft":0.888,
+                "marginTop":0.39430285,
+                "depthPosition":12000,
+                "ratio":{
+                    "widthRatio":0.112,
+                    "keepAspectRatio":1
+                }
+            },
+            "transparentObject": 1,
+            "rotation": "0,0,0"
+        },
+        {
+            "name": "buttonBG",
+            "type": "plane",
+            "batchNum": 1,
+            "visible": 0,
+            "touchable": 0,
+            "touchZone": 0,
+            "material": {
+                "common": {
+                    "defaultShaderName": "planeShader",
+                    "textureList": [
+                        {
+                            "textureName": "res/texture/buttonBG.png"
+                        }
+                    ]
+                }
+            },
+            "hudElement":{
+                "marginLeft":0.888,
+                "marginTop":0.38830585,
+                "depthPosition":9000,
+                "ratio":{
+                    "widthRatio":0.112,
+                    "keepAspectRatio":1
+                }
+            },
+            "rotation": "0,0,0"
+        }
+    ]
+}
