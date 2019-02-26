@@ -1,0 +1,66 @@
+{
+    "showImmediately": 1,
+    "userInteraction":
+    {
+        "disableAll": 0,
+        "disablePinch": 0,
+        "disableClick": 0,
+        "disableLongPress": 0,
+        "disableSingleFingerScroll": 0,
+        "disableTwoFingerScroll": 0,
+        "disableDoubleClick": 1,
+        "disableAccompany": 1
+    },
+    "nodeList": [
+    {
+        "name": "mainCamera",
+        "type": "camera",
+        "visiable": "1",
+        "position": "0,0,0",
+        "scale": "1,1,1",
+        "rotation": "0,0,0",
+        "chirlden": [],
+        "cameraNodeSuppl":
+        {
+            "fov": 32,
+            "zNear": 50,
+            "zFar": 15000
+        }
+    },
+    {
+            "name": "sakuraPlane",
+            "type": "framePicture",
+            "visible": 1,
+            "touchable": 1,
+            "framePictureSuppl": {
+                "picturePath": "res/media/sakura",
+                "pictureName": "",
+                "pictureFmtExtend": ".png",
+                "startNumber": 1,
+                "endNumber": 10,
+                "frameInterval": 10,
+                "bufferVolume": 10
+            },
+            "material": {
+                    "common": {
+                      "defaultShaderName": "frameShader"
+                    }
+                  },
+                 "hudDisplay": {
+                 "marginLeft": 0.5,
+                 "marginTop": 0.5,
+                 "screenRatio": {
+                 "screenWidthRatio": 0.5,
+                 "screenHeightRatio": 0.5
+                 }
+                 },
+                 
+                 "position": "0,0,-5",
+                 "scale": "400,400,400",
+                 "rotation": "90,0,0",
+                 "children": []
+        }
+
+        
+    ]
+}

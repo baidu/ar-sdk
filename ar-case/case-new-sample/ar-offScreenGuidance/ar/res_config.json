@@ -1,0 +1,22 @@
+{
+  "res": [
+    {
+      "resPath": "batch1",
+      "resId": "local",
+      "encoding": "gzip",
+      "md5": "3979c5a3d4f25793488923982f01977d"
+    },
+    {
+      "resPath": "batch2",
+      "resId": "local",
+      "encoding": "gzip",
+      "md5": "3979c5a3d4f25793488923982f01977d"
+    },
+    {
+      "resPath": "batch3",
+      "resId": "local",
+      "encoding": "gzip",
+      "md5": "3979c5a3d4f25793488923982f01977d"
+    }
+  ]
+}

@@ -1,0 +1,403 @@
+{
+  "imuRelayCtrlWhenTrackLost": 1,
+  "nodeList": [
+    {
+      "cameraNodeSuppl": {
+        "fov": 56,
+        "zFar": 10000,
+        "zNear": 50
+      },
+      "children": [],
+      "name": "mainCamera",
+      "position": "0,0,0",
+      "rotation": "0,0,0",
+      "scale": "1,1,1",
+      "type": "camera",
+      "visible": 1
+    },
+    {
+      "cameraNodeSuppl": {
+        "cameraDefaultLookAt": {
+          "centerPos": "0,0,0",
+          "eyePos": "333,999,222",
+          "upDirection": "0,0,1"
+        },
+        "fov": 56,
+        "zFar": 10000,
+        "zNear": 50
+      },
+      "children": [],
+      "name": "mainCamera2",
+      "position": "0,0,0",
+      "rotation": "0,0,0",
+      "scale": "1,1,1",
+      "type": "camera",
+      "visible": 1
+    },
+    {
+      "cameraNodeSuppl": {
+        "cameraDefaultLookAt": {
+          "centerPos": "0,0,0",
+          "eyePos": "600,1000,1536",
+          "upDirection": "0,0,1"
+        },
+        "fov": 56,
+        "zFar": 10000,
+        "zNear": 50
+      },
+      "children": [],
+      "name": "mainCamera3",
+      "position": "0,0,0",
+      "rotation": "0,0,0",
+      "scale": "1,1,1",
+      "type": "camera",
+      "visible": 1
+    },
+    {
+      "batchNum": 1,
+      "children": [],
+      "meshFileName": "res/model/daodiao.pod",
+      "name": "daodiao",
+      "offScreenGuidanceNodeConfig": {
+        "offScreenGuidanceTarget": 1,
+        "podsubNodeName": "Line003"
+      },
+      "position": "0,-1700,0",
+      "rotation": "20,0,0",
+      "scale": "5,5,5",
+      "touchable": 0,
+      "type": "pod",
+      "visible": 1
+    },
+    {
+      "batchNum": 0,
+      "children": [
+        {
+          "material": {
+            "common": {
+              "texturePath": "res/texture/floor"
+            }
+          },
+          "materialExtend": {
+            "phong1": {
+              "transparent": 1,
+              "type": "MESH_BASIC"
+            },
+            "phong2": {
+              "transparent": 1,
+              "type": "MESH_BASIC"
+            }
+          },
+          "meshFileName": "res/model/Loading.pod",
+          "name": "progressbar",
+          "rotation": "0,0,0",
+          "scale": "0.001, 1 ,0.006",
+          "touchable": 1,
+          "type": "pod",
+          "visible": 1
+        }
+      ],
+      "hudDisplay": {
+        "depthPosition": 10,
+        "marginLeft": 0.5,
+        "marginTop": 0.7,
+        "screenRatio": {
+          "screenHeightRatio": 0.055,
+          "screenWidthRatio": 0.5
+        }
+      },
+      "name": "progress_group2",
+      "rotation": "0,0,0",
+      "type": "group",
+      "visible": 1
+    },
+    {
+      "batchNum": 1,
+      "children": [],
+      "hudDisplay": {
+        "marginLeft": 0.9,
+        "marginTop": 0.6,
+        "screenRatio": {
+          "screenWidthRatio": 0.2
+        }
+      },
+      "material": {
+        "common": {
+          "defaultShaderName": "planeShader",
+          "textureList": [
+            {
+              "textureName": "res/texture/switch.png"
+            }
+          ]
+        }
+      },
+      "name": "button1",
+      "rotation": "90,0,0",
+      "touchable": 1,
+      "transparentObject": 1,
+      "type": "plane",
+      "visible": 1
+    },
+    {
+      "batchNum": 1,
+      "children": [],
+      "hudDisplay": {
+        "marginLeft": 0.95,
+        "marginTop": 0.5,
+        "screenRatio": {
+          "screenWidthRatio": 0.2
+        }
+      },
+      "material": {
+        "common": {
+          "defaultShaderName": "planeShader",
+          "textureList": [
+            {
+              "textureName": "res/texture/open.png"
+            }
+          ]
+        }
+      },
+      "name": "open",
+      "rotation": "90,0,0",
+      "touchable": 1,
+      "transparentObject": 1,
+      "type": "plane",
+      "visible": 1
+    },
+    {
+      "batchNum": 1,
+      "children": [],
+      "hudDisplay": {
+        "marginLeft": 0.95,
+        "marginTop": 0.5,
+        "screenRatio": {
+          "screenWidthRatio": 0.2
+        }
+      },
+      "material": {
+        "common": {
+          "defaultShaderName": "planeShader",
+          "textureList": [
+            {
+              "textureName": "res/texture/close.png"
+            }
+          ]
+        }
+      },
+      "name": "close",
+      "rotation": "90,0,0",
+      "touchable": 1,
+      "transparentObject": 1,
+      "type": "plane",
+      "visible": 1
+    },
+    {
+      "batchNum": 1,
+      "children": [],
+      "hudDisplay": {
+        "marginLeft": 0.9,
+        "marginTop": 0.7,
+        "screenRatio": {
+          "screenWidthRatio": 0.2
+        }
+      },
+      "material": {
+        "common": {
+          "defaultShaderName": "planeShader",
+          "textureList": [
+            {
+              "textureName": "res/texture/zhizhusi.png"
+            }
+          ]
+        }
+      },
+      "name": "tips1",
+      "rotation": "90,0,0",
+      "touchable": 1,
+      "transparentObject": 1,
+      "type": "plane",
+      "visible": 1
+    },
+    {
+      "batchNum": 1,
+      "children": [],
+      "hudDisplay": {
+        "marginLeft": 0.9,
+        "marginTop": 0.7,
+        "screenRatio": {
+          "screenWidthRatio": 0.2
+        }
+      },
+      "material": {
+        "common": {
+          "defaultShaderName": "planeShader",
+          "textureList": [
+            {
+              "textureName": "res/texture/xiaoxiong.png"
+            }
+          ]
+        }
+      },
+      "name": "tips2",
+      "rotation": "90,0,0",
+      "touchable": 1,
+      "transparentObject": 1,
+      "type": "plane",
+      "visible": 1
+    },
+    {
+      "batchNum": 1,
+      "children": [],
+      "hudDisplay": {
+        "marginLeft": 0.9,
+        "marginTop": 0.4,
+        "screenRatio": {
+          "screenWidthRatio": 0.2
+        }
+      },
+      "material": {
+        "common": {
+          "defaultShaderName": "planeShader",
+          "textureList": [
+            {
+              "textureName": "res/texture/guide.png"
+            }
+          ]
+        }
+      },
+      "name": "button2",
+      "rotation": "90,0,0",
+      "touchable": 1,
+      "transparentObject": 1,
+      "type": "plane",
+      "visible": 1
+    },
+    {
+      "batchNum": 0,
+      "children": [],
+      "hudDisplay": {
+        "depthPosition": 11000,
+        "marginLeft": 0.5,
+        "marginTop": 0.75
+      },
+      "material": {
+        "common": {
+          "defaultShaderName": "planeShader",
+          "textureList": [
+            {
+              "textureName": "res/texture/floor/onloading.png"
+            }
+          ]
+        }
+      },
+      "name": "on_loading_text",
+      "rotation": "90,0,0",
+      "scale": "273, 100 ,63",
+      "touchable": 1,
+      "transparentObject": 0,
+      "type": "plane",
+      "visible": 1
+    },
+    {
+      "children": [],
+      "framePictureSuppl": {
+        "bufferVolume": 9,
+        "endNumber": 12,
+        "frameInterval": 2,
+        "pictureFmtExtend": ".png",
+        "pictureName": "",
+        "picturePath": "res/texture/floor/progress",
+        "startNumber": 1
+      },
+      "hudDisplay": {
+        "depthPosition": 5000,
+        "marginLeft": 0.3,
+        "marginTop": 0.75
+      },
+      "material": {
+        "common": {
+          "defaultShaderName": "planeShader",
+          "textureList": [
+            {
+              "texturePath": "res/texture/floor/progress/1.png"
+            }
+          ]
+        }
+      },
+      "name": "on_loading_box",
+      "position": "0,0,0",
+      "rotation": "90,0,0",
+      "scale": "100,100,100",
+      "touchable": 0,
+      "transparentObject": 0,
+      "type": "framePicture",
+      "visible": 1
+    },
+    {
+      "batchNum": 0,
+      "hudDisplay": {
+        "marginLeft": 0.5,
+        "marginTop": 0.5,
+        "screenRatio": {
+          "screenWidthRatio": 0.4
+        }
+      },
+      "material": {
+        "common": {
+          "defaultShaderName": "planeShader",
+          "textureList": [
+            {
+              "textureName": "res/texture/tip.png"
+            }
+          ]
+        }
+      },
+      "name": "photoOne",
+      "position": "-800,0,0",
+      "rotation": "90,0,0",
+      "scale": "200,200,200",
+      "touchable": 1,
+      "type": "plane",
+      "visible": 1
+    },
+    {
+      "batchNum": 1,
+      "children": [],
+      "materialExtend": {
+        "Bear_01": {
+          "offsetRepeat": "0, 0, 1, 1",
+          "shininess": 0.5,
+          "type": "MESH_PHONG"
+        },
+        "Bear_02": {
+          "offsetRepeat": "0, 0, 1, 1",
+          "shininess": 0.5,
+          "type": "MESH_PHONG"
+        }
+      },
+      "meshFileName": "res/model/L2.pod",
+      "name": "base",
+      "position": "0,-400,500",
+      "rotation": "15,-25,0",
+      "scale": "1.0, 1.0, 1.0",
+      "touchZone": 200,
+      "touchable": 1,
+      "type": "pod",
+      "visible": 1
+    }
+  ],
+  "showImmediately": 1,
+  "showOffscreenGuidance": 1,
+  "userInteraction": {
+    "disableAll": 0,
+    "disableClick": 0,
+    "disableDoubleClick": 0,
+    "disablePinch": 0,
+    "disableScroll": 0,
+    "disableSingleFingerScroll": 0,
+    "disableTwoFingerScroll": 0,
+    "disbleLongPress": 0,
+    "enableTouchZone": 1
+  }
+}

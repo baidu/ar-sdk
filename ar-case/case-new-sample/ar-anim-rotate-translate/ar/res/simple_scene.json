@@ -1,0 +1,51 @@
+{
+    "showImmediately": 1,
+    "userInteraction":
+    {
+        "disableAll": 0,
+        "disablePinch": 0,
+        "disableClick": 0,
+        "disableLongPress": 0,
+        "disableSingleFingerScroll": 0,
+        "disableTwoFingerScroll": 0,
+        "disableDoubleClick": 1,
+        "disableAccompany": 1
+    },
+    "nodeList": [
+    {
+        "name": "mainCamera",
+        "type": "camera",
+        "visiable": "1",
+        "position": "0,0,0",
+        "scale": "1,1,1",
+        "rotation": "0,0,0",
+        "chirlden": [],
+        "cameraNodeSuppl":
+        {
+            "fov": 32,
+            "zNear": 50,
+            "zFar": 15000
+        }
+    },
+    {
+            "name": "bantouPhoto",
+            "type": "plane",
+            "visible": 1,
+            "touchable": 1,
+            "material": {
+                "common": {
+                    "defaultShaderName": "planeShader",
+                    "textureList": [
+                        {
+                            "textureName": "res/texture/bantou.png"
+                        }
+                    ]
+                }
+            },
+            "scale": "100,100,100",
+            "position": "0,200,0",
+            "rotation": "0,0,0"
+        }
+        
+    ]
+}
